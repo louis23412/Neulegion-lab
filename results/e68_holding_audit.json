@@ -1,0 +1,150 @@
+{
+  "config": {
+    "bars": 90,
+    "deadZones": [
+      0,
+      0.1,
+      0.3
+    ],
+    "scales": [
+      1
+    ],
+    "holdings": 3
+  },
+  "rows": {
+    "grid": {
+      "policiesExpected": 9,
+      "policies": 9,
+      "rows": 18,
+      "rowShapeOk": true,
+      "holdOk": true,
+      "bareFound": true
+    },
+    "surfaces": {
+      "ok": true
+    },
+    "costDead": {
+      "identicalRows": true,
+      "echoed": true,
+      "costMovesNetSharpe": true,
+      "rowNetSharpe": 0.6864950785702724,
+      "direct0NetSharpe": 0.6864950785702724,
+      "direct25NetSharpe": -3.156645069841796,
+      "note": "turnoverSweep destructures `costBps` and writes it on every row, but each restatement is `restateReportAtPolicy(baseline|candidate, policy, { periodsPerYear, trials })` - costBps is NEVER threaded, so it defaults to 0. The rows at costBps 0 and 25 are byte-identical apart from the echoed field, while a DIRECT restatement at 25 bps moves the net Sharpe. So the reported net Sharpe and the promotion decision are gross-of-cost regardless of the requested cost. `analyze.js` passes the run `costBps` (the --cost-bps flag), so a `--turnover-sweep --cost-bps=10` run prints cost-free Sharpes under a header that says costBps=10."
+    },
+    "auditSkip": {
+      "somePromote": true,
+      "sweepMentionsAudit": false,
+      "restDropsAudit": true,
+      "manualFailsAudit": true,
+      "cleanPromote": true,
+      "promoteStates": [
+        true
+      ],
+      "manualReasons": [
+        "candidate failed the lookahead audit (1 violations)"
+      ],
+      "note": "turnoverSweep passes `decisionOptions: { requireCleanAudit: audit }` straight to promoteDecision, but each report is RESTATED first, and restateReportAtPolicy does NOT carry the `audit` block (unlike its sibling restateReportAtCost, which deliberately does: \"the look-ahead audit is cost-independent, so it carries over unchanged\"). promoteDecision then sees audit === undefined and skips the hurdle (its guard is `if (baseline.audit && !baseline.audit.clean)`). So a candidate that FAILED the run's look-ahead audit still promotes in the sweep and can be named `byId.bestPromoting` - the sweep reports a decision the run would not make. Rebuilt with the audit attached, the same decision correctly fails."
+    },
+    "freeze": {
+      "outerFrozen": true,
+      "arraysFrozen": false,
+      "before": 48,
+      "after": 54,
+      "restored": 48,
+      "added": 6,
+      "note": "Object.freeze is shallow: the exported DEFAULT_TURNOVER_GRID object is frozen, but its deadZones/scales/holdings arrays (and the holding objects) are not, so a caller can push a band and silently change the default grid for every later default sweep in the process. Latent (nobody mutates it today), but the \"frozen\" default is a shared mutable singleton."
+    },
+    "ordering": {
+      "sorted": true,
+      "bestOk": true,
+      "promoteOk": true,
+      "bpOk": true,
+      "unknownNull": true,
+      "maxMin": {
+        "max": 8946.79204453621,
+        "min": 1.1503196362819923
+      }
+    },
+    "unavailable": {
+      "noRefs": "the baseline report carries no fold inputs (restatement unavailable)",
+      "noBase": "the baseline report carries no fold inputs (restatement unavailable)",
+      "badCand": "candidate x restatement unavailable"
+    },
+    "format": {
+      "avail": true,
+      "unavailOk": true,
+      "nullOk": true,
+      "sample": [
+        "turnover sig-strong: best break-even=8946.79bps turnover=1.00 gross=0.89 policy{dz=0.00} promote=true",
+        "turnover sig-var: best break-even=8.40bps turnover=18.00 gross=0.02 policy{dz=0.30 enter=0.30 exit=0.10 minHold=3} promote=false"
+      ]
+    }
+  },
+  "validation": {
+    "gridConstruction": true,
+    "sweepSurfacesRestatement": true,
+    "costBpsIsDead": true,
+    "auditHurdleSkipped": true,
+    "defaultGridShallowFrozen": true,
+    "orderingAndById": true,
+    "unavailablePaths": true,
+    "formatContract": true
+  },
+  "verdict": {
+    "note": "L10-cg..: `analysis/holding.js` is the SHIPPED turnover attack (round 26, R26-5) - `analyze.js` imports it as `runTurnoverSweep` behind `--turnover-sweep` and calls it with the run costBps and `decisionOptions: { requireCleanAudit: audit, ...gateOptions }`. PASSES the pre-registered read: the grid is the cartesian product DZ x SCALE x HOLD ({...holding, deadZone, scale} per policy, rows = policies x candidates); every row reproduces a direct `restateReportAtPolicy(candidate, policy)` recompute (turnover/gross/net Sharpe/break-even to 1e-9); rows are sorted by break-even DESCENDING with a missing value last; `byId.best` is the highest-break-even row and `bestPromoting` the highest-break-even promoting one; `bestTurnoverPolicy` prefers promoting and returns null for an unknown id; the two bail-outs (no baseline fold inputs, a candidate without any) return `available:false` with a reason; and `formatTurnoverSweep` renders the unavailable reason and, when available, every id plus the target. FINDINGS: (0) `turnoverSweep` accepts `costBps` and echoes it on every row but NEVER threads it into `restateReportAtPolicy`, so every row netSharpe/dsr and every promotion decision is computed at ZERO cost - the costBps 0 and 25 sweeps are byte-identical apart from the echoed field while a direct restatement at 25 bps moves the net Sharpe (shipped caller passes costBps); (1) the `requireCleanAudit` hurdle the caller asks for is structurally inapplicable because `restateReportAtPolicy` drops the `audit` block (unlike `restateReportAtCost`, which carries it), so a candidate that FAILED the look-ahead audit still promotes and can be named `bestPromoting`; (2) `DEFAULT_TURNOVER_GRID` is only SHALLOWLY frozen - a caller can push a band onto its mutable `deadZones` and change the default grid for every later caller. All three are latent/report-level (no scored number moves, no golden moves); no fold-back row.",
+    "checks": {
+      "gridConstruction": true,
+      "sweepSurfacesRestatement": true,
+      "costBpsIsDead": true,
+      "auditHurdleSkipped": true,
+      "defaultGridShallowFrozen": true,
+      "orderingAndById": true,
+      "unavailablePaths": true,
+      "formatContract": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "costBpsNeverThreaded": {
+        "identicalRows": true,
+        "echoed": true,
+        "costMovesNetSharpe": true,
+        "rowNetSharpe": 0.6864950785702724,
+        "direct0NetSharpe": 0.6864950785702724,
+        "direct25NetSharpe": -3.156645069841796,
+        "note": "turnoverSweep destructures `costBps` and writes it on every row, but each restatement is `restateReportAtPolicy(baseline|candidate, policy, { periodsPerYear, trials })` - costBps is NEVER threaded, so it defaults to 0. The rows at costBps 0 and 25 are byte-identical apart from the echoed field, while a DIRECT restatement at 25 bps moves the net Sharpe. So the reported net Sharpe and the promotion decision are gross-of-cost regardless of the requested cost. `analyze.js` passes the run `costBps` (the --cost-bps flag), so a `--turnover-sweep --cost-bps=10` run prints cost-free Sharpes under a header that says costBps=10."
+      },
+      "auditHurdleSkipped": {
+        "somePromote": true,
+        "sweepMentionsAudit": false,
+        "restDropsAudit": true,
+        "manualFailsAudit": true,
+        "cleanPromote": true,
+        "promoteStates": [
+          true
+        ],
+        "manualReasons": [
+          "candidate failed the lookahead audit (1 violations)"
+        ],
+        "note": "turnoverSweep passes `decisionOptions: { requireCleanAudit: audit }` straight to promoteDecision, but each report is RESTATED first, and restateReportAtPolicy does NOT carry the `audit` block (unlike its sibling restateReportAtCost, which deliberately does: \"the look-ahead audit is cost-independent, so it carries over unchanged\"). promoteDecision then sees audit === undefined and skips the hurdle (its guard is `if (baseline.audit && !baseline.audit.clean)`). So a candidate that FAILED the run's look-ahead audit still promotes in the sweep and can be named `byId.bestPromoting` - the sweep reports a decision the run would not make. Rebuilt with the audit attached, the same decision correctly fails."
+      },
+      "defaultGridShallowFrozen": {
+        "outerFrozen": true,
+        "arraysFrozen": false,
+        "before": 48,
+        "after": 54,
+        "restored": 48,
+        "added": 6,
+        "note": "Object.freeze is shallow: the exported DEFAULT_TURNOVER_GRID object is frozen, but its deadZones/scales/holdings arrays (and the holding objects) are not, so a caller can push a band and silently change the default grid for every later default sweep in the process. Latent (nobody mutates it today), but the \"frozen\" default is a shared mutable singleton."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "analyze.js imports turnoverSweep as runTurnoverSweep + formatTurnoverSweep",
+        "analyze.js calls runTurnoverSweep with { baseline, candidates: ladderCandidates, costBps, trials, decisionOptions: { requireCleanAudit: audit, ...gateOptions }, targetBps }"
+      ],
+      "why": "holding.js only restates journaled inputs (no model, no RNG), so none of the three findings can move a scored number; they shape the diagnostic `--turnover-sweep` block and one exported default. costBps is passed by the shipped caller but dropped, so the reading is cost-free; the audit hurdle is requested but unreachable. No golden moves and no fold-back row is due."
+    }
+  }
+}

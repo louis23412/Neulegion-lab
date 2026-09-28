@@ -1,0 +1,83 @@
+{
+  "config": {
+    "symbols": 8,
+    "periods": 5246,
+    "windowStart": "2021-12-01T00:00:00.000Z",
+    "smoothing": "EWMA 0.1, renormalised"
+  },
+  "topLSFade": {
+    "grossSharpe": 0.834,
+    "net4Sharpe": 0.788,
+    "turnoverAnnual": 22.885385192286886,
+    "breakEvenBps": 73.66207651557653
+  },
+  "carryDispersion": {
+    "grossSharpe": 4.417,
+    "net4Sharpe": 2.462,
+    "turnoverAnnual": 85.20707752500425,
+    "breakEvenBps": 9.04415370444584
+  },
+  "flatCarry": {
+    "grossSharpe": 1.697
+  },
+  "correlation_topLS_vs_carry": -0.001,
+  "correlation_topLS_vs_flat": 0.025,
+  "correlation_carry_vs_flat": -0.852,
+  "maxSharpeMix": {
+    "topFrac": 0.01607655018858184,
+    "carryFrac": 0.9839234498114181
+  },
+  "mixes": [
+    {
+      "topFrac": 0,
+      "carryFrac": 1,
+      "grossSharpe": 4.417192000572132,
+      "net4Sharpe": 2.4621699396610586,
+      "h1g": 4.892162129547558,
+      "h2g": 7.001883628381509,
+      "h1n": 3.6005454144432636,
+      "h2n": -0.12473713123961697
+    },
+    {
+      "topFrac": 0.25,
+      "carryFrac": 0.75,
+      "grossSharpe": 1.9139015751663657,
+      "net4Sharpe": 1.3805030376489889,
+      "h1g": 2.30849903713495,
+      "h2g": 1.4354360985948895,
+      "h1n": 1.8792161634918607,
+      "h2n": 0.7526259345844776
+    },
+    {
+      "topFrac": 0.5,
+      "carryFrac": 0.5,
+      "grossSharpe": 1.2101217250413292,
+      "net4Sharpe": 0.9971345756944429,
+      "h1g": 1.368216564239281,
+      "h2g": 1.028646895974001,
+      "h1n": 1.1954506437088885,
+      "h2n": 0.7614349512288349
+    },
+    {
+      "topFrac": 0.75,
+      "carryFrac": 0.25,
+      "grossSharpe": 0.9601447304460933,
+      "net4Sharpe": 0.8587726178871209,
+      "h1g": 1.025417645391239,
+      "h2g": 0.8920216363241801,
+      "h1n": 0.9441892598753828,
+      "h2n": 0.7637911977744911
+    },
+    {
+      "topFrac": 1,
+      "carryFrac": 0,
+      "grossSharpe": 0.833512527973531,
+      "net4Sharpe": 0.7882746590996604,
+      "h1g": 0.851012911202855,
+      "h2g": 0.8236032684566648,
+      "h1n": 0.8159845483697656,
+      "h2n": 0.7648587880427863
+    }
+  ],
+  "note": "Two independent cross-sectional positioning streams. `bal` = annualised Sharpe on the book grid (365*3 periods/yr). Mix fractions are of the two streams' capital."
+}

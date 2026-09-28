@@ -1,0 +1,86 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6558,
+    "years": "5.99"
+  },
+  "books": {
+    "flatEqualWeight": {
+      "n": 6557,
+      "annualized": 0.0905399380046104,
+      "sharpe": 4.543595787245012,
+      "maxDrawdown": 0.07955768174080716,
+      "totalReturn": 0.7176217990848912,
+      "negativeFraction": 0.375171572365411,
+      "designEffect": 99.51496949766671,
+      "marketCorr": -0.0666488874672779
+    },
+    "xsFundingLevel": {
+      "n": 6557,
+      "annualized": 0.21211075738323354,
+      "sharpe": 3.2658855973522862,
+      "maxDrawdown": 0.06629023020893093,
+      "totalReturn": 2.5184160623274137,
+      "negativeFraction": 0.3063901174317523,
+      "designEffect": 112.26981469400647,
+      "marketCorr": 0.07842734424913414
+    },
+    "xsFundingRank": {
+      "n": 6557,
+      "annualized": 0.15001531527923137,
+      "sharpe": 5.0274266371774035,
+      "maxDrawdown": 0.029257961478950222,
+      "totalReturn": 1.4489050488518154,
+      "negativeFraction": 0.3105078542016166,
+      "designEffect": 168.60771465703752,
+      "marketCorr": 0.08381914342807949
+    },
+    "xsFundingOnlyNoBasis": {
+      "n": 6557,
+      "annualized": 0.152180571007126,
+      "sharpe": 6.682419398509699,
+      "maxDrawdown": 0.0009274379917277364,
+      "totalReturn": 1.4835341254590189,
+      "negativeFraction": 0.09745310355345432,
+      "designEffect": 372.5809330770988,
+      "marketCorr": 0.045287534513982555
+    },
+    "shuffledPlacebo": {
+      "n": 6557,
+      "annualized": 0.006281661934347461,
+      "sharpe": 0.332026073637717,
+      "maxDrawdown": 0.041666481103927164,
+      "totalReturn": 0.03722781069232539,
+      "negativeFraction": 0.5066341314625591,
+      "designEffect": 0.360190910342771,
+      "marketCorr": -0.0387843400054167
+    }
+  },
+  "crossCorr": {
+    "xsLevel_vs_flat": -0.8048872718510035,
+    "xsRank_vs_flat": -0.7487414305837197
+  },
+  "placeboDistribution": {
+    "seeds": 40,
+    "mean": -0.025984122692578417,
+    "sd": 0.40218193673226393,
+    "min": -0.9620275903126094,
+    "max": 0.5813436276900692,
+    "q025": -0.6898049758546569,
+    "q975": 0.5249575199460074,
+    "xsLevelSharpe": 3.2658855973522862,
+    "xsRankSharpe": 5.0274266371774035,
+    "xsLevelZ": 8.185026276394634,
+    "xsRankZ": 12.564986883620488
+  }
+}

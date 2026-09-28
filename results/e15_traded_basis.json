@@ -1,0 +1,551 @@
+{
+  "config": {
+    "symbols": 8,
+    "markPooledPeriods": 6558,
+    "tradedPooledPeriods": 6510,
+    "markXsPeriods": 6557,
+    "tradedXsPeriods": 6509
+  },
+  "perpSpread": {
+    "perSymbol": [
+      {
+        "symbol": "btcusdt",
+        "n": 6735,
+        "mean": 0.000009789575045307005,
+        "sd": 0.00017008252994196092,
+        "acf1": 0.05183075412137412,
+        "p01": -0.000572749204183709,
+        "p99": 0.0004992060639534834,
+        "min": -0.0019265482580226312,
+        "max": 0.0016972876738932108,
+        "fractionNegative": 0.31625835189309576,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "ethusdt",
+        "n": 6753,
+        "mean": -0.0000015484848414147146,
+        "sd": 0.00024990186799885234,
+        "acf1": 0.12830748617635862,
+        "p01": -0.0008501686412392129,
+        "p99": 0.0006722227718591878,
+        "min": -0.0031169627829609192,
+        "max": 0.002826827757125283,
+        "fractionNegative": 0.3428106026950985,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "solusdt",
+        "n": 6498,
+        "mean": 0.000013534570809954748,
+        "sd": 0.0004651078774878034,
+        "acf1": 0.05304595284783977,
+        "p01": -0.0013448491204329782,
+        "p99": 0.001197694132734739,
+        "min": -0.006837606837606813,
+        "max": 0.014331449245821526,
+        "fractionNegative": 0.32702369959987687,
+        "first": "2020-09-14T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "bnbusdt",
+        "n": 6735,
+        "mean": -0.000007632270865499176,
+        "sd": 0.00028487553600860645,
+        "acf1": 0.09256002269695025,
+        "p01": -0.000960122895730553,
+        "p99": 0.0008754841973541705,
+        "min": -0.002258628294361298,
+        "max": 0.005503485235434757,
+        "fractionNegative": 0.421826280623608,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "xrpusdt",
+        "n": 6723,
+        "mean": 0.000002393439785777077,
+        "sd": 0.0003835187758128257,
+        "acf1": 0.05031977878252769,
+        "p01": -0.0010395010395011228,
+        "p99": 0.0008325795356833865,
+        "min": -0.0027125511875512043,
+        "max": 0.01761730056563282,
+        "fractionNegative": 0.3166741038226982,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "adausdt",
+        "n": 6753,
+        "mean": 0.00002628721365319208,
+        "sd": 0.0003475024139898173,
+        "acf1": 0.06999087083219777,
+        "p01": -0.0009813204508856144,
+        "p99": 0.0009333113772456159,
+        "min": -0.004373439378525856,
+        "max": 0.004763113625936732,
+        "fractionNegative": 0.31660002961646677,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "dogeusdt",
+        "n": 6725,
+        "mean": 0.000017669331632358337,
+        "sd": 0.00045547218574067046,
+        "acf1": 0.046017176141243385,
+        "p01": -0.0013133068249905344,
+        "p99": 0.0012161325814881163,
+        "min": -0.006007523939808523,
+        "max": 0.012066522338122443,
+        "fractionNegative": 0.3188104089219331,
+        "first": "2020-07-10T16:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "symbol": "linkusdt",
+        "n": 6735,
+        "mean": 0.000017598126426022832,
+        "sd": 0.0003732763884523374,
+        "acf1": 0.06339622087026595,
+        "p01": -0.0011994726217511298,
+        "p99": 0.0009688699020278246,
+        "min": -0.004176186477486632,
+        "max": 0.0034861401776900003,
+        "fractionNegative": 0.3247216035634744,
+        "first": "2020-07-01T08:00:00.000Z",
+        "last": "2026-09-01T00:00:00.000Z"
+      }
+    ],
+    "note": "mark/traded - 1 at the funding grid; a smoothed mark should be small, mean-reverting (acf1 < 0) and rarely large"
+  },
+  "mark": {
+    "perp": "mark",
+    "pooled": {
+      "n": 6558,
+      "annualized": 0.09046182033856837,
+      "sharpe": 4.539812843850759,
+      "maxDrawdown": 0.07955768174080637,
+      "totalReturn": 0.7169602312204901,
+      "negativeFraction": 0.3752668496492833,
+      "designEffect": 99.51496949766671,
+      "robustDesignEffect": 11.80308598854362
+    },
+    "perSymbol": {
+      "btcusdt": {
+        "periods": 6777,
+        "sharpe": 9.828025054127108,
+        "annualized": 0.11495488604513625,
+        "maxDrawdown": 0.0047553296005106915,
+        "basisStd": 0.000308149236720075,
+        "maxAbsBasis": 0.0036187107377824157,
+        "noMark": 908,
+        "raggedSkipped": 4
+      },
+      "ethusdt": {
+        "periods": 6798,
+        "sharpe": 8.188347750420638,
+        "annualized": 0.12891746943675525,
+        "maxDrawdown": 0.019604603580130397,
+        "basisStd": 0.00041643299672172973,
+        "maxAbsBasis": 0.008094484406700242,
+        "noMark": 656,
+        "raggedSkipped": 4
+      },
+      "solusdt": {
+        "periods": 6558,
+        "sharpe": -0.10200865074227619,
+        "annualized": -0.013050926211058146,
+        "maxDrawdown": 0.4966853530090941,
+        "basisStd": 0.0030841325680595172,
+        "maxAbsBasis": 0.19527300477233633,
+        "noMark": 21,
+        "raggedSkipped": 3
+      },
+      "bnbusdt": {
+        "periods": 6777,
+        "sharpe": 0.018334847894432425,
+        "annualized": 0.0004396264713409409,
+        "maxDrawdown": 0.2673772029415,
+        "basisStd": 0.0006415057243497938,
+        "maxAbsBasis": 0.009723031404876292,
+        "noMark": 449,
+        "raggedSkipped": 4
+      },
+      "xrpusdt": {
+        "periods": 6781,
+        "sharpe": 4.123374002991854,
+        "annualized": 0.134162838863048,
+        "maxDrawdown": 0.05689416797342359,
+        "basisStd": 0.0009690431405728592,
+        "maxAbsBasis": 0.05192913442735547,
+        "noMark": 551,
+        "raggedSkipped": 4
+      },
+      "adausdt": {
+        "periods": 6798,
+        "sharpe": 5.944572322514209,
+        "annualized": 0.1280197405439285,
+        "maxDrawdown": 0.022584574158007586,
+        "basisStd": 0.0005843727384127335,
+        "maxAbsBasis": 0.006118746069916359,
+        "noMark": 496,
+        "raggedSkipped": 4
+      },
+      "dogeusdt": {
+        "periods": 6771,
+        "sharpe": 4.019127052125102,
+        "annualized": 0.12308037652757312,
+        "maxDrawdown": 0.035531376306388314,
+        "basisStd": 0.000862056774926554,
+        "maxAbsBasis": 0.03200564584604271,
+        "noMark": 6,
+        "raggedSkipped": 3
+      },
+      "linkusdt": {
+        "periods": 6777,
+        "sharpe": 6.136863931514849,
+        "annualized": 0.13834834786875808,
+        "maxDrawdown": 0.024698942725508256,
+        "basisStd": 0.0006191311451328398,
+        "maxAbsBasis": 0.005481598820072264,
+        "noMark": 521,
+        "raggedSkipped": 4
+      }
+    },
+    "xs": {
+      "flat": {
+        "n": 6557,
+        "annualized": 0.0905399380046104,
+        "sharpe": 4.543595787245012,
+        "maxDrawdown": 0.07955768174080716,
+        "totalReturn": 0.7176217990848912,
+        "negativeFraction": 0.375171572365411
+      },
+      "xsLevel": {
+        "n": 6557,
+        "annualized": 0.21211075738323354,
+        "sharpe": 3.2658855973522862,
+        "maxDrawdown": 0.06629023020893093,
+        "totalReturn": 2.5184160623274137,
+        "negativeFraction": 0.3063901174317523
+      },
+      "xsRank": {
+        "n": 6557,
+        "annualized": 0.15001531527923137,
+        "sharpe": 5.0274266371774035,
+        "maxDrawdown": 0.029257961478950222,
+        "totalReturn": 1.4489050488518154,
+        "negativeFraction": 0.3105078542016166
+      },
+      "xsFundingOnly": {
+        "n": 6557,
+        "annualized": 0.152180571007126,
+        "sharpe": 6.682419398509699,
+        "maxDrawdown": 0.0009274379917277364,
+        "totalReturn": 1.4835341254590189,
+        "negativeFraction": 0.09745310355345432
+      },
+      "marketCorr": {
+        "xsLevel": 0.07842734424913414,
+        "xsRank": 0.08381914342807949
+      },
+      "placebo": {
+        "seeds": 40,
+        "mean": -0.025984122692578417,
+        "sd": 0.40218193673226393,
+        "min": -0.9620275903126094,
+        "max": 0.5813436276900692,
+        "q025": -0.6898049758546569,
+        "q975": 0.5249575199460074,
+        "xsLevelSharpe": 3.2658855973522862,
+        "xsRankSharpe": 5.0274266371774035,
+        "xsLevelZ": 8.185026276394634,
+        "xsRankZ": 12.564986883620488
+      },
+      "first": "2020-09-13T00:00:00.000Z",
+      "last": "2026-09-19T00:00:00.000Z",
+      "periods": 6557
+    },
+    "sizing": {
+      "unsized": {
+        "sharpe": 4.539812843850759,
+        "maxDrawdown": 0.07955768174080637
+      },
+      "volTarget": {
+        "sharpe": 8.054245171226231,
+        "maxDrawdown": 0.01325028151021719,
+        "designEffect": 5.980178749040619
+      },
+      "inverseVol": {
+        "sharpe": 10.660217936521622,
+        "maxDrawdown": 0.00692172750541018
+      },
+      "equalWeight": {
+        "sharpe": 4.539812843850759
+      },
+      "controlRandom": {
+        "unsizedSharpe": 0.3799790548721612,
+        "sizedSharpe": 0.8337593271050869
+      }
+    },
+    "reversion": {
+      "icMin": 0.10672076455992625,
+      "icMedian": 0.4299940378680367,
+      "icMax": 0.5269605153404278,
+      "icPositive": 8,
+      "icN": 8,
+      "basisOnlySharpe": 9.149678084034914,
+      "basisOnlyAnnualized": 0.13130544409418352,
+      "basisOnlyDE": 395.016461043942,
+      "basisOnlyDERobust": 7.835345361813804,
+      "followOnlySharpe": -9.149678084034914,
+      "carryPlusSharpe": 9.544442011875736,
+      "marketCorr": 0.09046148141964704
+    }
+  },
+  "traded": {
+    "perp": "traded",
+    "pooled": {
+      "n": 6510,
+      "annualized": 0.09068674989037387,
+      "sharpe": 4.648626653467166,
+      "maxDrawdown": 0.07963242253692487,
+      "totalReturn": 0.712559316160382,
+      "negativeFraction": 0.3870967741935484,
+      "designEffect": 76.42569964205038,
+      "robustDesignEffect": 9.737258454568538
+    },
+    "perSymbol": {
+      "btcusdt": {
+        "periods": 6752,
+        "sharpe": 11.115888154908664,
+        "annualized": 0.11474775352804958,
+        "maxDrawdown": 0.006339838057550222,
+        "basisStd": 0.0002584385036847809,
+        "maxAbsBasis": 0.0032278568408687924,
+        "noMark": 938,
+        "raggedSkipped": 4
+      },
+      "ethusdt": {
+        "periods": 6752,
+        "sharpe": 8.894991862651745,
+        "annualized": 0.1290957705900387,
+        "maxDrawdown": 0.020090272882328758,
+        "basisStd": 0.00036795624144511044,
+        "maxAbsBasis": 0.00645907938086554,
+        "noMark": 704,
+        "raggedSkipped": 4
+      },
+      "solusdt": {
+        "periods": 6510,
+        "sharpe": -0.11252502283285293,
+        "annualized": -0.013838234346988675,
+        "maxDrawdown": 0.4936802792455063,
+        "basisStd": 0.002911969943148824,
+        "maxAbsBasis": 0.16846008158508186,
+        "noMark": 71,
+        "raggedSkipped": 3
+      },
+      "bnbusdt": {
+        "periods": 6752,
+        "sharpe": -0.008445982301668362,
+        "annualized": -0.0002130585519270313,
+        "maxDrawdown": 0.2707822960532341,
+        "basisStd": 0.0006758942190195655,
+        "maxAbsBasis": 0.010184069016170971,
+        "noMark": 479,
+        "raggedSkipped": 4
+      },
+      "xrpusdt": {
+        "periods": 6735,
+        "sharpe": 3.291804037301384,
+        "annualized": 0.1335838952539812,
+        "maxDrawdown": 0.07695124231682861,
+        "basisStd": 0.0012235105676871338,
+        "maxAbsBasis": 0.06949629559342829,
+        "noMark": 599,
+        "raggedSkipped": 4
+      },
+      "adausdt": {
+        "periods": 6752,
+        "sharpe": 6.067730521725066,
+        "annualized": 0.127686457420228,
+        "maxDrawdown": 0.021755698886406764,
+        "basisStd": 0.0005616617140449072,
+        "maxAbsBasis": 0.003883829255717619,
+        "noMark": 544,
+        "raggedSkipped": 4
+      },
+      "dogeusdt": {
+        "periods": 6724,
+        "sharpe": 4.016947513096767,
+        "annualized": 0.12254292481034011,
+        "maxDrawdown": 0.0362614081022201,
+        "basisStd": 0.0008435911707451948,
+        "maxAbsBasis": 0.023574293195229412,
+        "noMark": 55,
+        "raggedSkipped": 3
+      },
+      "linkusdt": {
+        "periods": 6752,
+        "sharpe": 6.361078560862414,
+        "annualized": 0.1380403587471707,
+        "maxDrawdown": 0.02450852714630636,
+        "basisStd": 0.0005906822476729809,
+        "maxAbsBasis": 0.004880927560404924,
+        "noMark": 551,
+        "raggedSkipped": 4
+      }
+    },
+    "xs": {
+      "flat": {
+        "n": 6509,
+        "annualized": 0.09065825198827064,
+        "sharpe": 4.6468383267798385,
+        "maxDrawdown": 0.07963242253692315,
+        "totalReturn": 0.7121274854070057,
+        "negativeFraction": 0.3871562451989553
+      },
+      "xsLevel": {
+        "n": 6509,
+        "annualized": 0.20652849080370198,
+        "sharpe": 3.2480674335891497,
+        "maxDrawdown": 0.06884055980573058,
+        "totalReturn": 2.373638032884933,
+        "negativeFraction": 0.3104931633123368
+      },
+      "xsRank": {
+        "n": 6509,
+        "annualized": 0.14571521786643468,
+        "sharpe": 4.982389243665422,
+        "maxDrawdown": 0.03046847709601971,
+        "totalReturn": 1.371725083066024,
+        "negativeFraction": 0.3192502688585036
+      },
+      "xsFundingOnly": {
+        "n": 6509,
+        "annualized": 0.14878104947123738,
+        "sharpe": 6.527745091813762,
+        "maxDrawdown": 0.001566445747762154,
+        "totalReturn": 1.4176982658228128,
+        "negativeFraction": 0.0961745275772008
+      },
+      "marketCorr": {
+        "xsLevel": 0.06607934710588195,
+        "xsRank": 0.07200214702947559
+      },
+      "placebo": {
+        "seeds": 40,
+        "mean": -0.06568898526158959,
+        "sd": 0.3582475551770242,
+        "min": -0.6435836260247925,
+        "max": 0.5954354828247805,
+        "q025": -0.591972573818748,
+        "q975": 0.5302538508017416,
+        "xsLevelSharpe": 3.2480674335891497,
+        "xsRankSharpe": 4.982389243665422,
+        "xsLevelZ": 9.249906582651434,
+        "xsRankZ": 14.091033298001314
+      },
+      "first": "2020-09-20T16:00:00.000Z",
+      "last": "2026-09-01T00:00:00.000Z",
+      "periods": 6509
+    },
+    "sizing": {
+      "unsized": {
+        "sharpe": 4.648626653467166,
+        "maxDrawdown": 0.07963242253692487
+      },
+      "volTarget": {
+        "sharpe": 7.793001917538045,
+        "maxDrawdown": 0.012676529621483516,
+        "designEffect": 5.925637146066858
+      },
+      "inverseVol": {
+        "sharpe": 10.90645079129653,
+        "maxDrawdown": 0.006771180090362305
+      },
+      "equalWeight": {
+        "sharpe": 4.648626653467166
+      },
+      "controlRandom": {
+        "unsizedSharpe": 0.8673442677281051,
+        "sizedSharpe": 0.8286349018022828
+      }
+    },
+    "reversion": {
+      "icMin": 0.10667721135236974,
+      "icMedian": 0.39100581210175583,
+      "icMax": 0.5067567294568454,
+      "icPositive": 8,
+      "icN": 8,
+      "basisOnlySharpe": 9.170834771537383,
+      "basisOnlyAnnualized": 0.1258571944398324,
+      "basisOnlyDE": 240.8554504555242,
+      "basisOnlyDERobust": 7.606079564604347,
+      "followOnlySharpe": -9.170834771537383,
+      "carryPlusSharpe": 9.652747716254856,
+      "marketCorr": 0.07778902714365105
+    }
+  },
+  "comparison": {
+    "pooledFlatSharpe": {
+      "mark": 4.539812843850759,
+      "traded": 4.648626653467166,
+      "ratio": 1.0239687875599977
+    },
+    "pooledFlatDrawdown": {
+      "mark": 0.07955768174080637,
+      "traded": 0.07963242253692487
+    },
+    "xsRankSharpe": {
+      "mark": 5.0274266371774035,
+      "traded": 4.982389243665422,
+      "ratio": 0.9910416607218225
+    },
+    "xsRankDrawdown": {
+      "mark": 0.029257961478950222,
+      "traded": 0.03046847709601971
+    },
+    "reversionIcMedian": {
+      "mark": 0.4299940378680367,
+      "traded": 0.39100581210175583
+    },
+    "reversionBasisOnlySharpe": {
+      "mark": 9.149678084034914,
+      "traded": 9.170834771537383,
+      "ratio": 1.0023122876354944
+    },
+    "reversionRobustDE": {
+      "mark": 7.835345361813804,
+      "traded": 7.606079564604347
+    },
+    "xsRankVsFlatDrawdownAdvantage": {
+      "mark": 0.05029972026185693,
+      "traded": 0.04916394544090344
+    },
+    "sizingVolTargetSharpe": {
+      "mark": 8.054245171226231,
+      "traded": 7.793001917538045,
+      "ratio": 0.9675645267639136
+    },
+    "sizingVolTargetDrawdown": {
+      "mark": 0.01325028151021719,
+      "traded": 0.012676529621483516
+    },
+    "sizingInverseVolSharpe": {
+      "mark": 10.660217936521622,
+      "traded": 10.90645079129653,
+      "ratio": 1.0230982946353584
+    },
+    "sizingInverseVolDrawdown": {
+      "mark": 0.00692172750541018,
+      "traded": 0.006771180090362305
+    }
+  }
+}

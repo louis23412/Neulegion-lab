@@ -1,0 +1,112 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6557,
+    "firstTop": 1309,
+    "firstOI": 1310,
+    "feeBps": 4
+  },
+  "verdict": {
+    "note": "The REPO V2 sleeve layer must reproduce the lab books bit-for-bit on the lab data.",
+    "specs": {
+      "carry-dispersion": {
+        "cap": 0.125,
+        "bandEps": null
+      },
+      "toptrader-fade": {
+        "cap": 0.125,
+        "bandEps": null
+      },
+      "oi-change": {
+        "cap": null,
+        "bandEps": 0.03
+      }
+    },
+    "checks": {
+      "r8": true,
+      "r7": true,
+      "oi": true,
+      "cleanChainIdentical": true,
+      "r8StoredMatch": true,
+      "r7StoredMatch": true,
+      "oiStoredMatch": true,
+      "fuzzBooks": true,
+      "fuzzWeights": true,
+      "fuzzMisc": true
+    },
+    "fuzz": {
+      "trials": 250,
+      "divergences": {
+        "books": 0,
+        "weights": 0,
+        "misc": 0
+      },
+      "seed": "0x73f0"
+    },
+    "r8": {
+      "label": "r8 carry dispersion",
+      "rowsFingerprint": "4741802e",
+      "rowsMatch": true,
+      "retsMatch": true,
+      "repo": {
+        "net4": 6.18,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 46.04
+      },
+      "stored": {
+        "net4": 6.18,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 46.04
+      },
+      "matchesStored": true,
+      "pass": true
+    },
+    "r7": {
+      "label": "r7 toptrader fade",
+      "rowsFingerprint": "d7d01edf",
+      "rowsMatch": true,
+      "retsMatch": true,
+      "repo": {
+        "net4": 1.07,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 182.59
+      },
+      "stored": {
+        "net4": 1.07,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 182.59
+      },
+      "matchesStored": true,
+      "pass": true
+    },
+    "oi": {
+      "label": "oi change",
+      "rowsFingerprint": "fa535a97",
+      "rowsMatch": true,
+      "retsMatch": true,
+      "repo": {
+        "net4": 0.92,
+        "turnoverAnnual": 198,
+        "breakEvenBps": 15.22
+      },
+      "stored": {
+        "net4": 0.92,
+        "turnoverAnnual": 198,
+        "breakEvenBps": 15.22
+      },
+      "matchesStored": true,
+      "pass": true
+    },
+    "validationPass": true
+  }
+}

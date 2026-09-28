@@ -1,0 +1,155 @@
+{
+  "config": {
+    "folds": 6,
+    "topKs": [
+      1,
+      3,
+      20
+    ],
+    "cadences": 4
+  },
+  "rows": {
+    "foldConcentration": {
+      "okTop": true,
+      "okSums": true,
+      "okLoo": true,
+      "okMarg": true,
+      "okNeg": true,
+      "grossTotal": 9,
+      "full": -3.5204429235768973,
+      "min": -5.253810564276818,
+      "max": -1.6034020777212812,
+      "marginalMean": 0.023595765513707272
+    },
+    "foldGuards": {
+      "noFoldsNa": true,
+      "noInputsHasNa": true,
+      "wrongLenHasNa": true,
+      "badInputsHasNa": true
+    },
+    "persistence": {
+      "okLag": true,
+      "lag1": 0.666707822740828,
+      "halfLife": 1.709771604681528,
+      "noCross": true,
+      "splitPairs": 4,
+      "splitLag1": 1,
+      "constNote": true,
+      "guards": true
+    },
+    "paired": {
+      "ok": true,
+      "needed": 9,
+      "brute": 9,
+      "p80": 18,
+      "bruteP80": 18,
+      "pairedMde95": 0.13516579662244632,
+      "seScale": "paired"
+    },
+    "nextRun": {
+      "ok": true,
+      "costKind": true,
+      "noneKind": true,
+      "barsDep": 1829,
+      "clears": {
+        "0": true,
+        "2": true,
+        "5": true,
+        "10": false
+      }
+    },
+    "flip": {
+      "stab": true,
+      "mag": true,
+      "gateKind": true,
+      "searchKind": true,
+      "magKind": "magnitude",
+      "magRequired": 0.13516579662244632
+    },
+    "cadence": {
+      "okMajority": true,
+      "okTie": true,
+      "okVeto": true,
+      "okAudit": true,
+      "okCatastrophic": true,
+      "emptyAvailable": false
+    },
+    "decisionReport": {
+      "ok": true,
+      "bareOk": true,
+      "textOk": true,
+      "sample": [
+        "decision: keep-off (cand) | binding: minDsr: pooled DSR 0.9 < 0.95",
+        "  label policy: referent=conservative run=optimistic",
+        "  concentration: grossPos=n/a grossNeg=n/a "
+      ]
+    },
+    "restateBasis": {
+      "carriesOriginalInputs": true,
+      "foldsChanged": true,
+      "grossFromRestatedFolds": true,
+      "looFromOriginalSignals": true,
+      "baseMismatch": true,
+      "restatedNetSharpe": -5.201698358740081,
+      "originalSignalSharpe": -3.5204429235768973,
+      "restatedGross": -0.013520135124205322,
+      "note": "restateReportAtPolicy REPLACES `folds` with restated-position metrics but CARRIES `foldInputs` forward unchanged (the deliberate P2 chaining: the journal is kept so a restated report can be restated again). foldConcentration reads topKs/grossTotal from `folds` and deleteOneCluster/marginal from `foldInputs.signals`, so a policy-restated report handed to it yields a block whose GROSS half describes the RESTATED positions and whose Sharpe half describes the ORIGINAL positions - two different position series in one block. The SHIPPED `--decision` path is a COST-only restatement (restateReportAtCost, same signals), where both halves agree (see costRestatementStaysOnOneBasis), so this is latent/export-level: it is reached only by the documented \"restate a restated report\" chain (a policy or cadence sweep), not by the shipped call."
+    },
+    "costRestate": {
+      "signalsCarried": true,
+      "sharpeAgrees": true,
+      "grossAgrees": true,
+      "costBlockFull": -3.877740023296727,
+      "restatedNetSharpe": -3.877740023296727
+    }
+  },
+  "validation": {
+    "foldConcentrationContract": true,
+    "foldConcentrationGuards": true,
+    "confidencePersistenceContract": true,
+    "pairedUnitsArithmetic": true,
+    "nextRunPlanContract": true,
+    "cheapestFlipKinds": true,
+    "cadencePromotion": true,
+    "decisionReportContract": true,
+    "restatedFoldInputsBasisMix": true,
+    "costRestatementStaysOnOneBasis": true
+  },
+  "verdict": {
+    "note": "L10-cn..: `analysis/decision.js` is the SHIPPED decision-grade report (round 26, R26-8; `analyze.js` composes it behind `--decision`). PASSES the pre-registered read: `foldConcentration` reproduces a direct recompute of `folds`+`foldInputs` (top-K shares, signed sums, delete-one-cluster range with the right worst/best index, per-fold marginals) and abstains with explicit na blocks when inputs are absent/mismatched (with a null share on a non-positive gross total); `confidencePersistence` is the within-fold pooled lag-1 autocorrelation (no cross-fold pairs) with the ln 0.5/ln rho half-life, abstaining on fewer than two pairs and stating the constant-confidence case; `pairedUnitsNeeded` (via `nextRunPlan`) returns the smallest cluster count whose one-sided cluster-t resolves a target (matching a brute-force search) with `reference.pairedMde95 = tCritical(C-1,alpha)*se` and the paired/single-series scale flag; `nextRunPlan` carries the documented guards and the `cheapestFlip` kinds (none/cost/stability/magnitude/gate/search) with the one-sided t reference; `promotionAcrossCadences` is the majority-pass + catastrophic veto rule with `defaultCatastrophic`; `decisionReport` has the six blocks with the explicit-na discipline; and `formatDecision` renders them. FINDINGS: (0) `restateReportAtPolicy` replaces `folds` with restated-position metrics but carries `foldInputs` forward unchanged (the deliberate P2 chaining), so a POLICY-restated report handed to `foldConcentration` produces a block whose GROSS half (topKs/grossTotal from `folds`) and Sharpe half (deleteOneCluster/marginal from the stale `foldInputs.signals`) describe two DIFFERENT position series. Latent/export-level: the shipped `--decision` path restates at COST only (`restateReportAtCost`, same signals, same costBps) where both halves agree (verified by `costRestatementStaysOnOneBasis`), so the mix needs a position-changing restatement (a policy/cadence sweep), not the shipped call. No golden moves and no fold-back row.",
+    "checks": {
+      "foldConcentrationContract": true,
+      "foldConcentrationGuards": true,
+      "confidencePersistenceContract": true,
+      "pairedUnitsArithmetic": true,
+      "nextRunPlanContract": true,
+      "cheapestFlipKinds": true,
+      "cadencePromotion": true,
+      "decisionReportContract": true,
+      "restatedFoldInputsBasisMix": true,
+      "costRestatementStaysOnOneBasis": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "restatedFoldInputsBasisMix": {
+        "carriesOriginalInputs": true,
+        "foldsChanged": true,
+        "grossFromRestatedFolds": true,
+        "looFromOriginalSignals": true,
+        "baseMismatch": true,
+        "restatedNetSharpe": -5.201698358740081,
+        "originalSignalSharpe": -3.5204429235768973,
+        "restatedGross": -0.013520135124205322,
+        "note": "restateReportAtPolicy REPLACES `folds` with restated-position metrics but CARRIES `foldInputs` forward unchanged (the deliberate P2 chaining: the journal is kept so a restated report can be restated again). foldConcentration reads topKs/grossTotal from `folds` and deleteOneCluster/marginal from `foldInputs.signals`, so a policy-restated report handed to it yields a block whose GROSS half describes the RESTATED positions and whose Sharpe half describes the ORIGINAL positions - two different position series in one block. The SHIPPED `--decision` path is a COST-only restatement (restateReportAtCost, same signals), where both halves agree (see costRestatementStaysOnOneBasis), so this is latent/export-level: it is reached only by the documented \"restate a restated report\" chain (a policy or cadence sweep), not by the shipped call."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "analyze.js computes foldConcentration({ folds: featured.folds, foldInputs: featured.foldInputs, costBps }) on the SCORED featured report",
+        "confidencePersistence/nextRunPlan/decisionReport/formatDecision/promotionAcrossCadences are composed behind --decision"
+      ],
+      "why": "decision.js computes no new strategy statistic (every block is a restatement of already-scored data, so the finding cannot move a scored number), and the shipped `--decision` path restates at COST only (same signals, same costBps) where both halves of `foldConcentration` agree (verified by `costRestatementStaysOnOneBasis`). The mix is reached only by chaining a POSITION-changing restatement (policy/cadence) into `foldConcentration`, which the shipped call does not do. No golden moves and no fold-back row is due."
+    }
+  }
+}

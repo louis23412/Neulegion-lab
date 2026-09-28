@@ -1,0 +1,213 @@
+{
+  "config": {
+    "grid": [
+      {
+        "n": 10,
+        "b": 1,
+        "ok": true,
+        "min": 0,
+        "max": 8
+      },
+      {
+        "n": 10,
+        "b": 3,
+        "ok": true,
+        "min": 4,
+        "max": 8
+      },
+      {
+        "n": 37,
+        "b": 5,
+        "ok": true,
+        "min": 0,
+        "max": 36
+      },
+      {
+        "n": 100,
+        "b": 7,
+        "ok": true,
+        "min": 0,
+        "max": 99
+      }
+    ],
+    "reps": 200,
+    "nBoot": 99
+  },
+  "rows": {
+    "nw": [],
+    "pw": [],
+    "median": {
+      "per": [
+        3.671,
+        4.848,
+        3.369,
+        6.357
+      ],
+      "upper": 4.84761,
+      "standard": 4.25907,
+      "got": 4.84761
+    },
+    "minTaper": 0
+  },
+  "validation": {
+    "sbiLengthAndRange": true,
+    "sbiBlockOneIsIidWithReplacement": true,
+    "sbiGeometricRestartAndWrap": true,
+    "sbiRestartRateIsGeometric": true,
+    "sbiMeanRunLengthIsBlockLength": true,
+    "sbiDeterministic": true,
+    "nwMatchesIndependentBartlett": true,
+    "nwBandwidthZeroIsIidSe": true,
+    "nwConstantWindowIsZero": true,
+    "nwTaperedVarianceNeverNegative": true,
+    "nwSliceInvariant": true,
+    "nwDefaultBandwidth": true,
+    "pwMatchesArchOnPositiveG": true,
+    "pwReproducesArchReferenceVector": true,
+    "pwNegativeGReturnsZero": true,
+    "autoBlockFloorsAntiPersistentToOne": true,
+    "autoBlockMedianIsUpperOnEvenK": true,
+    "autoBlockReductionsExact": true,
+    "pwBoundsExact": true,
+    "rcStatisticIsSqrtTMaxMean": true,
+    "rcBenchmarkShiftExact": true,
+    "spaStatisticIsMaxStudentized": true,
+    "spaZeroVarianceIsInfinite": true,
+    "consistentRecentringBoundExact": true,
+    "consistentEqualsUpperWhenAllValid": true,
+    "spaConsistentPLeqUpperP": true,
+    "stepDownFirstStepIsConsistentSpa": true,
+    "stepDownMonotoneAndStops": true,
+    "subKfwer1EqualsStepDownFirstP": true,
+    "subOneSharedReference": true,
+    "subDeterministic": true,
+    "subKfwerNonIncreasingInK": true,
+    "subWindowStatExact": true,
+    "subShrinkAndDefaults": true,
+    "subGroupsBiteIdenticalAndSegmentAware": true,
+    "subFdpSelfConsistent": true,
+    "subSamplingSizeNominalAcrossPersistence": true,
+    "blockBootstrapOverRejectsUnderPersistence": true,
+    "rcSpaSizeUnderIidNull": true
+  },
+  "verdict": {
+    "note": "L10-aw..: `reality_check.js` is the resampling hub. SHIPPED via forecast.js: stationaryBlockIndices; SHIPPED via walkforward.js: neweyWestSE + the four subsampling procedures. All exact identities hold: the b=1 index process is i.i.d.-with-replacement (per-bar two-draw replay) and the process is geometric with mean run length b; neweyWestSE is exactly the Bartlett estimator (independent re-implementation, 1e-12), is slice invariant, and its tapered variance is never negative (so the `v<0` clamp arm is unreachable - a dead branch); the RC statistic is sqrt(T)*max mean, the SPA statistic is max(0,max fbar/omega), the consistent recentring is exactly A_k=omega*sqrt(2 log log T), the step-down first step IS the consistent SPA (bit-equal), and the subsampling family shares one reference (k-FWER k=1 == step-down first p, consistent SPA statistic/se/recentring identical), is deterministic, and is segment-aware. FAILURE: `politisWhiteBlockLength` (test-only) returns exactly 0 whenever its flat-top long-run `g` is not strictly positive, where the documented reference arch.bootstrap.base._single_optimal_block squares g and returns a positive length - over a mean-reverting ensemble the repo zeroes ~99% of series and autoBlockLength floors to 1 while the reference picks a multi-bar block; the `median` arm reduction is the UPPER median on an even arm count; and nothing in the shipped path uses the auto selector.",
+    "checks": {
+      "sbiLengthAndRange": true,
+      "sbiBlockOneIsIidWithReplacement": true,
+      "sbiGeometricRestartAndWrap": true,
+      "sbiRestartRateIsGeometric": true,
+      "sbiMeanRunLengthIsBlockLength": true,
+      "sbiDeterministic": true,
+      "nwMatchesIndependentBartlett": true,
+      "nwBandwidthZeroIsIidSe": true,
+      "nwConstantWindowIsZero": true,
+      "nwTaperedVarianceNeverNegative": true,
+      "nwSliceInvariant": true,
+      "nwDefaultBandwidth": true,
+      "pwMatchesArchOnPositiveG": true,
+      "pwReproducesArchReferenceVector": true,
+      "pwNegativeGReturnsZero": true,
+      "autoBlockFloorsAntiPersistentToOne": true,
+      "autoBlockMedianIsUpperOnEvenK": true,
+      "autoBlockReductionsExact": true,
+      "pwBoundsExact": true,
+      "rcStatisticIsSqrtTMaxMean": true,
+      "rcBenchmarkShiftExact": true,
+      "spaStatisticIsMaxStudentized": true,
+      "spaZeroVarianceIsInfinite": true,
+      "consistentRecentringBoundExact": true,
+      "consistentEqualsUpperWhenAllValid": true,
+      "spaConsistentPLeqUpperP": true,
+      "stepDownFirstStepIsConsistentSpa": true,
+      "stepDownMonotoneAndStops": true,
+      "subKfwer1EqualsStepDownFirstP": true,
+      "subOneSharedReference": true,
+      "subDeterministic": true,
+      "subKfwerNonIncreasingInK": true,
+      "subWindowStatExact": true,
+      "subShrinkAndDefaults": true,
+      "subGroupsBiteIdenticalAndSegmentAware": true,
+      "subFdpSelfConsistent": true,
+      "subSamplingSizeNominalAcrossPersistence": true,
+      "blockBootstrapOverRejectsUnderPersistence": true,
+      "rcSpaSizeUnderIidNull": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "divergence": {
+      "arNegZero": 198,
+      "arNegDiverged": 198,
+      "examples": [
+        {
+          "s": 0,
+          "repo": 0,
+          "arch": 22.00783,
+          "g": -0.85782,
+          "lr": 0.166173
+        },
+        {
+          "s": 1,
+          "repo": 0,
+          "arch": 5.98514,
+          "g": -0.273455,
+          "lr": 0.373511
+        },
+        {
+          "s": 2,
+          "repo": 0,
+          "arch": 10.85885,
+          "g": -0.565122,
+          "lr": 0.315862
+        }
+      ],
+      "iidGuardFraction": 0.58,
+      "autoFloorsToOne": 99
+    },
+    "calibration": {
+      "subsamplingSizes": [
+        0.04,
+        0.045,
+        0.045,
+        0.03
+      ],
+      "blockBootstrapSizes": [
+        0.09,
+        0.105,
+        0.18,
+        0.385
+      ],
+      "rcSize": 0.035,
+      "spaSize": 0.065,
+      "reps": 200,
+      "nBoot": 99
+    },
+    "reference": {
+      "benchStationary": 13.635665,
+      "benchCircular": 15.60894,
+      "numpyFirstTwoOk": true
+    },
+    "scope": {
+      "shippedViaForecast": [
+        "stationaryBlockIndices"
+      ],
+      "shippedViaWalkforward": [
+        "neweyWestSE",
+        "subsamplingSpa",
+        "subsamplingStepM",
+        "subsamplingKfwer",
+        "subsamplingFdp"
+      ],
+      "testOnly": [
+        "whiteRealityCheck",
+        "hansenSpa",
+        "hansenSpaConsistent",
+        "romanoWolfStepM",
+        "consistentRecentring",
+        "politisWhiteBlockLength",
+        "autoBlockLength",
+        "bootstrapRelativeMeans"
+      ]
+    }
+  }
+}

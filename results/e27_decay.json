@@ -1,0 +1,756 @@
+{
+  "config": {
+    "symbols": 8,
+    "periods": 5246,
+    "windowStart": "2021-12-01T00:00:00.000Z",
+    "windowEnd": "2026-09-18T08:00:00.000Z",
+    "smoothing": "EWMA 0.1, renormalised",
+    "feeBps": 4,
+    "mixTop": 0.25
+  },
+  "validation": {
+    "e23CarryGross": 4.417,
+    "e23TopGross": 0.834,
+    "carryGross": 4.417,
+    "topGross": 0.834,
+    "matchesE23": true,
+    "note": "e27 rebuilds e23 books; if this is false the builders diverge and nothing else counts."
+  },
+  "streams": {
+    "carryDispersion": {
+      "full": {
+        "grossSharpe": 4.417192000572132,
+        "net4Sharpe": 2.4621699396610586,
+        "turnoverAnnual": 85.20707752500425,
+        "breakEvenBps": 9.04415370444584
+      },
+      "halves": {
+        "h1": {
+          "grossSharpe": 4.892162129547558,
+          "net4Sharpe": 3.6005454144432636,
+          "turnoverAnnual": 77.69976971972942,
+          "breakEvenBps": 15.147072574589176
+        },
+        "h2": {
+          "grossSharpe": 7.001883628381509,
+          "net4Sharpe": -0.12473713123961697,
+          "turnoverAnnual": 92.7143853302795,
+          "breakEvenBps": 3.9295710090087552
+        },
+        "h2MeanNet4": -5.963269962726038e-7,
+        "h2Positive": false
+      },
+      "blocks": [
+        {
+          "start": "2021-12-01",
+          "grossSharpe": 9.880011738260633,
+          "net4Sharpe": 6.0092825737471385,
+          "turnoverAnnual": 80.76831684876987,
+          "breakEvenBps": 10.204507610335249
+        },
+        {
+          "start": "2022-07-07",
+          "grossSharpe": 4.66312164984232,
+          "net4Sharpe": 4.0140391329099225,
+          "turnoverAnnual": 75.21734630836576,
+          "breakEvenBps": 28.684773493814824
+        },
+        {
+          "start": "2023-02-13",
+          "grossSharpe": 11.132734305556035,
+          "net4Sharpe": 6.779855039441006,
+          "turnoverAnnual": 79.97180732488322,
+          "breakEvenBps": 10.286816304732554
+        },
+        {
+          "start": "2023-09-21",
+          "grossSharpe": 13.608680141187849,
+          "net4Sharpe": 9.039533668798871,
+          "turnoverAnnual": 74.69499979011343,
+          "breakEvenBps": 11.994470214110978
+        },
+        {
+          "start": "2024-04-26",
+          "grossSharpe": 8.019772637416784,
+          "net4Sharpe": 1.6242586791128935,
+          "turnoverAnnual": 87.41464599597933,
+          "breakEvenBps": 5.0206333392112334
+        },
+        {
+          "start": "2024-11-30",
+          "grossSharpe": 8.383715422409836,
+          "net4Sharpe": 1.1253038499436094,
+          "turnoverAnnual": 92.57547406725651,
+          "breakEvenBps": 4.626992598879954
+        },
+        {
+          "start": "2025-07-07",
+          "grossSharpe": 6.297943274824585,
+          "net4Sharpe": -1.0401187857730043,
+          "turnoverAnnual": 92.49115618203649,
+          "breakEvenBps": 3.430681303625302
+        },
+        {
+          "start": "2026-02-10",
+          "grossSharpe": 5.474966211509383,
+          "net4Sharpe": -2.055237666729038,
+          "turnoverAnnual": 98.31324189911571,
+          "breakEvenBps": 2.9044520790731543
+        }
+      ],
+      "perYearGross": {
+        "2021": {
+          "sharpe": 9.16,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": 4.36,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 8.39,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 10.88,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": 7.44,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": 5.7,
+          "n": 782
+        }
+      },
+      "perYearNet4": {
+        "2021": {
+          "sharpe": 5.93,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": 3.45,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 5.32,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 5.41,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": -0.01,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": -1.88,
+          "n": 782
+        }
+      },
+      "recent": {
+        "last12mNet4": -1.3741466511299127,
+        "last12mMean": -0.0000066084751789906345,
+        "last24mNet4": -0.5712440827097064,
+        "last24mMean": -0.0000027050150276163985
+      },
+      "rolling12mNet4": [
+        {
+          "at": "2021-12-01",
+          "sharpe": 3.34
+        },
+        {
+          "at": "2022-03-02",
+          "sharpe": 3.58
+        },
+        {
+          "at": "2022-06-01",
+          "sharpe": 3.76
+        },
+        {
+          "at": "2022-09-02",
+          "sharpe": 3.76
+        },
+        {
+          "at": "2022-12-04",
+          "sharpe": 5.02
+        },
+        {
+          "at": "2023-03-06",
+          "sharpe": 8.02
+        },
+        {
+          "at": "2023-06-06",
+          "sharpe": 7.64
+        },
+        {
+          "at": "2023-09-05",
+          "sharpe": 6.78
+        },
+        {
+          "at": "2023-12-05",
+          "sharpe": 6.76
+        },
+        {
+          "at": "2024-03-06",
+          "sharpe": 2.63
+        },
+        {
+          "at": "2024-06-05",
+          "sharpe": 0.33
+        },
+        {
+          "at": "2024-09-04",
+          "sharpe": 0.26
+        },
+        {
+          "at": "2024-12-05",
+          "sharpe": 0.33
+        },
+        {
+          "at": "2025-03-06",
+          "sharpe": -0.59
+        },
+        {
+          "at": "2025-06-05",
+          "sharpe": -1.21
+        },
+        {
+          "at": "2025-09-05",
+          "sharpe": -1.37
+        }
+      ],
+      "decayTest": {
+        "rho": -0.7882272798764842,
+        "pPerm": 0.02299540091981604,
+        "firstThirdMean": 5.0116608533285305,
+        "lastThirdMean": -1.5476782262510214,
+        "delta": -6.559339079579551,
+        "blockSharpes": [
+          6.01,
+          4.01,
+          6.78,
+          9.04,
+          1.62,
+          1.13,
+          -1.04,
+          -2.06
+        ]
+      },
+      "decayTestGross": {
+        "rho": -0.3523527485931489,
+        "pPerm": 0.38972205558888223,
+        "firstThirdMean": 7.271566694051476,
+        "lastThirdMean": 5.8864547431669845,
+        "delta": -1.3851119508844913,
+        "blockSharpes": [
+          9.88,
+          4.66,
+          11.13,
+          13.61,
+          8.02,
+          8.38,
+          6.3,
+          5.47
+        ]
+      }
+    },
+    "topLSFade": {
+      "full": {
+        "grossSharpe": 0.833512527973531,
+        "net4Sharpe": 0.7882746590996604,
+        "turnoverAnnual": 22.885385192286886,
+        "breakEvenBps": 73.66207651557653
+      },
+      "halves": {
+        "h1": {
+          "grossSharpe": 0.851012911202855,
+          "net4Sharpe": 0.8159845483697656,
+          "turnoverAnnual": 19.631633664798542,
+          "breakEvenBps": 97.08144986073998
+        },
+        "h2": {
+          "grossSharpe": 0.8236032684566648,
+          "net4Sharpe": 0.7648587880427863,
+          "turnoverAnnual": 26.1391367197752,
+          "breakEvenBps": 56.07310396838613
+        },
+        "h2MeanNet4": 0.00012430556931988213,
+        "h2Positive": true
+      },
+      "blocks": [
+        {
+          "start": "2021-12-01",
+          "grossSharpe": 0.7887608756734955,
+          "net4Sharpe": 0.7674104726988957,
+          "turnoverAnnual": 11.201408144474888,
+          "breakEvenBps": 146.89869789070823
+        },
+        {
+          "start": "2022-07-07",
+          "grossSharpe": 0.0037356939047537728,
+          "net4Sharpe": -0.010504762274250836,
+          "turnoverAnnual": 8.164486668194723,
+          "breakEvenBps": 1.0493220282532665
+        },
+        {
+          "start": "2023-02-13",
+          "grossSharpe": 1.2142629267898362,
+          "net4Sharpe": 1.1463476364412601,
+          "turnoverAnnual": 32.16565261993451,
+          "breakEvenBps": 71.5082987360065
+        },
+        {
+          "start": "2023-09-21",
+          "grossSharpe": 1.3723631076632739,
+          "net4Sharpe": 1.3312273794568155,
+          "turnoverAnnual": 27.01096131520042,
+          "breakEvenBps": 133.47332501216673
+        },
+        {
+          "start": "2024-04-26",
+          "grossSharpe": -1.38902175849915,
+          "net4Sharpe": -1.4427469748187862,
+          "turnoverAnnual": 24.069346864967766,
+          "breakEvenBps": -103.38973613057912
+        },
+        {
+          "start": "2024-11-30",
+          "grossSharpe": 2.4719073432605154,
+          "net4Sharpe": 2.4230122510224574,
+          "turnoverAnnual": 25.108616683013935,
+          "breakEvenBps": 202.01700031352522
+        },
+        {
+          "start": "2025-07-07",
+          "grossSharpe": 1.1960250536028423,
+          "net4Sharpe": 1.1322730993281753,
+          "turnoverAnnual": 29.63320430845616,
+          "breakEvenBps": 75.00272671226178
+        },
+        {
+          "start": "2026-02-10",
+          "grossSharpe": 0.9110058750972033,
+          "net4Sharpe": 0.8333939313139783,
+          "turnoverAnnual": 25.93904205031791,
+          "breakEvenBps": 46.971168260764024
+        }
+      ],
+      "perYearGross": {
+        "2021": {
+          "sharpe": 1.98,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": -0.17,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 2.04,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 0.09,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": 1.3,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": 1.35,
+          "n": 782
+        }
+      },
+      "perYearNet4": {
+        "2021": {
+          "sharpe": 1.9,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": -0.18,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 1.98,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 0.05,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": 1.24,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": 1.27,
+          "n": 782
+        }
+      },
+      "recent": {
+        "last12mNet4": 1.9132548254492192,
+        "last12mMean": 0.0002615521576485292,
+        "last24mNet4": 0.7266972492732867,
+        "last24mMean": 0.00012068327500839405
+      },
+      "rolling12mNet4": [
+        {
+          "at": "2021-12-01",
+          "sharpe": 0.35
+        },
+        {
+          "at": "2022-03-02",
+          "sharpe": 0.57
+        },
+        {
+          "at": "2022-06-01",
+          "sharpe": 0.38
+        },
+        {
+          "at": "2022-09-02",
+          "sharpe": 0.75
+        },
+        {
+          "at": "2022-12-04",
+          "sharpe": 0.98
+        },
+        {
+          "at": "2023-03-06",
+          "sharpe": 1.12
+        },
+        {
+          "at": "2023-06-06",
+          "sharpe": 0.95
+        },
+        {
+          "at": "2023-09-05",
+          "sharpe": 0.97
+        },
+        {
+          "at": "2023-12-05",
+          "sharpe": 0.21
+        },
+        {
+          "at": "2024-03-06",
+          "sharpe": 1.11
+        },
+        {
+          "at": "2024-06-05",
+          "sharpe": 0.94
+        },
+        {
+          "at": "2024-09-04",
+          "sharpe": 0.2
+        },
+        {
+          "at": "2024-12-05",
+          "sharpe": 1.76
+        },
+        {
+          "at": "2025-03-06",
+          "sharpe": 0.42
+        },
+        {
+          "at": "2025-06-05",
+          "sharpe": 0.37
+        },
+        {
+          "at": "2025-09-05",
+          "sharpe": 1.62
+        }
+      ],
+      "decayTest": {
+        "rho": 0.18776645037352113,
+        "pPerm": 0.6844631073785243,
+        "firstThirdMean": 0.37845285521232247,
+        "lastThirdMean": 0.9828335153210768,
+        "delta": 0.6043806601087542,
+        "blockSharpes": [
+          0.77,
+          -0.01,
+          1.15,
+          1.33,
+          -1.44,
+          2.42,
+          1.13,
+          0.83
+        ]
+      },
+      "decayTestGross": {
+        "rho": 0.20261944380285535,
+        "pPerm": 0.6646670665866826,
+        "firstThirdMean": 0.39624828478912466,
+        "lastThirdMean": 1.0535154643500229,
+        "delta": 0.6572671795608982,
+        "blockSharpes": [
+          0.79,
+          0,
+          1.21,
+          1.37,
+          -1.39,
+          2.47,
+          1.2,
+          0.91
+        ]
+      }
+    },
+    "mix25": {
+      "full": {
+        "grossSharpe": 1.9139015751663657,
+        "net4Sharpe": 1.3805030376489889,
+        "turnoverAnnual": 69.62665444182511,
+        "breakEvenBps": 14.353923596857378
+      },
+      "halves": {
+        "h1": {
+          "grossSharpe": 2.30849903713495,
+          "net4Sharpe": 1.8792161634918607,
+          "turnoverAnnual": 63.182735705996755,
+          "breakEvenBps": 21.51157096747225
+        },
+        "h2": {
+          "grossSharpe": 1.4354360985948895,
+          "net4Sharpe": 0.7526259345844776,
+          "turnoverAnnual": 76.07057317765333,
+          "breakEvenBps": 8.408921170779522
+        },
+        "h2MeanNet4": 0.0000306291470827661,
+        "h2Positive": true
+      },
+      "blocks": [
+        {
+          "start": "2021-12-01",
+          "grossSharpe": 1.9535593042772192,
+          "net4Sharpe": 1.473276888617523,
+          "turnoverAnnual": 63.376589672696106,
+          "breakEvenBps": 16.244464257642136
+        },
+        {
+          "start": "2022-07-07",
+          "grossSharpe": 2.4262766444872725,
+          "net4Sharpe": 2.0756842938770355,
+          "turnoverAnnual": 58.454131398322936,
+          "breakEvenBps": 27.719789199023865
+        },
+        {
+          "start": "2023-02-13",
+          "grossSharpe": 2.5070306772603783,
+          "net4Sharpe": 1.9343463712141464,
+          "turnoverAnnual": 68.02026864864597,
+          "breakEvenBps": 17.52447125627979
+        },
+        {
+          "start": "2023-09-21",
+          "grossSharpe": 2.3727753040905295,
+          "net4Sharpe": 1.9940726127467274,
+          "turnoverAnnual": 62.77399017138515,
+          "breakEvenBps": 25.06222581880751
+        },
+        {
+          "start": "2024-04-26",
+          "grossSharpe": -0.6563564383163789,
+          "net4Sharpe": -1.2974108416297374,
+          "turnoverAnnual": 71.57832121322635,
+          "breakEvenBps": -4.093043617372417
+        },
+        {
+          "start": "2024-11-30",
+          "grossSharpe": 3.101833778018918,
+          "net4Sharpe": 2.5110189958426874,
+          "turnoverAnnual": 75.70875972119575,
+          "breakEvenBps": 20.99296550286033
+        },
+        {
+          "start": "2025-07-07",
+          "grossSharpe": 1.694929353675449,
+          "net4Sharpe": 1.039277989167148,
+          "turnoverAnnual": 76.77666821364146,
+          "breakEvenBps": 10.336780167105893
+        },
+        {
+          "start": "2026-02-10",
+          "grossSharpe": 1.5427840709011544,
+          "net4Sharpe": 0.5884032322972066,
+          "turnoverAnnual": 80.21969193691623,
+          "breakEvenBps": 6.466695888720237
+        }
+      ],
+      "perYearGross": {
+        "2021": {
+          "sharpe": 3.16,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": 1.75,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 3.29,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 0.94,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": 1.84,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": 2.01,
+          "n": 782
+        }
+      },
+      "perYearNet4": {
+        "2021": {
+          "sharpe": 2.65,
+          "n": 93
+        },
+        "2022": {
+          "sharpe": 1.34,
+          "n": 1087
+        },
+        "2023": {
+          "sharpe": 2.76,
+          "n": 1091
+        },
+        "2024": {
+          "sharpe": 0.48,
+          "n": 1098
+        },
+        "2025": {
+          "sharpe": 1.24,
+          "n": 1095
+        },
+        "2026": {
+          "sharpe": 1.04,
+          "n": 782
+        }
+      },
+      "recent": {
+        "last12mNet4": 1.760657586681655,
+        "last12mMean": 0.00006043168302788933,
+        "last24mNet4": 0.6765993209517582,
+        "last24mMean": 0.000028142057481386217
+      },
+      "rolling12mNet4": [
+        {
+          "at": "2021-12-01",
+          "sharpe": 1.74
+        },
+        {
+          "at": "2022-03-02",
+          "sharpe": 2.09
+        },
+        {
+          "at": "2022-06-01",
+          "sharpe": 1.94
+        },
+        {
+          "at": "2022-09-02",
+          "sharpe": 2.4
+        },
+        {
+          "at": "2022-12-04",
+          "sharpe": 1.75
+        },
+        {
+          "at": "2023-03-06",
+          "sharpe": 1.91
+        },
+        {
+          "at": "2023-06-06",
+          "sharpe": 1.61
+        },
+        {
+          "at": "2023-09-05",
+          "sharpe": 1.52
+        },
+        {
+          "at": "2023-12-05",
+          "sharpe": 0.77
+        },
+        {
+          "at": "2024-03-06",
+          "sharpe": 1.31
+        },
+        {
+          "at": "2024-06-05",
+          "sharpe": 0.97
+        },
+        {
+          "at": "2024-09-04",
+          "sharpe": 0.22
+        },
+        {
+          "at": "2024-12-05",
+          "sharpe": 1.78
+        },
+        {
+          "at": "2025-03-06",
+          "sharpe": 0.37
+        },
+        {
+          "at": "2025-06-05",
+          "sharpe": 0.24
+        },
+        {
+          "at": "2025-09-05",
+          "sharpe": 1.47
+        }
+      ],
+      "decayTest": {
+        "rho": -0.31097736354700106,
+        "pPerm": 0.47130573885222954,
+        "firstThirdMean": 1.7744805912472792,
+        "lastThirdMean": 0.8138406107321773,
+        "delta": -0.9606399805151019,
+        "blockSharpes": [
+          1.47,
+          2.08,
+          1.93,
+          1.99,
+          -1.3,
+          2.51,
+          1.04,
+          0.59
+        ]
+      },
+      "decayTestGross": {
+        "rho": -0.19986015690516895,
+        "pPerm": 0.6776644671065787,
+        "firstThirdMean": 2.189917974382246,
+        "lastThirdMean": 1.6188567122883017,
+        "delta": -0.5710612620939441,
+        "blockSharpes": [
+          1.95,
+          2.43,
+          2.51,
+          2.37,
+          -0.66,
+          3.1,
+          1.69,
+          1.54
+        ]
+      }
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: no decay if last-third block Sharpe is within one SE of first-third and trend p > 0.05; decay if recent net@4 <= 0 and the trend test is significant.",
+    "carryDecayed": true,
+    "topDecayed": false,
+    "mixDecayed": false,
+    "carryLast12Net4": -1.3741466511299127,
+    "topLast12Net4": 1.9132548254492192,
+    "mixLast12Net4": 1.760657586681655,
+    "carryH2BreakEvenBps": 3.9295710090087552,
+    "carryH1BreakEvenBps": 15.147072574589176,
+    "carryTrendP": 0.02299540091981604,
+    "topTrendP": 0.6844631073785243,
+    "mixTrendP": 0.47130573885222954,
+    "validationPass": true
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "config": {
+    "resampleFixtures": 4,
+    "series": 240
+  },
+  "rows": {
+    "resample": {
+      "cases": [
+        {
+          "factor": 2,
+          "keepIncomplete": false,
+          "len": 11,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 2,
+          "keepIncomplete": true,
+          "len": 12,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 3,
+          "keepIncomplete": false,
+          "len": 7,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 3,
+          "keepIncomplete": true,
+          "len": 8,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 4,
+          "keepIncomplete": false,
+          "len": 5,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 4,
+          "keepIncomplete": true,
+          "len": 6,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 7,
+          "keepIncomplete": false,
+          "len": 3,
+          "matches": true,
+          "inv": true
+        },
+        {
+          "factor": 7,
+          "keepIncomplete": true,
+          "len": 4,
+          "matches": true,
+          "inv": true
+        }
+      ],
+      "unmutated": true,
+      "shallowCopy": true
+    },
+    "resampleEdges": {
+      "tenLen": 2,
+      "tenKeepLen": 3,
+      "allMissingHL": {
+        "timestamp": 0,
+        "open": 10,
+        "high": 11,
+        "low": 10,
+        "close": 11,
+        "volume": 6
+      },
+      "oneFiniteGroup": {
+        "timestamp": 0,
+        "open": 10,
+        "high": 15,
+        "low": 9,
+        "close": 11,
+        "volume": 6
+      },
+      "throws": true,
+      "arrThrows": true,
+      "shortKeepLen": 1,
+      "shortDropLen": 0
+    },
+    "designEffect": {
+      "K": 3,
+      "T": 240,
+      "rbar": 0.9729335632723272,
+      "rbarRef": 0.9729335632723272,
+      "designEffect": 2.9458671265446545,
+      "effectiveStreams": 1.0183758707130963,
+      "effectiveBars": 244.41020897114313,
+      "rawBars": 720,
+      "identities": true,
+      "rbarMatch": true
+    },
+    "designEffectForms": {
+      "single": {
+        "available": true,
+        "DE": 1,
+        "effStreams": 1,
+        "effBars": 200,
+        "rawBars": 200,
+        "T": 200
+      },
+      "identical": {
+        "rbar": 1,
+        "DE": 2,
+        "effStreams": 1,
+        "effBars": 200,
+        "rawBars": 400,
+        "T": 200
+      },
+      "triple": {
+        "rbar": 1,
+        "DE": 3,
+        "effStreams": 1,
+        "effBars": 200
+      },
+      "aligned": {
+        "T": 120,
+        "K": 2,
+        "rawBars": 240
+      },
+      "hedgeAvailable": false,
+      "hedgeReason": "the pairwise correlation could not be estimated (constant or too-short streams)",
+      "tooShortReason": "the common window is shorter than three bars",
+      "notArrayReason": "a stream series is missing",
+      "emptyReason": "no streams supplied"
+    },
+    "foldSharpe": {
+      "method": "fold-sharpe",
+      "rbar": 0.2657996327050153,
+      "ref": 0.2657996327050153,
+      "rawMethod": "raw-returns",
+      "noTileMethod": "raw-returns",
+      "foldLength": 20
+    },
+    "selector": {
+      "chosen": [
+        "a",
+        "c",
+        "d",
+        "b"
+      ],
+      "order": [
+        "a",
+        "c",
+        "d",
+        "b"
+      ],
+      "curveLabels": [
+        "a",
+        "c",
+        "d",
+        "b"
+      ],
+      "det": true,
+      "orderMatches": true,
+      "monotone": true,
+      "marginalOk": true,
+      "redundantChosen": [
+        "x"
+      ],
+      "dupChosen": [
+        "copy",
+        "other"
+      ],
+      "cappedChosen": [
+        "a",
+        "c"
+      ]
+    },
+    "selectorEdges": {
+      "maxStreams0Chosen": [
+        "a",
+        "b"
+      ],
+      "maxStreamsNegChosen": [
+        "a",
+        "b"
+      ],
+      "unavailable": false,
+      "minEffChosen": []
+    },
+    "format": {
+      "hasHeader": true,
+      "hasDesign": true,
+      "lines": 3,
+      "un": "streams: unavailable (x)",
+      "nul": null
+    },
+    "constantStream": {
+      "two": {
+        "rbar": -0.013316682156877634,
+        "K": 2,
+        "T": 240,
+        "designEffect": 0.9866833178431224,
+        "effectiveStreams": 2.026992819106312,
+        "effectiveBars": 486.4782765855149,
+        "rawBars": 480
+      },
+      "three": {
+        "rbar": -0.013316682156877634,
+        "K": 3,
+        "T": 240,
+        "designEffect": 0.9733666356862447,
+        "effectiveStreams": 3.082086328020617,
+        "effectiveBars": 739.7007187249482,
+        "rawBars": 720
+      },
+      "note": "the constant stream cannot be correlated with anything, so every pair involving it is skipped by meanPairwiseCorrelation — yet it is still counted in K and in rawBars = K*T. `e65` (two independent streams + one constant, T = 240): rbar is BIT-IDENTICAL with and without the constant stream (-0.0133166822 both), rawBars goes 480 -> 720, and effectiveStreams goes 2.027 -> 3.082 (a full extra unit, slightly MORE than one because the noise-set rbar is negative). So a no-information stream buys a full unit of \"effective breadth\" in the printed report, while the selector DOES skip it (its candidate is unavailable: rbar with a constant partner is NaN), so `designEffectOfStreams` and `selectStreams` disagree about whether it is a stream. LATENT (a flat/halted stream in the panel — the L10-l class) and diagnostic-only."
+    }
+  },
+  "validation": {
+    "resampleExact": true,
+    "resampleEdges": true,
+    "designEffectIdentities": true,
+    "designEffectClosedForms": true,
+    "designEffectFoldSharpe": true,
+    "selectStreamsContract": true,
+    "selectStreamsEdges": true,
+    "formatStreamSelection": true,
+    "constantStreamCountedInK": true
+  },
+  "verdict": {
+    "note": "L10-ca..: `analysis/streams.js` is the SHIPPED stream design layer (round 26, R26-6) that analyze.js prints in every run report: `resampleCandles` (a second bar interval without a second dataset), `designEffectOfStreams` (Kish 1965 design effect), `selectStreams` (greedy marginal-breadth selection) and `formatStreamSelection`. PASSES the pre-registered read: the resampler reproduces a hand recompute and the OHLCV invariants exactly, never mutates its input, is a shallow copy at factor 1, drops a trailing partial group unless `keepIncomplete`, honours the documented non-finite fallbacks (high/low -> max/min(open, close); a missing volume counts as 1) and rejects a bad factor/array; the design effect satisfies every Kish identity (rawBars = K*T; DE = 1+(K-1)*rbar; effectiveBars = rawBars/DE; effectiveStreams = K/DE; effectiveBarsPerBar = 1/DE), reports K=1 as the trivial panel, two/three identical streams as one bet (rbar 1, DE 2/3, effectiveStreams 1), aligns different-length streams on their most recent T = min-length bars, selects the fold-Sharpe method iff the fold tiles T (with rbar equal to an independent segmentation), and abstains on the documented degenerate panels; and `selectStreams` is deterministic, tie-breaks by label, returns order = the curve labels, is monotone in effective bars, computes marginalBars/marginalEfficiency exactly, keeps a diversifying stream over a redundant copy, stops on a fully redundant pool, and honours a positive maxStreams. FINDINGS: (0) a zero-variance (constant) stream is skipped from every correlation pair (so it never raises rbar) yet is still counted in K and in rawBars = K*T — a no-information stream buys a full unit of \"effective breadth\" in the printed report (a 3-stream panel where one is constant reads effectiveStreams ~3, rawBars 3T); the selector does skip it, so `designEffectOfStreams` and `selectStreams` disagree; (1) maxStreams <= 0 is silently treated as UNLIMITED rather than none. Both are diagnostic-layer/latent: the docstring says the numbers never enter the scored arithmetic, and analyze.js passes a positive maxStreams, so no golden moves.",
+    "checks": {
+      "resampleExact": true,
+      "resampleEdges": true,
+      "designEffectIdentities": true,
+      "designEffectClosedForms": true,
+      "designEffectFoldSharpe": true,
+      "selectStreamsContract": true,
+      "selectStreamsEdges": true,
+      "formatStreamSelection": true,
+      "constantStreamCountedInK": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "constantStreamCountedInK": {
+        "two": {
+          "rbar": -0.013316682156877634,
+          "K": 2,
+          "T": 240,
+          "designEffect": 0.9866833178431224,
+          "effectiveStreams": 2.026992819106312,
+          "effectiveBars": 486.4782765855149,
+          "rawBars": 480
+        },
+        "three": {
+          "rbar": -0.013316682156877634,
+          "K": 3,
+          "T": 240,
+          "designEffect": 0.9733666356862447,
+          "effectiveStreams": 3.082086328020617,
+          "effectiveBars": 739.7007187249482,
+          "rawBars": 720
+        },
+        "note": "the constant stream cannot be correlated with anything, so every pair involving it is skipped by meanPairwiseCorrelation — yet it is still counted in K and in rawBars = K*T. `e65` (two independent streams + one constant, T = 240): rbar is BIT-IDENTICAL with and without the constant stream (-0.0133166822 both), rawBars goes 480 -> 720, and effectiveStreams goes 2.027 -> 3.082 (a full extra unit, slightly MORE than one because the noise-set rbar is negative). So a no-information stream buys a full unit of \"effective breadth\" in the printed report, while the selector DOES skip it (its candidate is unavailable: rbar with a constant partner is NaN), so `designEffectOfStreams` and `selectStreams` disagree about whether it is a stream. LATENT (a flat/halted stream in the panel — the L10-l class) and diagnostic-only."
+      },
+      "maxStreamsZeroMeansUnlimited": {
+        "claim": "the selector \"stop[s] when the best remaining candidate cannot improve effective bars\" and honours `maxStreams`",
+        "witness": {
+          "maxStreams0Chosen": [
+            "a",
+            "b"
+          ],
+          "maxStreamsNegChosen": [
+            "a",
+            "b"
+          ],
+          "unavailable": false,
+          "minEffChosen": []
+        },
+        "note": "`maxStreams <= 0` is silently treated as UNLIMITED: the limit is `Number.isFinite(maxStreams) && maxStreams > 0 ? Math.floor(maxStreams) : all.length`, so `maxStreams: 0` and `maxStreams: -3` both select streams instead of none. The shipped check only exercises `maxStreams: 2`, so it cannot see this. LATENT (analyze.js passes a positive/Infinity value), but it is an API contract gap of the same class as L10-bj (`successiveHalving` not validating `eta`/`minBudget`)."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "analyze.js imports resampleCandles, designEffectOfStreams, selectStreams, formatStreamSelection",
+        "world.js imports barReturns only"
+      ],
+      "diagnosticOnly": true,
+      "why": "The module is shipped but the docstring and the lock registry both say the design numbers are a DIAGNOSTIC/DESIGN quantity that never enters the scored arithmetic (the deflated Sharpe keeps trials=K). Both findings are latent (a flat stream in the panel; a non-positive maxStreams that analyze.js never passes), so no golden moves and no fold-back row is due."
+    }
+  }
+}

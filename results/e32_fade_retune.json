@@ -1,0 +1,673 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5248,
+    "firstTop": 1309,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "lambdas": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.25,
+      0.5
+    ],
+    "caps": [
+      null,
+      0.125
+    ]
+  },
+  "validation": {
+    "e22Gross": 0.8388452629405042,
+    "hereGross": 0.84,
+    "e22Turnover": 22.87666362780812,
+    "hereTurnover": 23,
+    "e22BreakEvenBps": 74.15265559584995,
+    "hereBreakEvenBps": 74.15,
+    "matchesE22": true,
+    "note": "lam0.1/no-cap must reproduce e22; if not, the fade builders diverged."
+  },
+  "books": {
+    "lam0.02": {
+      "lambda": 0.02,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.77,
+        "net4Sharpe": 0.75,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 192.29
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.67,
+        "net4Sharpe": 0.65,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 138.22
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.83,
+        "net4Sharpe": 1.8,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 298.89
+      },
+      "capacityUSD_fee4bps_Y1": 74425972122.51022,
+      "oiBound5pct": 37617423.75161566,
+      "oiBinding": "linkusdt",
+      "usableY1": 37617423.75161566
+    },
+    "lam0.02_cap0.125": {
+      "lambda": 0.02,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.92,
+        "net4Sharpe": 0.91,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 289.05
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.98,
+        "net4Sharpe": 0.97,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 252.82
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 2.14,
+        "net4Sharpe": 2.12,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 430.8
+      },
+      "capacityUSD_fee4bps_Y1": 120226408067.84857,
+      "oiBound5pct": 53934100.15598146,
+      "oiBinding": "linkusdt",
+      "usableY1": 53934100.15598146
+    },
+    "lam0.03": {
+      "lambda": 0.03,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.83,
+        "net4Sharpe": 0.81,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 162
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.76,
+        "net4Sharpe": 0.73,
+        "turnoverAnnual": 11,
+        "breakEvenBps": 119.27
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.88,
+        "net4Sharpe": 1.85,
+        "turnoverAnnual": 12,
+        "breakEvenBps": 239.28
+      },
+      "capacityUSD_fee4bps_Y1": 42631300784.52503,
+      "oiBound5pct": 37299809.062981375,
+      "oiBinding": "linkusdt",
+      "usableY1": 37299809.062981375
+    },
+    "lam0.03_cap0.125": {
+      "lambda": 0.03,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 1.04,
+        "net4Sharpe": 1.02,
+        "turnoverAnnual": 6,
+        "breakEvenBps": 248.19
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.99,
+        "net4Sharpe": 0.97,
+        "turnoverAnnual": 6,
+        "breakEvenBps": 192.74
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 2.15,
+        "net4Sharpe": 2.12,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 331.98
+      },
+      "capacityUSD_fee4bps_Y1": 73365675881.46974,
+      "oiBound5pct": 54178421.514017604,
+      "oiBinding": "linkusdt",
+      "usableY1": 54178421.514017604
+    },
+    "lam0.05": {
+      "lambda": 0.05,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.85,
+        "net4Sharpe": 0.82,
+        "turnoverAnnual": 14,
+        "breakEvenBps": 118.38
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.8,
+        "net4Sharpe": 0.76,
+        "turnoverAnnual": 16,
+        "breakEvenBps": 89.57
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.92,
+        "net4Sharpe": 1.88,
+        "turnoverAnnual": 17,
+        "breakEvenBps": 172.89
+      },
+      "capacityUSD_fee4bps_Y1": 16759033279.213142,
+      "oiBound5pct": 37378255.874179214,
+      "oiBinding": "linkusdt",
+      "usableY1": 37378255.874179214
+    },
+    "lam0.05_cap0.125": {
+      "lambda": 0.05,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 1.1,
+        "net4Sharpe": 1.07,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 182.59
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.92,
+        "net4Sharpe": 0.9,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 125.17
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 2,
+        "net4Sharpe": 1.96,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 215.9
+      },
+      "capacityUSD_fee4bps_Y1": 29963843994.70321,
+      "oiBound5pct": 54782333.96631317,
+      "oiBinding": "linkusdt",
+      "usableY1": 54782333.96631317
+    },
+    "lam0.075": {
+      "lambda": 0.075,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.84,
+        "net4Sharpe": 0.81,
+        "turnoverAnnual": 19,
+        "breakEvenBps": 90.11
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.79,
+        "net4Sharpe": 0.75,
+        "turnoverAnnual": 22,
+        "breakEvenBps": 67.24
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.93,
+        "net4Sharpe": 1.87,
+        "turnoverAnnual": 22,
+        "breakEvenBps": 129.95
+      },
+      "capacityUSD_fee4bps_Y1": 7483383901.758638,
+      "oiBound5pct": 37198345.48493736,
+      "oiBinding": "linkusdt",
+      "usableY1": 37198345.48493736
+    },
+    "lam0.075_cap0.125": {
+      "lambda": 0.075,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 1.07,
+        "net4Sharpe": 1.04,
+        "turnoverAnnual": 11,
+        "breakEvenBps": 135.93
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.85,
+        "net4Sharpe": 0.81,
+        "turnoverAnnual": 12,
+        "breakEvenBps": 86.63
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.8,
+        "net4Sharpe": 1.75,
+        "turnoverAnnual": 13,
+        "breakEvenBps": 144.93
+      },
+      "capacityUSD_fee4bps_Y1": 12904984615.239155,
+      "oiBound5pct": 54443913.80056722,
+      "oiBinding": "linkusdt",
+      "usableY1": 54443913.80056722
+    },
+    "lam0.1": {
+      "lambda": 0.1,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.84,
+        "net4Sharpe": 0.79,
+        "turnoverAnnual": 23,
+        "breakEvenBps": 74.15
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.79,
+        "net4Sharpe": 0.73,
+        "turnoverAnnual": 26,
+        "breakEvenBps": 54.79
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.95,
+        "net4Sharpe": 1.87,
+        "turnoverAnnual": 27,
+        "breakEvenBps": 106.71
+      },
+      "capacityUSD_fee4bps_Y1": 4177146471.0681715,
+      "oiBound5pct": 36986403.11152483,
+      "oiBinding": "linkusdt",
+      "usableY1": 36986403.11152483
+    },
+    "lam0.1_cap0.125": {
+      "lambda": 0.1,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 1.04,
+        "net4Sharpe": 1,
+        "turnoverAnnual": 13,
+        "breakEvenBps": 109.3
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.8,
+        "net4Sharpe": 0.75,
+        "turnoverAnnual": 15,
+        "breakEvenBps": 66.83
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.63,
+        "net4Sharpe": 1.57,
+        "turnoverAnnual": 16,
+        "breakEvenBps": 107.44
+      },
+      "capacityUSD_fee4bps_Y1": 6952186003.8593445,
+      "oiBound5pct": 53844616.78191526,
+      "oiBinding": "linkusdt",
+      "usableY1": 53844616.78191526
+    },
+    "lam0.15": {
+      "lambda": 0.15,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.84,
+        "net4Sharpe": 0.78,
+        "turnoverAnnual": 30,
+        "breakEvenBps": 56.44
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.79,
+        "net4Sharpe": 0.72,
+        "turnoverAnnual": 35,
+        "breakEvenBps": 41.2
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.98,
+        "net4Sharpe": 1.89,
+        "turnoverAnnual": 36,
+        "breakEvenBps": 81.15
+      },
+      "capacityUSD_fee4bps_Y1": 1829588421.4202847,
+      "oiBound5pct": 36873449.24563374,
+      "oiBinding": "linkusdt",
+      "usableY1": 36873449.24563374
+    },
+    "lam0.15_cap0.125": {
+      "lambda": 0.15,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 1,
+        "net4Sharpe": 0.95,
+        "turnoverAnnual": 17,
+        "breakEvenBps": 81.09
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.76,
+        "net4Sharpe": 0.69,
+        "turnoverAnnual": 20,
+        "breakEvenBps": 47.65
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.47,
+        "net4Sharpe": 1.39,
+        "turnoverAnnual": 21,
+        "breakEvenBps": 73
+      },
+      "capacityUSD_fee4bps_Y1": 2951769290.057586,
+      "oiBound5pct": 52948804.04776637,
+      "oiBinding": "linkusdt",
+      "usableY1": 52948804.04776637
+    },
+    "lam0.25": {
+      "lambda": 0.25,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.85,
+        "net4Sharpe": 0.76,
+        "turnoverAnnual": 42,
+        "breakEvenBps": 40.14
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.82,
+        "net4Sharpe": 0.71,
+        "turnoverAnnual": 50,
+        "breakEvenBps": 29.63
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 2.05,
+        "net4Sharpe": 1.91,
+        "turnoverAnnual": 52,
+        "breakEvenBps": 58.47
+      },
+      "capacityUSD_fee4bps_Y1": 630541468.3309413,
+      "oiBound5pct": 36797630.163683444,
+      "oiBinding": "linkusdt",
+      "usableY1": 36797630.163683444
+    },
+    "lam0.25_cap0.125": {
+      "lambda": 0.25,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.94,
+        "net4Sharpe": 0.87,
+        "turnoverAnnual": 24,
+        "breakEvenBps": 54.32
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.8,
+        "net4Sharpe": 0.71,
+        "turnoverAnnual": 29,
+        "breakEvenBps": 35.44
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.53,
+        "net4Sharpe": 1.42,
+        "turnoverAnnual": 29,
+        "breakEvenBps": 53.74
+      },
+      "capacityUSD_fee4bps_Y1": 936509658.5186566,
+      "oiBound5pct": 51549948.971116036,
+      "oiBinding": "linkusdt",
+      "usableY1": 51549948.971116036
+    },
+    "lam0.5": {
+      "lambda": 0.5,
+      "cap": null,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.9,
+        "net4Sharpe": 0.76,
+        "turnoverAnnual": 69,
+        "breakEvenBps": 25.84
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.9,
+        "net4Sharpe": 0.71,
+        "turnoverAnnual": 84,
+        "breakEvenBps": 19.45
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 2.21,
+        "net4Sharpe": 1.98,
+        "turnoverAnnual": 85,
+        "breakEvenBps": 38.3
+      },
+      "capacityUSD_fee4bps_Y1": 143000779.69026312,
+      "oiBound5pct": 37616239.72685402,
+      "oiBinding": "linkusdt",
+      "usableY1": 37616239.72685402
+    },
+    "lam0.5_cap0.125": {
+      "lambda": 0.5,
+      "cap": 0.125,
+      "full": {
+        "n": 5248,
+        "grossSharpe": 0.88,
+        "net4Sharpe": 0.77,
+        "turnoverAnnual": 39,
+        "breakEvenBps": 32.27
+      },
+      "last24m": {
+        "n": 2190,
+        "grossSharpe": 0.9,
+        "net4Sharpe": 0.75,
+        "turnoverAnnual": 48,
+        "breakEvenBps": 24.34
+      },
+      "last12m": {
+        "n": 1095,
+        "grossSharpe": 1.84,
+        "net4Sharpe": 1.66,
+        "turnoverAnnual": 49,
+        "breakEvenBps": 39.69
+      },
+      "capacityUSD_fee4bps_Y1": 188663631.87057084,
+      "oiBound5pct": 51539433.162609674,
+      "oiBinding": "linkusdt",
+      "usableY1": 51539433.162609674
+    }
+  },
+  "walkForward": {
+    "span": 4015,
+    "picks": [
+      {
+        "at": "2022-12-03",
+        "lambda": 0.02,
+        "cap": null,
+        "trailingNet4": 1.06
+      },
+      {
+        "at": "2023-04-05",
+        "lambda": 0.05,
+        "cap": 0.125,
+        "trailingNet4": 0.94
+      },
+      {
+        "at": "2023-08-05",
+        "lambda": 0.03,
+        "cap": 0.125,
+        "trailingNet4": 1.51
+      },
+      {
+        "at": "2023-12-05",
+        "lambda": 0.15,
+        "cap": 0.125,
+        "trailingNet4": 1.59
+      },
+      {
+        "at": "2024-04-04",
+        "lambda": 0.15,
+        "cap": 0.125,
+        "trailingNet4": 2.84
+      },
+      {
+        "at": "2024-08-04",
+        "lambda": 0.15,
+        "cap": 0.125,
+        "trailingNet4": 2.26
+      },
+      {
+        "at": "2024-12-04",
+        "lambda": 0.02,
+        "cap": 0.125,
+        "trailingNet4": 1.92
+      },
+      {
+        "at": "2025-04-04",
+        "lambda": 0.05,
+        "cap": null,
+        "trailingNet4": 1.32
+      },
+      {
+        "at": "2025-08-04",
+        "lambda": 0.25,
+        "cap": 0.125,
+        "trailingNet4": 0.8
+      },
+      {
+        "at": "2025-12-04",
+        "lambda": 0.05,
+        "cap": null,
+        "trailingNet4": 1.7
+      },
+      {
+        "at": "2026-04-04",
+        "lambda": 0.5,
+        "cap": null,
+        "trailingNet4": 0.31
+      }
+    ]
+  },
+  "feeStress": {
+    "2bps": {
+      "oosNetSharpe": 0.73,
+      "recent24mNetSharpe": 0.5
+    },
+    "4bps": {
+      "oosNetSharpe": 0.7,
+      "recent24mNetSharpe": 0.46
+    },
+    "6bps": {
+      "oosNetSharpe": 0.68,
+      "recent24mNetSharpe": 0.42
+    },
+    "8bps": {
+      "oosNetSharpe": 0.65,
+      "recent24mNetSharpe": 0.38
+    },
+    "10bps": {
+      "oosNetSharpe": 0.62,
+      "recent24mNetSharpe": 0.34
+    }
+  },
+  "pinned": {
+    "ewma0.1_spec": {
+      "lambda": 0.1,
+      "cap": null,
+      "oosNet4": 0.94,
+      "oosRecent24mNet4": 0.84,
+      "net4At6bps": 0.92,
+      "breakEvenBps": 70.97,
+      "turnoverAnnual": 28
+    },
+    "ewma0.1_cap12.5": {
+      "lambda": 0.1,
+      "cap": 0.125,
+      "oosNet4": 1.11,
+      "oosRecent24mNet4": 0.47,
+      "net4At6bps": 1.08,
+      "breakEvenBps": 97.86,
+      "turnoverAnnual": 16
+    },
+    "ewma0.05_cap12.5": {
+      "lambda": 0.05,
+      "cap": 0.125,
+      "oosNet4": 1.14,
+      "oosRecent24mNet4": 0.64,
+      "net4At6bps": 1.12,
+      "breakEvenBps": 157.73,
+      "turnoverAnnual": 10
+    },
+    "ewma0.02_cap12.5": {
+      "lambda": 0.02,
+      "cap": 0.125,
+      "oosNet4": 1.03,
+      "oosRecent24mNet4": 0.82,
+      "net4At6bps": 1.03,
+      "breakEvenBps": 259.39,
+      "turnoverAnnual": 5
+    },
+    "ewma0.02_plain": {
+      "lambda": 0.02,
+      "cap": null,
+      "oosNet4": 0.69,
+      "oosRecent24mNet4": 0.82,
+      "net4At6bps": 0.69,
+      "breakEvenBps": 151.21,
+      "turnoverAnnual": 9
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: transfer is NULL if the joint (λ, cap) walk-forward does not beat the pinned EWMA(0.1) fade out of sample.",
+    "walkForwardOosNet4": 0.7,
+    "walkForwardRecent24mNet4": 0.46,
+    "walkForwardNet4At6bps": 0.68,
+    "walkForwardNet4At10bps": 0.62,
+    "pinnedSpecOosNet4": 0.94,
+    "pinnedSpecRecent24mNet4": 0.84,
+    "pinnedSpecBreakEvenBps": 70.97,
+    "bestPinnedOosNet4": 1.14,
+    "pickFrequency": {
+      "0.02": 1,
+      "0.05+cap0.125": 1,
+      "0.03+cap0.125": 1,
+      "0.15+cap0.125": 3,
+      "0.02+cap0.125": 1,
+      "0.05": 2,
+      "0.25+cap0.125": 1,
+      "0.5": 1
+    },
+    "transferConfirmed": false,
+    "validationPass": true
+  }
+}

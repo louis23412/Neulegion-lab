@@ -1,0 +1,786 @@
+{
+  "config": {
+    "scheduleGrid": [
+      [
+        9,
+        9,
+        2
+      ],
+      [
+        100,
+        27,
+        3
+      ],
+      [
+        16,
+        4,
+        2
+      ],
+      [
+        9,
+        27,
+        3
+      ],
+      [
+        3,
+        9,
+        3
+      ]
+    ],
+    "costGrid": [
+      [
+        9,
+        9,
+        3
+      ],
+      [
+        9,
+        4,
+        2
+      ],
+      [
+        9,
+        3,
+        2
+      ],
+      [
+        9,
+        2,
+        2
+      ],
+      [
+        16,
+        2,
+        2
+      ],
+      [
+        100,
+        10,
+        1.1
+      ]
+    ],
+    "etaGrid": [
+      1.1,
+      1.2,
+      1.5,
+      2
+    ],
+    "ensemble": [
+      [
+        3,
+        27
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        16
+      ]
+    ]
+  },
+  "rows": {
+    "schedule": [
+      {
+        "n": 9,
+        "B": 9,
+        "eta": 2,
+        "rounds": 4,
+        "roundsUsed": 4,
+        "budgets": [
+          1,
+          2,
+          5,
+          9
+        ],
+        "keeps": [
+          5,
+          3,
+          2,
+          1
+        ],
+        "fullRounds": true,
+        "topEqualsMax": true
+      },
+      {
+        "n": 100,
+        "B": 27,
+        "eta": 3,
+        "rounds": 4,
+        "roundsUsed": 4,
+        "budgets": [
+          1,
+          3,
+          9,
+          27
+        ],
+        "keeps": [
+          34,
+          12,
+          4,
+          2
+        ],
+        "fullRounds": true,
+        "topEqualsMax": true
+      },
+      {
+        "n": 16,
+        "B": 4,
+        "eta": 2,
+        "rounds": 3,
+        "roundsUsed": 3,
+        "budgets": [
+          1,
+          2,
+          4
+        ],
+        "keeps": [
+          8,
+          4,
+          2
+        ],
+        "fullRounds": true,
+        "topEqualsMax": true
+      },
+      {
+        "n": 9,
+        "B": 27,
+        "eta": 3,
+        "rounds": 4,
+        "roundsUsed": 2,
+        "budgets": [
+          1,
+          3
+        ],
+        "keeps": [
+          3,
+          1
+        ],
+        "fullRounds": false,
+        "topEqualsMax": false
+      },
+      {
+        "n": 3,
+        "B": 9,
+        "eta": 3,
+        "rounds": 3,
+        "roundsUsed": 1,
+        "budgets": [
+          1
+        ],
+        "keeps": [
+          1
+        ],
+        "fullRounds": false,
+        "topEqualsMax": false
+      }
+    ],
+    "race": {
+      "winner": "a0",
+      "evaluated": 12,
+      "spentBudget": 18,
+      "gridBudget": 81,
+      "rungs": [
+        {
+          "budget": 1,
+          "scored": 9,
+          "keep": 3,
+          "survivors": [
+            "a0",
+            "a1",
+            "a2"
+          ]
+        },
+        {
+          "budget": 3,
+          "scored": 3,
+          "keep": 1,
+          "survivors": [
+            "a0"
+          ]
+        }
+      ]
+    },
+    "cost": [
+      {
+        "n": 9,
+        "B": 9,
+        "eta": 3,
+        "spentBudget": 18,
+        "gridBudget": 81,
+        "ratio": 0.222,
+        "rungBudgets": [
+          1,
+          3
+        ]
+      },
+      {
+        "n": 9,
+        "B": 4,
+        "eta": 2,
+        "spentBudget": 31,
+        "gridBudget": 36,
+        "ratio": 0.861,
+        "rungBudgets": [
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "n": 9,
+        "B": 3,
+        "eta": 2,
+        "spentBudget": 33,
+        "gridBudget": 27,
+        "ratio": 1.222,
+        "rungBudgets": [
+          2,
+          3
+        ]
+      },
+      {
+        "n": 9,
+        "B": 2,
+        "eta": 2,
+        "spentBudget": 19,
+        "gridBudget": 18,
+        "ratio": 1.056,
+        "rungBudgets": [
+          1,
+          2
+        ]
+      },
+      {
+        "n": 16,
+        "B": 2,
+        "eta": 2,
+        "spentBudget": 32,
+        "gridBudget": 32,
+        "ratio": 1,
+        "rungBudgets": [
+          1,
+          2
+        ]
+      },
+      {
+        "n": 100,
+        "B": 10,
+        "eta": 1.1,
+        "spentBudget": 2890,
+        "gridBudget": 1000,
+        "ratio": 2.89,
+        "rungBudgets": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          8,
+          8,
+          9,
+          10
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "roundsClosedForm": true,
+    "roundsGuards": true,
+    "scheduleExactFixture": true,
+    "scheduleGeneralForms": true,
+    "raceFixture": true,
+    "raceScoredIsFullRungInArmOrder": true,
+    "raceNonFiniteEliminated": true,
+    "raceMinimize": true,
+    "raceDeterministicAndAsync": true,
+    "raceTiesAreStable": true,
+    "raceCostCounters": true,
+    "raceGuards": true,
+    "formatRaceRenders": true,
+    "raceSingleArm": true,
+    "raceEvaluatesScheduleBudgets": true,
+    "raceDefaultsEta": true,
+    "raceLostIsFiniteArmsBeyondKeep": true,
+    "costIdentitiesAcrossGrid": true
+  },
+  "verdict": {
+    "note": "L10-bg..: `race.js` is the successive-halving family-search ENGINE, and the shipped `analyze` driver deliberately has no `--race` flag (the R26-15 gate is closed), so it is test-only (the `locks.test.js` export pin and §AM are its only callers). PASSES the pre-registered read: `halvingRounds` is the documented closed form for eta=3/eta=2 and returns 0 for eta<=1 / minBudget>maxBudget / non-numeric input; `halvingSchedule` keeps `max(1, ceil(survivors/eta))`, starts at `maxBudget/eta^(rounds-1)`, reaches exactly `maxBudget` when every round runs, is monotone in the budget and stops once one arm remains; `successiveHalving` scores the full rung in arm order, keeps the top `keep` finite arms, eliminates a non-finite evaluation (`nonFinite`, never ranked), honours `maximize:false`, is deterministic and works with an async evaluator, reports the full per-rung table and both cost counters, refuses an empty arm list / missing evaluator / bad `maxBudget`, and `formatRace` renders the winner/rungs/evaluation count. FINDINGS: (1) the claimed correctness requirement - the race winner equals the full-grid oracle, i.e. a racing budget does not change the decided set - is only true because the repo test's fixture scores arms in a BUDGET-INDEPENDENT order (`rank(b=1) == rank(b=9)`), and because its top rung is 3 while the \"oracle\" is evaluated at 9; on a budget-dependent evaluator (the SHA premise that a cheap rung is noisier) the race eliminates the true best at rung 0 and disagrees with the top-budget oracle on **0.617-0.70** of seeded fixtures; (2) the budget-saving claim is not universal - the race spends MORE than the grid when the budget ratio is small relative to the round count (`spentBudget/gridBudget` = **1.056** at (9 arms, B=2, eta=2), **1.222** at (9, 3, 2), **1.00** at (16, 2, 2) and **2.89** at (100, 10, eta=1.1)); (3) the same integer rounding collapses consecutive rungs to the SAME budget for a small eta (eta=1.1, B=10, 100 arms: **15** repeated consecutive budgets, 25 rungs), so the \"budget eta times larger\" framing and the reallocation story fail in that regime; (4) `successiveHalving` does not validate eta/minBudget, so eta=1, eta=0.5, eta=0 and minBudget>maxBudget all return `available:true` with `winner:null` after scoring nothing (a silent degenerate success). Scope: engine-only / test-only (no shipped importer; the `--race` driver is gated).",
+    "checks": {
+      "roundsClosedForm": true,
+      "roundsGuards": true,
+      "scheduleExactFixture": true,
+      "scheduleGeneralForms": true,
+      "raceFixture": true,
+      "raceScoredIsFullRungInArmOrder": true,
+      "raceNonFiniteEliminated": true,
+      "raceMinimize": true,
+      "raceDeterministicAndAsync": true,
+      "raceTiesAreStable": true,
+      "raceCostCounters": true,
+      "raceGuards": true,
+      "formatRaceRenders": true,
+      "raceSingleArm": true,
+      "raceEvaluatesScheduleBudgets": true,
+      "raceDefaultsEta": true,
+      "raceLostIsFiniteArmsBeyondKeep": true,
+      "costIdentitiesAcrossGrid": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "decidedSetClaim": {
+        "claim": "the race winner equals the full-grid oracle (a racing budget does not change the decided set)",
+        "fixtureIsTautological": {
+          "topRung": 3,
+          "maxBudget": 9,
+          "schedule": [
+            1,
+            3
+          ],
+          "rankBudget1EqualsRankBudget9": true,
+          "winner": "a0",
+          "oracleAtMaxBudget": "a0"
+        },
+        "witness": {
+          "raceWinner": "early0",
+          "gridOracle": "late",
+          "agree": false,
+          "eliminatedAtRung0": [
+            "early3",
+            "early4",
+            "early5",
+            "early6",
+            "early7",
+            "late"
+          ],
+          "rungBudgets": [
+            1,
+            3
+          ]
+        },
+        "ensemble": [
+          {
+            "eta": 3,
+            "maxBudget": 27,
+            "K": 16,
+            "reps": 120,
+            "disagreeRate": 0.6166666666666667
+          },
+          {
+            "eta": 3,
+            "maxBudget": 9,
+            "K": 16,
+            "reps": 120,
+            "disagreeRate": 0.6166666666666667
+          },
+          {
+            "eta": 3,
+            "maxBudget": 3,
+            "K": 16,
+            "reps": 120,
+            "disagreeRate": 0.7
+          },
+          {
+            "eta": 2,
+            "maxBudget": 16,
+            "K": 16,
+            "reps": 120,
+            "disagreeRate": 0.625
+          }
+        ],
+        "note": "successive halving is a best-arm-identification HEURISTIC, not an exact selector: eliminating all but the top 1/eta at a cheap rung can and does discard the arm that is best at the full budget. The repo test passes only because its fixture scores arms in a budget-independent order, and because its top rung (3) is below maxBudget (9), so its oracle is evaluated at a budget the race never visits."
+      },
+      "budgetSavingNotUniversal": {
+        "claim": "the search cost is O(arms) at the cheapest rung instead of O(arms) at the full budget / spentBudget < gridBudget",
+        "rows": [
+          {
+            "n": 9,
+            "B": 9,
+            "eta": 3,
+            "spentBudget": 18,
+            "gridBudget": 81,
+            "ratio": 0.222,
+            "rungBudgets": [
+              1,
+              3
+            ]
+          },
+          {
+            "n": 9,
+            "B": 4,
+            "eta": 2,
+            "spentBudget": 31,
+            "gridBudget": 36,
+            "ratio": 0.861,
+            "rungBudgets": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "n": 9,
+            "B": 3,
+            "eta": 2,
+            "spentBudget": 33,
+            "gridBudget": 27,
+            "ratio": 1.222,
+            "rungBudgets": [
+              2,
+              3
+            ]
+          },
+          {
+            "n": 9,
+            "B": 2,
+            "eta": 2,
+            "spentBudget": 19,
+            "gridBudget": 18,
+            "ratio": 1.056,
+            "rungBudgets": [
+              1,
+              2
+            ]
+          },
+          {
+            "n": 16,
+            "B": 2,
+            "eta": 2,
+            "spentBudget": 32,
+            "gridBudget": 32,
+            "ratio": 1,
+            "rungBudgets": [
+              1,
+              2
+            ]
+          },
+          {
+            "n": 100,
+            "B": 10,
+            "eta": 1.1,
+            "spentBudget": 2890,
+            "gridBudget": 1000,
+            "ratio": 2.89,
+            "rungBudgets": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              8,
+              8,
+              9,
+              10
+            ]
+          }
+        ],
+        "inversions": [
+          {
+            "n": 9,
+            "B": 3,
+            "eta": 2,
+            "spentBudget": 33,
+            "gridBudget": 27,
+            "ratio": 1.222,
+            "rungBudgets": [
+              2,
+              3
+            ]
+          },
+          {
+            "n": 9,
+            "B": 2,
+            "eta": 2,
+            "spentBudget": 19,
+            "gridBudget": 18,
+            "ratio": 1.056,
+            "rungBudgets": [
+              1,
+              2
+            ]
+          },
+          {
+            "n": 100,
+            "B": 10,
+            "eta": 1.1,
+            "spentBudget": 2890,
+            "gridBudget": 1000,
+            "ratio": 2.89,
+            "rungBudgets": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              8,
+              8,
+              9,
+              10
+            ]
+          }
+        ],
+        "note": "when the budget ratio maxBudget/minBudget is small relative to the round count, the early full-width rungs dominate and the race costs more than the grid. The repo test uses 9 arms at maxBudget 9, eta 3 (ratio 0.222), the one regime where the saving is large."
+      },
+      "smallEtaRungCollapse": {
+        "claim": "a budget eta times larger / the freed budget is reallocated",
+        "rows": [
+          {
+            "eta": 1.1,
+            "rounds": 25,
+            "repeatedConsecutiveBudgets": 15,
+            "budgets": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              8,
+              8,
+              9,
+              10
+            ],
+            "spentBudget": 2890,
+            "gridBudget": 1000,
+            "costRatio": 2.89
+          },
+          {
+            "eta": 1.2,
+            "rounds": 13,
+            "repeatedConsecutiveBudgets": 4,
+            "budgets": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              3,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10
+            ],
+            "spentBudget": 1520,
+            "gridBudget": 1000,
+            "costRatio": 1.52
+          },
+          {
+            "eta": 1.5,
+            "rounds": 6,
+            "repeatedConsecutiveBudgets": 0,
+            "budgets": [
+              1,
+              2,
+              3,
+              4,
+              7,
+              10
+            ],
+            "spentBudget": 769,
+            "gridBudget": 1000,
+            "costRatio": 0.769
+          },
+          {
+            "eta": 2,
+            "rounds": 4,
+            "repeatedConsecutiveBudgets": 0,
+            "budgets": [
+              1,
+              3,
+              5,
+              10
+            ],
+            "spentBudget": 505,
+            "gridBudget": 1000,
+            "costRatio": 0.505
+          }
+        ],
+        "collapsed": [
+          {
+            "eta": 1.1,
+            "rounds": 25,
+            "repeatedConsecutiveBudgets": 15,
+            "budgets": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              8,
+              8,
+              9,
+              10
+            ],
+            "spentBudget": 2890,
+            "gridBudget": 1000,
+            "costRatio": 2.89
+          },
+          {
+            "eta": 1.2,
+            "rounds": 13,
+            "repeatedConsecutiveBudgets": 4,
+            "budgets": [
+              1,
+              1,
+              2,
+              2,
+              2,
+              3,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10
+            ],
+            "spentBudget": 1520,
+            "gridBudget": 1000,
+            "costRatio": 1.52
+          }
+        ],
+        "note": "the schedule multiplies an UNROUNDED budget by eta but stores and evaluates Math.round(budget); for a small eta (or a small budget) round(budget) is unchanged across several rungs, so those rungs re-score the survivors at the same budget."
+      },
+      "unvalidatedEtaAndMinBudget": {
+        "claim": "the engine refuses an invalid configuration (it validates arms, evaluate and maxBudget)",
+        "observed": {
+          "etaOne": {
+            "available": true,
+            "winnerId": null,
+            "winner": null,
+            "rounds": 0,
+            "evaluated": 0,
+            "spentBudget": 0,
+            "gridBudget": 81
+          },
+          "etaHalf": {
+            "available": true,
+            "winnerId": null,
+            "winner": null,
+            "rounds": 0,
+            "evaluated": 0,
+            "spentBudget": 0,
+            "gridBudget": 81
+          },
+          "minGtMax": {
+            "available": true,
+            "winnerId": null,
+            "winner": null,
+            "rounds": 0,
+            "evaluated": 0,
+            "spentBudget": 0,
+            "gridBudget": 81
+          },
+          "etaZero": {
+            "available": true,
+            "winnerId": null,
+            "winner": null,
+            "rounds": 0,
+            "evaluated": 0,
+            "spentBudget": 0,
+            "gridBudget": 81
+          }
+        },
+        "note": "halvingRounds itself guards eta <= 1 and minBudget > maxBudget (returns 0 rounds), but successiveHalving does not check its own eta/minBudget: the schedule is empty, no arm is ever evaluated, and the result is available:true with winner null and winnerId null - a silent degenerate success rather than available:false."
+      }
+    },
+    "scope": {
+      "shipped": [],
+      "testOnly": [
+        "halvingRounds",
+        "halvingSchedule",
+        "successiveHalving",
+        "formatRace"
+      ],
+      "why": "the shipped analyze driver deliberately exposes no --race flag (R26-15 is gated on an economics/diversity win, RUN-ANALYSIS.md §7 measured neither); only analysis.test.js §AM and locks.test.js import the module"
+    }
+  }
+}

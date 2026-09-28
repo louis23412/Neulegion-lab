@@ -1,0 +1,147 @@
+{
+  "config": {
+    "coverageR": 400,
+    "panels": 300
+  },
+  "rows": {
+    "iqm": {
+      "exact": true,
+      "filtered": true,
+      "monotone": true
+    },
+    "iqmReference": {
+      "witness": [
+        0,
+        0,
+        5,
+        10
+      ],
+      "module": 2.5,
+      "reference": 1.6666666666666667,
+      "witnessGap": 0.8333333333333333,
+      "skewedPanelsDiffering": 149,
+      "skewedPanels": 300,
+      "maxSkewedGap": 1.016136662364667,
+      "note": "the module sorts and takes `sorted.slice(floor(n/4), n - floor(n/4))` - it drops a fixed COUNT (floor(n/4)) from each END BY RANK. The cited Agarwal et al. (arXiv 2108.13264) / rliable IQM drops the values outside [q1, q3] (a MASS rule). For [0,0,5,10] the module reads 2.5 (mean of [0,5]) while the reference reads 1.6667 (mean of [0,0,5]). On 300 right-skewed panels (5-12 values) the two disagree on a large fraction, with a gap up to the value measured. The doc says \"the interquartile mean (IQM) ... is the summary Agarwal et al. recommend\" - it is not that estimator."
+    },
+    "bootstrap": {
+      "deterministic": true,
+      "seedMoves": true,
+      "ordered": true,
+      "sizePreserved": true,
+      "total": 12,
+      "emptyAbstains": true,
+      "allNonFiniteAbstains": true,
+      "points": 500,
+      "nBoot": 500,
+      "nanFiltered": true,
+      "lo": 0.012500000000000002,
+      "hi": 0.23749999999999996,
+      "median": 0.12916666666666668
+    },
+    "coverage": {
+      "R": 400,
+      "nBoot": 400,
+      "coverage": 0.92,
+      "note": "the CIs are for the MEAN here (statistic = mean) of 12 i.i.d. zero-mean strata of 6; the population mean is 0. Percentile-bootstrap coverage is asymptotic, so a small shortfall from 0.95 is expected."
+    },
+    "variance": {
+      "betweenOnlySeedFraction": 1,
+      "betweenOnlyExact": true,
+      "withinOnlyFoldFraction": 1,
+      "withinOnlyExact": true,
+      "residualOnlyFraction": 1,
+      "residualOnlyExact": true,
+      "mixedIdentity": true,
+      "mixedFractions": true,
+      "mixedSeedFraction": 0.02702702702702702,
+      "mixedFoldFraction": 0.972972972972973,
+      "mixedResidualFraction": 0,
+      "shortAbstains": true,
+      "totalIsPopulationVariance": true
+    },
+    "paired": {
+      "ratioExact": true,
+      "reductionExact": true,
+      "crnHelps": true,
+      "ratio": 0.000634927661824479,
+      "reduction": 0.9993650723381755,
+      "shortAbstains": true,
+      "zeroVarAbstains": true,
+      "zeroVarReason": "the unpaired difference has zero variance",
+      "increaseIsNegative": true
+    },
+    "distribution": {
+      "ok": true,
+      "ciAlpha": 0.05,
+      "emptyAbstains": true,
+      "reader": "mean + IQM (Agarwal et al. 2021) over th"
+    },
+    "formatter": {
+      "ciAlpha": 0.1,
+      "badLabels95": true,
+      "goodLabels90": true,
+      "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 95%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+      "goodText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+      "note": "formatSeedReplication({ label, dist, alpha = 0.05 }) prints `(1 - alpha) * 100}%CI` using ITS OWN `alpha` parameter, never `dist.ci.alpha`. A distribution built at alpha = 0.10 is reported as \"95%CI\" by default, and only the caller happening to know the distribution alpha labels it correctly. The interval bounds are the 90% ones either way. analyze.js calls the formatter without an alpha, so the shipped path is consistent only because it also builds the distribution at the default 0.05 - a non-default alpha mislabels the summary."
+    }
+  },
+  "validation": {
+    "iqmContract": true,
+    "iqmIsNotTheCitedReference": true,
+    "stratifiedBootstrapContract": true,
+    "bootstrapCoverage": true,
+    "varianceDecomposition": true,
+    "pairedVarianceContract": true,
+    "seedDistributionStructure": true,
+    "formatterAlphaMismatch": true
+  },
+  "verdict": {
+    "note": "L10-cj..: `analysis/replication.js` is the SHIPPED honest-summary layer (round 26, R26-13; `analyze.js` aggregates `--seeds` into `replication.json` via seedDistribution/formatSeedReplication). PASSES the pre-registered read: `interquartileMean` is exactly the rank-slice middle its own doc describes (drop floor(n/4) from each end, `< 4` -> plain mean, non-finite filtered, empty -> NaN); `stratifiedBootstrapCI` is deterministic per seed, seed-sensitive, preserves each stratum size in every replicate, returns lo <= median <= hi and abstains on empty/all-non-finite input; its empirical coverage of a known mean is near nominal; `varianceComponents` satisfies total = between + within + residual with the fractions summing to 1 and the pure-between-seed, pure-within-seed and repeated-cell cases exact (total is the population variance, consistently); `pairedVarianceRatio` is exactly var(paired)/var(unpaired) with reduction = 1 - ratio, abstaining on short / zero-unpaired-variance input and going negative when the pairing hurts; `seedDistribution` carries the documented fields; and `formatSeedReplication` renders the level, the CI and the fractions. FINDINGS: (0) the IQM is the RANK-slice middle, not the cited Agarwal et al. estimator (a quantile-filter of the middle 50%) - witness [0,0,5,10] reads 2.5 vs the reference 1.6667, and the two disagree on much of skewed data; (1) `formatSeedReplication` prints its OWN alpha in the CI label rather than `dist.ci.alpha`, so a distribution built at alpha = 0.10 is labelled \"95%CI\". Both latent/claim-level (the shipped path uses the default alpha throughout); no golden moves and no fold-back row.",
+    "checks": {
+      "iqmContract": true,
+      "iqmIsNotTheCitedReference": true,
+      "stratifiedBootstrapContract": true,
+      "bootstrapCoverage": true,
+      "varianceDecomposition": true,
+      "pairedVarianceContract": true,
+      "seedDistributionStructure": true,
+      "formatterAlphaMismatch": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "iqmIsNotTheCitedReference": {
+        "witness": [
+          0,
+          0,
+          5,
+          10
+        ],
+        "module": 2.5,
+        "reference": 1.6666666666666667,
+        "witnessGap": 0.8333333333333333,
+        "skewedPanelsDiffering": 149,
+        "skewedPanels": 300,
+        "maxSkewedGap": 1.016136662364667,
+        "note": "the module sorts and takes `sorted.slice(floor(n/4), n - floor(n/4))` - it drops a fixed COUNT (floor(n/4)) from each END BY RANK. The cited Agarwal et al. (arXiv 2108.13264) / rliable IQM drops the values outside [q1, q3] (a MASS rule). For [0,0,5,10] the module reads 2.5 (mean of [0,5]) while the reference reads 1.6667 (mean of [0,0,5]). On 300 right-skewed panels (5-12 values) the two disagree on a large fraction, with a gap up to the value measured. The doc says \"the interquartile mean (IQM) ... is the summary Agarwal et al. recommend\" - it is not that estimator."
+      },
+      "formatterAlphaMismatch": {
+        "ciAlpha": 0.1,
+        "badLabels95": true,
+        "goodLabels90": true,
+        "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 95%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+        "goodText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+        "note": "formatSeedReplication({ label, dist, alpha = 0.05 }) prints `(1 - alpha) * 100}%CI` using ITS OWN `alpha` parameter, never `dist.ci.alpha`. A distribution built at alpha = 0.10 is reported as \"95%CI\" by default, and only the caller happening to know the distribution alpha labels it correctly. The interval bounds are the 90% ones either way. analyze.js calls the formatter without an alpha, so the shipped path is consistent only because it also builds the distribution at the default 0.05 - a non-default alpha mislabels the summary."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "analyze.js imports seedDistribution + formatSeedReplication",
+        "replicateAnalysis builds seedDistribution({ perSeed: runs.map(...) }) per variant and writes replication.json",
+        "the CLI --seeds path prints formatSeedReplication({ label, dist }) per variant"
+      ],
+      "why": "replication.js is pure + seeded and only summarizes an already-scored run, so no finding can move a measured number. The shipped path uses the default alpha (0.05) for BOTH the distribution and the formatter, so the label bug is latent there; the IQM divergence is a claim-level mismatch (the module is self-consistent, it is the attribution that is wrong). No golden moves and no fold-back row is due."
+    }
+  }
+}

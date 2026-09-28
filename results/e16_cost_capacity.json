@@ -1,0 +1,337 @@
+{
+  "config": {
+    "symbols": 8,
+    "perp": "mark",
+    "periods": 6558,
+    "years": "5.99",
+    "costLevelsBps": [
+      0,
+      2,
+      4,
+      5,
+      10,
+      15,
+      20,
+      30
+    ]
+  },
+  "note": "costBps = fee on one (spot + perp) unit; reference tiers taker ~15, mixed ~11, VIP maker ~4 bps",
+  "books": {
+    "flat": {
+      "name": "flatEqualWeight",
+      "periods": 6557,
+      "symbols": 8,
+      "gross": {
+        "sharpe": 4.543595787245012,
+        "annualized": 0.0905399380046104,
+        "maxDrawdown": 0.07955768174080716
+      },
+      "turnover": {
+        "totalL1": 1,
+        "meanPerPeriod": 0.00015250876925423213,
+        "annualized": 0.1669971023333842,
+        "medianPerPeriod": 0,
+        "p90PerPeriod": 0,
+        "nonzeroFraction": 0.00015250876925423213
+      },
+      "breakEvenBps": 5421.647246540916,
+      "net": {
+        "0": {
+          "sharpe": 4.543595787245012,
+          "annualized": 0.0905399380046104,
+          "maxDrawdown": 0.07955768174080716
+        },
+        "2": {
+          "sharpe": 4.542034459701601,
+          "annualized": 0.0905065385841437,
+          "maxDrawdown": 0.0795576817408065
+        },
+        "4": {
+          "sharpe": 4.540396668710994,
+          "annualized": 0.09047313916367701,
+          "maxDrawdown": 0.07955768174080756
+        },
+        "5": {
+          "sharpe": 4.539549123591348,
+          "annualized": 0.09045643945344368,
+          "maxDrawdown": 0.07955768174080692
+        },
+        "10": {
+          "sharpe": 4.535025360709449,
+          "annualized": 0.090372940902277,
+          "maxDrawdown": 0.07955768174080635
+        },
+        "15": {
+          "sharpe": 4.530026135361609,
+          "annualized": 0.09028944235111029,
+          "maxDrawdown": 0.07955768174080696
+        },
+        "20": {
+          "sharpe": 4.524553532546746,
+          "annualized": 0.09020594379994364,
+          "maxDrawdown": 0.0795576817408073
+        },
+        "30": {
+          "sharpe": 4.512198750043172,
+          "annualized": 0.09003894669761023,
+          "maxDrawdown": 0.07955768174080656
+        }
+      }
+    },
+    "xsLevel": {
+      "name": "xsFundingLevel",
+      "periods": 6557,
+      "symbols": 8,
+      "gross": {
+        "sharpe": 3.2658855973522862,
+        "annualized": 0.21211075738323354,
+        "maxDrawdown": 0.06629023020893093
+      },
+      "turnover": {
+        "totalL1": 5244.615308720868,
+        "meanPerPeriod": 0.7998498259449242,
+        "annualized": 875.835559409692,
+        "medianPerPeriod": 0.7781027674702773,
+        "p90PerPeriod": 1.3959591668958105,
+        "nonzeroFraction": 0.9554674393777642
+      },
+      "breakEvenBps": 2.42181029423143,
+      "net": {
+        "0": {
+          "sharpe": 3.2658855973522862,
+          "annualized": 0.21211075738323354,
+          "maxDrawdown": 0.06629023020893093
+        },
+        "2": {
+          "sharpe": 0.566861966690908,
+          "annualized": 0.03694364550129511,
+          "maxDrawdown": 0.2910541011906369
+        },
+        "4": {
+          "sharpe": -2.1092528364536327,
+          "annualized": -0.13822346638064373,
+          "maxDrawdown": 0.6503448395239574
+        },
+        "5": {
+          "sharpe": -3.43371247016729,
+          "annualized": -0.2258070223216128,
+          "maxDrawdown": 0.7830792846049317
+        },
+        "10": {
+          "sharpe": -9.848254759038976,
+          "annualized": -0.6637248020264589,
+          "maxDrawdown": 0.9815120203483221
+        },
+        "15": {
+          "sharpe": -15.785083870970594,
+          "annualized": -1.1016425817313027,
+          "maxDrawdown": 0.9986596388222728
+        },
+        "20": {
+          "sharpe": -21.127051833634987,
+          "annualized": -1.5395603614361475,
+          "maxDrawdown": 0.9999030065522871
+        },
+        "30": {
+          "sharpe": -29.907323838529184,
+          "annualized": -2.4153959208458518,
+          "maxDrawdown": 0.9999994949583006
+        }
+      }
+    },
+    "xsRank": {
+      "name": "xsFundingRank",
+      "periods": 6557,
+      "symbols": 8,
+      "gross": {
+        "sharpe": 5.0274266371774035,
+        "annualized": 0.15001531527923137,
+        "maxDrawdown": 0.029257961478950222
+      },
+      "turnover": {
+        "totalL1": 4808.375,
+        "meanPerPeriod": 0.7333193533628184,
+        "annualized": 802.9846919322862,
+        "medianPerPeriod": 0.75,
+        "p90PerPeriod": 1.25,
+        "nonzeroFraction": 0.9158151593716639
+      },
+      "breakEvenBps": 1.8682213594662378,
+      "net": {
+        "0": {
+          "sharpe": 5.0274266371774035,
+          "annualized": 0.15001531527923137,
+          "maxDrawdown": 0.029257961478950222
+        },
+        "2": {
+          "sharpe": -0.3525626404810146,
+          "annualized": -0.010581623107225553,
+          "maxDrawdown": 0.31494080458908724
+        },
+        "4": {
+          "sharpe": -5.624408661439144,
+          "annualized": -0.17117856149368293,
+          "maxDrawdown": 0.6919532449933063
+        },
+        "5": {
+          "sharpe": -8.181967112903182,
+          "annualized": -0.2514770306869115,
+          "maxDrawdown": 0.8012844610957084
+        },
+        "10": {
+          "sharpe": -19.75000148090508,
+          "annualized": -0.6529693766530543,
+          "maxDrawdown": 0.9800759778848448
+        },
+        "15": {
+          "sharpe": -28.85302799597387,
+          "annualized": -1.0544617226191975,
+          "maxDrawdown": 0.9982022986734175
+        },
+        "20": {
+          "sharpe": -35.603761125658366,
+          "annualized": -1.455954068585338,
+          "maxDrawdown": 0.999838208661216
+        },
+        "30": {
+          "sharpe": -44.065377113283866,
+          "annualized": -2.2589387605176334,
+          "maxDrawdown": 0.9999986941140075
+        }
+      }
+    },
+    "reversionBasisOnly": {
+      "name": "reversionBasisOnly",
+      "periods": 6557,
+      "symbols": 8,
+      "gross": {
+        "sharpe": 9.149678084034914,
+        "annualized": 0.13130544409418352,
+        "maxDrawdown": 0.0202592817870027
+      },
+      "turnover": {
+        "totalL1": 2783.654131182484,
+        "meanPerPeriod": 0.42453166557609945,
+        "annualized": 464.8621738058289,
+        "medianPerPeriod": 0.40708052935484124,
+        "p90PerPeriod": 0.6356272237366916,
+        "nonzeroFraction": 1
+      },
+      "breakEvenBps": 2.824610206917573,
+      "net": {
+        "0": {
+          "sharpe": 9.149678084034914,
+          "annualized": 0.13130544409418352,
+          "maxDrawdown": 0.0202592817870027
+        },
+        "2": {
+          "sharpe": 2.6878986080074325,
+          "annualized": 0.03833300933301734,
+          "maxDrawdown": 0.04478244318276768
+        },
+        "4": {
+          "sharpe": -3.8339676889593397,
+          "annualized": -0.05463942542814818,
+          "maxDrawdown": 0.34030961580822516
+        },
+        "5": {
+          "sharpe": -7.08342074871485,
+          "annualized": -0.10112564280873064,
+          "maxDrawdown": 0.484163694746493
+        },
+        "10": {
+          "sharpe": -22.699881188832737,
+          "annualized": -0.3335567297116445,
+          "maxDrawdown": 0.8644381404365689
+        },
+        "15": {
+          "sharpe": -36.36356291769484,
+          "annualized": -0.5659878166145604,
+          "maxDrawdown": 0.9663184676997768
+        },
+        "20": {
+          "sharpe": -47.474883461270444,
+          "annualized": -0.7984189035174748,
+          "maxDrawdown": 0.9916343602748278
+        },
+        "30": {
+          "sharpe": -62.64211427390741,
+          "annualized": -1.2632810773233005,
+          "maxDrawdown": 0.9994844480335469
+        }
+      }
+    },
+    "reversionCarryPlus": {
+      "name": "reversionCarryPlus",
+      "periods": 6557,
+      "symbols": 8,
+      "gross": {
+        "sharpe": 9.544442011875736,
+        "annualized": 0.16442054405162485,
+        "maxDrawdown": 0.01627462571924198
+      },
+      "turnover": {
+        "totalL1": 2783.654131182484,
+        "meanPerPeriod": 0.42453166557609945,
+        "annualized": 464.8621738058289,
+        "medianPerPeriod": 0.40708052935484124,
+        "p90PerPeriod": 0.6356272237366916,
+        "nonzeroFraction": 1
+      },
+      "breakEvenBps": 3.5369740391117013,
+      "net": {
+        "0": {
+          "sharpe": 9.544442011875736,
+          "annualized": 0.16442054405162485,
+          "maxDrawdown": 0.01627462571924198
+        },
+        "2": {
+          "sharpe": 4.169584743662195,
+          "annualized": 0.07144810929045886,
+          "maxDrawdown": 0.026154827893048006
+        },
+        "4": {
+          "sharpe": -1.2579634464111042,
+          "annualized": -0.021524325470706904,
+          "maxDrawdown": 0.2741370024361675
+        },
+        "5": {
+          "sharpe": -3.9719163656252885,
+          "annualized": -0.06801054285128978,
+          "maxDrawdown": 0.4224760283650103
+        },
+        "10": {
+          "sharpe": -17.235594580936038,
+          "annualized": -0.30044162975420374,
+          "maxDrawdown": 0.835376792494167
+        },
+        "15": {
+          "sharpe": -29.389157206541064,
+          "annualized": -0.5328727166571189,
+          "maxDrawdown": 0.9589375297366657
+        },
+        "20": {
+          "sharpe": -39.900172671346766,
+          "annualized": -0.7653038035600308,
+          "maxDrawdown": 0.9898006505458148
+        },
+        "30": {
+          "sharpe": -55.63761073519731,
+          "annualized": -1.2301659773658662,
+          "maxDrawdown": 0.9993713832314597
+        }
+      }
+    }
+  },
+  "flatRehedge": {
+    "note": "delta-maintenance turnover for the flat hold IF the hedge is re-established each period (approximate; not included in `flat`)",
+    "perPeriod": 0.00037274672917710956,
+    "annualized": 0.408157668448935,
+    "breakEvenIfRehedgedBps": 2218.258898544692
+  },
+  "crossCheck": {
+    "xsRankRepoSum": 4808.375,
+    "xsRankL1": 4808.375,
+    "agree": true
+  }
+}

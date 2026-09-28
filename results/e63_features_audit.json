@@ -1,0 +1,626 @@
+{
+  "config": {
+    "n": 140,
+    "testBars": 100,
+    "candidates": 16,
+    "perturbation": "closes x(1.5+i%3), returns -> -1.7r+0.03, volumes x2.5"
+  },
+  "rows": {
+    "roster": {
+      "counts": {
+        "signal": 8,
+        "reversal": 4,
+        "sigup": 4
+      },
+      "ids": [
+        "sig-momentum",
+        "sig-frac-momentum",
+        "sig-vol-regime",
+        "sig-agreement",
+        "sig-range",
+        "sig-volume",
+        "sig-autocorr",
+        "sig-accel",
+        "sig-reversal",
+        "sig-reversal-4",
+        "sig-reversal-vol",
+        "sig-reversal-xs",
+        "sig-vol-momentum",
+        "sig-blend-momentum",
+        "sig-network-momentum",
+        "sig-regime-momentum"
+      ],
+      "crossSectional": [
+        "sig-reversal-xs",
+        "sig-network-momentum"
+      ]
+    },
+    "causality": {
+      "sig-momentum": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-frac-momentum": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-vol-regime": {
+        "mismatches": 0,
+        "laterMoved": 77,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-agreement": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-range": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-volume": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-autocorr": {
+        "mismatches": 0,
+        "laterMoved": 77,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-accel": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-reversal": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-reversal-4": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-reversal-vol": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-reversal-xs": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-vol-momentum": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-blend-momentum": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-network-momentum": {
+        "mismatches": 0,
+        "laterMoved": 78,
+        "nonZero": 100,
+        "bars": 100
+      },
+      "sig-regime-momentum": {
+        "mismatches": 0,
+        "laterMoved": 79,
+        "nonZero": 100,
+        "bars": 100
+      }
+    },
+    "causalityNonVacuous": [],
+    "abstainReturnsOnly": {
+      "sig-momentum": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.7852410669888319,
+          -0.1195869362367748,
+          0.32894393653884063,
+          0.4692874306676356
+        ]
+      },
+      "sig-frac-momentum": {
+        "allZero": true,
+        "nonzero": 0,
+        "sample": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sig-vol-regime": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -1,
+          -0.3851834844073107,
+          0.08982757619028957,
+          -0.0682294019194089
+        ]
+      },
+      "sig-agreement": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.6007290686385043,
+          0.05049101014302604,
+          0.6506475198016796,
+          0.611214336783396
+        ]
+      },
+      "sig-range": {
+        "allZero": true,
+        "nonzero": 0,
+        "sample": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sig-volume": {
+        "allZero": true,
+        "nonzero": 0,
+        "sample": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sig-autocorr": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.467464602114222,
+          -0.6987991104098727,
+          0.6687369901999107,
+          -0.620378519513878
+        ]
+      },
+      "sig-accel": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.6155541828313248,
+          -0.2953919373981114,
+          -0.23006672627067795,
+          -0.20113096154403623
+        ]
+      },
+      "sig-reversal": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.29357150088074574,
+          -0.9658344440634025,
+          -0.5721901632557614,
+          0.06471222247217102
+        ]
+      },
+      "sig-reversal-4": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          0.1655944138933912,
+          -0.35803549008298685,
+          -0.6567956475357789,
+          -0.7095941002233247
+        ]
+      },
+      "sig-reversal-vol": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.3404527817795485,
+          -1,
+          -0.5487135101038152,
+          0.06391081649697557
+        ]
+      },
+      "sig-reversal-xs": {
+        "allZero": true,
+        "nonzero": 0,
+        "sample": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sig-vol-momentum": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.877488626153082,
+          -0.10795468502924373,
+          0.3016742776249876,
+          0.432435481284585
+        ]
+      },
+      "sig-blend-momentum": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.8992975798621679,
+          -0.09065882613984037,
+          0.5068577057295972,
+          0.7213191916982169
+        ]
+      },
+      "sig-network-momentum": {
+        "allZero": true,
+        "nonzero": 0,
+        "sample": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sig-regime-momentum": {
+        "allZero": false,
+        "nonzero": 20,
+        "sample": [
+          -0.7852410669888319,
+          -0.1195869362367748,
+          0.32894393653884063,
+          0.4692874306676356
+        ]
+      }
+    },
+    "abstainNeedOtherChannel": [
+      "sig-frac-momentum",
+      "sig-range",
+      "sig-volume",
+      "sig-reversal-xs",
+      "sig-network-momentum"
+    ],
+    "clamp": {
+      "z0": 0,
+      "z2": 1,
+      "zNeg2": -1,
+      "z3": 1,
+      "zNeg3": -1,
+      "nan": 0,
+      "inf": 0,
+      "sat0": 0,
+      "sat1": 1,
+      "satNeg": 0,
+      "docs": {
+        "saturation": 2,
+        "zWindow": 32,
+        "minObs": 8
+      }
+    },
+    "zScoreHandCheck": {
+      "raw": 0.012283236098205938,
+      "nVals": 6,
+      "mean": -0.0005375230944429888,
+      "sd": 0.0076928991762848275,
+      "z": 1.666570547573525,
+      "ref": 0.8332852737867625,
+      "pos": 0.8332852737867625
+    },
+    "zScoreGuards": {
+      "earlyAllZero": true,
+      "minObsHighZero": true,
+      "nanRawZero": true
+    },
+    "constantWindowZ": [
+      {
+        "val": 0.001,
+        "n": 8,
+        "z": 0,
+        "expectedAbs": 0.9354143466934853,
+        "okHere": true
+      },
+      {
+        "val": 0.001,
+        "n": 16,
+        "z": -0.9682458365518544,
+        "expectedAbs": 0.9682458365518543,
+        "okHere": true
+      },
+      {
+        "val": 0.001,
+        "n": 32,
+        "z": 0,
+        "expectedAbs": 0.9842509842514764,
+        "okHere": true
+      },
+      {
+        "val": 0.1,
+        "n": 16,
+        "z": -0.9682458365518544,
+        "expectedAbs": 0.9682458365518543,
+        "okHere": true
+      },
+      {
+        "val": 0.1,
+        "n": 32,
+        "z": -0.9842509842514764,
+        "expectedAbs": 0.9842509842514764,
+        "okHere": true
+      },
+      {
+        "val": 0.07,
+        "n": 20,
+        "z": -0.9746794344808966,
+        "expectedAbs": 0.9746794344808963,
+        "okHere": true
+      }
+    ],
+    "constantWindowExactMean": {
+      "returns": 0.03125,
+      "z": 0
+    },
+    "featureReferences": {
+      "momentum": {
+        "got": -0.011142058952480773,
+        "ref": -0.011142058952480773
+      },
+      "fracDiffAt": {
+        "got": 1.0488473492738868,
+        "ref": 1.0488473492738868
+      },
+      "fracMomentum": {
+        "got": 0.012772824601315458,
+        "ref": 0.012772824601315458
+      },
+      "volRegime": {
+        "got": -0.12061496696261131,
+        "ref": -0.12061496696261131
+      },
+      "agreement": {
+        "got": -0.5,
+        "ref": -0.5
+      },
+      "range": {
+        "got": 0.021162522509665216,
+        "ref": 0.021162522509665216
+      },
+      "volume": {
+        "got": 0.20929163433194953,
+        "ref": 0.20929163433194953
+      },
+      "autocorr": {
+        "got": 0.6020360655351722,
+        "ref": 0.6020360655351722
+      },
+      "accel": {
+        "got": -0.017557421204312196,
+        "ref": -0.017557421204312196
+      },
+      "reversal": {
+        "got": -0.012283236098205938,
+        "ref": -0.012283236098205938
+      },
+      "reversalWindow": {
+        "got": -0.0022484793860559184,
+        "ref": -0.0022484793860559184
+      },
+      "reversalVol": {
+        "got": -1.684061641981806,
+        "ref": -1.684061641981806
+      },
+      "volScaled": {
+        "got": -1.3859622010544284,
+        "ref": -1.3859622010544284
+      },
+      "blended": {
+        "got": -1.3467974668216638,
+        "ref": -1.3467974668216638
+      }
+    },
+    "featureReferenceMismatches": [],
+    "crossSection": {
+      "gotXs": -0.006612810876567535,
+      "xsRef": -0.006612810876567535,
+      "gotNet": -0.9066812991824462,
+      "netRef": -0.9066812991824462,
+      "others": 2
+    },
+    "regimeGate": [
+      {
+        "t": 80,
+        "gate": -0.028904293484291296,
+        "threshold": -0.09335328299510791,
+        "gated": false,
+        "got": -0.017653054665858058,
+        "ref": -0.017653054665858058,
+        "agree": true
+      },
+      {
+        "t": 110,
+        "gate": -0.004726696700649338,
+        "threshold": -0.09095342352841015,
+        "gated": false,
+        "got": -0.011142058952480773,
+        "ref": -0.011142058952480773,
+        "agree": true
+      },
+      {
+        "t": 130,
+        "gate": 0.020780880783093154,
+        "threshold": -0.0806448622596348,
+        "gated": false,
+        "got": 0.014057698783028668,
+        "ref": 0.014057698783028668,
+        "agree": true
+      }
+    ],
+    "closesContract": {
+      "rangeOnPlural": 0.021162522509665216,
+      "rangeOnSingular": null,
+      "posOnSingular": 0,
+      "fracOnSingular": null
+    }
+  },
+  "validation": {
+    "candidateRoster": true,
+    "causalityUnderFuturePerturbation": true,
+    "abstainInsteadOfThrow": true,
+    "neverThrowsOnDegenerateSeries": true,
+    "clampPositionExact": true,
+    "zScorePipelineExact": true,
+    "constantWindowClosedForm": true,
+    "featureReferencesExact": true,
+    "crossSectionReferences": true,
+    "regimeGateReference": true,
+    "closesContract": true
+  },
+  "verdict": {
+    "note": "L10-bs..: `analysis/features.js` is the SHIPPED causal signal family the walk-forward A/B scores (8 features in `SIGNAL_CANDIDATES` + two opt-in families on the same pipeline: `REVERSAL_CANDIDATES`, `SIGUP_CANDIDATES`). PASSES the pre-registered read, including the module header's strongest claim: for ALL 16 candidates and every t, perturbing closes/returns/volumes (and every panel stream) strictly AFTER t leaves `positionAt(candidate, series, t)` EXACTLY unchanged (0 mismatches over 16 candidates x 100 bars), and the perturbation is non-vacuous (a later position moves for every candidate, so the family really reads the perturbed data). A view missing `closes`/`volumes`/`panel` makes the affected features abstain (0) rather than throw; degenerate series (all-NaN, all-zero, Infinity) stay finite and in [-1,1]; `clampPosition` is exact (bounds, non-finite -> 0, degenerate saturation -> 0) and the documented defaults are exact; the z-score pipeline reproduces a hand recomputation over the trailing `zWindow` FINITE values with the sample std and the `minObs` floor, and abstains for a not-yet-populated window or a zero-dispersion series; all 16 features reproduce independent references exactly (fracDiffAt against an independent binomial-weight recursion AND the shipped `labels.js` convolution; the cross-section and the gate likewise); the cross-sectional candidates abstain without a panel; and the L10-e `closes` contract holds (a `{close}`-only series abstains, a `{closes}` series works). FINDINGS: (0) the zero-dispersion guard is defeated by floating-point rounding — an exactly-constant feature window returns z = ±sqrt((n-1)/n) (measured exactly: -0.9682458365518544 at n=16, -0.9842509842514764 at n=32, -0.9746794344808966 at n=20), i.e. a 0.47-0.49 position at the default saturation 2, where the module header and the docstring both promise 0 (the computed std is a denormal positive number, so `std > 0` passes; only an exactly-representable mean abstains); (1) the two internal helpers disagree on an EMPTY range — `finiteSum` returns 0 where `meanOf` returns NaN, so a zero-width window reads a valid-looking \"no momentum\" from every finiteSum-based feature instead of abstaining (latent: all shipped candidates fix window >= 1); (2) `networkMomentum` does not skip its own stream when `panel.streamIndex` is absent (`i === undefined` is never true), silently folding the stream's own lagged momentum into the \"network\" average (latent: analyze.js always sets it); (3) `regimeGatedMomentum`'s crash gate standardises the gate window's SUM by the MOMENTUM window's variance, mis-scaling the threshold by sqrt(v_window/v_gateWindow) whenever the two windows differ (latent, opt-in G-H). Scope: SHIPPED family, but every finding is export-level/latent and no finding can move a golden.",
+    "checks": {
+      "candidateRoster": true,
+      "causalityUnderFuturePerturbation": true,
+      "abstainInsteadOfThrow": true,
+      "neverThrowsOnDegenerateSeries": true,
+      "clampPositionExact": true,
+      "zScorePipelineExact": true,
+      "constantWindowClosedForm": true,
+      "featureReferencesExact": true,
+      "crossSectionReferences": true,
+      "regimeGateReference": true,
+      "closesContract": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "constantWindowSpuriousZ": {
+        "claim": "causalZScore abstains when the window has no dispersion — the module header says the position is \"0 while the window is not full, or std is 0\", and the docstring says it \"Returns 0 (abstain) when ... the std is 0\"",
+        "closedForm": "for n exactly-equal finite readings v, the sample mean m = (sum v)/n is not bit-equal to v, so every deviation is the SAME d = m - v != 0; acc = n*d^2, std = |d|*sqrt(n/(n-1)) (a denormal positive number), and the returned z = (v - m)/std = -sign(d)*sqrt((n-1)/n).",
+        "witness": [
+          {
+            "val": 0.001,
+            "n": 8,
+            "z": 0,
+            "expectedAbs": 0.9354143466934853,
+            "okHere": true
+          },
+          {
+            "val": 0.001,
+            "n": 16,
+            "z": -0.9682458365518544,
+            "expectedAbs": 0.9682458365518543,
+            "okHere": true
+          },
+          {
+            "val": 0.001,
+            "n": 32,
+            "z": 0,
+            "expectedAbs": 0.9842509842514764,
+            "okHere": true
+          },
+          {
+            "val": 0.1,
+            "n": 16,
+            "z": -0.9682458365518544,
+            "expectedAbs": 0.9682458365518543,
+            "okHere": true
+          },
+          {
+            "val": 0.1,
+            "n": 32,
+            "z": -0.9842509842514764,
+            "expectedAbs": 0.9842509842514764,
+            "okHere": true
+          },
+          {
+            "val": 0.07,
+            "n": 20,
+            "z": -0.9746794344808966,
+            "expectedAbs": 0.9746794344808963,
+            "okHere": true
+          }
+        ],
+        "exactlyRepresentableMeanAbstains": {
+          "returns": 0.03125,
+          "z": 0
+        },
+        "note": "An exactly-constant feature over the trailing window yields |z| = sqrt((n-1)/n) whenever the sample mean is not bit-equal to the value — measured exactly at -sqrt(15/16) = -0.9682458365518544 (n=16), -sqrt(31/32) = -0.9842509842514764 (n=32) and -sqrt(19/20) = -0.9746794344808966 (n=20). Where the sum and quotient happen to be exact (n=8 and n=32 on a 0.001 constant; the 0.03125 fixture) the guard DOES fire and returns 0, so the bug is a rounding-boundary effect, not a universally-firing branch. At the default saturation 2 the spurious |z| = 0.935 … 0.984 is a position of 0.468 … 0.492 — nearly a half-size book, from a feature carrying no information (the intended value is exactly 0, so this is the largest possible error on this branch). The guard `if (!(std > 0)) return 0` cannot fire there because the computed std is a denormal positive number. Real-valued features (frac-momentum, range location, vol-regime, volume imbalance, autocorrelation, and the recomputed momentum of a bit-constant return series) can all trip it; discrete-valued `momentumAgreement` cannot (its mean is exact). LATENT for live market data (a bit-constant window is measure-zero there), but reachable on the flat/constant series this project uses as CONTROLS, and in production through a coarse/rounded price feed — the L10-l class (prices stored as round(price*100) gave 67 distinct values over 3621 bars, i.e. long runs of exactly-equal returns). A relative tolerance (std <= |mean|*1e-12) or a max-min == 0 test would fix it."
+      },
+      "emptyRangeSum": {
+        "claim": "the feature helpers never manufacture a value: a feature that cannot be computed abstains (NaN)",
+        "witness": {
+          "momentumWindow0": 0,
+          "accelerationWindow0": 0,
+          "volRegimeWindow0": null,
+          "reversalWindowWindow0": null,
+          "meanOfWindow0": null,
+          "note": "finiteSum guards `a < 0` but NOT `b < a`, so an empty range sums to 0; meanOf guards `b < a` and returns NaN. A 0-width window therefore reads a valid-looking 0 from every finiteSum-based feature (momentum, acceleration, and the volatility-scaled/blended/network/gated upgrades via their sums) while every meanOf-based feature abstains."
+        },
+        "note": "LATENT: every shipped candidate fixes window >= 1, so the empty range is reachable only through the exported API (a custom candidate or a direct call). It matters because 0 is a FINITE, plausible reading (\"no momentum\"), so it flows through causalZScore as a real observation rather than abstaining — the opposite of the module header's \"a feature ... abstains\" discipline, and an inconsistency between two helpers in the same file."
+      },
+      "networkSelfInclusion": {
+        "claim": "networkMomentum \"skips this stream by `panel.streamIndex`\"",
+        "witness": {
+          "withStreamIndex": -0.9066812991824462,
+          "othersOnly": -0.9066812991824462,
+          "missingStreamIndex": -1.8820447956410788,
+          "allThreeIncludingSelf": -1.8820447956410788,
+          "ownLaggedMomentum": -3.8327717885583437,
+          "equalsAllThree": true,
+          "equalsOthers": true
+        },
+        "note": "the skip is `if (i === p.streamIndex) continue` — with `streamIndex` absent (undefined) the comparison is never true, so the feature silently folds the stream's OWN lagged momentum into its \"network\" average and reports a non-abstaining position. LATENT: `analyze.js` always sets `streamIndex`, so the shipped path is correct; the exported API is not, and the failure mode is silent (a plausible number, not a NaN)."
+      },
+      "regimeGateWindowScale": {
+        "claim": "regimeGatedMomentum abstains while the trailing gateWindow-bar return \"sits below -gateZ standard deviations of its own causal vol estimate\"",
+        "witness": {
+          "momentumWindow": 16,
+          "gateWindow": 32,
+          "varianceUsed": 0.000050809326631839605,
+          "varianceOfGateWindow": 0.0000665190200350271,
+          "ratio": 1.3091891675128604,
+          "thresholdUsed": -0.0806448622596348,
+          "thresholdIfGateWindowScaled": -0.09227369378367527,
+          "note": "the gate compares sum(returns, gateWindow) against -gateZ*sqrt(v_window)*sqrt(gateWindow), where v_window is the MOMENTUM window's variance. Under the i.i.d. reading the sum over the gate window has variance gateWindow*v_gateWindow, so the threshold is mis-scaled by sqrt(v_window/v_gateWindow) = 1/sqrt(vGate/vMomentum). With the shipped windows (16 vs 32) a hot short-term regime (vGate > vMomentum) makes the crash gate too LOOSE, i.e. it fires less often than the documented \"-gateZ standard deviations of its own causal vol estimate\"."
+        },
+        "note": "LATENT and opt-in (`SIGUP_CANDIDATES`, gate G-H): the mis-scale is only visible when gateWindow != window, and the shipped candidate uses 32 vs 16. It does not fire at all when the two windows coincide. Worth recording because the feature is pre-registered as a *causal crash gate*, so a mis-scaled threshold changes how often the arm de-risks — a behavioural, not cosmetic, difference."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "SIGNAL_CANDIDATES (8 features)",
+        "causalZScore/positionAt/signalForCandidate",
+        "clampPosition",
+        "fracDiffAt/fracMomentum",
+        "momentum/volRegime/momentumAgreement/rangeLocation/volumeImbalance/autocorr1/acceleration"
+      ],
+      "testOnly": [
+        "REVERSAL_CANDIDATES (opt-in --variants)",
+        "SIGUP_CANDIDATES (opt-in, gate G-H)"
+      ],
+      "why": "analyze.js imports SIGNAL_CANDIDATES/REVERSAL_CANDIDATES/SIGUP_CANDIDATES + signalForCandidate to build every `sig:*` variant, and the default roster scores {baseline, sig-momentum, sig-accel}; walkforward.js's audit runs over the same `viewFor`. The three findings are all latent (a fixed window, a driver always setting streamIndex, an opt-in family), so nothing here moves a report and no fold-back row is due."
+    }
+  }
+}

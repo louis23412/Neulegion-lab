@@ -1,0 +1,299 @@
+{
+  "config": {
+    "tf": "1h",
+    "symbols": 8,
+    "alignedBars": 53500,
+    "windowBars": 9600,
+    "maxClusters": 192,
+    "costBps": 0
+  },
+  "panel": {
+    "streams": 8,
+    "wholeSeriesMeanPairwiseReturnCorr": 0.6229084465773899
+  },
+  "arms": {
+    "buyAndHold": {
+      "perStream": [
+        {
+          "symbol": "candles",
+          "netSharpe": 0.14159747077274437,
+          "grossSharpe": 0.14159747077274437,
+          "breakEvenCostBps": 29621.866056178704,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.7719848663243937,
+          "hitRate": 0.5063090008412001,
+          "bars": 53500
+        },
+        {
+          "symbol": "ethusdt_1h",
+          "netSharpe": 0.13413016683508752,
+          "grossSharpe": 0.13413016683508752,
+          "breakEvenCostBps": 36876.172823868714,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.813430141271089,
+          "hitRate": 0.506209553735084,
+          "bars": 53500
+        },
+        {
+          "symbol": "solusdt_1h",
+          "netSharpe": 0.18544307272637348,
+          "grossSharpe": 0.18544307272637348,
+          "breakEvenCostBps": 80049.00448522056,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.96796161584894,
+          "hitRate": 0.5032962466234723,
+          "bars": 53500
+        },
+        {
+          "symbol": "bnbusdt_1h",
+          "netSharpe": 0.192985891287263,
+          "grossSharpe": 0.192985891287263,
+          "breakEvenCostBps": 53582.0335907726,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.7253807254976463,
+          "hitRate": 0.5149739335591157,
+          "bars": 53500
+        },
+        {
+          "symbol": "xrpusdt_1h",
+          "netSharpe": 0.12849203956567032,
+          "grossSharpe": 0.12849203956567032,
+          "breakEvenCostBps": 46885.276467616415,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.8482792075426903,
+          "hitRate": 0.5068169801344512,
+          "bars": 53500
+        },
+        {
+          "symbol": "adausdt_1h",
+          "netSharpe": 0.09790874508446967,
+          "grossSharpe": 0.09790874508446967,
+          "breakEvenCostBps": 35517.85632191247,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.9551211631663962,
+          "hitRate": 0.49803884234577306,
+          "bars": 53500
+        },
+        {
+          "symbol": "dogeusdt_1h",
+          "netSharpe": 0.17495806518904483,
+          "grossSharpe": 0.17495806518904483,
+          "breakEvenCostBps": 80890.01718350656,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.9317876207163515,
+          "hitRate": 0.5037392355340686,
+          "bars": 53500
+        },
+        {
+          "symbol": "linkusdt_1h",
+          "netSharpe": 0.08542139958488795,
+          "grossSharpe": 0.08542139958488795,
+          "breakEvenCostBps": 31495.7239939001,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.9999813084112149,
+          "meanAbsPosition": 0.9999813084112149,
+          "maxDrawdown": 0.9048001683598308,
+          "hitRate": 0.5012436859023419,
+          "bars": 53500
+        }
+      ],
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.14261710638069267,
+        "std": 0.03956872368941903,
+        "min": 0.08542139958488795,
+        "max": 0.192985891287263
+      },
+      "panelReadout": {
+        "label": "buy-and-hold",
+        "streams": 8,
+        "barsPerStream": 9600,
+        "foldLength": 50,
+        "dependence": {
+          "streams": 8,
+          "nClusters": 192,
+          "meanPairwiseStreamCorr": 0.7959086937208983,
+          "designEffect": 6.103661179037889,
+          "effectiveStreams": 1.2174038491036792,
+          "effectiveBars": 12582.6119352362,
+          "adjustmentNeeded": true,
+          "seCluster": 0.14152068658444938,
+          "seIid": 0.05728286329704875
+        },
+        "pooled": {
+          "netSharpe": -0.10837279496096049,
+          "dsr": 0.02914071321859707,
+          "dsrAdjusted": 0.22170656763262608,
+          "effectiveBars": 12583,
+          "psrAdjusted": 0.22170656763262608
+        }
+      }
+    },
+    "momentum": {
+      "perStream": [
+        {
+          "symbol": "candles",
+          "netSharpe": 0.14957545162963554,
+          "grossSharpe": 0.14957545162963554,
+          "breakEvenCostBps": 2.012633818829424,
+          "turnover": 9811.839416445982,
+          "tradeCount": 50429,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.501076383245768,
+          "maxDrawdown": 0.34842642725805484,
+          "hitRate": 0.4847680137639556,
+          "bars": 53500
+        },
+        {
+          "symbol": "ethusdt_1h",
+          "netSharpe": 0.16589196954587024,
+          "grossSharpe": 0.16589196954587024,
+          "breakEvenCostBps": 2.953933702683542,
+          "turnover": 9681.546308463034,
+          "tradeCount": 50491,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.5022764258071133,
+          "maxDrawdown": 0.3313991875769699,
+          "hitRate": 0.48527430581543296,
+          "bars": 53500
+        },
+        {
+          "symbol": "solusdt_1h",
+          "netSharpe": 0.04379926822985788,
+          "grossSharpe": 0.04379926822985788,
+          "breakEvenCostBps": 1.2138173287651213,
+          "turnover": 9888.755805899746,
+          "tradeCount": 50560,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.5050758183657142,
+          "maxDrawdown": 0.8319600344926211,
+          "hitRate": 0.48825519209327817,
+          "bars": 53500
+        },
+        {
+          "symbol": "bnbusdt_1h",
+          "netSharpe": 0.16263126153409002,
+          "grossSharpe": 0.16263126153409002,
+          "breakEvenCostBps": 2.937833352240514,
+          "turnover": 9969.145729512338,
+          "tradeCount": 50582,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.5013850432223018,
+          "maxDrawdown": 0.5879602641227657,
+          "hitRate": 0.48560986751941526,
+          "bars": 53500
+        },
+        {
+          "symbol": "xrpusdt_1h",
+          "netSharpe": 0.1344940817293063,
+          "grossSharpe": 0.1344940817293063,
+          "breakEvenCostBps": 3.19255590911891,
+          "turnover": 10086.728354513421,
+          "tradeCount": 50529,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.4975513464085434,
+          "maxDrawdown": 0.6377927928795867,
+          "hitRate": 0.4840367249782748,
+          "bars": 53500
+        },
+        {
+          "symbol": "adausdt_1h",
+          "netSharpe": 0.046624560804265684,
+          "grossSharpe": 0.046624560804265684,
+          "breakEvenCostBps": 1.0887970132101707,
+          "turnover": 10110.128743496121,
+          "tradeCount": 50625,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.4989741703360026,
+          "maxDrawdown": 0.7800407969847467,
+          "hitRate": 0.4867711765938399,
+          "bars": 53500
+        },
+        {
+          "symbol": "dogeusdt_1h",
+          "netSharpe": 0.10768654143200494,
+          "grossSharpe": 0.10768654143200494,
+          "breakEvenCostBps": 3.3631908480607673,
+          "turnover": 10228.98791464528,
+          "tradeCount": 50642,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.4975128739948537,
+          "maxDrawdown": 0.8578994310402548,
+          "hitRate": 0.48481012658227846,
+          "bars": 53500
+        },
+        {
+          "symbol": "linkusdt_1h",
+          "netSharpe": 0.07075853053138166,
+          "grossSharpe": 0.07075853053138166,
+          "breakEvenCostBps": 1.6364092436011046,
+          "turnover": 9970.128253453846,
+          "tradeCount": 50580,
+          "nonZeroFraction": 0.9995700934579439,
+          "meanAbsPosition": 0.5037619625680416,
+          "maxDrawdown": 0.7317292627899613,
+          "hitRate": 0.48949121396577466,
+          "bars": 53500
+        }
+      ],
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.11018270817955154,
+        "std": 0.05071502947191956,
+        "min": 0.04379926822985788,
+        "max": 0.16589196954587024
+      },
+      "meanBreakEvenCostBps": 2.2998964020636943,
+      "panelReadout": {
+        "label": "sig-momentum",
+        "streams": 8,
+        "barsPerStream": 9600,
+        "foldLength": 50,
+        "dependence": {
+          "streams": 8,
+          "nClusters": 192,
+          "meanPairwiseStreamCorr": 0.6339371841560268,
+          "designEffect": 4.92245110923739,
+          "effectiveStreams": 1.4712480551338616,
+          "effectiveBars": 15601.983299717978,
+          "adjustmentNeeded": true,
+          "seCluster": 0.1270915787721764,
+          "seIid": 0.05728304147388189
+        },
+        "pooled": {
+          "netSharpe": 0.1219500748407631,
+          "dsr": 0.9838867779394751,
+          "dsrAdjusted": 0.8327872949823588,
+          "effectiveBars": 15602,
+          "psrAdjusted": 0.8327872949823588
+        }
+      },
+      "coverage": {
+        "nonZeroFraction": 0.9995700934579439,
+        "turnoverPerBar": 0.1863253750617518
+      }
+    }
+  }
+}

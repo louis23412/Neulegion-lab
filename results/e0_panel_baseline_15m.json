@@ -1,0 +1,299 @@
+{
+  "config": {
+    "tf": "15m",
+    "symbols": 8,
+    "alignedBars": 79999,
+    "windowBars": 9600,
+    "maxClusters": 192,
+    "costBps": 0
+  },
+  "panel": {
+    "streams": 8,
+    "wholeSeriesMeanPairwiseReturnCorr": 0.7321981518534172
+  },
+  "arms": {
+    "buyAndHold": {
+      "perStream": [
+        {
+          "symbol": "btcusdt_15m",
+          "netSharpe": 0.037466297554391154,
+          "grossSharpe": 0.037466297554391154,
+          "breakEvenCostBps": 4680.5625647688175,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.5383758012582621,
+          "hitRate": 0.4991994596352538,
+          "bars": 79999
+        },
+        {
+          "symbol": "ethusdt_15m",
+          "netSharpe": 0.012964108559644633,
+          "grossSharpe": 0.012964108559644633,
+          "breakEvenCostBps": 2316.4175864306326,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.692701568689335,
+          "hitRate": 0.503259305598999,
+          "bars": 79999
+        },
+        {
+          "symbol": "solusdt_15m",
+          "netSharpe": 0.02108591211127582,
+          "grossSharpe": 0.02108591211127582,
+          "breakEvenCostBps": 4561.401141450232,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.794360175099249,
+          "hitRate": 0.5030122006783779,
+          "bars": 79999
+        },
+        {
+          "symbol": "bnbusdt_15m",
+          "netSharpe": 0.03988372831497776,
+          "grossSharpe": 0.03988372831497776,
+          "breakEvenCostBps": 5848.540979941969,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.6052266284812499,
+          "hitRate": 0.5071871174547887,
+          "bars": 79999
+        },
+        {
+          "symbol": "xrpusdt_15m",
+          "netSharpe": 0.08501867959762346,
+          "grossSharpe": 0.08501867959762346,
+          "breakEvenCostBps": 19749.40587211093,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.7291364445052577,
+          "hitRate": 0.4980294754983336,
+          "bars": 79999
+        },
+        {
+          "symbol": "adausdt_15m",
+          "netSharpe": 0.018630174561528344,
+          "grossSharpe": 0.018630174561528344,
+          "breakEvenCostBps": 4837.267860889556,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.8949557589049376,
+          "hitRate": 0.49592694443003166,
+          "bars": 79999
+        },
+        {
+          "symbol": "dogeusdt_15m",
+          "netSharpe": 0.021721041349716086,
+          "grossSharpe": 0.021721041349716086,
+          "breakEvenCostBps": 5341.326740472605,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.8577995008319472,
+          "hitRate": 0.5009857197017566,
+          "bars": 79999
+        },
+        {
+          "symbol": "linkusdt_15m",
+          "netSharpe": 0.03015864843850518,
+          "grossSharpe": 0.03015864843850518,
+          "breakEvenCostBps": 7475.7137647970485,
+          "turnover": 1,
+          "tradeCount": 1,
+          "nonZeroFraction": 0.999987499843748,
+          "meanAbsPosition": 0.999987499843748,
+          "maxDrawdown": 0.7716282092947603,
+          "hitRate": 0.4956991723446622,
+          "bars": 79999
+        }
+      ],
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.033366073810957804,
+        "std": 0.022857843237376534,
+        "min": 0.012964108559644633,
+        "max": 0.08501867959762346
+      },
+      "panelReadout": {
+        "label": "buy-and-hold",
+        "streams": 8,
+        "barsPerStream": 9600,
+        "foldLength": 50,
+        "dependence": {
+          "streams": 8,
+          "nClusters": 192,
+          "meanPairwiseStreamCorr": 0.7548662506308018,
+          "designEffect": 4.706089831797163,
+          "effectiveStreams": 1.2730615589917675,
+          "effectiveBars": 16319.280495049878,
+          "adjustmentNeeded": true,
+          "seCluster": 0.12426924167646625,
+          "seIid": 0.057284027124337465
+        },
+        "pooled": {
+          "netSharpe": 0.17952331767794197,
+          "dsr": 0.9990864699225558,
+          "dsrAdjusted": 0.9246116940011418,
+          "effectiveBars": 16319,
+          "psrAdjusted": 0.9246116940011418
+        }
+      }
+    },
+    "momentum": {
+      "perStream": [
+        {
+          "symbol": "btcusdt_15m",
+          "netSharpe": -0.00952540878319569,
+          "grossSharpe": -0.00952540878319569,
+          "breakEvenCostBps": -0.04923201994369128,
+          "turnover": 15407.85833205558,
+          "tradeCount": 75654,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.4972405276468,
+          "maxDrawdown": 0.369898068874941,
+          "hitRate": 0.48830138631700115,
+          "bars": 79999
+        },
+        {
+          "symbol": "ethusdt_15m",
+          "netSharpe": 0.05187688097770704,
+          "grossSharpe": 0.05187688097770704,
+          "breakEvenCostBps": 0.3878507588348437,
+          "turnover": 15212.553819249679,
+          "tradeCount": 75698,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.4975781899632281,
+          "maxDrawdown": 0.36713160078074836,
+          "hitRate": 0.4849505024842622,
+          "bars": 79999
+        },
+        {
+          "symbol": "solusdt_15m",
+          "netSharpe": -0.07350569365714052,
+          "grossSharpe": -0.07350569365714052,
+          "breakEvenCostBps": -0.6486532722028094,
+          "turnover": 15375.041462012021,
+          "tradeCount": 75631,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.5000756169825009,
+          "maxDrawdown": 0.773367348192473,
+          "hitRate": 0.487574533807649,
+          "bars": 79999
+        },
+        {
+          "symbol": "bnbusdt_15m",
+          "netSharpe": -0.030356502775760467,
+          "grossSharpe": -0.030356502775760467,
+          "breakEvenCostBps": -0.18809627591855285,
+          "turnover": 15380.418632709037,
+          "tradeCount": 75667,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.49587549369662964,
+          "maxDrawdown": 0.407034801414089,
+          "hitRate": 0.49105621268162136,
+          "bars": 79999
+        },
+        {
+          "symbol": "xrpusdt_15m",
+          "netSharpe": -0.05533950206837089,
+          "grossSharpe": -0.05533950206837089,
+          "breakEvenCostBps": -0.5538062495052415,
+          "turnover": 15519.381063939067,
+          "tradeCount": 75688,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.49546596960848793,
+          "maxDrawdown": 0.7982873423534731,
+          "hitRate": 0.48526447883789026,
+          "bars": 79999
+        },
+        {
+          "symbol": "adausdt_15m",
+          "netSharpe": -0.06399664966557995,
+          "grossSharpe": -0.06399664966557995,
+          "breakEvenCostBps": -0.7102536793635353,
+          "turnover": 15694.791490397558,
+          "tradeCount": 75698,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.4980028052298956,
+          "maxDrawdown": 0.8496922640118395,
+          "hitRate": 0.48875741180439325,
+          "bars": 79999
+        },
+        {
+          "symbol": "dogeusdt_15m",
+          "netSharpe": -0.04481891591586933,
+          "grossSharpe": -0.04481891591586933,
+          "breakEvenCostBps": -0.4537087371492951,
+          "turnover": 15555.491638965059,
+          "tradeCount": 75723,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.49730867556814645,
+          "maxDrawdown": 0.7273969875057039,
+          "hitRate": 0.4861581635232846,
+          "bars": 79999
+        },
+        {
+          "symbol": "linkusdt_15m",
+          "netSharpe": -0.07343027854347205,
+          "grossSharpe": -0.07343027854347205,
+          "breakEvenCostBps": -0.7639562491247304,
+          "turnover": 15820.290766463067,
+          "tradeCount": 75701,
+          "nonZeroFraction": 0.9997124964062051,
+          "meanAbsPosition": 0.49823716120768924,
+          "maxDrawdown": 0.8714084874520622,
+          "hitRate": 0.4878389181718405,
+          "bars": 79999
+        }
+      ],
+      "meanSharpe": {
+        "n": 8,
+        "mean": -0.03738700880396023,
+        "std": 0.04222899092741682,
+        "min": -0.07350569365714052,
+        "max": 0.05187688097770704
+      },
+      "meanBreakEvenCostBps": -0.37248196554662655,
+      "panelReadout": {
+        "label": "sig-momentum",
+        "streams": 8,
+        "barsPerStream": 9600,
+        "foldLength": 50,
+        "dependence": {
+          "streams": 8,
+          "nClusters": 192,
+          "meanPairwiseStreamCorr": 0.5043757823923368,
+          "designEffect": 3.620977282069672,
+          "effectiveStreams": 1.7657586600938477,
+          "effectiveBars": 21209.74367342697,
+          "adjustmentNeeded": true,
+          "seCluster": 0.10900380043992754,
+          "seIid": 0.057283393767404905
+        },
+        "pooled": {
+          "netSharpe": -0.14520078792971336,
+          "dsr": 0.005537449374301007,
+          "dsrAdjusted": 0.0909428384269737,
+          "effectiveBars": 21210,
+          "psrAdjusted": 0.0909428384269737
+        }
+      },
+      "coverage": {
+        "nonZeroFraction": 0.999712496406205,
+        "turnoverPerBar": 0.19369902624687665
+      }
+    }
+  }
+}

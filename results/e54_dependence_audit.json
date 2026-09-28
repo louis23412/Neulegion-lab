@@ -1,0 +1,245 @@
+{
+  "config": {
+    "K": 8,
+    "periodsPerYear": 252,
+    "equiTrials": 25,
+    "identicalTrials": 25,
+    "negativeTrials": 25,
+    "noise36Trials": 120,
+    "noise288Trials": 40
+  },
+  "closedForm": {
+    "equicorrelation": [
+      {
+        "rho": 0,
+        "meanDE": 0.989,
+        "sdDE": 0.204,
+        "se": 0.041,
+        "tol": 0.2,
+        "closedForm": 1,
+        "gap": -0.011
+      },
+      {
+        "rho": 0.25,
+        "meanDE": 2.751,
+        "sdDE": 0.618,
+        "se": 0.124,
+        "tol": 0.309,
+        "closedForm": 2.75,
+        "gap": 0.001
+      },
+      {
+        "rho": 0.5,
+        "meanDE": 4.439,
+        "sdDE": 1.049,
+        "se": 0.21,
+        "tol": 0.525,
+        "closedForm": 4.5,
+        "gap": -0.061
+      },
+      {
+        "rho": 0.75,
+        "meanDE": 6.101,
+        "sdDE": 1.457,
+        "se": 0.291,
+        "tol": 0.729,
+        "closedForm": 6.25,
+        "gap": -0.149
+      },
+      {
+        "rho": 0.95,
+        "meanDE": 7.399,
+        "sdDE": 1.753,
+        "se": 0.351,
+        "tol": 0.876,
+        "closedForm": 7.65,
+        "gap": -0.251
+      }
+    ],
+    "identicalStreams": [
+      {
+        "K": 2,
+        "fold": 40,
+        "meanDE": 2.139,
+        "sdDE": 0.28,
+        "se": 0.056,
+        "tol": 0.2,
+        "closedForm": 2,
+        "gap": 0.139
+      },
+      {
+        "K": 2,
+        "fold": 100,
+        "meanDE": 2.03,
+        "sdDE": 0.552,
+        "se": 0.11,
+        "tol": 0.276,
+        "closedForm": 2,
+        "gap": 0.03
+      },
+      {
+        "K": 4,
+        "fold": 40,
+        "meanDE": 3.75,
+        "sdDE": 0.694,
+        "se": 0.139,
+        "tol": 0.347,
+        "closedForm": 4,
+        "gap": -0.25
+      },
+      {
+        "K": 4,
+        "fold": 100,
+        "meanDE": 4.017,
+        "sdDE": 1.142,
+        "se": 0.228,
+        "tol": 0.571,
+        "closedForm": 4,
+        "gap": 0.017
+      },
+      {
+        "K": 8,
+        "fold": 40,
+        "meanDE": 8.318,
+        "sdDE": 1.412,
+        "se": 0.282,
+        "tol": 0.706,
+        "closedForm": 8,
+        "gap": 0.318
+      },
+      {
+        "K": 8,
+        "fold": 100,
+        "meanDE": 8.069,
+        "sdDE": 2.638,
+        "se": 0.528,
+        "tol": 1.319,
+        "closedForm": 8,
+        "gap": 0.069
+      }
+    ],
+    "negativePairs": [
+      {
+        "rho": -0.2,
+        "meanDE": 0.909,
+        "sdDE": 0.236,
+        "se": 0.047,
+        "tol": 0.15,
+        "closedForm": 0.8,
+        "gap": 0.109
+      },
+      {
+        "rho": -0.5,
+        "meanDE": 0.571,
+        "sdDE": 0.148,
+        "se": 0.03,
+        "tol": 0.15,
+        "closedForm": 0.5,
+        "gap": 0.071
+      },
+      {
+        "rho": -0.8,
+        "meanDE": 0.228,
+        "sdDE": 0.058,
+        "se": 0.012,
+        "tol": 0.15,
+        "closedForm": 0.2,
+        "gap": 0.028
+      }
+    ],
+    "maxGap": 0.318,
+    "biased": []
+  },
+  "noise": {
+    "c36": {
+      "C": 36,
+      "trials": 120,
+      "meanDE": 1.001,
+      "sdDE": 0.243,
+      "p05": 0.644,
+      "p50": 0.977,
+      "p95": 1.452,
+      "band90": 0.808
+    },
+    "c288": {
+      "C": 288,
+      "trials": 40,
+      "meanDE": 1.016,
+      "sdDE": 0.097,
+      "p05": 0.899,
+      "p50": 0.993,
+      "p95": 1.231,
+      "band90": 0.332
+    },
+    "labSerialIid": [
+      {
+        "fold": 50,
+        "meanDE": 1.008,
+        "sdDE": 0.075
+      },
+      {
+        "fold": 100,
+        "meanDE": 0.98,
+        "sdDE": 0.151
+      },
+      {
+        "fold": 250,
+        "meanDE": 1.062,
+        "sdDE": 0.294
+      }
+    ]
+  },
+  "bounds": {
+    "diversifying": {
+      "meanDE": 0.506,
+      "rawBars": 2400,
+      "exceedFraction": 1,
+      "maxEffectiveBars": 8210
+    },
+    "hedgedExact": {
+      "designEffect": 4.7109441551292897e-32,
+      "effectiveBars": 3.396346777445696e+34,
+      "rawBars": 1600,
+      "adjustmentNeeded": false
+    },
+    "dsrPath": {
+      "acceptsEffectiveBars": false,
+      "effectiveBarsUsed": null,
+      "dsrAdjusted": null,
+      "rawBars": 1600,
+      "note": "backtestMetrics requires 2 <= effectiveBars < n, so an exploded n/DE is declined (L10-i)"
+    }
+  },
+  "validation": {
+    "noDetectableBias": true,
+    "equicorrelationMatches": true,
+    "identicalMatchesK": true,
+    "negativeMatchesForm": true,
+    "noiseCentred": true,
+    "labMirrorCentred": true,
+    "noiseBandShrinks": true,
+    "noiseBandBounded": true,
+    "diversifyingBelowOne": true,
+    "hedgedExplodes": true,
+    "dsrDeclinesToAdjust": true
+  },
+  "verdict": {
+    "note": "L10-f/L10-i: the dependence estimator is UNBIASED (ensemble means match 1+(K-1)*rho, K, 1+rho and 1 to within 2.5 SE; no detectable bias) but carries ~±25% ensemble noise at C=36 folds, and `effectiveBars = n/DE` is UNBOUNDED on a hedged panel (DE is a squared ratio, so the `> 0` guard passes at DE~1e-32); the DSR path declines to adjust.",
+    "maxClosedFormGap": 0.318,
+    "biasedRows": [],
+    "checks": {
+      "noDetectableBias": true,
+      "equicorrelationMatches": true,
+      "identicalMatchesK": true,
+      "negativeMatchesForm": true,
+      "noiseCentred": true,
+      "labMirrorCentred": true,
+      "noiseBandShrinks": true,
+      "noiseBandBounded": true,
+      "diversifyingBelowOne": true,
+      "hedgedExplodes": true,
+      "dsrDeclinesToAdjust": true
+    },
+    "validationPass": true
+  }
+}

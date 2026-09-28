@@ -1,0 +1,72 @@
+{
+  "config": {
+    "tf": "1h",
+    "totalBars": 53500,
+    "streams": 8,
+    "trainSize": 60,
+    "testSize": 15,
+    "costBps": 0
+  },
+  "windows": {
+    "600": {
+      "bars": 600,
+      "foldsPerStream": 36,
+      "testBarsPerStream": 540,
+      "pooledBars": 4320,
+      "abPooledNetSharpe": 1.1058928743533705,
+      "abMeanFoldSharpe": 0.6356870482154017,
+      "abDsrAdjusted": 0.9952312792989098,
+      "abDesignEffect": 3.6638825310570047,
+      "abEffectiveStreams": 1.7132092257357325,
+      "contiguousMeanSharpe": 1.2674342821222948,
+      "contiguousPooledNetSharpe": 1.190479971591213,
+      "contiguousDesignEffect": 4.480522274526872,
+      "agreement": 0.08458709723784263
+    },
+    "2400": {
+      "bars": 2400,
+      "foldsPerStream": 156,
+      "testBarsPerStream": 2340,
+      "pooledBars": 18720,
+      "abPooledNetSharpe": 0.005829994308526391,
+      "abMeanFoldSharpe": -0.7225023655030886,
+      "abDsrAdjusted": 0.509209049026671,
+      "abDesignEffect": 4.735703433823041,
+      "abEffectiveStreams": 1.6137390425420974,
+      "contiguousMeanSharpe": -0.008267796893547941,
+      "contiguousPooledNetSharpe": -0.00920362338691613,
+      "contiguousDesignEffect": 5.310620840996822,
+      "agreement": 0.015033617695442522
+    },
+    "9600": {
+      "bars": 9600,
+      "foldsPerStream": 636,
+      "testBarsPerStream": 9540,
+      "pooledBars": 76320,
+      "abPooledNetSharpe": 0.11036601045063671,
+      "abMeanFoldSharpe": -0.5801396270475079,
+      "abDsrAdjusted": 0.8053180715598935,
+      "abDesignEffect": 5.035277283076355,
+      "abEffectiveStreams": 1.5407846134985859,
+      "contiguousMeanSharpe": 0.1222849396024692,
+      "contiguousPooledNetSharpe": 0.12218113525848714,
+      "contiguousDesignEffect": 4.921802152567523,
+      "agreement": 0.011815124807850436
+    },
+    "full": {
+      "bars": 53500,
+      "foldsPerStream": 3562,
+      "testBarsPerStream": 53430,
+      "pooledBars": 427440,
+      "abPooledNetSharpe": 0.10909430083307585,
+      "abMeanFoldSharpe": -0.6913974907443956,
+      "abDsrAdjusted": 0.9950589505311316,
+      "abDesignEffect": 3.073466380625187,
+      "abEffectiveStreams": 1.892705998542113,
+      "contiguousMeanSharpe": 0.11018270817955486,
+      "contiguousPooledNetSharpe": 0.12195007484078929,
+      "contiguousDesignEffect": 4.922451109237731,
+      "agreement": 0.012855774007713441
+    }
+  }
+}

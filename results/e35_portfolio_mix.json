@@ -1,0 +1,329 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5247,
+    "firstTop": 1309,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "carrySpec": {
+      "lam": 0.02,
+      "cap": 0.125
+    },
+    "fadeSpec": {
+      "lam": 0.1,
+      "cap": 0.125
+    },
+    "mixGrid": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.75,
+      1
+    ],
+    "ebarCarry": 0.7026,
+    "ebarFade": 0.7
+  },
+  "validation": {
+    "carryFullNet4": 6.493485705053514,
+    "fadeFullNet4": 1.001792242059737,
+    "e31PinnedOosNet4": 6.86,
+    "e32PinnedOosNet4": 1.11,
+    "e34CarryOiMean": 24033986,
+    "e34FadeOiMean": 31857219,
+    "carryOiMeanRelDiff": 0.0131,
+    "fadeOiMeanRelDiff": 0.0001,
+    "matchesE34": true,
+    "note": "Read-only cross-checks: e31/e32 pinned specs were computed on their own OOS spans, so only the sign/magnitude is expected to agree. The hard guard is that each book's INDIVIDUAL OI schedule mean reproduces e34's stored `meanGcap` for the same spec within 5 % - which checks the weights, the grid, the OI join and the unit convention all at once."
+  },
+  "carry": {
+    "fullNet4": 6.493,
+    "secondHalfNet4": 4.662,
+    "turnoverAnnual": 10,
+    "breakEvenBps": 31.92
+  },
+  "fade": {
+    "fullNet4": 1.002,
+    "turnoverAnnual": 13,
+    "breakEvenBps": 109.3
+  },
+  "correlation": 0.01,
+  "maxSharpeMix": {
+    "fadeFrac": 7.101,
+    "carryFrac": 1689.612,
+    "normalizedFadeFrac": 0.004
+  },
+  "mixes": [
+    {
+      "fadeFrac": 0,
+      "carryFrac": 1,
+      "grossSharpe": 7.426368362872004,
+      "net4Sharpe": 6.493485705053514,
+      "h1Net4": 7.968087237478757,
+      "h2Net4": 4.6624703679028485
+    },
+    {
+      "fadeFrac": 0.05,
+      "carryFrac": 0.95,
+      "grossSharpe": 4.745371573381792,
+      "net4Sharpe": 4.228461261880124,
+      "h1Net4": 5.630485744495207,
+      "h2Net4": 2.4643906103739637
+    },
+    {
+      "fadeFrac": 0.1,
+      "carryFrac": 0.9,
+      "grossSharpe": 3.0602549216044292,
+      "net4Sharpe": 2.7650428524351143,
+      "h1Net4": 3.7870142128929705,
+      "h2Net4": 1.531440567752703
+    },
+    {
+      "fadeFrac": 0.15,
+      "carryFrac": 0.85,
+      "grossSharpe": 2.3535846843236894,
+      "net4Sharpe": 2.1492438911542506,
+      "h1Net4": 2.9658354341781537,
+      "h2Net4": 1.1756014192799877
+    },
+    {
+      "fadeFrac": 0.2,
+      "carryFrac": 0.8,
+      "grossSharpe": 1.9787387466235111,
+      "net4Sharpe": 1.8221845627433764,
+      "h1Net4": 2.5219296473025463,
+      "h2Net4": 0.991912191668211
+    },
+    {
+      "fadeFrac": 0.25,
+      "carryFrac": 0.75,
+      "grossSharpe": 1.7483471804835582,
+      "net4Sharpe": 1.6210302194329183,
+      "h1Net4": 2.246790229399484,
+      "h2Net4": 0.8803142307566634
+    },
+    {
+      "fadeFrac": 0.3,
+      "carryFrac": 0.7,
+      "grossSharpe": 1.5928499403070624,
+      "net4Sharpe": 1.4852101256149304,
+      "h1Net4": 2.06024396456732,
+      "h2Net4": 0.8054543452514727
+    },
+    {
+      "fadeFrac": 0.4,
+      "carryFrac": 0.6,
+      "grossSharpe": 1.3966853106969501,
+      "net4Sharpe": 1.3138060300675993,
+      "h1Net4": 1.8240625566278879,
+      "h2Net4": 0.711461514901957
+    },
+    {
+      "fadeFrac": 0.5,
+      "carryFrac": 0.5,
+      "grossSharpe": 1.278184926284389,
+      "net4Sharpe": 1.2102297354173386,
+      "h1Net4": 1.6809861644843642,
+      "h2Net4": 0.6548867473998167
+    },
+    {
+      "fadeFrac": 0.6,
+      "carryFrac": 0.4,
+      "grossSharpe": 1.1989058083204367,
+      "net4Sharpe": 1.1409212530788115,
+      "h1Net4": 1.585115646006192,
+      "h2Net4": 0.6171110106037548
+    },
+    {
+      "fadeFrac": 0.75,
+      "carryFrac": 0.25,
+      "grossSharpe": 1.1194350424814006,
+      "net4Sharpe": 1.0714341497172324,
+      "h1Net4": 1.4889041752041623,
+      "h2Net4": 0.5792965677793407
+    },
+    {
+      "fadeFrac": 1,
+      "carryFrac": 0,
+      "grossSharpe": 1.0397998690080428,
+      "net4Sharpe": 1.001792242059737,
+      "h1Net4": 1.3923936163764188,
+      "h2Net4": 0.5414508791927436
+    }
+  ],
+  "walkForward": {
+    "span": 4015,
+    "net4": 6.59,
+    "picks": [
+      {
+        "at": "2022-12-03",
+        "fadeFrac": 0,
+        "trailingNet4": 7.07
+      },
+      {
+        "at": "2023-04-05",
+        "fadeFrac": 0,
+        "trailingNet4": 8.07
+      },
+      {
+        "at": "2023-08-05",
+        "fadeFrac": 0,
+        "trailingNet4": 8.29
+      },
+      {
+        "at": "2023-12-05",
+        "fadeFrac": 0,
+        "trailingNet4": 6.27
+      },
+      {
+        "at": "2024-04-04",
+        "fadeFrac": 0,
+        "trailingNet4": 9.71
+      },
+      {
+        "at": "2024-08-04",
+        "fadeFrac": 0,
+        "trailingNet4": 10.85
+      },
+      {
+        "at": "2024-12-04",
+        "fadeFrac": 0,
+        "trailingNet4": 11.11
+      },
+      {
+        "at": "2025-04-04",
+        "fadeFrac": 0,
+        "trailingNet4": 6.35
+      },
+      {
+        "at": "2025-08-04",
+        "fadeFrac": 0,
+        "trailingNet4": 4.63
+      },
+      {
+        "at": "2025-12-04",
+        "fadeFrac": 0,
+        "trailingNet4": 4.63
+      },
+      {
+        "at": "2026-04-04",
+        "fadeFrac": 0,
+        "trailingNet4": 4.22
+      }
+    ],
+    "pinned25": 1.67,
+    "pinned0": 6.59,
+    "pinned50": 1.3
+  },
+  "capacity": {
+    "carryIndividual": {
+      "n": 5175,
+      "mean": 23718023.097011425,
+      "p5": 11136324.54438133,
+      "median": 20737827.443205945,
+      "p95": 50777602.069273844,
+      "min": 8079033.665985278
+    },
+    "fadeIndividual": {
+      "n": 5175,
+      "mean": 31852563.707827162,
+      "p5": 11018952.134199662,
+      "median": 22111881.505890515,
+      "p95": 93839555.76843446,
+      "min": 8837077.502746027
+    },
+    "joint_fade25": {
+      "n": 5175,
+      "mean": 31318758.691414785,
+      "p5": 11514003.287799153,
+      "median": 28043303.7641022,
+      "p95": 65453028.22713736,
+      "min": 9658195.532325996
+    },
+    "joint_fade50": {
+      "n": 5175,
+      "mean": 44971756.42280791,
+      "p5": 11717286.809116615,
+      "median": 31424674.63946926,
+      "p95": 115857357.22029686,
+      "min": 9649134.96343522
+    },
+    "bothAtIndividual": {
+      "periods": 5175,
+      "breachFrac": 0.784,
+      "peakParticipation": 0.1,
+      "medianParticipation": 0.081,
+      "bindingSymbols": {
+        "linkusdt": 1692,
+        "dogeusdt": 635,
+        "adausdt": 2707,
+        "xrpusdt": 38,
+        "solusdt": 60,
+        "bnbusdt": 43
+      }
+    },
+    "bindingSymbols": {
+      "a0.25": {
+        "linkusdt": 3423,
+        "dogeusdt": 189,
+        "adausdt": 1571,
+        "solusdt": 5
+      },
+      "a0.5": {
+        "linkusdt": 2013,
+        "dogeusdt": 457,
+        "adausdt": 2639,
+        "xrpusdt": 23,
+        "solusdt": 56
+      }
+    },
+    "linkAlignment": {
+      "symbol": "linkusdt",
+      "periods": 5247,
+      "sameSignFrac": 0.512,
+      "weightCorr": -0.197
+    }
+  },
+  "verdict": {
+    "note": "Falsifier (a): F-31 survives only if the 25 % mix net@4 second half is positive AND the carry book alone is still negative in that half (i.e. there is something to hedge). Falsifier (b): the capacities add only if the joint bound at the mix is >= the individual bounds summed.",
+    "carryFullNet4": 6.49,
+    "fadeFullNet4": 1,
+    "carrySecondHalfNet4": 4.66,
+    "mix25SecondHalfNet4": 0.88,
+    "mix25Net4": 1.62,
+    "f31SurvivesRespec": false,
+    "mixingHelpsSharpe": false,
+    "carryIndividualMean": 23718023.097011425,
+    "fadeIndividualMean": 31852563.707827162,
+    "sumOfIndividualMeans": 55570586.80483858,
+    "jointMean_fade25": 31318758.691414785,
+    "jointOverSum": 0.564,
+    "capacitiesAdd": false,
+    "bothAtIndividualBreachFrac": 0.784,
+    "bothAtIndividualPeak": 0.1,
+    "linkAlignment": {
+      "symbol": "linkusdt",
+      "periods": 5247,
+      "sameSignFrac": 0.512,
+      "weightCorr": -0.197
+    },
+    "validationPass": true
+  }
+}

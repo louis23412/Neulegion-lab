@@ -1,0 +1,228 @@
+{
+  "config": {
+    "symbols": 8,
+    "perp": "mark",
+    "periods": 6557,
+    "lookback": 1095,
+    "block": 365,
+    "lambdas": [
+      0.005,
+      0.0075,
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15
+    ],
+    "caps": [
+      null,
+      0.1,
+      0.125,
+      0.15
+    ],
+    "combos": 40
+  },
+  "validation": {
+    "specRecentNet4": -0.58,
+    "specRecentBreakEvenBps": 3.68,
+    "matchesE28": true,
+    "note": "the F-24 spec must still read recent net@4 < 0 and break-even < 4.5 bps (e28/F-36)."
+  },
+  "walkForward": {
+    "start": 1095,
+    "span": 5110,
+    "picks": [
+      {
+        "at": "2021-09-20",
+        "lambda": 0.075,
+        "cap": 0.1,
+        "trailingNet4": 9.66
+      },
+      {
+        "at": "2022-01-20",
+        "lambda": 0.15,
+        "cap": null,
+        "trailingNet4": 9.98
+      },
+      {
+        "at": "2022-05-22",
+        "lambda": 0.03,
+        "cap": null,
+        "trailingNet4": 7.42
+      },
+      {
+        "at": "2022-09-22",
+        "lambda": 0.03,
+        "cap": null,
+        "trailingNet4": 7.83
+      },
+      {
+        "at": "2023-01-23",
+        "lambda": 0.02,
+        "cap": null,
+        "trailingNet4": 7.7
+      },
+      {
+        "at": "2023-05-26",
+        "lambda": 0.015,
+        "cap": null,
+        "trailingNet4": 8.88
+      },
+      {
+        "at": "2023-09-24",
+        "lambda": 0.015,
+        "cap": null,
+        "trailingNet4": 8.72
+      },
+      {
+        "at": "2024-01-24",
+        "lambda": 0.005,
+        "cap": null,
+        "trailingNet4": 8.44
+      },
+      {
+        "at": "2024-05-25",
+        "lambda": 0.03,
+        "cap": 0.1,
+        "trailingNet4": 10.39
+      },
+      {
+        "at": "2024-09-23",
+        "lambda": 0.02,
+        "cap": 0.1,
+        "trailingNet4": 10.98
+      },
+      {
+        "at": "2025-01-23",
+        "lambda": 0.015,
+        "cap": 0.1,
+        "trailingNet4": 10.35
+      },
+      {
+        "at": "2025-05-25",
+        "lambda": 0.0075,
+        "cap": 0.1,
+        "trailingNet4": 5.83
+      },
+      {
+        "at": "2025-09-23",
+        "lambda": 0.0075,
+        "cap": 0.1,
+        "trailingNet4": 5.8
+      },
+      {
+        "at": "2026-01-23",
+        "lambda": 0.0075,
+        "cap": 0.1,
+        "trailingNet4": 4.86
+      }
+    ],
+    "pickFrequency": {
+      "0.075+cap0.1": 1,
+      "0.15": 1,
+      "0.03": 2,
+      "0.02": 1,
+      "0.015": 2,
+      "0.005": 1,
+      "0.03+cap0.1": 1,
+      "0.02+cap0.1": 1,
+      "0.015+cap0.1": 1,
+      "0.0075+cap0.1": 3
+    }
+  },
+  "feeStress": {
+    "2bps": {
+      "oosNetSharpe": 6.69,
+      "recent24mNetSharpe": 4.94,
+      "breakEvenBps": 25.81
+    },
+    "4bps": {
+      "oosNetSharpe": 6.13,
+      "recent24mNetSharpe": 4.49,
+      "breakEvenBps": 25.81
+    },
+    "6bps": {
+      "oosNetSharpe": 5.57,
+      "recent24mNetSharpe": 4.03,
+      "breakEvenBps": 25.81
+    },
+    "8bps": {
+      "oosNetSharpe": 5,
+      "recent24mNetSharpe": 3.57,
+      "breakEvenBps": 25.81
+    },
+    "10bps": {
+      "oosNetSharpe": 4.43,
+      "recent24mNetSharpe": 3.12,
+      "breakEvenBps": 25.81
+    }
+  },
+  "pinned": {
+    "F24_spec_lam0.1": {
+      "lambda": 0.1,
+      "cap": null,
+      "oosNet4Sharpe": 2.76,
+      "oosRecent24mNet4": -0.53,
+      "net4At6bps": 1.82,
+      "breakEvenBps": 9.88,
+      "turnoverAnnual": 84
+    },
+    "lam0.02_plain": {
+      "lambda": 0.02,
+      "cap": null,
+      "oosNet4Sharpe": 6.63,
+      "oosRecent24mNet4": 3.43,
+      "net4At6bps": 6.18,
+      "breakEvenBps": 33.98,
+      "turnoverAnnual": 17
+    },
+    "lam0.02_cap12.5": {
+      "lambda": 0.02,
+      "cap": 0.125,
+      "oosNet4Sharpe": 6.86,
+      "oosRecent24mNet4": 4.3,
+      "net4At6bps": 6.42,
+      "breakEvenBps": 35.69,
+      "turnoverAnnual": 10
+    },
+    "lam0.05_cap12.5": {
+      "lambda": 0.05,
+      "cap": 0.125,
+      "oosNet4Sharpe": 4.58,
+      "oosRecent24mNet4": 2.71,
+      "net4At6bps": 3.9,
+      "breakEvenBps": 17.48,
+      "turnoverAnnual": 24
+    },
+    "lam0.1_cap12.5": {
+      "lambda": 0.1,
+      "cap": 0.125,
+      "oosNet4Sharpe": 1.93,
+      "oosRecent24mNet4": -0.22,
+      "net4At6bps": 1.33,
+      "breakEvenBps": 10.38,
+      "turnoverAnnual": 49
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: not robust enough to port if the joint walk-forward fails to beat the pinned F-24 spec OOS, or if its OOS recent-24m net@4 <= 0 at a 6 bps fee.",
+    "walkForwardOosNet4": 6.13,
+    "walkForwardRecent24mNet4": 4.49,
+    "walkForwardBreakEvenBps": 25.81,
+    "pinnedSpecOosNet4": 2.76,
+    "bestPinnedOosNet4": 6.86,
+    "oosNet4At2bps": 6.69,
+    "oosNet4At6bps": 5.57,
+    "recent24mNet4At6bps": 4.03,
+    "oosNet4At10bps": 4.43,
+    "minOosNetAcrossFees": 4.43,
+    "minRecent24mNetAcrossFees": 3.12,
+    "beatsPinnedSpecOOS": true,
+    "marginAt6bpsPositive": true,
+    "validationPass": true,
+    "portReady": true
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5175,
+    "feeBps": 4,
+    "f": 0.05,
+    "ebarCarry": 0.7026,
+    "ebarFade": 0.7
+  },
+  "validation": {
+    "e34CarryOiMean": 24033986,
+    "e34FadeOiMean": 31857219,
+    "carryOiMeanRelDiff": 0.0045,
+    "fadeOiMeanRelDiff": 0.0114,
+    "lpAtLeastLargerIndividual": true,
+    "matchesE34": true,
+    "note": "The LP optimum must be >= the larger individual bound (an axis is feasible - it may exceed their sum, because the books' positions net in some symbols); and each individual bound mean must reproduce e34's stored meanGcap to 5 %.",
+    "validationPass": true
+  },
+  "frontier": {
+    "lpTotalGross": {
+      "n": 5175,
+      "mean": 62719815.68796937,
+      "p5": 11931703.981984312,
+      "median": 37113104.10124118,
+      "p95": 166390582.4061989,
+      "p99": 624281899.3538268
+    },
+    "individualCarry": {
+      "n": 5175,
+      "mean": 24143050.63649501,
+      "p5": 10256709.325575946,
+      "median": 20129075.171877142,
+      "p95": 57922950.43555182,
+      "p99": 71024080.69728252
+    },
+    "individualFade": {
+      "n": 5175,
+      "mean": 31494566.75401179,
+      "p5": 10754100.803810788,
+      "median": 22223913.422206733,
+      "p95": 86806766.36623457,
+      "p99": 125024808.91724259
+    },
+    "proportional25": {
+      "n": 5158,
+      "mean": 31300776.844004393,
+      "p5": 11506594.726318646,
+      "median": 28003820.54967778,
+      "p95": 65492374.848119825,
+      "p99": 95702369.11945388
+    }
+  },
+  "optimalSplit": {
+    "fadeShareMean": 0.595,
+    "fadeShareP5": 0,
+    "fadeShareP95": 1
+  },
+  "bindingSymbols": {
+    "linkusdt": 1713,
+    "xrpusdt": 159,
+    "dogeusdt": 606,
+    "bnbusdt": 176,
+    "adausdt": 2448,
+    "solusdt": 73
+  },
+  "schedule": {
+    "grossMean": 62719815.68796937,
+    "grossP5": 11931703.981984312,
+    "grossMedian": 37113104.10124118,
+    "net4Sharpe": 0.62,
+    "grossSharpe": 0.7,
+    "turnoverAnnualFractionOfGross": 48.5,
+    "grossPnlAnnual": 11005264.83266076
+  },
+  "verdict": {
+    "note": "Falsifier: the joint schedule is \"just the sum\" (F-43 overstated) if the LP MEAN total gross is within 5 % of the sum of the individual bounds. NB the LP is free to pick the split, so it can exploit cross-symbol netting; compare the median too, and the schedule Sharpe for churn.",
+    "lpMeanTotalGross": 62719816,
+    "lpMedianTotalGross": 37113104,
+    "sumOfIndividualMeans": 55637617,
+    "sumOfIndividualMedians": 42352989,
+    "lpOverSumMean": 1.127,
+    "lpOverSumMedian": 0.876,
+    "proportional25Mean": 31300777,
+    "lpOverProportional25": 2.004,
+    "lpMeanWithin5PctOfSum": true,
+    "optimalFadeShareMean": 0.595,
+    "lpScheduledNet4Sharpe": 0.62,
+    "lpScheduledTurnoverFractionOfGross": 48.5,
+    "validationPass": true
+  }
+}

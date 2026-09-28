@@ -1,0 +1,347 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6557,
+    "lambda": 0.02,
+    "cap": 0.125,
+    "invK": 0.125,
+    "feeBps": 4,
+    "f": 0.05
+  },
+  "validation": {
+    "base": {
+      "e30Net4": 4.92,
+      "here": 4.92,
+      "e30Turnover": 17,
+      "hereTurnover": 17,
+      "e30Oi5": 20415294,
+      "hereOi5": 20415294
+    },
+    "hard_0.125": {
+      "e30Net4": 6.18,
+      "here": 6.18,
+      "e30Turnover": 10,
+      "hereTurnover": 10,
+      "e30Oi5": 35937181,
+      "hereOi5": 35937181
+    },
+    "matchesE30": true,
+    "note": "base and hard_0.125 must reproduce e30 exactly."
+  },
+  "table": {
+    "base": {
+      "kind": "base",
+      "grossSharpe": 5.48,
+      "net4Sharpe": 4.92,
+      "turnoverAnnual": 17,
+      "breakEvenBps": 39.63,
+      "meanAbsW": 0.125,
+      "maxAbsW": 0.4375,
+      "oi5RatioOfMeansUSD": 20415294,
+      "oi5Binding": "linkusdt"
+    },
+    "hard_0.1": {
+      "kind": "hard",
+      "level": 0.1,
+      "grossSharpe": 6.74,
+      "net4Sharpe": 6.18,
+      "turnoverAnnual": 8,
+      "breakEvenBps": 48.1,
+      "meanAbsW": 0.0772,
+      "maxAbsW": 0.1,
+      "oi5RatioOfMeansUSD": 44175189,
+      "oi5Binding": "linkusdt"
+    },
+    "hard_0.125": {
+      "kind": "hard",
+      "level": 0.125,
+      "grossSharpe": 6.77,
+      "net4Sharpe": 6.18,
+      "turnoverAnnual": 10,
+      "breakEvenBps": 46.04,
+      "meanAbsW": 0.089,
+      "maxAbsW": 0.125,
+      "oi5RatioOfMeansUSD": 35937181,
+      "oi5Binding": "linkusdt"
+    },
+    "hard_0.15": {
+      "kind": "hard",
+      "level": 0.15,
+      "grossSharpe": 6.72,
+      "net4Sharpe": 6.13,
+      "turnoverAnnual": 12,
+      "breakEvenBps": 45.27,
+      "meanAbsW": 0.0985,
+      "maxAbsW": 0.15,
+      "oi5RatioOfMeansUSD": 30596364,
+      "oi5Binding": "linkusdt"
+    },
+    "hard_0.2": {
+      "kind": "hard",
+      "level": 0.2,
+      "grossSharpe": 6.43,
+      "net4Sharpe": 5.84,
+      "turnoverAnnual": 14,
+      "breakEvenBps": 44.12,
+      "meanAbsW": 0.112,
+      "maxAbsW": 0.2,
+      "oi5RatioOfMeansUSD": 24385550,
+      "oi5Binding": "linkusdt"
+    },
+    "hard_0.3": {
+      "kind": "hard",
+      "level": 0.3,
+      "grossSharpe": 5.79,
+      "net4Sharpe": 5.23,
+      "turnoverAnnual": 17,
+      "breakEvenBps": 40.91,
+      "meanAbsW": 0.1235,
+      "maxAbsW": 0.3,
+      "oi5RatioOfMeansUSD": 20720735,
+      "oi5Binding": "linkusdt"
+    },
+    "soft_0.1": {
+      "kind": "soft",
+      "level": 0.1,
+      "grossSharpe": 6.68,
+      "net4Sharpe": 6.11,
+      "turnoverAnnual": 8,
+      "breakEvenBps": 47.6,
+      "meanAbsW": 0.0697,
+      "maxAbsW": 0.1,
+      "oi5RatioOfMeansUSD": 46367000,
+      "oi5Binding": "linkusdt"
+    },
+    "soft_0.125": {
+      "kind": "soft",
+      "level": 0.125,
+      "grossSharpe": 6.62,
+      "net4Sharpe": 6.04,
+      "turnoverAnnual": 9,
+      "breakEvenBps": 46.23,
+      "meanAbsW": 0.0793,
+      "maxAbsW": 0.1248,
+      "oi5RatioOfMeansUSD": 38860727,
+      "oi5Binding": "linkusdt"
+    },
+    "soft_0.15": {
+      "kind": "soft",
+      "level": 0.15,
+      "grossSharpe": 6.52,
+      "net4Sharpe": 5.94,
+      "turnoverAnnual": 10,
+      "breakEvenBps": 45.2,
+      "meanAbsW": 0.0869,
+      "maxAbsW": 0.1491,
+      "oi5RatioOfMeansUSD": 34177928,
+      "oi5Binding": "linkusdt"
+    },
+    "soft_0.2": {
+      "kind": "soft",
+      "level": 0.2,
+      "grossSharpe": 6.32,
+      "net4Sharpe": 5.74,
+      "turnoverAnnual": 12,
+      "breakEvenBps": 43.72,
+      "meanAbsW": 0.0979,
+      "maxAbsW": 0.195,
+      "oi5RatioOfMeansUSD": 28881337,
+      "oi5Binding": "linkusdt"
+    },
+    "soft_0.3": {
+      "kind": "soft",
+      "level": 0.3,
+      "grossSharpe": 6,
+      "net4Sharpe": 5.43,
+      "turnoverAnnual": 14,
+      "breakEvenBps": 42.03,
+      "meanAbsW": 0.1098,
+      "maxAbsW": 0.2692,
+      "oi5RatioOfMeansUSD": 24506450,
+      "oi5Binding": "linkusdt"
+    },
+    "power_1.25": {
+      "kind": "power",
+      "level": 1.25,
+      "grossSharpe": 4.97,
+      "net4Sharpe": 4.44,
+      "turnoverAnnual": 12,
+      "breakEvenBps": 37.13,
+      "meanAbsW": 0.08,
+      "maxAbsW": 0.3558,
+      "oi5RatioOfMeansUSD": 29567402,
+      "oi5Binding": "linkusdt"
+    },
+    "power_1.5": {
+      "kind": "power",
+      "level": 1.5,
+      "grossSharpe": 4.5,
+      "net4Sharpe": 3.99,
+      "turnoverAnnual": 8,
+      "breakEvenBps": 35.06,
+      "meanAbsW": 0.0522,
+      "maxAbsW": 0.2894,
+      "oi5RatioOfMeansUSD": 42570100,
+      "oi5Binding": "linkusdt"
+    },
+    "power_2": {
+      "kind": "power",
+      "level": 2,
+      "grossSharpe": 3.72,
+      "net4Sharpe": 3.25,
+      "turnoverAnnual": 4,
+      "breakEvenBps": 31.65,
+      "meanAbsW": 0.0233,
+      "maxAbsW": 0.1914,
+      "oi5RatioOfMeansUSD": 86899947,
+      "oi5Binding": "linkusdt"
+    },
+    "power_3": {
+      "kind": "power",
+      "level": 3,
+      "grossSharpe": 2.68,
+      "net4Sharpe": 2.27,
+      "turnoverAnnual": 1,
+      "breakEvenBps": 26.4,
+      "meanAbsW": 0.0053,
+      "maxAbsW": 0.0838,
+      "oi5RatioOfMeansUSD": 344313844,
+      "oi5Binding": "linkusdt"
+    },
+    "flat_rank": {
+      "kind": "flat",
+      "level": 0.125,
+      "grossSharpe": 1.9,
+      "net4Sharpe": 1.51,
+      "turnoverAnnual": 17,
+      "breakEvenBps": 19.51,
+      "meanAbsW": 0.125,
+      "maxAbsW": 0.125,
+      "oi5RatioOfMeansUSD": 34276476,
+      "oi5Binding": "linkusdt"
+    }
+  },
+  "sameConcentrationNeighbours": [
+    {
+      "name": "soft_0.125",
+      "kind": "soft",
+      "level": 0.125,
+      "net4": 6.04,
+      "maxAbsW": 0.1248,
+      "meanAbsW": 0.0793,
+      "maxWDiff": 0,
+      "netGapVsHard": -0.14
+    },
+    {
+      "name": "soft_0.1",
+      "kind": "soft",
+      "level": 0.1,
+      "net4": 6.11,
+      "maxAbsW": 0.1,
+      "meanAbsW": 0.0697,
+      "maxWDiff": -0.02,
+      "netGapVsHard": -0.07
+    },
+    {
+      "name": "soft_0.15",
+      "kind": "soft",
+      "level": 0.15,
+      "net4": 5.94,
+      "maxAbsW": 0.1491,
+      "meanAbsW": 0.0869,
+      "maxWDiff": 0.02,
+      "netGapVsHard": -0.24
+    },
+    {
+      "name": "power_3",
+      "kind": "power",
+      "level": 3,
+      "net4": 2.27,
+      "maxAbsW": 0.0838,
+      "meanAbsW": 0.0053,
+      "maxWDiff": -0.04,
+      "netGapVsHard": -3.91
+    },
+    {
+      "name": "soft_0.2",
+      "kind": "soft",
+      "level": 0.2,
+      "net4": 5.74,
+      "maxAbsW": 0.195,
+      "meanAbsW": 0.0979,
+      "maxWDiff": 0.07,
+      "netGapVsHard": -0.44
+    },
+    {
+      "name": "power_2",
+      "kind": "power",
+      "level": 2,
+      "net4": 3.25,
+      "maxAbsW": 0.1914,
+      "meanAbsW": 0.0233,
+      "maxWDiff": 0.07,
+      "netGapVsHard": -2.93
+    },
+    {
+      "name": "soft_0.3",
+      "kind": "soft",
+      "level": 0.3,
+      "net4": 5.43,
+      "maxAbsW": 0.2692,
+      "meanAbsW": 0.1098,
+      "maxWDiff": 0.14,
+      "netGapVsHard": -0.75
+    },
+    {
+      "name": "power_1.5",
+      "kind": "power",
+      "level": 1.5,
+      "net4": 3.99,
+      "maxAbsW": 0.2894,
+      "meanAbsW": 0.0522,
+      "maxWDiff": 0.16,
+      "netGapVsHard": -2.19
+    },
+    {
+      "name": "power_1.25",
+      "kind": "power",
+      "level": 1.25,
+      "net4": 4.44,
+      "maxAbsW": 0.3558,
+      "meanAbsW": 0.08,
+      "maxWDiff": 0.23,
+      "netGapVsHard": -1.74
+    }
+  ],
+  "verdict": {
+    "note": "Why does clipping help? If a smooth saturation (softCap) or a smooth power shrink at matched concentration matches the hard cap, the mechanism is concentration; if the hard cap is special, it is not.",
+    "hardCapNet4": 6.18,
+    "softCap0p125Net4": 6.04,
+    "softMatchesHard": true,
+    "closestConcentrationSmooth": {
+      "name": "soft_0.125",
+      "kind": "soft",
+      "level": 0.125,
+      "net4": 6.04,
+      "maxAbsW": 0.1248,
+      "meanAbsW": 0.0793,
+      "maxWDiff": 0,
+      "netGapVsHard": -0.14
+    },
+    "anySmoothBeatsHard": false,
+    "flatRankNet4": 1.51,
+    "flatRankMaxAbsW": 0.125,
+    "hardCapMaxAbsW": 0.125,
+    "validationPass": true
+  }
+}

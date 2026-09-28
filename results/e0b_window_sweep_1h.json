@@ -1,0 +1,196 @@
+{
+  "config": {
+    "tf": "1h",
+    "totalBars": 53500,
+    "symbols": 8,
+    "costBps": 0
+  },
+  "rows": [
+    {
+      "window": 600,
+      "meanSharpe": {
+        "n": 8,
+        "mean": 1.267434282122175,
+        "std": 0.4966223555288315,
+        "min": 0.49807353081918726,
+        "max": 1.9208801542134772
+      },
+      "meanBreakEvenCostBps": 18.726904160796952,
+      "turnoverPerBar": 0.17530071507532385,
+      "positiveStreams": 8,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 150,
+        "meanPairwiseStreamCorr": 0.4351019516909082,
+        "designEffect": 4.480522274527009,
+        "effectiveStreams": 1.9774014348728735,
+        "effectiveBars": 1071.3036797717332,
+        "adjustmentNeeded": true,
+        "seCluster": 0.48568392641550506,
+        "seIid": 0.2294507124277909
+      },
+      "pooled": {
+        "netSharpe": 1.1904799715911305,
+        "dsr": 0.9999999894944963,
+        "dsrAdjusted": 0.9959288732497387,
+        "effectiveBars": 1071,
+        "psrAdjusted": 0.9959288732497387
+      }
+    },
+    {
+      "window": 1200,
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.44572791329158323,
+        "std": 0.27822875683365916,
+        "min": -0.053021998842398915,
+        "max": 0.8642087644713498
+      },
+      "meanBreakEvenCostBps": 5.96221302080651,
+      "turnoverPerBar": 0.191252056886198,
+      "positiveStreams": 7,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 171,
+        "meanPairwiseStreamCorr": 0.4468471069859847,
+        "designEffect": 5.246390827707669,
+        "effectiveStreams": 1.9380174776782841,
+        "effectiveBars": 1825.2547921947491,
+        "adjustmentNeeded": true,
+        "seCluster": 0.3716225170636886,
+        "seIid": 0.1622451414988141
+      },
+      "pooled": {
+        "netSharpe": 0.3833311895569192,
+        "dsr": 0.9904954159530677,
+        "dsrAdjusted": 0.8469992649351891,
+        "effectiveBars": 1825,
+        "psrAdjusted": 0.8469992649351891
+      }
+    },
+    {
+      "window": 2400,
+      "meanSharpe": {
+        "n": 8,
+        "mean": -0.008267796893637398,
+        "std": 0.15082221897102155,
+        "min": -0.18947278019809027,
+        "max": 0.259145373649058
+      },
+      "meanBreakEvenCostBps": -0.11195768777225806,
+      "turnoverPerBar": 0.19386657316205586,
+      "positiveStreams": 4,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 184,
+        "meanPairwiseStreamCorr": 0.5166259365034928,
+        "designEffect": 5.3106208409971165,
+        "effectiveStreams": 1.7329590077809656,
+        "effectiveBars": 3603.345178076589,
+        "adjustmentNeeded": true,
+        "seCluster": 0.2644523209025728,
+        "seIid": 0.11475582383155702
+      },
+      "pooled": {
+        "netSharpe": -0.009203623386997142,
+        "dsr": 0.46803765619925614,
+        "dsrAdjusted": 0.48612046519344276,
+        "effectiveBars": 3603,
+        "psrAdjusted": 0.48612046519344276
+      }
+    },
+    {
+      "window": 4800,
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.046168863715269445,
+        "std": 0.11017085990679915,
+        "min": -0.06034252319494176,
+        "max": 0.2303376794758251
+      },
+      "meanBreakEvenCostBps": 0.5691748375693448,
+      "turnoverPerBar": 0.18682792060335365,
+      "positiveStreams": 4,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.5966240514066385,
+        "designEffect": 4.603898303095157,
+        "effectiveStreams": 1.5454850667229714,
+        "effectiveBars": 8340.75765187603,
+        "adjustmentNeeded": true,
+        "seCluster": 0.17381943349429327,
+        "seIid": 0.08100941001521891
+      },
+      "pooled": {
+        "netSharpe": 0.04338716243036452,
+        "dsr": 0.7038755372045113,
+        "dsrAdjusted": 0.5985521976042399,
+        "effectiveBars": 8341,
+        "psrAdjusted": 0.5985521976042399
+      }
+    },
+    {
+      "window": 9600,
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.12228493960243773,
+        "std": 0.055629352992136706,
+        "min": 0.02996896195281392,
+        "max": 0.191817446081793
+      },
+      "meanBreakEvenCostBps": 1.8163098605999117,
+      "turnoverPerBar": 0.1839377089135497,
+      "positiveStreams": 8,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.6338403222528868,
+        "designEffect": 4.9218021525672055,
+        "effectiveStreams": 1.4714315344073408,
+        "effectiveBars": 15604.040475284286,
+        "adjustmentNeeded": true,
+        "seCluster": 0.12708320761659164,
+        "seIid": 0.05728304451577428
+      },
+      "pooled": {
+        "netSharpe": 0.12218113525846074,
+        "dsr": 0.9840503606463643,
+        "dsrAdjusted": 0.8332627895840664,
+        "effectiveBars": 15604,
+        "psrAdjusted": 0.8332627895840664
+      }
+    },
+    {
+      "window": 53500,
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.11018270817955154,
+        "std": 0.05071502947191956,
+        "min": 0.04379926822985788,
+        "max": 0.16589196954587024
+      },
+      "meanBreakEvenCostBps": 2.2998964020636943,
+      "turnoverPerBar": 0.1863253750617518,
+      "positiveStreams": 8,
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.6339371841560268,
+        "designEffect": 4.92245110923739,
+        "effectiveStreams": 1.4712480551338616,
+        "effectiveBars": 15601.983299717978,
+        "adjustmentNeeded": true,
+        "seCluster": 0.1270915787721764,
+        "seIid": 0.05728304147388189
+      },
+      "pooled": {
+        "netSharpe": 0.1219500748407631,
+        "dsr": 0.9838867779394751,
+        "dsrAdjusted": 0.8327872949823588,
+        "effectiveBars": 15602,
+        "psrAdjusted": 0.8327872949823588
+      }
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6557,
+    "years": "5.99",
+    "oiCoverage": {
+      "btcusdt": 6492,
+      "ethusdt": 5188,
+      "solusdt": 5184,
+      "bnbusdt": 5187,
+      "xrpusdt": 5189,
+      "adausdt": 5187,
+      "dogeusdt": 5189,
+      "linkusdt": 5188
+    },
+    "signalWindowStart": "2021-12-01T08:00:00.000Z",
+    "note": "OI + toptrader positioning from data/open_interest_8h.json (5-min metrics aggregated to the 8h grid). Signal books run on the common window (missing symbols masked); Part B uses each symbol's own OI history."
+  },
+  "infoCoef": {
+    "pooled": {
+      "n": 42758,
+      "ic_dLogOI_nextRet": 0.019596279172887504,
+      "ic_dLogOI_nextFunding": 0.026618045233218285,
+      "ic_dLogOI_contemporaneousRet": 0.5950745549345596
+    },
+    "bySymbol": {
+      "btcusdt": {
+        "n": 6484,
+        "ic_dLogOI_nextRet": 0.030701342628180906,
+        "ic_dLogOI_nextFunding": 0.07947345964636232,
+        "ic_topLS_nextRet": -0.03209621251555703
+      },
+      "ethusdt": {
+        "n": 5183,
+        "ic_dLogOI_nextRet": 0.030049970737940298,
+        "ic_dLogOI_nextFunding": 0.08534876114434957,
+        "ic_topLS_nextRet": -0.018015797103096223
+      },
+      "solusdt": {
+        "n": 5175,
+        "ic_dLogOI_nextRet": 0.016064302453257018,
+        "ic_dLogOI_nextFunding": 0.0198465930321784,
+        "ic_topLS_nextRet": -0.01846193896780986
+      },
+      "bnbusdt": {
+        "n": 5182,
+        "ic_dLogOI_nextRet": -0.005329660751269847,
+        "ic_dLogOI_nextFunding": 0.028779487805697973,
+        "ic_topLS_nextRet": 0.008191067016528823
+      },
+      "xrpusdt": {
+        "n": 5185,
+        "ic_dLogOI_nextRet": 0.05889076658749231,
+        "ic_dLogOI_nextFunding": 0.07906405527808105,
+        "ic_topLS_nextRet": 0.008886105007332213
+      },
+      "adausdt": {
+        "n": 5181,
+        "ic_dLogOI_nextRet": 0.03315366705196936,
+        "ic_dLogOI_nextFunding": 0.11943766862677278,
+        "ic_topLS_nextRet": -0.029841285629939315
+      },
+      "dogeusdt": {
+        "n": 5185,
+        "ic_dLogOI_nextRet": -0.008341426071232828,
+        "ic_dLogOI_nextFunding": 0.14253740781914928,
+        "ic_topLS_nextRet": 0.006055412377387032
+      },
+      "linkusdt": {
+        "n": 5183,
+        "ic_dLogOI_nextRet": 0.009163159880613454,
+        "ic_dLogOI_nextFunding": 0.11178534895942208,
+        "ic_topLS_nextRet": -0.03203055507437969
+      }
+    }
+  },
+  "signalBooks": {
+    "dLogOI_pos": {
+      "grossSharpe": 0.9612203471681686,
+      "annualized": 0.28356211978458656,
+      "maxDrawdown": 0.46991941478366067,
+      "turnoverAnnual": 1501.113249693133,
+      "breakEvenBps": 1.8890121704178822,
+      "net": {
+        "0": {
+          "sharpe": 0.9612203471681686
+        },
+        "2": {
+          "sharpe": -0.05646636447828207
+        },
+        "4": {
+          "sharpe": -1.0737312743492733
+        },
+        "5": {
+          "sharpe": -1.5821378754763684
+        },
+        "10": {
+          "sharpe": -4.120834425079136
+        },
+        "15": {
+          "sharpe": -6.65152099786471
+        },
+        "20": {
+          "sharpe": -9.17090545161835
+        },
+        "30": {
+          "sharpe": -14.163004837201568
+        }
+      },
+      "periods": 5246,
+      "firstBookTime": "2021-12-01T08:00:00.000Z",
+      "halves": [
+        0.173,
+        2.137
+      ],
+      "quartileSharpes": [
+        -0.75,
+        1.35,
+        2.9,
+        1.02
+      ]
+    },
+    "dLogOI_neg": {
+      "grossSharpe": -0.9612203471681686,
+      "annualized": -0.28356211978458656,
+      "maxDrawdown": 0.8588191065156663,
+      "turnoverAnnual": 1501.113249693133,
+      "breakEvenBps": -1.8890121704178822,
+      "net": {
+        "0": {
+          "sharpe": -0.9612203471681686
+        },
+        "2": {
+          "sharpe": -1.9791118408318422
+        },
+        "4": {
+          "sharpe": -2.9969907907711404
+        },
+        "5": {
+          "sharpe": -3.5058576209223906
+        },
+        "10": {
+          "sharpe": -6.048379400545643
+        },
+        "15": {
+          "sharpe": -8.585401819659127
+        },
+        "20": {
+          "sharpe": -11.113574150006757
+        },
+        "30": {
+          "sharpe": -16.13026231755916
+        }
+      },
+      "periods": 5246,
+      "firstBookTime": "2021-12-01T08:00:00.000Z",
+      "halves": [
+        -0.173,
+        -2.137
+      ],
+      "quartileSharpes": [
+        0.75,
+        -1.35,
+        -2.9,
+        -1.02
+      ]
+    },
+    "topLS_pos": {
+      "grossSharpe": -1.055127366094126,
+      "annualized": -0.18938306214139217,
+      "maxDrawdown": 0.6445221350301092,
+      "turnoverAnnual": 125.8032983111491,
+      "breakEvenBps": -15.05390277391546,
+      "net": {
+        "0": {
+          "sharpe": -1.055127366094126
+        },
+        "2": {
+          "sharpe": -1.195171204517507
+        },
+        "4": {
+          "sharpe": -1.3351611200828022
+        },
+        "5": {
+          "sharpe": -1.405133699531213
+        },
+        "10": {
+          "sharpe": -1.754738390593858
+        },
+        "15": {
+          "sharpe": -2.103834177440175
+        },
+        "20": {
+          "sharpe": -2.452314571171268
+        },
+        "30": {
+          "sharpe": -3.1470080486667107
+        }
+      },
+      "periods": 5247,
+      "firstBookTime": "2021-12-01T00:00:00.000Z",
+      "halves": [
+        -1.274,
+        -0.838
+      ],
+      "quartileSharpes": [
+        -1.18,
+        -1.38,
+        -0.31,
+        -1.52
+      ]
+    },
+    "topLS_neg": {
+      "grossSharpe": 1.055127366094126,
+      "annualized": 0.18938306214139217,
+      "maxDrawdown": 0.2644810799491228,
+      "turnoverAnnual": 125.8032983111491,
+      "breakEvenBps": 15.05390277391546,
+      "net": {
+        "0": {
+          "sharpe": 1.055127366094126
+        },
+        "2": {
+          "sharpe": 0.9150365193452822
+        },
+        "4": {
+          "sharpe": 0.7749055901776746
+        },
+        "5": {
+          "sharpe": 0.7048272617225861
+        },
+        "10": {
+          "sharpe": 0.3543417019357708
+        },
+        "15": {
+          "sharpe": 0.0037792792288363903
+        },
+        "20": {
+          "sharpe": -0.34675130501439855
+        },
+        "30": {
+          "sharpe": -1.047282618690076
+        }
+      },
+      "periods": 5247,
+      "firstBookTime": "2021-12-01T00:00:00.000Z",
+      "halves": [
+        1.274,
+        0.838
+      ],
+      "quartileSharpes": [
+        1.18,
+        1.38,
+        0.31,
+        1.52
+      ]
+    }
+  },
+  "topLSRobustness": {
+    "perYear": {
+      "2021": 1.21,
+      "2022": 0.65,
+      "2023": 1.76,
+      "2024": 0.07,
+      "2025": 1.57,
+      "2026": 1.69
+    },
+    "blockBootstrap": {
+      "p5": 0.3628985837045254,
+      "p50": 1.064046625253429,
+      "p95": 1.8313218370447593
+    },
+    "placebo": {
+      "mean": 0.007,
+      "sd": 0.489,
+      "z": 2.14
+    },
+    "note": "topLS (position-weighted toptrader long/short ratio) cross-sectional FADE. Positive in 4/4 quartiles and 5/6 years, bootstrap p5 > 0, z vs a cross-sectional label-shuffle ~2.1 (seeded, reproducible), uncorrelated with the funding-rank carry book."
+  },
+  "positioningCapacity": {
+    "note": "G = notional at which the holding is f of mean (or min) open interest; the flat book holds G/k per symbol, the dispersion book mean|w_j|*G. Compare with the impact capacity (F-26/F-27).",
+    "oiStats": {
+      "btcusdt": {
+        "periods": 6492,
+        "meanOI_USD": 4455168546.2459955,
+        "minOI_USD": 343965907,
+        "maxOI_USD": 12715348401
+      },
+      "ethusdt": {
+        "periods": 5188,
+        "meanOI_USD": 3123542202.059946,
+        "minOI_USD": 865268617,
+        "maxOI_USD": 11342513084
+      },
+      "solusdt": {
+        "periods": 5184,
+        "meanOI_USD": 670457341.1033951,
+        "minOI_USD": 63310092,
+        "maxOI_USD": 3194656091
+      },
+      "bnbusdt": {
+        "periods": 5187,
+        "meanOI_USD": 273408638.95064586,
+        "minOI_USD": 108344069,
+        "maxOI_USD": 1102574236
+      },
+      "xrpusdt": {
+        "periods": 5189,
+        "meanOI_USD": 322143936.82636344,
+        "minOI_USD": 60721495,
+        "maxOI_USD": 1592489704
+      },
+      "adausdt": {
+        "periods": 5187,
+        "meanOI_USD": 103615033.58569501,
+        "minOI_USD": 32550007,
+        "maxOI_USD": 380202440
+      },
+      "dogeusdt": {
+        "periods": 5189,
+        "meanOI_USD": 234444181.46367314,
+        "minOI_USD": 34236692,
+        "maxOI_USD": 1469736474
+      },
+      "linkusdt": {
+        "periods": 5188,
+        "meanOI_USD": 85691189.1611411,
+        "minOI_USD": 28745866,
+        "maxOI_USD": 295670298
+      }
+    },
+    "flatBook": {
+      "at_1pct_of_minOI": 2299669.2800000003,
+      "at_1pct_of_meanOI": 6855295.132891288,
+      "at_5pct_of_minOI": 11498346.4,
+      "at_5pct_of_meanOI": 34276475.66445644,
+      "at_10pct_of_minOI": 22996692.8,
+      "at_10pct_of_meanOI": 68552951.32891288
+    },
+    "dispersionBook": {
+      "at_1pct_of_meanOI": {
+        "USD": 4682796.959328549,
+        "bindingSymbol": "linkusdt"
+      },
+      "at_5pct_of_meanOI": {
+        "USD": 23413984.796642747,
+        "bindingSymbol": "linkusdt"
+      },
+      "at_10pct_of_meanOI": {
+        "USD": 46827969.59328549,
+        "bindingSymbol": "linkusdt"
+      }
+    },
+    "dispersionMeanAbsWeight": {
+      "btcusdt": 0.11383344242119722,
+      "ethusdt": 0.08194663749157419,
+      "solusdt": 0.10557719348630033,
+      "bnbusdt": 0.20494223470636483,
+      "xrpusdt": 0.09342929950122521,
+      "adausdt": 0.09679151965031543,
+      "dogeusdt": 0.12048820438470176,
+      "linkusdt": 0.18299146835832078
+    }
+  }
+}

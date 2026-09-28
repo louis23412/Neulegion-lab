@@ -1,0 +1,1270 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "perp": "mark",
+    "f": 0.05,
+    "feeBps": 4,
+    "books": 5,
+    "guardTargets": [
+      "disp_lam0.1",
+      "fade_lam0.1"
+    ]
+  },
+  "guards": {
+    "disp_lam0.1": {
+      "source": "e30#ewma_0.1_norm",
+      "storedValue": 23413985,
+      "hereValue": 23413985,
+      "bindingSymbol": "linkusdt",
+      "relError": 0,
+      "matches": true,
+      "expectedSymbol": "linkusdt",
+      "symbolMatches": true
+    },
+    "fade_lam0.1": {
+      "source": "e32#lam0.1",
+      "storedValue": 36986403,
+      "hereValue": 36986403,
+      "bindingSymbol": "linkusdt",
+      "relError": 0,
+      "matches": true,
+      "expectedSymbol": "linkusdt",
+      "symbolMatches": true
+    }
+  },
+  "validationPass": true,
+  "books": {
+    "disp_lam0.1": {
+      "family": "disp",
+      "lambda": 0.1,
+      "cap": null,
+      "periods": 6557,
+      "turnoverAnnual": 85,
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.1753,
+          "net4Sharpe": 3.5534,
+          "breakEvenBps": 12.7768
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 6.6187,
+          "net4Sharpe": -0.5789,
+          "breakEvenBps": 3.6764
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 6.1792,
+          "net4Sharpe": -1.3697,
+          "breakEvenBps": 3.2713
+        }
+      },
+      "oiBound": {
+        "ratioOfMeans_published": {
+          "USD": 23413985,
+          "exactUSD": 23413984.796642747,
+          "bindingSymbol": "linkusdt"
+        },
+        "meanOfRatios_averageCase": {
+          "USD": 18282994,
+          "exactUSD": 18282993.741981745,
+          "bindingSymbol": "linkusdt"
+        },
+        "minOfRatios_worstCase": {
+          "USD": 4365917,
+          "exactUSD": 4365917.357279804,
+          "bindingSymbol": "linkusdt"
+        },
+        "naiveMinOiOverMeanWeight": {
+          "USD": 7854428,
+          "exactUSD": 7854427.9298617095,
+          "bindingSymbol": "linkusdt"
+        },
+        "note": "ratioOfMeans = the published convention (f*mean(OI)/mean|w|). meanOfRatios = true average-case (f/mean(|w|/OI)). minOfRatios = true worst-case (f*min(OI/|w|)). naiveMinOiOverMeanWeight = f*min(OI)/mean|w| - the \"just use min OI\" fix, which is NOT the worst case.",
+        "timeVarying_distribution_full": {
+          "n": 5176,
+          "min": 4365917,
+          "p5": 8570171,
+          "p10": 9847556,
+          "p25": 12502815,
+          "median": 17043275,
+          "p75": 27228986,
+          "p90": 40835674,
+          "p95": 49744692,
+          "mean": 21703654,
+          "max": 87559583
+        },
+        "timeVarying_distribution_last24m": {
+          "n": 2190,
+          "min": 7382292,
+          "p5": 11190383,
+          "p10": 12741529,
+          "p25": 16410478,
+          "median": 23206519,
+          "p75": 34090989,
+          "p90": 48158478,
+          "p95": 54674011,
+          "mean": 27020287,
+          "max": 82072091
+        },
+        "timeVarying_distribution_last12m": {
+          "n": 1095,
+          "min": 8605746,
+          "p5": 11525623,
+          "p10": 13035839,
+          "p25": 16266862,
+          "median": 20806227,
+          "p75": 28075453,
+          "p90": 47824620,
+          "p95": 55811448,
+          "mean": 24932808,
+          "max": 82072091
+        },
+        "timeVarying_distribution_last3m": {
+          "n": 274,
+          "min": 13760834,
+          "p5": 15251766,
+          "p10": 16199025,
+          "p25": 17632557,
+          "median": 20380694,
+          "p75": 23022304,
+          "p90": 27460111,
+          "p95": 30782131,
+          "mean": 21458793,
+          "max": 75964850
+        },
+        "worstDates": [
+          {
+            "date": "2023-07-08",
+            "boundUSD": 4365917,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-07-08",
+            "boundUSD": 4482575,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-07-07",
+            "boundUSD": 4560259,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-07-10",
+            "boundUSD": 4579370,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-07-10",
+            "boundUSD": 4612104,
+            "binding": "linkusdt"
+          }
+        ],
+        "worstDatesRecent24m": [
+          {
+            "date": "2026-03-27",
+            "boundUSD": 8605746,
+            "binding": "linkusdt",
+            "weight": 0.4238
+          },
+          {
+            "date": "2024-09-22",
+            "boundUSD": 8670461,
+            "binding": "linkusdt",
+            "weight": 0.2536
+          },
+          {
+            "date": "2024-09-20",
+            "boundUSD": 8810372,
+            "binding": "linkusdt",
+            "weight": 0.2381
+          },
+          {
+            "date": "2024-09-22",
+            "boundUSD": 8868710,
+            "binding": "linkusdt",
+            "weight": 0.2373
+          },
+          {
+            "date": "2026-03-26",
+            "boundUSD": 9001936,
+            "binding": "linkusdt",
+            "weight": 0.4115
+          }
+        ],
+        "tailBindingSymbolCounts": {
+          "linkusdt": 200,
+          "dogeusdt": 45,
+          "adausdt": 14
+        }
+      },
+      "atPublishedSize": {
+        "participationCapPct": 5,
+        "maxParticipationPct": 26.8145,
+        "breachFraction": 0.6818,
+        "breachesPerYear": 746.5717,
+        "p99ParticipationPct": 18.2159,
+        "medianParticipationPct": 6.869
+      },
+      "capacityStress": {
+        "bookWorst5Pct": {
+          "n": 174,
+          "median": 14215580,
+          "p5": 7725244,
+          "mean": 17464722
+        },
+        "basketOiDropWorst5Pct": {
+          "n": 187,
+          "median": 13861424,
+          "p5": 6798219,
+          "mean": 18348741
+        }
+      },
+      "impactCapacityY1": 13211349,
+      "restatedUsable": {
+        "published": {
+          "oiBound": 23413985,
+          "impactBound": 13211349,
+          "usable": 13211349
+        },
+        "averageCase": {
+          "oiBound": 18282994,
+          "usable": 13211349
+        },
+        "worstCaseFull": {
+          "oiBound": 4365917,
+          "usable": 4365917
+        },
+        "p5Full": {
+          "oiBound": 8570171,
+          "usable": 8570171
+        },
+        "recent24mP5": {
+          "oiBound": 11190383,
+          "usable": 11190383
+        },
+        "recent24mMin": {
+          "oiBound": 7382292,
+          "usable": 7382292
+        }
+      },
+      "oiCoverage": {
+        "bookPeriods": 6557,
+        "withOiPrint": 5176,
+        "missingFraction": 0.2106,
+        "firstOiBookDate": "2021-12-01",
+        "lastOiBookDate": "2026-08-31",
+        "lastBookDate": "2026-09-19"
+      }
+    },
+    "disp_lam0.01": {
+      "family": "disp",
+      "lambda": 0.01,
+      "cap": null,
+      "periods": 6557,
+      "turnoverAnnual": 9,
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.7101,
+          "net4Sharpe": 5.3712,
+          "breakEvenBps": 67.5403
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 4.5272,
+          "net4Sharpe": 3.8568,
+          "breakEvenBps": 27.07
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 3.8504,
+          "net4Sharpe": 3.1417,
+          "breakEvenBps": 21.7591
+        }
+      },
+      "oiBound": {
+        "ratioOfMeans_published": {
+          "USD": 19200934,
+          "exactUSD": 19200933.62513582,
+          "bindingSymbol": "linkusdt"
+        },
+        "meanOfRatios_averageCase": {
+          "USD": 14888326,
+          "exactUSD": 14888326.186846774,
+          "bindingSymbol": "linkusdt"
+        },
+        "minOfRatios_worstCase": {
+          "USD": 4994515,
+          "exactUSD": 4994515.054769777,
+          "bindingSymbol": "linkusdt"
+        },
+        "naiveMinOiOverMeanWeight": {
+          "USD": 6441123,
+          "exactUSD": 6441122.7159553,
+          "bindingSymbol": "linkusdt"
+        },
+        "note": "ratioOfMeans = the published convention (f*mean(OI)/mean|w|). meanOfRatios = true average-case (f/mean(|w|/OI)). minOfRatios = true worst-case (f*min(OI/|w|)). naiveMinOiOverMeanWeight = f*min(OI)/mean|w| - the \"just use min OI\" fix, which is NOT the worst case.",
+        "timeVarying_distribution_full": {
+          "n": 5176,
+          "min": 4994515,
+          "p5": 7537263,
+          "p10": 8837616,
+          "p25": 11820674,
+          "median": 16310571,
+          "p75": 22529988,
+          "p90": 37072895,
+          "p95": 47004555,
+          "mean": 19412521,
+          "max": 66169947
+        },
+        "timeVarying_distribution_last24m": {
+          "n": 2190,
+          "min": 8286914,
+          "p5": 10247670,
+          "p10": 11988333,
+          "p25": 13792535,
+          "median": 18204630,
+          "p75": 23661364,
+          "p90": 41371100,
+          "p95": 47602548,
+          "mean": 21654349,
+          "max": 66169947
+        },
+        "timeVarying_distribution_last12m": {
+          "n": 1095,
+          "min": 8286914,
+          "p5": 9317813,
+          "p10": 10247474,
+          "p25": 12231285,
+          "median": 15334509,
+          "p75": 20355968,
+          "p90": 41928930,
+          "p95": 46553948,
+          "mean": 18808517,
+          "max": 53990277
+        },
+        "timeVarying_distribution_last3m": {
+          "n": 274,
+          "min": 8286914,
+          "p5": 8597799,
+          "p10": 8792977,
+          "p25": 9550133,
+          "median": 11115270,
+          "p75": 12755369,
+          "p90": 18669241,
+          "p95": 19406985,
+          "mean": 12297572,
+          "max": 22741963
+        },
+        "worstDates": [
+          {
+            "date": "2022-05-13",
+            "boundUSD": 4994515,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-28",
+            "boundUSD": 5028023,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-18",
+            "boundUSD": 5095685,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-12",
+            "boundUSD": 5156003,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-12",
+            "boundUSD": 5212238,
+            "binding": "linkusdt"
+          }
+        ],
+        "worstDatesRecent24m": [
+          {
+            "date": "2026-07-01",
+            "boundUSD": 8286914,
+            "binding": "linkusdt",
+            "weight": 0.3548
+          },
+          {
+            "date": "2026-06-30",
+            "boundUSD": 8317190,
+            "binding": "linkusdt",
+            "weight": 0.3545
+          },
+          {
+            "date": "2026-07-01",
+            "boundUSD": 8347984,
+            "binding": "linkusdt",
+            "weight": 0.3558
+          },
+          {
+            "date": "2026-06-28",
+            "boundUSD": 8435604,
+            "binding": "linkusdt",
+            "weight": 0.3489
+          },
+          {
+            "date": "2026-06-23",
+            "boundUSD": 8444013,
+            "binding": "linkusdt",
+            "weight": 0.3497
+          }
+        ],
+        "tailBindingSymbolCounts": {
+          "linkusdt": 259
+        }
+      },
+      "atPublishedSize": {
+        "participationCapPct": 5,
+        "maxParticipationPct": 19.222,
+        "breachFraction": 0.6509,
+        "breachesPerYear": 712.7231,
+        "p99ParticipationPct": 16.6132,
+        "medianParticipationPct": 5.886
+      },
+      "capacityStress": {
+        "bookWorst5Pct": {
+          "n": 155,
+          "median": 12703202,
+          "p5": 6139594,
+          "mean": 16053043
+        },
+        "basketOiDropWorst5Pct": {
+          "n": 187,
+          "median": 12797227,
+          "p5": 6544941,
+          "mean": 16750824
+        }
+      },
+      "impactCapacityY1": 1985965104,
+      "restatedUsable": {
+        "published": {
+          "oiBound": 19200934,
+          "impactBound": 1985965104,
+          "usable": 19200934
+        },
+        "averageCase": {
+          "oiBound": 14888326,
+          "usable": 14888326
+        },
+        "worstCaseFull": {
+          "oiBound": 4994515,
+          "usable": 4994515
+        },
+        "p5Full": {
+          "oiBound": 7537263,
+          "usable": 7537263
+        },
+        "recent24mP5": {
+          "oiBound": 10247670,
+          "usable": 10247670
+        },
+        "recent24mMin": {
+          "oiBound": 8286914,
+          "usable": 8286914
+        }
+      },
+      "oiCoverage": {
+        "bookPeriods": 6557,
+        "withOiPrint": 5176,
+        "missingFraction": 0.2106,
+        "firstOiBookDate": "2021-12-01",
+        "lastOiBookDate": "2026-08-31",
+        "lastBookDate": "2026-09-19"
+      }
+    },
+    "disp_lam0.02_cap12.5": {
+      "family": "disp",
+      "lambda": 0.02,
+      "cap": 0.125,
+      "periods": 6557,
+      "turnoverAnnual": 10,
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 6.7735,
+          "net4Sharpe": 6.1845,
+          "breakEvenBps": 46.0439
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 5.6544,
+          "net4Sharpe": 4.2358,
+          "breakEvenBps": 15.9673
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 5.4932,
+          "net4Sharpe": 3.8077,
+          "breakEvenBps": 13.0446
+        }
+      },
+      "oiBound": {
+        "ratioOfMeans_published": {
+          "USD": 35937181,
+          "exactUSD": 35937180.5694138,
+          "bindingSymbol": "linkusdt"
+        },
+        "meanOfRatios_averageCase": {
+          "USD": 29310509,
+          "exactUSD": 29310508.78127118,
+          "bindingSymbol": "linkusdt"
+        },
+        "minOfRatios_worstCase": {
+          "USD": 11498346,
+          "exactUSD": 11498346.4,
+          "bindingSymbol": "linkusdt"
+        },
+        "naiveMinOiOverMeanWeight": {
+          "USD": 12055445,
+          "exactUSD": 12055444.523281679,
+          "bindingSymbol": "linkusdt"
+        },
+        "note": "ratioOfMeans = the published convention (f*mean(OI)/mean|w|). meanOfRatios = true average-case (f/mean(|w|/OI)). minOfRatios = true worst-case (f*min(OI/|w|)). naiveMinOiOverMeanWeight = f*min(OI)/mean|w| - the \"just use min OI\" fix, which is NOT the worst case.",
+        "timeVarying_distribution_full": {
+          "n": 5176,
+          "min": 11498346,
+          "p5": 15850529,
+          "p10": 17391074,
+          "p25": 22358826,
+          "median": 29518331,
+          "p75": 38490294,
+          "p90": 56470339,
+          "p95": 72268084,
+          "mean": 33759168,
+          "max": 118268119
+        },
+        "timeVarying_distribution_last24m": {
+          "n": 2190,
+          "min": 15956961,
+          "p5": 20338768,
+          "p10": 24348734,
+          "p25": 29239052,
+          "median": 35141055,
+          "p75": 44602207,
+          "p90": 70842238,
+          "p95": 84869848,
+          "mean": 40765048,
+          "max": 118268119
+        },
+        "timeVarying_distribution_last12m": {
+          "n": 1095,
+          "min": 23522924,
+          "p5": 25552066,
+          "p10": 27359632,
+          "p25": 30552188,
+          "median": 35720042,
+          "p75": 41487991,
+          "p90": 69240803,
+          "p95": 82994876,
+          "mean": 39861386,
+          "max": 95937498
+        },
+        "timeVarying_distribution_last3m": {
+          "n": 274,
+          "min": 23522924,
+          "p5": 24228192,
+          "p10": 24699459,
+          "p25": 26087871,
+          "median": 28696187,
+          "p75": 31478225,
+          "p90": 47270779,
+          "p95": 48815829,
+          "mean": 31701038,
+          "max": 56491570
+        },
+        "worstDates": [
+          {
+            "date": "2022-05-13",
+            "boundUSD": 11498346,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-14",
+            "boundUSD": 11822253,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-16",
+            "boundUSD": 11970841,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-18",
+            "boundUSD": 12014841,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2022-05-12",
+            "boundUSD": 12030438,
+            "binding": "linkusdt"
+          }
+        ],
+        "worstDatesRecent24m": [
+          {
+            "date": "2024-10-03",
+            "boundUSD": 16607850,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-10-03",
+            "boundUSD": 16792088,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-10-04",
+            "boundUSD": 16910338,
+            "binding": "linkusdt",
+            "weight": 0.1249
+          },
+          {
+            "date": "2024-10-03",
+            "boundUSD": 17035907,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-10-02",
+            "boundUSD": 17299991,
+            "binding": "linkusdt",
+            "weight": 0.125
+          }
+        ],
+        "tailBindingSymbolCounts": {
+          "linkusdt": 233,
+          "dogeusdt": 14,
+          "adausdt": 12
+        }
+      },
+      "atPublishedSize": {
+        "participationCapPct": 5,
+        "maxParticipationPct": 15.6271,
+        "breachFraction": 0.6934,
+        "breachesPerYear": 759.2649,
+        "p99ParticipationPct": 13.2696,
+        "medianParticipationPct": 6.0873
+      },
+      "capacityStress": {
+        "bookWorst5Pct": {
+          "n": 140,
+          "median": 27444823,
+          "p5": 14203520,
+          "mean": 30115312
+        },
+        "basketOiDropWorst5Pct": {
+          "n": 187,
+          "median": 24722935,
+          "p5": 14923154,
+          "mean": 29397742
+        }
+      },
+      "impactCapacityY1": 726292139,
+      "restatedUsable": {
+        "published": {
+          "oiBound": 35937181,
+          "impactBound": 726292139,
+          "usable": 35937181
+        },
+        "averageCase": {
+          "oiBound": 29310509,
+          "usable": 29310509
+        },
+        "worstCaseFull": {
+          "oiBound": 11498346,
+          "usable": 11498346
+        },
+        "p5Full": {
+          "oiBound": 15850529,
+          "usable": 15850529
+        },
+        "recent24mP5": {
+          "oiBound": 20338768,
+          "usable": 20338768
+        },
+        "recent24mMin": {
+          "oiBound": 15956961,
+          "usable": 15956961
+        }
+      },
+      "oiCoverage": {
+        "bookPeriods": 6557,
+        "withOiPrint": 5176,
+        "missingFraction": 0.2106,
+        "firstOiBookDate": "2021-12-01",
+        "lastOiBookDate": "2026-08-31",
+        "lastBookDate": "2026-09-19"
+      }
+    },
+    "fade_lam0.1": {
+      "family": "fade",
+      "lambda": 0.1,
+      "cap": null,
+      "periods": 5248,
+      "turnoverAnnual": 23,
+      "windows": {
+        "full": {
+          "n": 5248,
+          "grossSharpe": 0.8388,
+          "net4Sharpe": 0.7936,
+          "breakEvenBps": 74.1527
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 0.7911,
+          "net4Sharpe": 0.7334,
+          "breakEvenBps": 54.7859
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 1.9466,
+          "net4Sharpe": 1.8736,
+          "breakEvenBps": 106.7121
+        }
+      },
+      "oiBound": {
+        "ratioOfMeans_published": {
+          "USD": 36986403,
+          "exactUSD": 36986403.11152483,
+          "bindingSymbol": "linkusdt"
+        },
+        "meanOfRatios_averageCase": {
+          "USD": 26494378,
+          "exactUSD": 26494377.541049816,
+          "bindingSymbol": "linkusdt"
+        },
+        "minOfRatios_worstCase": {
+          "USD": 4185408,
+          "exactUSD": 4185408.4770867787,
+          "bindingSymbol": "linkusdt"
+        },
+        "naiveMinOiOverMeanWeight": {
+          "USD": 9194990,
+          "exactUSD": 9194989.984561563,
+          "bindingSymbol": "dogeusdt"
+        },
+        "note": "ratioOfMeans = the published convention (f*mean(OI)/mean|w|). meanOfRatios = true average-case (f/mean(|w|/OI)). minOfRatios = true worst-case (f*min(OI/|w|)). naiveMinOiOverMeanWeight = f*min(OI)/mean|w| - the \"just use min OI\" fix, which is NOT the worst case.",
+        "timeVarying_distribution_full": {
+          "n": 5176,
+          "min": 4185408,
+          "p5": 8354875,
+          "p10": 10015500,
+          "p25": 14232854,
+          "median": 22677251,
+          "p75": 41993919,
+          "p90": 69458146,
+          "p95": 87061107,
+          "mean": 32514483,
+          "max": 186376860
+        },
+        "timeVarying_distribution_last24m": {
+          "n": 2190,
+          "min": 9284779,
+          "p5": 12265006,
+          "p10": 13459278,
+          "p25": 21063952,
+          "median": 40088747,
+          "p75": 65031558,
+          "p90": 90887788,
+          "p95": 105772448,
+          "mean": 46975910,
+          "max": 186376860
+        },
+        "timeVarying_distribution_last12m": {
+          "n": 1095,
+          "min": 9284779,
+          "p5": 11958164,
+          "p10": 12644310,
+          "p25": 15983676,
+          "median": 26785861,
+          "p75": 43453152,
+          "p90": 83885639,
+          "p95": 100124399,
+          "mean": 36909672,
+          "max": 138280809
+        },
+        "timeVarying_distribution_last3m": {
+          "n": 274,
+          "min": 11174361,
+          "p5": 12086962,
+          "p10": 12674507,
+          "p25": 16776655,
+          "median": 20931605,
+          "p75": 23102531,
+          "p90": 25991192,
+          "p95": 27957260,
+          "mean": 20233707,
+          "max": 36357568
+        },
+        "worstDates": [
+          {
+            "date": "2023-06-11",
+            "boundUSD": 4185408,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-11",
+            "boundUSD": 4189605,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-12",
+            "boundUSD": 4243939,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-11",
+            "boundUSD": 4252025,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-10",
+            "boundUSD": 4264244,
+            "binding": "linkusdt"
+          }
+        ],
+        "worstDatesRecent24m": [
+          {
+            "date": "2026-03-27",
+            "boundUSD": 9284779,
+            "binding": "linkusdt",
+            "weight": 0.3928
+          },
+          {
+            "date": "2026-03-27",
+            "boundUSD": 9411062,
+            "binding": "linkusdt",
+            "weight": 0.3961
+          },
+          {
+            "date": "2026-03-28",
+            "boundUSD": 9516566,
+            "binding": "linkusdt",
+            "weight": 0.3961
+          },
+          {
+            "date": "2026-03-27",
+            "boundUSD": 9586560,
+            "binding": "linkusdt",
+            "weight": 0.3934
+          },
+          {
+            "date": "2026-03-26",
+            "boundUSD": 9613187,
+            "binding": "linkusdt",
+            "weight": 0.3854
+          }
+        ],
+        "tailBindingSymbolCounts": {
+          "linkusdt": 245,
+          "adausdt": 14
+        }
+      },
+      "atPublishedSize": {
+        "participationCapPct": 5,
+        "maxParticipationPct": 44.1849,
+        "breachFraction": 0.6944,
+        "breachesPerYear": 760.3226,
+        "p99ParticipationPct": 29.6981,
+        "medianParticipationPct": 8.155
+      },
+      "capacityStress": {
+        "bookWorst5Pct": {
+          "n": 260,
+          "median": 24812790,
+          "p5": 8218191,
+          "mean": 35753926
+        },
+        "basketOiDropWorst5Pct": {
+          "n": 251,
+          "median": 18266552,
+          "p5": 8074663,
+          "mean": 28118017
+        }
+      },
+      "impactCapacityY1": 4177146471,
+      "restatedUsable": {
+        "published": {
+          "oiBound": 36986403,
+          "impactBound": 4177146471,
+          "usable": 36986403
+        },
+        "averageCase": {
+          "oiBound": 26494378,
+          "usable": 26494378
+        },
+        "worstCaseFull": {
+          "oiBound": 4185408,
+          "usable": 4185408
+        },
+        "p5Full": {
+          "oiBound": 8354875,
+          "usable": 8354875
+        },
+        "recent24mP5": {
+          "oiBound": 12265006,
+          "usable": 12265006
+        },
+        "recent24mMin": {
+          "oiBound": 9284779,
+          "usable": 9284779
+        }
+      },
+      "oiCoverage": {
+        "bookPeriods": 5248,
+        "withOiPrint": 5176,
+        "missingFraction": 0.0137,
+        "firstOiBookDate": "2021-12-01",
+        "lastOiBookDate": "2026-08-31",
+        "lastBookDate": "2026-09-19"
+      }
+    },
+    "fade_lam0.1_cap12.5": {
+      "family": "fade",
+      "lambda": 0.1,
+      "cap": 0.125,
+      "periods": 5248,
+      "turnoverAnnual": 13,
+      "windows": {
+        "full": {
+          "n": 5248,
+          "grossSharpe": 1.0397,
+          "net4Sharpe": 1.0017,
+          "breakEvenBps": 109.2998
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 0.797,
+          "net4Sharpe": 0.7493,
+          "breakEvenBps": 66.8255
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 1.6297,
+          "net4Sharpe": 1.5691,
+          "breakEvenBps": 107.4382
+        }
+      },
+      "oiBound": {
+        "ratioOfMeans_published": {
+          "USD": 53844617,
+          "exactUSD": 53844616.78191526,
+          "bindingSymbol": "linkusdt"
+        },
+        "meanOfRatios_averageCase": {
+          "USD": 40325897,
+          "exactUSD": 40325896.63595598,
+          "bindingSymbol": "linkusdt"
+        },
+        "minOfRatios_worstCase": {
+          "USD": 12624548,
+          "exactUSD": 12624548.4,
+          "bindingSymbol": "linkusdt"
+        },
+        "naiveMinOiOverMeanWeight": {
+          "USD": 16215010,
+          "exactUSD": 16215009.947473397,
+          "bindingSymbol": "dogeusdt"
+        },
+        "note": "ratioOfMeans = the published convention (f*mean(OI)/mean|w|). meanOfRatios = true average-case (f/mean(|w|/OI)). minOfRatios = true worst-case (f*min(OI/|w|)). naiveMinOiOverMeanWeight = f*min(OI)/mean|w| - the \"just use min OI\" fix, which is NOT the worst case.",
+        "timeVarying_distribution_full": {
+          "n": 5176,
+          "min": 12624548,
+          "p5": 15735498,
+          "p10": 18018658,
+          "p25": 22912951,
+          "median": 31548433,
+          "p75": 52054578,
+          "p90": 90605389,
+          "p95": 133909168,
+          "mean": 45512513,
+          "max": 270448735
+        },
+        "timeVarying_distribution_last24m": {
+          "n": 2190,
+          "min": 14297730,
+          "p5": 21868709,
+          "p10": 25634171,
+          "p25": 32814200,
+          "median": 45686503,
+          "p75": 79949376,
+          "p90": 142420588,
+          "p95": 169413140,
+          "mean": 64348218,
+          "max": 270448735
+        },
+        "timeVarying_distribution_last12m": {
+          "n": 1095,
+          "min": 23522924,
+          "p5": 27359927,
+          "p10": 29369574,
+          "p25": 32141768,
+          "median": 37499959,
+          "p75": 53017189,
+          "p90": 110056178,
+          "p95": 135149105,
+          "mean": 53873893,
+          "max": 270448735
+        },
+        "timeVarying_distribution_last3m": {
+          "n": 274,
+          "min": 23522924,
+          "p5": 24345739,
+          "p10": 26299528,
+          "p25": 28670795,
+          "median": 33848503,
+          "p75": 39247858,
+          "p90": 46876049,
+          "p95": 64610070,
+          "mean": 36311659,
+          "max": 81327185
+        },
+        "worstDates": [
+          {
+            "date": "2023-06-12",
+            "boundUSD": 12624548,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-11",
+            "boundUSD": 12679509,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-12",
+            "boundUSD": 12688409,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-11",
+            "boundUSD": 12777851,
+            "binding": "linkusdt"
+          },
+          {
+            "date": "2023-06-15",
+            "boundUSD": 12857105,
+            "binding": "linkusdt"
+          }
+        ],
+        "worstDatesRecent24m": [
+          {
+            "date": "2024-09-19",
+            "boundUSD": 16060516,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-09-19",
+            "boundUSD": 16524868,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-09-20",
+            "boundUSD": 16784875,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-09-20",
+            "boundUSD": 17358912,
+            "binding": "linkusdt",
+            "weight": 0.125
+          },
+          {
+            "date": "2024-09-20",
+            "boundUSD": 17668557,
+            "binding": "linkusdt",
+            "weight": 0.125
+          }
+        ],
+        "tailBindingSymbolCounts": {
+          "linkusdt": 208,
+          "adausdt": 48,
+          "dogeusdt": 3
+        }
+      },
+      "atPublishedSize": {
+        "participationCapPct": 5,
+        "maxParticipationPct": 21.3254,
+        "breachFraction": 0.7658,
+        "breachesPerYear": 838.5974,
+        "p99ParticipationPct": 18.899,
+        "medianParticipationPct": 8.5336
+      },
+      "capacityStress": {
+        "bookWorst5Pct": {
+          "n": 259,
+          "median": 36618479,
+          "p5": 16307889,
+          "mean": 52795186
+        },
+        "basketOiDropWorst5Pct": {
+          "n": 251,
+          "median": 27728204,
+          "p5": 15239605,
+          "mean": 40210490
+        }
+      },
+      "impactCapacityY1": 6952186004,
+      "restatedUsable": {
+        "published": {
+          "oiBound": 53844617,
+          "impactBound": 6952186004,
+          "usable": 53844617
+        },
+        "averageCase": {
+          "oiBound": 40325897,
+          "usable": 40325897
+        },
+        "worstCaseFull": {
+          "oiBound": 12624548,
+          "usable": 12624548
+        },
+        "p5Full": {
+          "oiBound": 15735498,
+          "usable": 15735498
+        },
+        "recent24mP5": {
+          "oiBound": 21868709,
+          "usable": 21868709
+        },
+        "recent24mMin": {
+          "oiBound": 14297730,
+          "usable": 14297730
+        }
+      },
+      "oiCoverage": {
+        "bookPeriods": 5248,
+        "withOiPrint": 5176,
+        "missingFraction": 0.0137,
+        "firstOiBookDate": "2021-12-01",
+        "lastOiBookDate": "2026-08-31",
+        "lastBookDate": "2026-09-19"
+      }
+    }
+  },
+  "frontier": [
+    {
+      "name": "disp_lam0.1",
+      "binding": "linkusdt",
+      "publishedBoundUSD": 23413985,
+      "averageCaseUSD": 18282994,
+      "worstCaseUSD": 4365917,
+      "recent24mP5USD": 11190383,
+      "recent24mMinUSD": 7382292,
+      "oiFactorRecentP5": 2.0923,
+      "oiFactorRecentMin": 3.1716,
+      "publishedUsableUSD": 13211349,
+      "recentP5UsableUSD": 11190383,
+      "usableOverstatementFactor": 1.1806,
+      "breachFractionAtPublished": 0.6818,
+      "peakParticipationPct": 26.8145,
+      "impactCapacityUSD": 13211349,
+      "publishedBoundIs": "impact"
+    },
+    {
+      "name": "disp_lam0.01",
+      "binding": "linkusdt",
+      "publishedBoundUSD": 19200934,
+      "averageCaseUSD": 14888326,
+      "worstCaseUSD": 4994515,
+      "recent24mP5USD": 10247670,
+      "recent24mMinUSD": 8286914,
+      "oiFactorRecentP5": 1.8737,
+      "oiFactorRecentMin": 2.317,
+      "publishedUsableUSD": 19200934,
+      "recentP5UsableUSD": 10247670,
+      "usableOverstatementFactor": 1.8737,
+      "breachFractionAtPublished": 0.6509,
+      "peakParticipationPct": 19.222,
+      "impactCapacityUSD": 1985965104,
+      "publishedBoundIs": "OI"
+    },
+    {
+      "name": "disp_lam0.02_cap12.5",
+      "binding": "linkusdt",
+      "publishedBoundUSD": 35937181,
+      "averageCaseUSD": 29310509,
+      "worstCaseUSD": 11498346,
+      "recent24mP5USD": 20338768,
+      "recent24mMinUSD": 15956961,
+      "oiFactorRecentP5": 1.7669,
+      "oiFactorRecentMin": 2.2521,
+      "publishedUsableUSD": 35937181,
+      "recentP5UsableUSD": 20338768,
+      "usableOverstatementFactor": 1.7669,
+      "breachFractionAtPublished": 0.6934,
+      "peakParticipationPct": 15.6271,
+      "impactCapacityUSD": 726292139,
+      "publishedBoundIs": "OI"
+    },
+    {
+      "name": "fade_lam0.1",
+      "binding": "linkusdt",
+      "publishedBoundUSD": 36986403,
+      "averageCaseUSD": 26494378,
+      "worstCaseUSD": 4185408,
+      "recent24mP5USD": 12265006,
+      "recent24mMinUSD": 9284779,
+      "oiFactorRecentP5": 3.0156,
+      "oiFactorRecentMin": 3.9836,
+      "publishedUsableUSD": 36986403,
+      "recentP5UsableUSD": 12265006,
+      "usableOverstatementFactor": 3.0156,
+      "breachFractionAtPublished": 0.6944,
+      "peakParticipationPct": 44.1849,
+      "impactCapacityUSD": 4177146471,
+      "publishedBoundIs": "OI"
+    },
+    {
+      "name": "fade_lam0.1_cap12.5",
+      "binding": "linkusdt",
+      "publishedBoundUSD": 53844617,
+      "averageCaseUSD": 40325897,
+      "worstCaseUSD": 12624548,
+      "recent24mP5USD": 21868709,
+      "recent24mMinUSD": 14297730,
+      "oiFactorRecentP5": 2.4622,
+      "oiFactorRecentMin": 3.766,
+      "publishedUsableUSD": 53844617,
+      "recentP5UsableUSD": 21868709,
+      "usableOverstatementFactor": 2.4622,
+      "breachFractionAtPublished": 0.7658,
+      "peakParticipationPct": 21.3254,
+      "impactCapacityUSD": 6952186004,
+      "publishedBoundIs": "OI"
+    }
+  ],
+  "verdict": {
+    "note": "Falsifier: immaterial if every sleeve's recent-24m worst-case OI bound is within 20% of the published ratio-of-means AND the breach fraction at the published size is < 5%.",
+    "materialBooks": [
+      "disp_lam0.1",
+      "disp_lam0.01",
+      "disp_lam0.02_cap12.5",
+      "fade_lam0.1",
+      "fade_lam0.1_cap12.5"
+    ],
+    "correctionIsMaterial": true,
+    "summary": "The published OI bound is f*mean(OI)/mean|w| (a ratio of means). The true average-case bound f/mean(|w|/OI) is lower, and the true worst case f*min(OI/|w|) is lower still; at the published size every sleeve breaches the 5%-of-OI cap a majority of the time, and peak participation reaches 16-44% of a single symbol's open interest.",
+    "validationPass": true
+  }
+}

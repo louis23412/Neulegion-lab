@@ -1,0 +1,383 @@
+{
+  "config": {
+    "tf": "1h",
+    "bars": 53500,
+    "streams": 8,
+    "window": 1,
+    "truePeriodsPerYear": 8760,
+    "firstBar": "2020-08-11T06:00:00.000Z",
+    "lastBar": "2026-09-19T05:00:00.000Z"
+  },
+  "spreadEstimates": {
+    "note": "Half of these is the most a passive fill could earn. Both estimators are VOLATILITY-contaminated on crypto (a real BTC perp spread is ~1 bp, not 20), so they are unusable upper bounds and cannot resolve a 0.5-1.0 bps break-even. That is the point: the bar model cannot measure the maker's spread capture.",
+    "perSymbol": {
+      "btcusdt": {
+        "corwinSchultzBps": 20.746,
+        "rollBps": 11.061
+      },
+      "ethusdt": {
+        "corwinSchultzBps": 26.952,
+        "rollBps": 0
+      },
+      "solusdt": {
+        "corwinSchultzBps": 42.96,
+        "rollBps": 38.189
+      },
+      "bnbusdt": {
+        "corwinSchultzBps": 26.371,
+        "rollBps": 18.325
+      },
+      "xrpusdt": {
+        "corwinSchultzBps": 33.557,
+        "rollBps": 32.497
+      },
+      "adausdt": {
+        "corwinSchultzBps": 37.242,
+        "rollBps": 33.872
+      },
+      "dogeusdt": {
+        "corwinSchultzBps": 39.587,
+        "rollBps": 27.301
+      },
+      "linkusdt": {
+        "corwinSchultzBps": 39.424,
+        "rollBps": 25.296
+      }
+    },
+    "meanCsBps": 33.355,
+    "meanRollBps": 23.318
+  },
+  "fillSelection": {
+    "note": "Per-symbol reversal signal (long after a down bar, short after an up bar), passive quote at the signal close offset by `depth`, filled if the next bar reaches it. meanFilledFromQuoteBps isolates SELECTION (return measured from the reference close); netVsTakerBps = return from the actual fill price minus the taker's unconditional return. NEGATIVE selection = adverse. At depth 0 the fill rate is ~99% (quoting at the last price is almost always reached), so a maker there is a fee-discounted taker with the worse half of the signal.",
+    "byDepth": {
+      "d0bp": {
+        "depthBps": 0,
+        "fillRate": 0.9937,
+        "meanFilledFromQuoteBps": 0.043,
+        "meanFilledFromFillBps": 0.043,
+        "meanNotFilledBps": 97.95,
+        "meanAllBps": 0.657,
+        "selectionBps": -0.614,
+        "netVsTakerBps": -0.614
+      },
+      "d1bp": {
+        "depthBps": 1,
+        "fillRate": 0.9647,
+        "meanFilledFromQuoteBps": -1.934,
+        "meanFilledFromFillBps": -0.934,
+        "meanNotFilledBps": 71.539,
+        "meanAllBps": 0.657,
+        "selectionBps": -2.591,
+        "netVsTakerBps": -1.591
+      },
+      "d5bp": {
+        "depthBps": 5,
+        "fillRate": 0.9078,
+        "meanFilledFromQuoteBps": -5.564,
+        "meanFilledFromFillBps": -0.563,
+        "meanNotFilledBps": 61.92,
+        "meanAllBps": 0.657,
+        "selectionBps": -6.221,
+        "netVsTakerBps": -1.221
+      },
+      "d10bp": {
+        "depthBps": 10,
+        "fillRate": 0.8342,
+        "meanFilledFromQuoteBps": -10.365,
+        "meanFilledFromFillBps": -0.364,
+        "meanNotFilledBps": 56.11,
+        "meanAllBps": 0.657,
+        "selectionBps": -11.023,
+        "netVsTakerBps": -1.021
+      },
+      "d20bp": {
+        "depthBps": 20,
+        "fillRate": 0.6992,
+        "meanFilledFromQuoteBps": -20.019,
+        "meanFilledFromFillBps": -0.016,
+        "meanNotFilledBps": 48.712,
+        "meanAllBps": 0.657,
+        "selectionBps": -20.677,
+        "netVsTakerBps": -0.673
+      }
+    },
+    "byHorizon": {
+      "h1": {
+        "fillRate": 0.9937,
+        "meanAllBps": 0.657,
+        "selectionBps": -0.614
+      },
+      "h2": {
+        "fillRate": 0.9937,
+        "meanAllBps": 1.953,
+        "selectionBps": -0.638
+      },
+      "h4": {
+        "fillRate": 0.9937,
+        "meanAllBps": 1.93,
+        "selectionBps": -0.6
+      }
+    },
+    "perSymbol": {
+      "btcusdt_d0bp": {
+        "fillRate": 0.9978,
+        "selectionBps": -0.15,
+        "netVsTakerBps": -0.15
+      },
+      "ethusdt_d0bp": {
+        "fillRate": 0.9965,
+        "selectionBps": -0.278,
+        "netVsTakerBps": -0.278
+      },
+      "solusdt_d0bp": {
+        "fillRate": 0.9918,
+        "selectionBps": -1.088,
+        "netVsTakerBps": -1.088
+      },
+      "bnbusdt_d0bp": {
+        "fillRate": 0.9957,
+        "selectionBps": -0.306,
+        "netVsTakerBps": -0.306
+      },
+      "xrpusdt_d0bp": {
+        "fillRate": 0.9936,
+        "selectionBps": -0.601,
+        "netVsTakerBps": -0.601
+      },
+      "adausdt_d0bp": {
+        "fillRate": 0.9924,
+        "selectionBps": -0.759,
+        "netVsTakerBps": -0.759
+      },
+      "dogeusdt_d0bp": {
+        "fillRate": 0.991,
+        "selectionBps": -0.833,
+        "netVsTakerBps": -0.833
+      },
+      "linkusdt_d0bp": {
+        "fillRate": 0.991,
+        "selectionBps": -0.909,
+        "netVsTakerBps": -0.909
+      },
+      "btcusdt_d5bp": {
+        "fillRate": 0.8709,
+        "selectionBps": -5.261,
+        "netVsTakerBps": -0.261
+      },
+      "ethusdt_d5bp": {
+        "fillRate": 0.8967,
+        "selectionBps": -5.873,
+        "netVsTakerBps": -0.873
+      },
+      "solusdt_d5bp": {
+        "fillRate": 0.9309,
+        "selectionBps": -6.587,
+        "netVsTakerBps": -1.587
+      },
+      "bnbusdt_d5bp": {
+        "fillRate": 0.8841,
+        "selectionBps": -6.336,
+        "netVsTakerBps": -1.336
+      },
+      "xrpusdt_d5bp": {
+        "fillRate": 0.9066,
+        "selectionBps": -6.737,
+        "netVsTakerBps": -1.737
+      },
+      "adausdt_d5bp": {
+        "fillRate": 0.9219,
+        "selectionBps": -6.629,
+        "netVsTakerBps": -1.629
+      },
+      "dogeusdt_d5bp": {
+        "fillRate": 0.9172,
+        "selectionBps": -6.51,
+        "netVsTakerBps": -1.509
+      },
+      "linkusdt_d5bp": {
+        "fillRate": 0.9349,
+        "selectionBps": -5.867,
+        "netVsTakerBps": -0.866
+      }
+    },
+    "sideControls": {
+      "mom": {
+        "d0bp": {
+          "fillRate": 0.9939,
+          "meanAllBps": -0.657,
+          "selectionBps": -0.69,
+          "netVsTakerBps": -0.69
+        },
+        "d5bp": {
+          "fillRate": 0.9194,
+          "meanAllBps": -0.657,
+          "selectionBps": -6.151,
+          "netVsTakerBps": -1.15
+        }
+      },
+      "random": {
+        "d0bp": {
+          "fillRate": 0.994,
+          "meanAllBps": 0.092,
+          "selectionBps": -0.649,
+          "netVsTakerBps": -0.649
+        },
+        "d5bp": {
+          "fillRate": 0.914,
+          "meanAllBps": 0.092,
+          "selectionBps": -6.178,
+          "netVsTakerBps": -1.177
+        }
+      }
+    }
+  },
+  "books": {
+    "taker": {
+      "model": "taker",
+      "depthBps": 0,
+      "grossSharpe252": 0.4147,
+      "turnoverAnnualTrue": 11654,
+      "fractionOfTakerTurnover": 1,
+      "breakEvenBps": 0.709,
+      "netSharpeByFeeBps": {
+        "0": 0.415,
+        "1": -0.17,
+        "2": -0.754,
+        "4": -1.921,
+        "5": -2.503,
+        "10": -5.395,
+        "0.5": 0.122
+      }
+    },
+    "maker_d0": {
+      "model": "maker",
+      "depthBps": 0,
+      "grossSharpe252": -0.0019,
+      "turnoverAnnualTrue": 11536,
+      "fractionOfTakerTurnover": 0.99,
+      "breakEvenBps": -0.003,
+      "netSharpeByFeeBps": {
+        "0": -0.002,
+        "1": -0.572,
+        "2": -1.142,
+        "4": -2.282,
+        "5": -2.85,
+        "10": -5.677,
+        "0.5": -0.287
+      }
+    },
+    "maker_d1bp": {
+      "model": "maker",
+      "depthBps": 1,
+      "grossSharpe252": -0.5959,
+      "turnoverAnnualTrue": 11099,
+      "fractionOfTakerTurnover": 0.952,
+      "breakEvenBps": -1.133,
+      "netSharpeByFeeBps": {
+        "0": -0.596,
+        "1": -1.122,
+        "2": -1.649,
+        "4": -2.703,
+        "5": -3.23,
+        "10": -5.859,
+        "0.5": -0.859
+      }
+    },
+    "maker_d5bp": {
+      "model": "maker",
+      "depthBps": 5,
+      "grossSharpe252": -0.3544,
+      "turnoverAnnualTrue": 10353,
+      "fractionOfTakerTurnover": 0.888,
+      "breakEvenBps": -0.778,
+      "netSharpeByFeeBps": {
+        "0": -0.354,
+        "1": -0.811,
+        "2": -1.269,
+        "4": -2.187,
+        "5": -2.648,
+        "10": -4.959,
+        "0.5": -0.582
+      }
+    },
+    "maker_d10bp": {
+      "model": "maker",
+      "depthBps": 10,
+      "grossSharpe252": -0.2197,
+      "turnoverAnnualTrue": 9411,
+      "fractionOfTakerTurnover": 0.808,
+      "breakEvenBps": -0.573,
+      "netSharpeByFeeBps": {
+        "0": -0.22,
+        "1": -0.604,
+        "2": -0.991,
+        "4": -1.767,
+        "5": -2.158,
+        "10": -4.124,
+        "0.5": -0.412
+      }
+    },
+    "maker_d20bp": {
+      "model": "maker",
+      "depthBps": 20,
+      "grossSharpe252": 0.0037,
+      "turnoverAnnualTrue": 7739,
+      "fractionOfTakerTurnover": 0.664,
+      "breakEvenBps": 0.013,
+      "netSharpeByFeeBps": {
+        "0": 0.004,
+        "1": -0.284,
+        "2": -0.574,
+        "4": -1.157,
+        "5": -1.45,
+        "10": -2.933,
+        "0.5": -0.14
+      }
+    },
+    "oracle": {
+      "model": "oracle",
+      "depthBps": 0,
+      "grossSharpe252": 16.8677,
+      "turnoverAnnualTrue": 11654,
+      "fractionOfTakerTurnover": 1,
+      "breakEvenBps": 67.898,
+      "netSharpeByFeeBps": {
+        "0": 16.868,
+        "1": 16.639,
+        "2": 16.41,
+        "4": 15.949,
+        "5": 15.717,
+        "10": 14.547,
+        "0.5": 16.754
+      }
+    }
+  },
+  "validation": {
+    "tag": "taker",
+    "takerGrossSharpe252": 0.4147,
+    "takerBreakEvenBps": 0.709,
+    "e24Reference": {
+      "grossSharpe252": 0.41433128097876265,
+      "breakEvenBps": 0.7089322071725292
+    },
+    "matchesE24": true,
+    "note": "taker uses the identical target and return path as E24 rank_w1_rev; if it does not reproduce that artefact, the execution model is measuring a different book and nothing else counts."
+  },
+  "conclusion": {
+    "note": "Financial-per-trade view. takerBreakEvenBps is what a passive execution must beat after its fee. oracleBreakEvenBps is the UNACHIEVABLE ceiling (filled at the bar extreme). netVsTakerBps per depth is the maker's per-fill edge over taking, from the actual fill price. If even `oracle` does not clear a realistic fee, no maker model can save the family.",
+    "takerBreakEvenBps": 0.709,
+    "oracleBreakEvenBps": 67.898,
+    "oracleNetAt1bps": 16.639,
+    "oracleNetAt4bps": 15.949,
+    "maker_d0_breakEvenBps": -0.003,
+    "maker_d5bp_breakEvenBps": -0.778,
+    "maker_d0_netAt1bps": -0.572,
+    "maker_d0_tradesFractionOfTaker": 0.99,
+    "spreadCaptureUnusableBps": 33.355,
+    "deepestTested": {
+      "depthBps": 20,
+      "fillRate": 0.6992,
+      "netVsTakerBps": -0.673
+    }
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "config": {
+    "tf": "15m",
+    "symbols": 8,
+    "bars": 77735,
+    "blocks": 6,
+    "flowNote": "taker-buy ratio from data.binance.vision, 2020-08 .. 2026-08"
+  },
+  "coverage": {
+    "mean": 1,
+    "min": 1,
+    "max": 1
+  },
+  "panel": {
+    "meanPairwiseReturnCorr": 0.7316943149320131,
+    "meanPairwiseFlowCorr": 0.22115782468541884
+  },
+  "ic": {
+    "flow-1": {
+      "h1": -0.0069176843595185845,
+      "h4": -0.006816009888876204,
+      "n": 621872
+    },
+    "flow-8": {
+      "h1": -0.003959370024301883,
+      "h4": -0.002685585469436103,
+      "n": 621872
+    },
+    "flow-24": {
+      "h1": 0.0007194872873730758,
+      "h4": 0.0038250314381639942,
+      "n": 621872
+    },
+    "flow-chg-8": {
+      "h1": -0.006183135570134663,
+      "h4": -0.006372922632541939,
+      "n": 621864
+    },
+    "flow-diverge-8": {
+      "h1": 0.00042080951887551153,
+      "h4": -0.0010029208023462938,
+      "n": 616947
+    },
+    "flow-gate-mom16": {
+      "h1": -0.016639620244920907,
+      "h4": -0.014681961347723848,
+      "n": 404681
+    },
+    "flow-xs-8": {
+      "h1": 0.000840352143279136,
+      "h4": 0.003134755671933188,
+      "n": 621872
+    },
+    "flow-xs-24": {
+      "h1": 0.0013578305003086168,
+      "h4": 0.00343305605154352,
+      "n": 621872
+    },
+    "mom-16": {
+      "h1": -0.011433113266551404,
+      "h4": -0.007126587959676526,
+      "n": 621752
+    }
+  },
+  "arms": {
+    "flow-1": {
+      "note": "this bar's signed taker imbalance",
+      "meanSharpe": -0.1257118915679571,
+      "meanBreakEvenCostBps": -0.2896235402879999,
+      "positiveStreams": 0,
+      "turnoverPerBar": 0.5138994601829195,
+      "stability": {
+        "blockSharpes": [
+          -0.09987468061562349,
+          0.07909214295169074,
+          -0.25804848933613045,
+          -0.2691347300786712,
+          -0.3443962254545777,
+          0.057393576075936356
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.3443962254545777,
+        "max": 0.07909214295169074
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.19066977125176193,
+        "designEffect": 2.4381676660055627,
+        "effectiveStreams": 3.426581467677214,
+        "effectiveBars": 31499.064264854696,
+        "adjustmentNeeded": true,
+        "seCluster": 0.08944488398834581,
+        "seIid": 0.05728273182010471
+      },
+      "pooled": {
+        "netSharpe": 0.09706869004502312,
+        "dsr": 0.9560349521646112,
+        "dsrAdjusted": 0.8627639059470507,
+        "effectiveBars": 31499,
+        "psrAdjusted": 0.8627639059470507
+      },
+      "marketCorr": -0.08597579828529037
+    },
+    "flow-8": {
+      "note": "8-bar mean imbalance",
+      "meanSharpe": -0.10344340019680459,
+      "meanBreakEvenCostBps": -0.7497667390676545,
+      "positiveStreams": 0,
+      "turnoverPerBar": 0.19427905017398547,
+      "stability": {
+        "blockSharpes": [
+          -0.06612479621497983,
+          0.02238945006349441,
+          -0.30243287595042107,
+          -0.1245335289127702,
+          -0.2327098514446473,
+          0.037432253257732084
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.30243287595042107,
+        "max": 0.037432253257732084
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.12477866763381691,
+        "designEffect": 1.7208266428848773,
+        "effectiveStreams": 4.270195160956408,
+        "effectiveBars": 44629.71346796953,
+        "adjustmentNeeded": true,
+        "seCluster": 0.07514321444822614,
+        "seIid": 0.05728240037919574
+      },
+      "pooled": {
+        "netSharpe": 0.05995475914035369,
+        "dsr": 0.8529278089791749,
+        "dsrAdjusted": 0.7880628578038735,
+        "effectiveBars": 44630,
+        "psrAdjusted": 0.7880628578038735
+      },
+      "marketCorr": 0.017558192924589724
+    },
+    "flow-24": {
+      "note": "24-bar mean imbalance",
+      "meanSharpe": -0.0372030236233003,
+      "meanBreakEvenCostBps": -0.35952531265962606,
+      "positiveStreams": 2,
+      "turnoverPerBar": 0.15011469266041413,
+      "stability": {
+        "blockSharpes": [
+          0.00775574885138031,
+          -0.002181945626510102,
+          -0.2441332238272681,
+          -0.00031253995263325843,
+          -0.017588592180435385,
+          0.017328782933872664
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.2441332238272681,
+        "max": 0.017328782933872664
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.1179648086699895,
+        "designEffect": 1.5655808480029418,
+        "effectiveStreams": 4.3817521346099415,
+        "effectiveBars": 49055.27561733157,
+        "adjustmentNeeded": true,
+        "seCluster": 0.0716733052645945,
+        "seIid": 0.05728219914213656
+      },
+      "pooled": {
+        "netSharpe": -0.007235466115448357,
+        "dsr": 0.4497541775172025,
+        "dsrAdjusted": 0.4598046365356132,
+        "effectiveBars": 49055,
+        "psrAdjusted": 0.4598046365356132
+      },
+      "marketCorr": 0.021029416931859342
+    },
+    "flow-chg-8": {
+      "note": "flow shock vs trailing mean",
+      "meanSharpe": -0.09693828066675275,
+      "meanBreakEvenCostBps": -0.22002112340870117,
+      "positiveStreams": 0,
+      "turnoverPerBar": 0.5154671669644879,
+      "stability": {
+        "blockSharpes": [
+          -0.10469471981375267,
+          0.07865086972538339,
+          -0.13999445602898172,
+          -0.22714727376284727,
+          -0.27884355401357364,
+          0.028609897891446714
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.27884355401357364,
+        "max": 0.07865086972538339
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.18386849290156332,
+        "designEffect": 2.297756681701345,
+        "effectiveStreams": 3.497910839482357,
+        "effectiveBars": 33423.90454638322,
+        "adjustmentNeeded": true,
+        "seCluster": 0.08683074748251236,
+        "seIid": 0.05728244157568632
+      },
+      "pooled": {
+        "netSharpe": 0.06569517602815869,
+        "dsr": 0.8752789010367427,
+        "dsrAdjusted": 0.7763062538351155,
+        "effectiveBars": 33424,
+        "psrAdjusted": 0.7763062538351155
+      },
+      "marketCorr": -0.0795513630382776
+    },
+    "flow-diverge-8": {
+      "note": "price/flow agreement (+1/-1)",
+      "meanSharpe": 0.019540416861668197,
+      "meanBreakEvenCostBps": 0.07581063997830235,
+      "positiveStreams": 5,
+      "turnoverPerBar": 0.26852765405022555,
+      "stability": {
+        "blockSharpes": [
+          0.007907148190644732,
+          -0.009432099502537344,
+          0.013641171214728617,
+          0.010658209587973482,
+          -0.01077440656576516,
+          0.14905625671255562
+        ],
+        "positiveFraction": 0.6666666666666666,
+        "min": -0.01077440656576516,
+        "max": 0.14905625671255562
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.03659273811343129,
+        "designEffect": 1.0711601827181971,
+        "effectiveStreams": 6.368670386828211,
+        "effectiveBars": 71697.96006150155,
+        "adjustmentNeeded": true,
+        "seCluster": 0.05928645259907527,
+        "seIid": 0.057283329779449645
+      },
+      "pooled": {
+        "netSharpe": 0.1411480181027421,
+        "dsr": 0.9932069926399231,
+        "dsrAdjusted": 0.9914520677155969,
+        "effectiveBars": 71698,
+        "psrAdjusted": 0.9914520677155969
+      },
+      "marketCorr": 0.014569863771635364
+    },
+    "flow-gate-mom16": {
+      "note": "momentum, abstain on flow divergence",
+      "meanSharpe": -0.0688799640272727,
+      "meanBreakEvenCostBps": -0.5388177184993497,
+      "positiveStreams": 0,
+      "turnoverPerBar": 0.21865172282290213,
+      "stability": {
+        "blockSharpes": [
+          -0.007062944361181146,
+          -0.06268063534034794,
+          -0.27172228922557656,
+          0.004684072464092888,
+          -0.02435674857567746,
+          -0.08257218484128173
+        ],
+        "positiveFraction": 0.16666666666666666,
+        "min": -0.27172228922557656,
+        "max": 0.004684072464092888
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.3641623653555363,
+        "designEffect": 3.1052239202955536,
+        "effectiveStreams": 2.2540693688215034,
+        "effectiveBars": 24732.515905870718,
+        "adjustmentNeeded": true,
+        "seCluster": 0.10094132524287473,
+        "seIid": 0.05728257609866934
+      },
+      "pooled": {
+        "netSharpe": -0.08184255465661958,
+        "dsr": 0.07654061630798525,
+        "dsrAdjusted": 0.20874609823621226,
+        "effectiveBars": 24733,
+        "psrAdjusted": 0.20874609823621226
+      },
+      "marketCorr": -0.06096897117699554
+    },
+    "flow-xs-8": {
+      "note": "cross-sectional relative flow",
+      "meanSharpe": -0.022228054203195437,
+      "meanBreakEvenCostBps": -0.16459556410049714,
+      "positiveStreams": 3,
+      "turnoverPerBar": 0.19305481975968072,
+      "stability": {
+        "blockSharpes": [
+          -0.02044649216778093,
+          -0.006554847547665714,
+          -0.09913780979970353,
+          -0.027494545796157774,
+          -0.03457325732023514,
+          0.052204026879025846
+        ],
+        "positiveFraction": 0.16666666666666666,
+        "min": -0.09913780979970353,
+        "max": 0.052204026879025846
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": -0.08849390796376713,
+        "designEffect": 0.4009280760073363,
+        "effectiveStreams": 21.02261105503864,
+        "effectiveBars": 191555.55471399485,
+        "adjustmentNeeded": false,
+        "seCluster": 0.036270627592227676,
+        "seIid": 0.05728248305620356
+      },
+      "pooled": {
+        "netSharpe": 0.07111410681253594,
+        "dsr": 0.8926236022039804,
+        "dsrAdjusted": null,
+        "effectiveBars": null,
+        "psrAdjusted": null
+      },
+      "marketCorr": 0.07068010463545728
+    },
+    "flow-xs-24": {
+      "note": "cross-sectional relative flow, slower",
+      "meanSharpe": -0.0044876832214648926,
+      "meanBreakEvenCostBps": -0.029897402792174482,
+      "positiveStreams": 5,
+      "turnoverPerBar": 0.14756351186404848,
+      "stability": {
+        "blockSharpes": [
+          -0.02422116896225928,
+          0.03111535751097836,
+          -0.08479795639942111,
+          -0.009717565923892252,
+          -0.009335504072394162,
+          0.06573877929495034
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.08479795639942111,
+        "max": 0.06573877929495034
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": -0.08882666342005738,
+        "designEffect": 0.3212536545462031,
+        "effectiveStreams": 21.152082209226293,
+        "effectiveBars": 239063.42826974604,
+        "adjustmentNeeded": false,
+        "seCluster": 0.032467297205054535,
+        "seIid": 0.05728251772032846
+      },
+      "pooled": {
+        "netSharpe": 0.0751933928766536,
+        "dsr": 0.9053590043995468,
+        "dsrAdjusted": null,
+        "effectiveBars": null,
+        "psrAdjusted": null
+      },
+      "marketCorr": 0.13826592659590603
+    },
+    "mom-16": {
+      "note": "baseline for comparison",
+      "meanSharpe": -0.032605074617221716,
+      "meanBreakEvenCostBps": -0.33300772293341485,
+      "positiveStreams": 1,
+      "turnoverPerBar": 0.19365733627101162,
+      "stability": {
+        "blockSharpes": [
+          -0.0015349127822711795,
+          -0.034581896289871794,
+          -0.2118857279698262,
+          0.07427513235668991,
+          0.04318388958676358,
+          -0.12447818095078057
+        ],
+        "positiveFraction": 0.3333333333333333,
+        "min": -0.2118857279698262,
+        "max": 0.07427513235668991
+      },
+      "dependence": {
+        "streams": 8,
+        "nClusters": 192,
+        "meanPairwiseStreamCorr": 0.534259980694571,
+        "designEffect": 3.816680694987716,
+        "effectiveStreams": 1.6878278559290616,
+        "effectiveBars": 20122.196782365936,
+        "adjustmentNeeded": true,
+        "seCluster": 0.11191045405321266,
+        "seIid": 0.05728326236315615
+      },
+      "pooled": {
+        "netSharpe": -0.13697115494602338,
+        "dsr": 0.008149314229093041,
+        "dsrAdjusted": 0.10943158450001084,
+        "effectiveBars": 20122,
+        "psrAdjusted": 0.10943158450001084
+      },
+      "marketCorr": -0.17144634671420145
+    }
+  },
+  "controls": {
+    "oracle": {
+      "meanSharpe": 13.181258792759408,
+      "antiSharpe": -13.181258792759408
+    },
+    "random": {
+      "meanSharpe": -0.0678280999701526,
+      "antiSharpe": 0.0678280999701526
+    },
+    "pass": true
+  }
+}

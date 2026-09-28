@@ -1,0 +1,250 @@
+{
+  "config": {
+    "tf": "1h"
+  },
+  "forecast": {
+    "perSymbol": {
+      "candles.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -9.663821218903369,
+        "qlikeEwma": -9.755077339236346,
+        "qlikeHar": -9.469342839393123,
+        "qlikeHarFixed": -9.501364672487567,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_ethusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -9.000544484467225,
+        "qlikeEwma": -9.093226383550554,
+        "qlikeHar": -8.790640694882093,
+        "qlikeHarFixed": -8.821397882780728,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_solusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -8.528222940354027,
+        "qlikeEwma": -8.591852955452962,
+        "qlikeHar": -7.378700403630024,
+        "qlikeHarFixed": -7.219489631767559,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_bnbusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -9.536351312704205,
+        "qlikeEwma": -9.596032361241651,
+        "qlikeHar": -7.823423083703041,
+        "qlikeHarFixed": -7.85565028625893,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_xrpusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -8.838002604682945,
+        "qlikeEwma": -8.91419302435211,
+        "qlikeHar": -7.97850972642883,
+        "qlikeHarFixed": -7.930602404298316,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_adausdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -8.474929145222996,
+        "qlikeEwma": -8.534795099091818,
+        "qlikeHar": -6.9700908660866085,
+        "qlikeHarFixed": -6.875270564379722,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_dogeusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -8.502025083480246,
+        "qlikeEwma": -8.585403740212463,
+        "qlikeHar": -7.452209959963664,
+        "qlikeHarFixed": -7.260227020670724,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      },
+      "candles_linkusdt_1h.jsonl": {
+        "oos": 26390,
+        "qlikeBaseline": -8.480919121023677,
+        "qlikeEwma": -8.546340075964897,
+        "qlikeHar": -6.854124601023416,
+        "qlikeHarFixed": -7.086942911630191,
+        "harBeatsBaseline": false,
+        "harFixedBeatsBaseline": false,
+        "ewmaBeatsBaseline": true
+      }
+    },
+    "pooled": {
+      "n": 211120,
+      "qlikeBaseline": -8.878101988854619,
+      "qlikeEwma": -8.952115122387914,
+      "qlikeHar": -7.839630271888769,
+      "qlikeHarFixed": -7.8188681717843
+    }
+  },
+  "sizing": {
+    "carryPooled": {
+      "unsized": {
+        "n": 6558,
+        "annualized": 0.09046182033856837,
+        "sharpe": 4.539812843850759,
+        "maxDrawdown": 0.07955768174080637,
+        "totalReturn": 0.7169602312204901,
+        "negativeFraction": 0.3752668496492833
+      },
+      "sized": {
+        "n": 6558,
+        "annualized": 0.09334585023958758,
+        "sharpe": 8.054245171226231,
+        "maxDrawdown": 0.01325028151021719,
+        "totalReturn": 0.7482692592804483,
+        "negativeFraction": 0.3728270814272644
+      },
+      "sizedCap2": {
+        "n": 6558,
+        "annualized": 0.08614783084120366,
+        "sharpe": 7.9858357431664855,
+        "maxDrawdown": 0.013250281510217584,
+        "totalReturn": 0.6746000088762203,
+        "negativeFraction": 0.3728270814272644
+      },
+      "meanLeverage": 1.6341616631559805,
+      "leverageMedian": 1.6188587943146173,
+      "leverageMax": 4,
+      "unsizedDesignEffect": 99.51496949766671,
+      "sizedDesignEffect": 5.980178749040619,
+      "unsizedDesignEffectRobust": 11.80308598854362,
+      "sizedDesignEffectRobust": 6.223156115836088,
+      "target": 0.00033038933981279357
+    },
+    "carryPerSymbol": {
+      "btcusdt": {
+        "unsized": {
+          "n": 6777,
+          "annualized": 0.11495488604513625,
+          "sharpe": 9.828025054127108,
+          "maxDrawdown": 0.0047553296005106915,
+          "totalReturn": 1.0360264472319658,
+          "negativeFraction": 0.35620481038807733
+        }
+      },
+      "ethusdt": {
+        "unsized": {
+          "n": 6798,
+          "annualized": 0.12891746943675525,
+          "sharpe": 8.188347750420638,
+          "maxDrawdown": 0.019604603580130397,
+          "totalReturn": 1.2245000545505684,
+          "negativeFraction": 0.36157693439246835
+        }
+      },
+      "solusdt": {
+        "unsized": {
+          "n": 6558,
+          "annualized": -0.013050926211058146,
+          "sharpe": -0.10200865074227619,
+          "maxDrawdown": 0.4966853530090941,
+          "totalReturn": -0.1254641467763551,
+          "negativeFraction": 0.4422079902409271
+        }
+      },
+      "bnbusdt": {
+        "unsized": {
+          "n": 6777,
+          "annualized": 0.0004396264713409409,
+          "sharpe": 0.018334847894432425,
+          "maxDrawdown": 0.2673772029415,
+          "totalReturn": 0.0009425406897509703,
+          "negativeFraction": 0.49520436771432785
+        }
+      },
+      "xrpusdt": {
+        "unsized": {
+          "n": 6781,
+          "annualized": 0.134162838863048,
+          "sharpe": 4.123374002991854,
+          "maxDrawdown": 0.05689416797342359,
+          "totalReturn": 1.287522686355278,
+          "negativeFraction": 0.4133608612299071
+        }
+      },
+      "adausdt": {
+        "unsized": {
+          "n": 6798,
+          "annualized": 0.1280197405439285,
+          "sharpe": 5.944572322514209,
+          "maxDrawdown": 0.022584574158007586,
+          "totalReturn": 1.2106566111094854,
+          "negativeFraction": 0.42541924095322153
+        }
+      },
+      "dogeusdt": {
+        "unsized": {
+          "n": 6771,
+          "annualized": 0.12308037652757312,
+          "sharpe": 4.019127052125102,
+          "maxDrawdown": 0.035531376306388314,
+          "totalReturn": 1.1342991378658134,
+          "negativeFraction": 0.4119037069856742
+        }
+      },
+      "linkusdt": {
+        "unsized": {
+          "n": 6777,
+          "annualized": 0.13834834786875808,
+          "sharpe": 6.136863931514849,
+          "maxDrawdown": 0.024698942725508256,
+          "totalReturn": 1.350475982156996,
+          "negativeFraction": 0.40903054448871184
+        }
+      }
+    },
+    "carryCrossSection": {
+      "equalWeight": {
+        "n": 6558,
+        "annualized": 0.09046182033856837,
+        "sharpe": 4.539812843850759,
+        "maxDrawdown": 0.07955768174080637,
+        "totalReturn": 0.7169602312204901,
+        "negativeFraction": 0.3752668496492833
+      },
+      "inverseVol": {
+        "n": 6558,
+        "annualized": 0.11014262799777387,
+        "sharpe": 10.660217936521622,
+        "maxDrawdown": 0.00692172750541018,
+        "totalReturn": 0.93343090396989,
+        "negativeFraction": 0.34644708752668496
+      }
+    },
+    "controlRandom": {
+      "unsized": {
+        "n": 6558,
+        "annualized": 0.007642019275847908,
+        "sharpe": 0.3799790548721612,
+        "maxDrawdown": 0.04412574840142881,
+        "totalReturn": 0.045551495569096545,
+        "negativeFraction": 0.48368405001524856
+      },
+      "sized": {
+        "n": 6558,
+        "annualized": 0.009941974757880633,
+        "sharpe": 0.8337593271050869,
+        "maxDrawdown": 0.021602504644928286,
+        "totalReturn": 0.060899379330180636,
+        "negativeFraction": 0.48109179627935345
+      }
+    }
+  }
+}

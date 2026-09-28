@@ -1,0 +1,522 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5246,
+    "firstOI": 1310,
+    "lambdas": [
+      0.25,
+      0.1
+    ],
+    "sign": "+1 (prior, F-28 pooled IC 0.020)",
+    "splitYear": 2024,
+    "feeBps": 4,
+    "f": 0.05
+  },
+  "validation": {
+    "e21GrossSharpe": 0.9612203471681686,
+    "hereGrossSharpe": 0.9612,
+    "e21Turnover": 1501.113249693133,
+    "hereTurnover": 1501.113,
+    "matchesE21": true,
+    "note": "daily/sign+1 must reproduce e21#dLogOI_pos to display precision (xsBookImpl extraction)."
+  },
+  "daily": {
+    "grossSharpe": 0.961,
+    "turnoverAnnual": 1501.1,
+    "breakEvenBps": 1.89,
+    "net4": -1.07
+  },
+  "splits": {
+    "level": {
+      "daily": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 0.96,
+          "turnoverAnnual": 1501,
+          "breakEvenBps": 1.89,
+          "net4": -1.07
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": -0.25,
+          "turnoverAnnual": 1521,
+          "breakEvenBps": -0.57,
+          "net4": -1.99
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": 2.32,
+          "turnoverAnnual": 1486,
+          "breakEvenBps": 3.81,
+          "net4": -0.11
+        },
+        "perYearGross": {
+          "2021": -0.27,
+          "2022": -0.68,
+          "2023": 0.3,
+          "2024": 2.91,
+          "2025": 2.29,
+          "2026": 1.16
+        },
+        "perYearNet4": {
+          "2021": -1.86,
+          "2022": -2.25,
+          "2023": -1.7,
+          "2024": 0.9,
+          "2025": -0.26,
+          "2026": -2.76
+        }
+      },
+      "lam_0p25": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 1.18,
+          "turnoverAnnual": 338,
+          "breakEvenBps": 8.93,
+          "net4": 0.65
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": 0.34,
+          "turnoverAnnual": 342,
+          "breakEvenBps": 2.96,
+          "net4": -0.12
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": 2.06,
+          "turnoverAnnual": 334,
+          "breakEvenBps": 13.6,
+          "net4": 1.45
+        },
+        "perYearGross": {
+          "2021": -2.68,
+          "2022": 0.89,
+          "2023": -0.19,
+          "2024": 2.04,
+          "2025": 1.68,
+          "2026": 3.16
+        },
+        "perYearNet4": {
+          "2021": -3.1,
+          "2022": 0.52,
+          "2023": -0.86,
+          "2024": 1.56,
+          "2025": 0.96,
+          "2026": 2.3
+        }
+      },
+      "lam_0p1": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 0.71,
+          "turnoverAnnual": 116,
+          "breakEvenBps": 14.73,
+          "net4": 0.52
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": 0.64,
+          "turnoverAnnual": 118,
+          "breakEvenBps": 15.23,
+          "net4": 0.47
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": 0.82,
+          "turnoverAnnual": 114,
+          "breakEvenBps": 14.33,
+          "net4": 0.59
+        },
+        "perYearGross": {
+          "2021": -2.59,
+          "2022": -0.18,
+          "2023": 2.08,
+          "2024": -0.06,
+          "2025": 1.65,
+          "2026": 1.26
+        },
+        "perYearNet4": {
+          "2021": -2.78,
+          "2022": -0.33,
+          "2023": 1.88,
+          "2024": -0.26,
+          "2025": 1.41,
+          "2026": 0.99
+        }
+      },
+      "signNeg_lam_0p25": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": -1.18,
+          "turnoverAnnual": 338,
+          "breakEvenBps": -8.93,
+          "net4": -1.71
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": -0.34,
+          "turnoverAnnual": 342,
+          "breakEvenBps": -2.96,
+          "net4": -0.8
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": -2.06,
+          "turnoverAnnual": 334,
+          "breakEvenBps": -13.6,
+          "net4": -2.66
+        },
+        "perYearGross": {
+          "2021": 2.68,
+          "2022": -0.89,
+          "2023": 0.19,
+          "2024": -2.04,
+          "2025": -1.68,
+          "2026": -3.16
+        },
+        "perYearNet4": {
+          "2021": 2.25,
+          "2022": -1.27,
+          "2023": -0.48,
+          "2024": -2.52,
+          "2025": -2.39,
+          "2026": -4.01
+        }
+      }
+    },
+    "rank": {
+      "lam_0p25": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 0.79,
+          "turnoverAnnual": 331,
+          "breakEvenBps": 5.57,
+          "net4": 0.22
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": 0.09,
+          "turnoverAnnual": 334,
+          "breakEvenBps": 0.69,
+          "net4": -0.42
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": 1.48,
+          "turnoverAnnual": 328,
+          "breakEvenBps": 9.36,
+          "net4": 0.85
+        },
+        "perYearGross": {
+          "2021": -2.75,
+          "2022": 0.82,
+          "2023": -0.72,
+          "2024": 1,
+          "2025": 1.26,
+          "2026": 3.42
+        },
+        "perYearNet4": {
+          "2021": -3.16,
+          "2022": 0.4,
+          "2023": -1.44,
+          "2024": 0.48,
+          "2025": 0.57,
+          "2026": 2.5
+        }
+      },
+      "lam_0p1": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 0.2,
+          "turnoverAnnual": 112,
+          "breakEvenBps": 3.74,
+          "net4": -0.01
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": 0.55,
+          "turnoverAnnual": 114,
+          "breakEvenBps": 11.37,
+          "net4": 0.36
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": -0.13,
+          "turnoverAnnual": 111,
+          "breakEvenBps": -2.21,
+          "net4": -0.36
+        },
+        "perYearGross": {
+          "2021": -1.88,
+          "2022": 0.23,
+          "2023": 1.38,
+          "2024": -1.95,
+          "2025": 1.05,
+          "2026": 1.68
+        },
+        "perYearNet4": {
+          "2021": -2.08,
+          "2022": 0.07,
+          "2023": 1.12,
+          "2024": -2.15,
+          "2025": 0.79,
+          "2026": 1.42
+        }
+      }
+    },
+    "ensemble": {
+      "lam_50_50": {
+        "full": {
+          "n": 5246,
+          "start": "2021-12-01",
+          "end": "2026-09-18",
+          "grossSharpe": 1.18,
+          "turnoverAnnual": 254,
+          "breakEvenBps": 11.33,
+          "net4": 0.77
+        },
+        "pre2024": {
+          "n": 2270,
+          "start": "2021-12-01",
+          "end": "2023-12-31",
+          "grossSharpe": 0.69,
+          "turnoverAnnual": 256,
+          "breakEvenBps": 7.7,
+          "net4": 0.33
+        },
+        "post2024": {
+          "n": 2976,
+          "start": "2024-01-01",
+          "end": "2026-09-18",
+          "grossSharpe": 1.73,
+          "turnoverAnnual": 252,
+          "breakEvenBps": 14.15,
+          "net4": 1.24
+        },
+        "perYearGross": {
+          "2021": -2.61,
+          "2022": 0.64,
+          "2023": 1.22,
+          "2024": 1.3,
+          "2025": 1.99,
+          "2026": 2.56
+        },
+        "perYearNet4": {
+          "2021": -2.93,
+          "2022": 0.34,
+          "2023": 0.73,
+          "2024": 0.89,
+          "2025": 1.45,
+          "2026": 1.88
+        }
+      }
+    }
+  },
+  "regimeSelection": {
+    "selectOnPre2024": {
+      "pickedLambda": 0.1,
+      "trainingNet4": 0.47,
+      "oosPost2024Net4": 0.59
+    },
+    "selectOnPost2024": {
+      "pickedLambda": 0.25,
+      "trainingNet4": 1.45,
+      "oosPre2024Net4": -0.12
+    },
+    "signSelectOnPre2024": {
+      "pickedSign": 1,
+      "trainingNet4": -0.12,
+      "oosPost2024Net4": 1.45
+    },
+    "note": "λ and sign chosen by TRAILING net@4 on one regime only, then scored on the never-used regime. If the picked value loses out-of-regime, the rescue was a window fit."
+  },
+  "decay": {
+    "lam_0p25": {
+      "net4": {
+        "rho": 0.674,
+        "pPerm": 0.0534,
+        "firstThirdMean": 0.19,
+        "lastThirdMean": 1.81,
+        "delta": 1.62,
+        "blockSharpes": [
+          -0.06,
+          0.44,
+          -2.21,
+          1.09,
+          1.51,
+          1.28,
+          1.55,
+          2.07
+        ]
+      },
+      "gross": {
+        "rho": 0.774,
+        "pPerm": 0.0176,
+        "firstThirdMean": 0.58,
+        "lastThirdMean": 2.65,
+        "delta": 2.07,
+        "blockSharpes": [
+          0.3,
+          0.86,
+          -1.34,
+          1.6,
+          2.02,
+          1.84,
+          2.32,
+          2.99
+        ]
+      }
+    },
+    "lam_0p1": {
+      "net4": {
+        "rho": 0.559,
+        "pPerm": 0.1488,
+        "firstThirdMean": -0.27,
+        "lastThirdMean": 1.77,
+        "delta": 2.04,
+        "blockSharpes": [
+          -0.63,
+          0.09,
+          0.15,
+          2.23,
+          0.52,
+          -0.48,
+          1.96,
+          1.57
+        ]
+      },
+      "gross": {
+        "rho": 0.58,
+        "pPerm": 0.1464,
+        "firstThirdMean": -0.09,
+        "lastThirdMean": 2.04,
+        "delta": 2.13,
+        "blockSharpes": [
+          -0.51,
+          0.32,
+          0.4,
+          2.39,
+          0.73,
+          -0.27,
+          2.23,
+          1.85
+        ]
+      }
+    }
+  },
+  "confound": {
+    "returnCorr_withL18Fade": -0.045,
+    "signalXsecCorr_withTopLS": -0.016,
+    "dOI_vs_priorIntervalSpotReturn": 0.595,
+    "dOI_vs_forwardSpotReturn": 0.02,
+    "note": "If the OI change merely echoes the price move over its own interval, the causal past-move corr would be large; the forward corr is the (≈0.02) IC. Return-level independence from L18 is what keeps this a distinct stream."
+  },
+  "capacity": {
+    "lam_0p25": {
+      "n": 5175,
+      "meanUSD": 27700149,
+      "p5USD": 8222815,
+      "medianUSD": 22406123,
+      "minUSD": 4465599,
+      "tailBindingSymbols": {
+        "dogeusdt": 102,
+        "linkusdt": 105,
+        "adausdt": 52
+      }
+    },
+    "lam_0p1": {
+      "n": 5175,
+      "meanUSD": 23191037,
+      "p5USD": 6308018,
+      "medianUSD": 19445730,
+      "minUSD": 3676253,
+      "tailBindingSymbols": {
+        "dogeusdt": 230,
+        "linkusdt": 29
+      }
+    },
+    "note": "G_t = 0.05·min_j OI_j(t)/|w_j(t)| over certifiable periods (every traded symbol has an OI print). A third stream on the same thin alts shares R8's constraint (F-43/F-44) — this is the individual bound, not the joint one."
+  },
+  "verdict": {
+    "note": "Falsifier (L19-b): a 2024-26 artefact if BOTH pre-registered λ have pre-2024 net@4 <= 0 with sign +1.",
+    "pre2024Net4": {
+      "lam_0p25": -0.12,
+      "lam_0p1": 0.47
+    },
+    "post2024Net4": {
+      "lam_0p25": 1.45,
+      "lam_0p1": 0.59
+    },
+    "holdoutFiresForBothLambdas": false,
+    "holdoutFiresForAnyLambda": true,
+    "lambda_0p25_isPost2024Artefact": true,
+    "lambda_0p1_regimeRobust": true,
+    "ensemblePre2024Net4": 0.33,
+    "ensemblePost2024Net4": 1.24,
+    "ensemblePositiveEveryYear": true,
+    "ensemblePerYearNet4": {
+      "2021": -2.93,
+      "2022": 0.34,
+      "2023": 0.73,
+      "2024": 0.89,
+      "2025": 1.45,
+      "2026": 1.88
+    },
+    "regimeSelectedPickedLambda": 0.1,
+    "regimeSelectedOosNet4": 0.59,
+    "decayTrendP_lam_0p25": 0.0534,
+    "decayRho_lam_0p25": 0.674,
+    "rankPre2024Net4_lam_0p25": -0.42,
+    "rankPost2024Net4_lam_0p25": 0.85,
+    "rankBeatsLevelHoldout": false,
+    "returnCorrWithL18Fade": -0.045,
+    "validationPass": true
+  }
+}

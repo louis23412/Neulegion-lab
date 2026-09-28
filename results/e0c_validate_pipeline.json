@@ -1,0 +1,40 @@
+{
+  "config": {
+    "tf": "15m",
+    "bars": 4000,
+    "validatedBars": 4000
+  },
+  "rows": [
+    {
+      "name": "mom-16",
+      "n": 4000,
+      "maxAbsDiff": 1.2445600106048005e-13,
+      "firstDiffIndex": 22
+    },
+    {
+      "name": "mom-168",
+      "n": 4000,
+      "maxAbsDiff": 2.273403687524933e-12,
+      "firstDiffIndex": 174
+    },
+    {
+      "name": "reversal-1",
+      "n": 4000,
+      "maxAbsDiff": 5.828670879282072e-14,
+      "firstDiffIndex": 13
+    },
+    {
+      "name": "volmom-16",
+      "n": 4000,
+      "maxAbsDiff": 2.653433028854124e-14,
+      "firstDiffIndex": 22
+    },
+    {
+      "name": "xs-mom-16",
+      "n": 4000,
+      "maxAbsDiff": 2.8266278206956486e-13,
+      "firstDiffIndex": 25
+    }
+  ],
+  "pass": true
+}

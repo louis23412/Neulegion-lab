@@ -1,0 +1,512 @@
+{
+  "config": {
+    "crossGrid": [
+      [
+        500,
+        10
+      ],
+      [
+        200,
+        5
+      ],
+      [
+        137,
+        20
+      ],
+      [
+        64,
+        1
+      ],
+      [
+        300,
+        3
+      ],
+      [
+        90,
+        10
+      ]
+    ],
+    "dmReps": 400,
+    "mcsReps": 200,
+    "denomConfigs": 150
+  },
+  "rows": {
+    "crossModule": [
+      {
+        "T": 500,
+        "B": 10,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 9.259086553026208e-17,
+        "gapIdent": 9.280770596475918e-17,
+        "gapVsVar": 0.000022743051397074946,
+        "gap": 0.0008515679399596077,
+        "withinVar": 0.0008288248885625327,
+        "withinCov": -0.000011371525698491096
+      },
+      {
+        "T": 200,
+        "B": 5,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 5.204170427930421e-18,
+        "gapIdent": 5.204170427930421e-18,
+        "gapVsVar": 0.007694697056644282,
+        "gap": -0.004488401831391847,
+        "withinVar": 0.003206295225252434,
+        "withinCov": 0.003847348528322138
+      },
+      {
+        "T": 137,
+        "B": 20,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 3.0357660829594124e-18,
+        "gapIdent": 3.0357660829594124e-18,
+        "gapVsVar": 0.001412025112187439,
+        "gap": -0.001245822341276348,
+        "withinVar": 0.00016620277091109096,
+        "withinCov": 0.000706012556093721
+      },
+      {
+        "T": 64,
+        "B": 1,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 0,
+        "gapIdent": 0,
+        "gapVsVar": 0.13046164127081283,
+        "gap": -0.05308679040335032,
+        "withinVar": 0.07737485086746251,
+        "withinCov": 0.06523082063540642
+      },
+      {
+        "T": 300,
+        "B": 3,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 4.5102810375396984e-17,
+        "gapIdent": 4.683753385137379e-17,
+        "gapVsVar": 0.020599438987648135,
+        "gap": -0.010791352806320487,
+        "withinVar": 0.00980808618132765,
+        "withinCov": 0.010299719493824092
+      },
+      {
+        "T": 90,
+        "B": 10,
+        "relD": 0,
+        "resD": 0,
+        "uncD": 0,
+        "brierD": 0,
+        "withinD": 3.469446951953614e-17,
+        "gapIdent": 3.426078865054194e-17,
+        "gapVsVar": 0.0021595655339268645,
+        "gap": -0.0012927808586029044,
+        "withinVar": 0.0008667846753239601,
+        "withinCov": 0.0010797827669634151
+      }
+    ],
+    "dm": {
+      "statistic": 6.639594,
+      "se": 0.019676,
+      "pValue": 0.003322,
+      "blockLength": 4
+    },
+    "mcs": {
+      "members": [
+        "a",
+        "c"
+      ],
+      "eliminated": [
+        {
+          "id": "b",
+          "step": 0,
+          "p": 0.0025
+        }
+      ]
+    }
+  },
+  "validation": {
+    "pairsMapsProbAndNextSign": true,
+    "pairsSkipsNonFinite": true,
+    "confidenceRoundTripsToProbability": true,
+    "binIndexExact": true,
+    "brierScoreExact": true,
+    "logScoreExactAndClips": true,
+    "murphyIdentityHolds": true,
+    "murphyCraftedExact": true,
+    "murphyEmptyUnavailable": true,
+    "murphyBinDegenerates": true,
+    "crossModuleMurphyAgrees": true,
+    "observerWithinEqualsForecastGap": true,
+    "murphyGapIsWithinVarMinus2Cov": true,
+    "bootstrapDeterministic": true,
+    "bootstrapDefaultBlockIsCbrt": true,
+    "bootstrapPairedIndexDraw": true,
+    "bootstrapEmptyUnavailable": true,
+    "dmStatisticIsDbarOverBootSE": true,
+    "dmDegenerateArms": true,
+    "dmReportsBlockLength": true,
+    "dmIidSizeNominal": true,
+    "mcsEliminatesWorseKeepsIdentical": true,
+    "mcsDeterministic": true,
+    "mcsDegenerateSizes": true,
+    "mcsMonotoneInConfidence": true,
+    "mcsAlwaysContainsSampleBest": true,
+    "mcsCoverageNearNominal": true,
+    "mcsHlnDenominatorInertButReal": true,
+    "fcStructure": true,
+    "fcBenchmarkInProbabilityGroup": true,
+    "fcSkillFormulasExact": true,
+    "fcRefusesCountMismatch": true,
+    "fcFormatRenders": true
+  },
+  "verdict": {
+    "note": "L10-ba..: `forecast.js` is SHIPPED (analyze.js runs the forecast block by default). PASSES the pre-registered read: the scoring primitives are exact (`forecastPairs` IS the `confidenceFromProb` inverse + next-bar sign, dropping the fold-last bar; brierBinIndex/brierScore/logScore are the closed forms with the documented non-finite and eps-clipping handling); the Murphy partition is exact AND agrees with the repo's independent second implementation (observer/legion_metrics.js) on REL/RES/UNC/Brier to 1e-12; bootstrapMeans is deterministic, uses max(1,floor(cbrt(T))), resamples all series with one paired index draw and reports its block; the DM statistic is exactly dbar/boot-SE with the documented degenerate arms (zero differential -> 0/1/null, constant positive -> Infinity/0), nominal i.i.d. size (0.0525/0.1075 at 5%/10% over 400 reps), and the block bootstrap controls persistence size where blockLength=1 does not (0.07 vs 0.135 at phi=0.5); the MCS eliminates a uniformly worse arm, keeps an identical pair, ALWAYS contains the sample-best (4 ensembles, 200 each), keeps ~1-alpha coverage (K=3 alpha=0.1 0.885, K=4 0.86, alpha=0.05 0.95) and is deterministic + monotone in confidence. FINDINGS: (1) the brierDecomposition docstring claim that the raw-minus-binned gap IS \"the within-bin forecast variance\" is FALSE - the exact identity is gap = WITHIN = withinVar - 2*withinCov (stated correctly by observer/legion_metrics.js), and the gap is NEGATIVE while withinVar is positive on 5 of 6 audited configs; (2) forecastComparison's alignment guard is count-only, so a count-coincident misalignment (two variants dropping DIFFERENT bars) is silently paired index-wise and the DM verdict flips in 6 of 6 crafted cases - the module's own \"refuse rather than silently compare mismatched windows\" invariant is not enforced; (3) forecastComparison#groupOf maps `benchmark` to the BASELINE's kind, so with baselineKind \"signal\" a probability-calibrated benchmark joins the z-score group and gets a DM test against it, contradicting the reader - unreachable from analyze.js (the id:\"baseline\" controller variant is always at index 0) but reachable through the exported API; (4) the MCS elimination denominator uses sd(L_i) where HLN specifies sd(d_i): a real paper deviation that is empirically INERT (0/150 heterogeneous-variance configs changed the surviving set or the elimination order); (5) bootstrapMeans silently NaNs on unequal-length series and modelConfidenceSet returns available:true for a NaN-containing loss series. Scope: forecast.js is SHIPPED via analyze.js (forecastComparison + formatForecast); it also consumes reality_check.js#stationaryBlockIndices (audited in F-66).",
+    "checks": {
+      "pairsMapsProbAndNextSign": true,
+      "pairsSkipsNonFinite": true,
+      "confidenceRoundTripsToProbability": true,
+      "binIndexExact": true,
+      "brierScoreExact": true,
+      "logScoreExactAndClips": true,
+      "murphyIdentityHolds": true,
+      "murphyCraftedExact": true,
+      "murphyEmptyUnavailable": true,
+      "murphyBinDegenerates": true,
+      "crossModuleMurphyAgrees": true,
+      "observerWithinEqualsForecastGap": true,
+      "murphyGapIsWithinVarMinus2Cov": true,
+      "bootstrapDeterministic": true,
+      "bootstrapDefaultBlockIsCbrt": true,
+      "bootstrapPairedIndexDraw": true,
+      "bootstrapEmptyUnavailable": true,
+      "dmStatisticIsDbarOverBootSE": true,
+      "dmDegenerateArms": true,
+      "dmReportsBlockLength": true,
+      "dmIidSizeNominal": true,
+      "mcsEliminatesWorseKeepsIdentical": true,
+      "mcsDeterministic": true,
+      "mcsDegenerateSizes": true,
+      "mcsMonotoneInConfidence": true,
+      "mcsAlwaysContainsSampleBest": true,
+      "mcsCoverageNearNominal": true,
+      "mcsHlnDenominatorInertButReal": true,
+      "fcStructure": true,
+      "fcBenchmarkInProbabilityGroup": true,
+      "fcSkillFormulasExact": true,
+      "fcRefusesCountMismatch": true,
+      "fcFormatRenders": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "calibrations": {
+      "dmIidSize5": 0.0525,
+      "dmIidSize10": 0.1075,
+      "dmSizePhi05Default": 0.095,
+      "dmSizePhi05Block1": 0.135,
+      "mcsCoverIid": 0.88,
+      "mcsCoverPers": 0.855,
+      "mcsCover95": 0.925,
+      "mcsCoverK4": 0.865,
+      "dmSizeBand": 0.0451
+    },
+    "findings": {
+      "murphyGapCommentFalse": {
+        "claim": "the gap is the within-bin *forecast* variance that merging into a bin discards",
+        "exact": "gap = WITHIN = withinVar - 2*withinCov (observer/legion_metrics.js brierDecomposition)",
+        "rows": [
+          {
+            "T": 500,
+            "B": 10,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 9.259086553026208e-17,
+            "gapIdent": 9.280770596475918e-17,
+            "gapVsVar": 0.000022743051397074946,
+            "gap": 0.0008515679399596077,
+            "withinVar": 0.0008288248885625327,
+            "withinCov": -0.000011371525698491096
+          },
+          {
+            "T": 200,
+            "B": 5,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 5.204170427930421e-18,
+            "gapIdent": 5.204170427930421e-18,
+            "gapVsVar": 0.007694697056644282,
+            "gap": -0.004488401831391847,
+            "withinVar": 0.003206295225252434,
+            "withinCov": 0.003847348528322138
+          },
+          {
+            "T": 137,
+            "B": 20,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 3.0357660829594124e-18,
+            "gapIdent": 3.0357660829594124e-18,
+            "gapVsVar": 0.001412025112187439,
+            "gap": -0.001245822341276348,
+            "withinVar": 0.00016620277091109096,
+            "withinCov": 0.000706012556093721
+          },
+          {
+            "T": 64,
+            "B": 1,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 0,
+            "gapIdent": 0,
+            "gapVsVar": 0.13046164127081283,
+            "gap": -0.05308679040335032,
+            "withinVar": 0.07737485086746251,
+            "withinCov": 0.06523082063540642
+          },
+          {
+            "T": 300,
+            "B": 3,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 4.5102810375396984e-17,
+            "gapIdent": 4.683753385137379e-17,
+            "gapVsVar": 0.020599438987648135,
+            "gap": -0.010791352806320487,
+            "withinVar": 0.00980808618132765,
+            "withinCov": 0.010299719493824092
+          },
+          {
+            "T": 90,
+            "B": 10,
+            "relD": 0,
+            "resD": 0,
+            "uncD": 0,
+            "brierD": 0,
+            "withinD": 3.469446951953614e-17,
+            "gapIdent": 3.426078865054194e-17,
+            "gapVsVar": 0.0021595655339268645,
+            "gap": -0.0012927808586029044,
+            "withinVar": 0.0008667846753239601,
+            "withinCov": 0.0010797827669634151
+          }
+        ],
+        "witnesses": [
+          {
+            "T": 200,
+            "B": 5,
+            "gap": -0.004488,
+            "withinVar": 0.003206,
+            "withinCov": 0.003847
+          },
+          {
+            "T": 137,
+            "B": 20,
+            "gap": -0.001246,
+            "withinVar": 0.000166,
+            "withinCov": 0.000706
+          },
+          {
+            "T": 64,
+            "B": 1,
+            "gap": -0.053087,
+            "withinVar": 0.077375,
+            "withinCov": 0.065231
+          },
+          {
+            "T": 300,
+            "B": 3,
+            "gap": -0.010791,
+            "withinVar": 0.009808,
+            "withinCov": 0.0103
+          },
+          {
+            "T": 90,
+            "B": 10,
+            "gap": -0.001293,
+            "withinVar": 0.000867,
+            "withinCov": 0.00108
+          }
+        ]
+      },
+      "alignmentGuardCountOnly": {
+        "claim": "alignment is the whole point of a paired test; refuse rather than silently compare mismatched windows",
+        "guard": "pairs.bars !== base.bars (a COUNT, not the bar identities)",
+        "cases": [
+          {
+            "j1": 3,
+            "j2": 7,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          },
+          {
+            "j1": 2,
+            "j2": 9,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          },
+          {
+            "j1": 4,
+            "j2": 5,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          },
+          {
+            "j1": 1,
+            "j2": 8,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          },
+          {
+            "j1": 6,
+            "j2": 10,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          },
+          {
+            "j1": 3,
+            "j2": 6,
+            "accepted": true,
+            "barsA": 22,
+            "barsB": 22,
+            "outcomesDiffer": true,
+            "pAsAccepted": 0.0033,
+            "favoredAsAccepted": "B",
+            "pAligned": 0.0033,
+            "favoredAligned": "A"
+          }
+        ],
+        "flips": 6,
+        "of": 6
+      },
+      "benchmarkGroupOnSignalBaseline": {
+        "readerClaim": "the benchmark arms (kind benchmark) journal a calibrated probability, so they share the baseline's calibration GROUP",
+        "observed": {
+          "baselineGroup": "signal",
+          "benchmarkGroup": "signal",
+          "benchmarkDmAvailable": true,
+          "controllerGroup": "controller",
+          "controllerDmAvailable": false,
+          "kinds": [
+            {
+              "kind": "signal",
+              "members": [
+                "sigma",
+                "bk"
+              ]
+            },
+            {
+              "kind": "controller",
+              "members": [
+                "ctl"
+              ]
+            }
+          ]
+        },
+        "reachableFromAnalyze": false,
+        "why": "analyze.js forces the id:\"baseline\" controller variant to index 0 whenever --variants= is given, and forecastKindOf(baselineVariant) is \"controller\" for the default roster, so baselineKind is never \"signal\" in a real run; the branch is reachable only through the exported forecastComparison API"
+      },
+      "mcsEliminationDenominator": {
+        "hln": "sd(d_i), d_i = L_i - mean_others",
+        "code": "sd(L_i)",
+        "maxRelDenomDiff": 77.1026,
+        "configs": 150,
+        "setChanged": 0,
+        "orderChanged": 0
+      },
+      "bootstrapMeansUnvalidatedLengths": {
+        "claim": "series: one array per model, all the same length",
+        "observed": {
+          "available": true,
+          "T": 4,
+          "K": 2,
+          "nanReplicates": 7,
+          "of": 16
+        },
+        "note": "modelConfidenceSet validates equal lengths and refuses, so this arm is only reachable through the exported bootstrapMeans"
+      },
+      "mcsNanLossUnvalidated": {
+        "observed": {
+          "available": true,
+          "members": [
+            "y"
+          ],
+          "lastPValue": 0.01
+        },
+        "note": "forecastComparison feeds only finite pairs (forecastPairs drops non-finite), so the shipped path is safe; the exported primitive is not"
+      }
+    },
+    "scope": {
+      "shippedViaAnalyze": [
+        "forecastComparison",
+        "formatForecast"
+      ],
+      "shippedInternal": [
+        "forecastPairs",
+        "brierScore",
+        "logScore",
+        "brierDecomposition",
+        "brierLosses",
+        "bootstrapMeans",
+        "dieboldMariano",
+        "modelConfidenceSet",
+        "brierBinIndex"
+      ],
+      "consumedFromRealityCheck": [
+        "stationaryBlockIndices"
+      ],
+      "independentReference": "observer/legion_metrics.js#brierDecomposition (second Murphy implementation in the repo)"
+    }
+  }
+}

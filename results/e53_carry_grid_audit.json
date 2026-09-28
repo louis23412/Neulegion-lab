@@ -1,0 +1,239 @@
+{
+  "config": {
+    "symbols": 8,
+    "gridMs": 28800000,
+    "feeFree": true
+  },
+  "synthetic": {
+    "iv8h": {
+      "rowsIn8h": 1,
+      "codeReceiptPer8h": 0.0001,
+      "sleevePer8h": 0.0001,
+      "understatementX": 1
+    },
+    "iv4h": {
+      "rowsIn8h": 2,
+      "codeReceiptPer8h": 0.0001,
+      "sleevePer8h": 0.0002,
+      "understatementX": 2
+    },
+    "iv2h": {
+      "rowsIn8h": 4,
+      "codeReceiptPer8h": 0.0001,
+      "sleevePer8h": 0.0004,
+      "understatementX": 4
+    },
+    "iv1h": {
+      "rowsIn8h": 8,
+      "codeReceiptPer8h": 0.0001,
+      "sleevePer8h": 0.0008,
+      "understatementX": 8
+    }
+  },
+  "barSpacing": {
+    "synthetic": {
+      "cleanReceipt": 0.0008,
+      "raggedReceipt": 0.0016,
+      "inflatedX": 2
+    },
+    "shippedFirstPairs": {
+      "btcusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "ethusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "solusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "bnbusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "xrpusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "adausdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "dogeusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      },
+      "linkusdt": {
+        "firstStepMin": 60,
+        "modalStepMin": 60
+      }
+    }
+  },
+  "sub8h": {
+    "rows": 6681,
+    "intervalHistogram": {
+      "8h": 6579,
+      "4h": 3
+    },
+    "offGridSteps": 98,
+    "offGridFraction": 0.0147,
+    "missingPeriods": 0,
+    "extremeRows": 11,
+    "auditProblems": [],
+    "ftxWindow": {
+      "bars": 264,
+      "shippedReceipt": -0.107043,
+      "correctedReceipt": -0.324421,
+      "understatementX": 3.031
+    }
+  },
+  "pooledSleeve": {
+    "shipped": {
+      "periods": 6691,
+      "annCarry": 0.09985,
+      "sharpe": 11.961,
+      "corrWithMarket": 0.07952
+    },
+    "corrected": {
+      "periods": 6691,
+      "annCarry": 0.09531,
+      "sharpe": 9.602,
+      "corrWithMarket": 0.0623
+    },
+    "delta": {
+      "annCarry": -0.00454,
+      "sharpe": -2.359,
+      "corrWithMarket": -0.01722
+    }
+  },
+  "validation": {
+    "syntheticExact": true,
+    "solSub8hPresent": true,
+    "solAuditBlind": true,
+    "ftxUnderstated": true,
+    "pooledAnnMoves": true,
+    "pooledSharpeMoves": true,
+    "firstPairLatent": true
+  },
+  "verdict": {
+    "note": "L10-d / FOLD-BACK-R4(b): the shipped carry grid join spreads every funding row over an 8h bar count regardless of the observed interval, so sub-8h funding is understated by 8h/interval.",
+    "commentClaim": "carry.js lines 22-26 (\"the bar-grid projection divides by the period actually observed\")",
+    "codeFact": "carryOnBarGrid uses perBar = gridMs (default 8h) and barsPerPeriod = round(gridMs / firstBarStep)",
+    "synthetic": {
+      "iv8h": {
+        "rowsIn8h": 1,
+        "codeReceiptPer8h": 0.0001,
+        "sleevePer8h": 0.0001,
+        "understatementX": 1
+      },
+      "iv4h": {
+        "rowsIn8h": 2,
+        "codeReceiptPer8h": 0.0001,
+        "sleevePer8h": 0.0002,
+        "understatementX": 2
+      },
+      "iv2h": {
+        "rowsIn8h": 4,
+        "codeReceiptPer8h": 0.0001,
+        "sleevePer8h": 0.0004,
+        "understatementX": 4
+      },
+      "iv1h": {
+        "rowsIn8h": 8,
+        "codeReceiptPer8h": 0.0001,
+        "sleevePer8h": 0.0008,
+        "understatementX": 8
+      }
+    },
+    "barSpacing": {
+      "synthetic": {
+        "cleanReceipt": 0.0008,
+        "raggedReceipt": 0.0016,
+        "inflatedX": 2
+      },
+      "shippedFirstPairs": {
+        "btcusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "ethusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "solusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "bnbusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "xrpusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "adausdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "dogeusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        },
+        "linkusdt": {
+          "firstStepMin": 60,
+          "modalStepMin": 60
+        }
+      }
+    },
+    "shipped": {
+      "rows": 6681,
+      "intervalHistogram": {
+        "8h": 6579,
+        "4h": 3
+      },
+      "offGridSteps": 98,
+      "offGridFraction": 0.0147,
+      "missingPeriods": 0,
+      "extremeRows": 11,
+      "auditProblems": [],
+      "ftxWindow": {
+        "bars": 264,
+        "shippedReceipt": -0.107043,
+        "correctedReceipt": -0.324421,
+        "understatementX": 3.031
+      }
+    },
+    "pooledSleeve": {
+      "shipped": {
+        "periods": 6691,
+        "annCarry": 0.09985,
+        "sharpe": 11.961,
+        "corrWithMarket": 0.07952
+      },
+      "corrected": {
+        "periods": 6691,
+        "annCarry": 0.09531,
+        "sharpe": 9.602,
+        "corrWithMarket": 0.0623
+      },
+      "delta": {
+        "annCarry": -0.00454,
+        "sharpe": -2.359,
+        "corrWithMarket": -0.01722
+      }
+    },
+    "checks": {
+      "syntheticExact": true,
+      "solSub8hPresent": true,
+      "solAuditBlind": true,
+      "ftxUnderstated": true,
+      "pooledAnnMoves": true,
+      "pooledSharpeMoves": true,
+      "firstPairLatent": true
+    },
+    "validationPass": true
+  }
+}

@@ -1,0 +1,1195 @@
+{
+  "config": {
+    "symbols": 8,
+    "perp": "mark",
+    "periods": 6557,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "lambdas": [
+      "0.005",
+      "0.0075",
+      "0.01",
+      "0.015",
+      "0.02",
+      "0.03",
+      "0.05",
+      "0.075",
+      "0.1",
+      "0.15",
+      "0.2",
+      "0.3"
+    ],
+    "recentWindow": 2190
+  },
+  "regimeTable": {
+    "0.005": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 6,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 228.56
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.57,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 72.42
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 5.51,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 178.31
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 5.02,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 122
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 9.2,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 776.69
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 7.94,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 151.4
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8.27,
+        "turnoverAnnual": 4,
+        "breakEvenBps": 115.35
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 4.3,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 57.08
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.5,
+        "turnoverAnnual": 5,
+        "breakEvenBps": 31.53
+      }
+    },
+    "0.0075": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 5.6,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 167.12
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.18,
+        "turnoverAnnual": 6,
+        "breakEvenBps": 44.24
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 6.47,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 117.73
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 5.44,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 91.08
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 11,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 447.14
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 7.54,
+        "turnoverAnnual": 6,
+        "breakEvenBps": 101.65
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8.26,
+        "turnoverAnnual": 6,
+        "breakEvenBps": 77.98
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 4.35,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 39.85
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.81,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 24.73
+      }
+    },
+    "0.01": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 5.16,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 133.57
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.04,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 32.09
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 7.19,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 88.59
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 5.81,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 72.54
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 13.22,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 307.78
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 7.23,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 76.93
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8.27,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 60.02
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 4.33,
+        "turnoverAnnual": 9,
+        "breakEvenBps": 30.32
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.93,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 20.46
+      }
+    },
+    "0.015": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 4.65,
+        "turnoverAnnual": 15,
+        "breakEvenBps": 100.52
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.06,
+        "turnoverAnnual": 13,
+        "breakEvenBps": 22.5
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 7.95,
+        "turnoverAnnual": 13,
+        "breakEvenBps": 60.84
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 6.35,
+        "turnoverAnnual": 15,
+        "breakEvenBps": 51.03
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 16.71,
+        "turnoverAnnual": 13,
+        "breakEvenBps": 204.58
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 6.82,
+        "turnoverAnnual": 12,
+        "breakEvenBps": 53.54
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8.24,
+        "turnoverAnnual": 12,
+        "breakEvenBps": 42.21
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 4.25,
+        "turnoverAnnual": 14,
+        "breakEvenBps": 20.86
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.87,
+        "turnoverAnnual": 15,
+        "breakEvenBps": 14.85
+      }
+    },
+    "0.02": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 4.43,
+        "turnoverAnnual": 20,
+        "breakEvenBps": 84.42
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.19,
+        "turnoverAnnual": 17,
+        "breakEvenBps": 18.55
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 8.2,
+        "turnoverAnnual": 17,
+        "breakEvenBps": 48.38
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 6.76,
+        "turnoverAnnual": 19,
+        "breakEvenBps": 40.09
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 17.69,
+        "turnoverAnnual": 17,
+        "breakEvenBps": 170.75
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 6.57,
+        "turnoverAnnual": 15,
+        "breakEvenBps": 41.67
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8.18,
+        "turnoverAnnual": 16,
+        "breakEvenBps": 33.11
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 4.17,
+        "turnoverAnnual": 18,
+        "breakEvenBps": 16.2
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.73,
+        "turnoverAnnual": 20,
+        "breakEvenBps": 11.65
+      }
+    },
+    "0.03": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 4.49,
+        "turnoverAnnual": 30,
+        "breakEvenBps": 66.61
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.49,
+        "turnoverAnnual": 25,
+        "breakEvenBps": 14.93
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 7.89,
+        "turnoverAnnual": 25,
+        "breakEvenBps": 36.64
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 7.35,
+        "turnoverAnnual": 29,
+        "breakEvenBps": 28.76
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 16.11,
+        "turnoverAnnual": 25,
+        "breakEvenBps": 150.95
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 6.31,
+        "turnoverAnnual": 23,
+        "breakEvenBps": 29.59
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 8,
+        "turnoverAnnual": 24,
+        "breakEvenBps": 23.49
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 3.91,
+        "turnoverAnnual": 27,
+        "breakEvenBps": 11.44
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 2.31,
+        "turnoverAnnual": 29,
+        "breakEvenBps": 8.23
+      }
+    },
+    "0.05": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 5.01,
+        "turnoverAnnual": 51,
+        "breakEvenBps": 50.31
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 3.02,
+        "turnoverAnnual": 42,
+        "breakEvenBps": 12.07
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 6.11,
+        "turnoverAnnual": 41,
+        "breakEvenBps": 27.15
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 8.11,
+        "turnoverAnnual": 47,
+        "breakEvenBps": 19.16
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 12.12,
+        "turnoverAnnual": 40,
+        "breakEvenBps": 135.91
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 6.09,
+        "turnoverAnnual": 38,
+        "breakEvenBps": 19.5
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 7.46,
+        "turnoverAnnual": 40,
+        "breakEvenBps": 15.17
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 3.02,
+        "turnoverAnnual": 45,
+        "breakEvenBps": 7.37
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": 1.24,
+        "turnoverAnnual": 49,
+        "breakEvenBps": 5.35
+      }
+    },
+    "0.075": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 5.76,
+        "turnoverAnnual": 76,
+        "breakEvenBps": 40.9
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 3.45,
+        "turnoverAnnual": 61,
+        "breakEvenBps": 10.48
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 4.26,
+        "turnoverAnnual": 61,
+        "breakEvenBps": 22.2
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 8.31,
+        "turnoverAnnual": 71,
+        "breakEvenBps": 13.74
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 9.22,
+        "turnoverAnnual": 58,
+        "breakEvenBps": 132.58
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 5.77,
+        "turnoverAnnual": 58,
+        "breakEvenBps": 13.97
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 6.56,
+        "turnoverAnnual": 60,
+        "breakEvenBps": 10.58
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": 1.57,
+        "turnoverAnnual": 68,
+        "breakEvenBps": 5.15
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": -0.26,
+        "turnoverAnnual": 74,
+        "breakEvenBps": 3.82
+      }
+    },
+    "0.1": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 6.58,
+        "turnoverAnnual": 100,
+        "breakEvenBps": 35.85
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 3.63,
+        "turnoverAnnual": 80,
+        "breakEvenBps": 9.44
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 3.33,
+        "turnoverAnnual": 80,
+        "breakEvenBps": 19.36
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 7.85,
+        "turnoverAnnual": 94,
+        "breakEvenBps": 10.81
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 7.88,
+        "turnoverAnnual": 77,
+        "breakEvenBps": 126.16
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 5.32,
+        "turnoverAnnual": 77,
+        "breakEvenBps": 10.95
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 5.48,
+        "turnoverAnnual": 81,
+        "breakEvenBps": 8.09
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": -0.02,
+        "turnoverAnnual": 92,
+        "breakEvenBps": 3.99
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": -1.87,
+        "turnoverAnnual": 99,
+        "breakEvenBps": 3.01
+      }
+    },
+    "0.15": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 8.07,
+        "turnoverAnnual": 144,
+        "breakEvenBps": 28.97
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 3.39,
+        "turnoverAnnual": 117,
+        "breakEvenBps": 7.46
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 2.52,
+        "turnoverAnnual": 120,
+        "breakEvenBps": 15.29
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 6.03,
+        "turnoverAnnual": 141,
+        "breakEvenBps": 7.58
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 6.77,
+        "turnoverAnnual": 114,
+        "breakEvenBps": 107.82
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 4.18,
+        "turnoverAnnual": 116,
+        "breakEvenBps": 7.6
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 3.07,
+        "turnoverAnnual": 123,
+        "breakEvenBps": 5.48
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": -3.51,
+        "turnoverAnnual": 142,
+        "breakEvenBps": 2.76
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": -5.41,
+        "turnoverAnnual": 151,
+        "breakEvenBps": 2.17
+      }
+    },
+    "0.2": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 9.14,
+        "turnoverAnnual": 186,
+        "breakEvenBps": 24.34
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 2.89,
+        "turnoverAnnual": 154,
+        "breakEvenBps": 6.18
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 2.1,
+        "turnoverAnnual": 161,
+        "breakEvenBps": 12.59
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 3.99,
+        "turnoverAnnual": 190,
+        "breakEvenBps": 5.87
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 6.2,
+        "turnoverAnnual": 152,
+        "breakEvenBps": 91.69
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": 2.85,
+        "turnoverAnnual": 157,
+        "breakEvenBps": 5.82
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": 0.51,
+        "turnoverAnnual": 166,
+        "breakEvenBps": 4.18
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": -7.14,
+        "turnoverAnnual": 194,
+        "breakEvenBps": 2.15
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": -9.42,
+        "turnoverAnnual": 205,
+        "breakEvenBps": 1.73
+      }
+    },
+    "0.3": {
+      "meltup_2021H1": {
+        "n": 451,
+        "net4Sharpe": 10.78,
+        "turnoverAnnual": 268,
+        "breakEvenBps": 18.53
+      },
+      "crash_2021_05": {
+        "n": 156,
+        "net4Sharpe": 1.28,
+        "turnoverAnnual": 229,
+        "breakEvenBps": 4.64
+      },
+      "bear_2022": {
+        "n": 994,
+        "net4Sharpe": 1.56,
+        "turnoverAnnual": 244,
+        "breakEvenBps": 9.25
+      },
+      "luna_2022_05": {
+        "n": 183,
+        "net4Sharpe": 0.17,
+        "turnoverAnnual": 294,
+        "breakEvenBps": 4.06
+      },
+      "ftx_2022_11": {
+        "n": 90,
+        "net4Sharpe": 5.54,
+        "turnoverAnnual": 233,
+        "breakEvenBps": 68.18
+      },
+      "recovery_2023": {
+        "n": 1091,
+        "net4Sharpe": -0.13,
+        "turnoverAnnual": 239,
+        "breakEvenBps": 3.94
+      },
+      "bull_2024": {
+        "n": 1098,
+        "net4Sharpe": -4.8,
+        "turnoverAnnual": 254,
+        "breakEvenBps": 2.87
+      },
+      "y2025": {
+        "n": 1095,
+        "net4Sharpe": -14.81,
+        "turnoverAnnual": 305,
+        "breakEvenBps": 1.5
+      },
+      "y2026": {
+        "n": 784,
+        "net4Sharpe": -18.36,
+        "turnoverAnnual": 323,
+        "breakEvenBps": 1.23
+      }
+    }
+  },
+  "positiveRegimesByLambda": {
+    "0.005": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.0075": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.01": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.015": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.02": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.03": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.05": {
+      "positive": 9,
+      "of": 9
+    },
+    "0.075": {
+      "positive": 8,
+      "of": 9
+    },
+    "0.1": {
+      "positive": 7,
+      "of": 9
+    },
+    "0.15": {
+      "positive": 7,
+      "of": 9
+    },
+    "0.2": {
+      "positive": 7,
+      "of": 9
+    },
+    "0.3": {
+      "positive": 5,
+      "of": 9
+    }
+  },
+  "marketCorr": {
+    "0.005": 0.052,
+    "0.0075": 0.048,
+    "0.01": 0.045,
+    "0.015": 0.043,
+    "0.02": 0.044,
+    "0.03": 0.049,
+    "0.05": 0.057,
+    "0.075": 0.067,
+    "0.1": 0.074,
+    "0.15": 0.081,
+    "0.2": 0.084,
+    "0.3": 0.085
+  },
+  "walkForward": {
+    "lookback": 1095,
+    "block": 365,
+    "start": 1095,
+    "span": 5110,
+    "net4Sharpe": 5.71,
+    "turnoverAnnual": 38,
+    "breakEvenBps": 16.08,
+    "recent24mNet4Sharpe": 3.41,
+    "recent24mBreakEvenBps": 18.65,
+    "picks": [
+      {
+        "at": "2021-09-20",
+        "lambda": "0.3",
+        "trailingScore": 8.31
+      },
+      {
+        "at": "2022-01-20",
+        "lambda": "0.2",
+        "trailingScore": 10.34
+      },
+      {
+        "at": "2022-05-22",
+        "lambda": "0.03",
+        "trailingScore": 7.42
+      },
+      {
+        "at": "2022-09-22",
+        "lambda": "0.03",
+        "trailingScore": 7.83
+      },
+      {
+        "at": "2023-01-23",
+        "lambda": "0.02",
+        "trailingScore": 7.7
+      },
+      {
+        "at": "2023-05-26",
+        "lambda": "0.015",
+        "trailingScore": 8.88
+      },
+      {
+        "at": "2023-09-24",
+        "lambda": "0.015",
+        "trailingScore": 8.72
+      },
+      {
+        "at": "2024-01-24",
+        "lambda": "0.005",
+        "trailingScore": 8.44
+      },
+      {
+        "at": "2024-05-25",
+        "lambda": "0.03",
+        "trailingScore": 9.09
+      },
+      {
+        "at": "2024-09-23",
+        "lambda": "0.03",
+        "trailingScore": 8.48
+      },
+      {
+        "at": "2025-01-23",
+        "lambda": "0.01",
+        "trailingScore": 7.78
+      },
+      {
+        "at": "2025-05-25",
+        "lambda": "0.0075",
+        "trailingScore": 4.65
+      },
+      {
+        "at": "2025-09-23",
+        "lambda": "0.0075",
+        "trailingScore": 4.5
+      },
+      {
+        "at": "2026-01-23",
+        "lambda": "0.0075",
+        "trailingScore": 4.05
+      }
+    ],
+    "pickFrequency": {
+      "0.3": 1,
+      "0.2": 1,
+      "0.03": 4,
+      "0.02": 1,
+      "0.015": 2,
+      "0.005": 1,
+      "0.01": 1,
+      "0.0075": 3
+    }
+  },
+  "walkForwardGrossControl": {
+    "lookback": 1095,
+    "block": 365,
+    "start": 1095,
+    "span": 5110,
+    "net4Sharpe": 0.28,
+    "turnoverAnnual": 218,
+    "breakEvenBps": 4.48,
+    "recent24mNet4Sharpe": -14.55,
+    "recent24mBreakEvenBps": 1.45,
+    "picks": [
+      {
+        "at": "2021-09-20",
+        "lambda": "0.3",
+        "trailingScore": 11.69
+      },
+      {
+        "at": "2022-01-20",
+        "lambda": "0.3",
+        "trailingScore": 16.63
+      },
+      {
+        "at": "2022-05-22",
+        "lambda": "0.3",
+        "trailingScore": 11.69
+      },
+      {
+        "at": "2022-09-22",
+        "lambda": "0.3",
+        "trailingScore": 11.31
+      },
+      {
+        "at": "2023-01-23",
+        "lambda": "0.02",
+        "trailingScore": 8.34
+      },
+      {
+        "at": "2023-05-26",
+        "lambda": "0.02",
+        "trailingScore": 9.47
+      },
+      {
+        "at": "2023-09-24",
+        "lambda": "0.02",
+        "trailingScore": 9.2
+      },
+      {
+        "at": "2024-01-24",
+        "lambda": "0.3",
+        "trailingScore": 12.72
+      },
+      {
+        "at": "2024-05-25",
+        "lambda": "0.3",
+        "trailingScore": 14.3
+      },
+      {
+        "at": "2024-09-23",
+        "lambda": "0.3",
+        "trailingScore": 14.05
+      },
+      {
+        "at": "2025-01-23",
+        "lambda": "0.3",
+        "trailingScore": 12.44
+      },
+      {
+        "at": "2025-05-25",
+        "lambda": "0.3",
+        "trailingScore": 9.77
+      },
+      {
+        "at": "2025-09-23",
+        "lambda": "0.3",
+        "trailingScore": 9.16
+      },
+      {
+        "at": "2026-01-23",
+        "lambda": "0.3",
+        "trailingScore": 9.33
+      }
+    ],
+    "pickFrequency": {
+      "0.3": 11,
+      "0.02": 3
+    }
+  },
+  "sensitivity": [
+    {
+      "lookback": 365,
+      "block": 180,
+      "span": 6120,
+      "net4Sharpe": 6.71,
+      "recent24mNet4Sharpe": 3.72,
+      "breakEvenBps": 21.1
+    },
+    {
+      "lookback": 365,
+      "block": 365,
+      "span": 5840,
+      "net4Sharpe": 7.33,
+      "recent24mNet4Sharpe": 3.58,
+      "breakEvenBps": 19.56
+    },
+    {
+      "lookback": 365,
+      "block": 730,
+      "span": 5840,
+      "net4Sharpe": 7.42,
+      "recent24mNet4Sharpe": 3.56,
+      "breakEvenBps": 20.86
+    },
+    {
+      "lookback": 730,
+      "block": 180,
+      "span": 5760,
+      "net4Sharpe": 5.93,
+      "recent24mNet4Sharpe": 3.72,
+      "breakEvenBps": 16.83
+    },
+    {
+      "lookback": 730,
+      "block": 365,
+      "span": 5475,
+      "net4Sharpe": 5.82,
+      "recent24mNet4Sharpe": 3.51,
+      "breakEvenBps": 15.02
+    },
+    {
+      "lookback": 730,
+      "block": 730,
+      "span": 5110,
+      "net4Sharpe": 5.98,
+      "recent24mNet4Sharpe": 5.6,
+      "breakEvenBps": 14.14
+    },
+    {
+      "lookback": 1095,
+      "block": 180,
+      "span": 5400,
+      "net4Sharpe": 5.87,
+      "recent24mNet4Sharpe": 3.7,
+      "breakEvenBps": 17.34
+    },
+    {
+      "lookback": 1095,
+      "block": 365,
+      "span": 5110,
+      "net4Sharpe": 5.71,
+      "recent24mNet4Sharpe": 3.41,
+      "breakEvenBps": 16.08
+    },
+    {
+      "lookback": 1095,
+      "block": 730,
+      "span": 5110,
+      "net4Sharpe": 5.5,
+      "recent24mNet4Sharpe": 3.39,
+      "breakEvenBps": 13.96
+    },
+    {
+      "lookback": 1560,
+      "block": 180,
+      "span": 4860,
+      "net4Sharpe": 5.4,
+      "recent24mNet4Sharpe": 3.66,
+      "breakEvenBps": 16.54
+    },
+    {
+      "lookback": 1560,
+      "block": 365,
+      "span": 4745,
+      "net4Sharpe": 5.32,
+      "recent24mNet4Sharpe": 3.73,
+      "breakEvenBps": 15.56
+    },
+    {
+      "lookback": 1560,
+      "block": 730,
+      "span": 4380,
+      "net4Sharpe": 5.02,
+      "recent24mNet4Sharpe": 5.24,
+      "breakEvenBps": 11.96
+    }
+  ],
+  "pinnedOnSpan": {
+    "0.01": {
+      "n": 5110,
+      "grossSharpe": 6.93,
+      "net4Sharpe": 6.48,
+      "turnoverAnnual": 8,
+      "breakEvenBps": 62.09
+    },
+    "0.02": {
+      "n": 5110,
+      "grossSharpe": 7.52,
+      "net4Sharpe": 6.63,
+      "turnoverAnnual": 17,
+      "breakEvenBps": 33.98
+    },
+    "0.05": {
+      "n": 5110,
+      "grossSharpe": 7.17,
+      "net4Sharpe": 5.44,
+      "turnoverAnnual": 42,
+      "breakEvenBps": 16.6
+    },
+    "0.1": {
+      "n": 5110,
+      "grossSharpe": 4.64,
+      "net4Sharpe": 2.76,
+      "turnoverAnnual": 84,
+      "breakEvenBps": 9.88
+    }
+  },
+  "pinnedRecentOnSpan": {
+    "0.01": {
+      "n": 2190,
+      "grossSharpe": 4.3,
+      "net4Sharpe": 3.67,
+      "turnoverAnnual": 9,
+      "breakEvenBps": 27.36
+    },
+    "0.02": {
+      "n": 2190,
+      "grossSharpe": 4.72,
+      "net4Sharpe": 3.43,
+      "turnoverAnnual": 18,
+      "breakEvenBps": 14.76
+    },
+    "0.05": {
+      "n": 2190,
+      "grossSharpe": 5.58,
+      "net4Sharpe": 2.24,
+      "turnoverAnnual": 45,
+      "breakEvenBps": 6.7
+    },
+    "0.1": {
+      "n": 2190,
+      "grossSharpe": 6.39,
+      "net4Sharpe": -0.53,
+      "turnoverAnnual": 92,
+      "breakEvenBps": 3.69
+    }
+  },
+  "significance": {
+    "0.01": {
+      "recentNet4Sharpe": 3.86,
+      "turnoverAnnual": 9,
+      "breakEvenBps": 27.07,
+      "tRaw": 5.45,
+      "designEffect": 0.4,
+      "tAdjusted": 8.71,
+      "designEffectWinsor3": 0.4,
+      "tAdjustedWinsor3": 8.49,
+      "bootstrapCI": {
+        "lo": 3.07,
+        "hi": 4.85,
+        "se": 0.46
+      }
+    },
+    "0.02": {
+      "recentNet4Sharpe": 3.62,
+      "turnoverAnnual": 18,
+      "breakEvenBps": 14.65,
+      "tRaw": 5.11,
+      "designEffect": 0.4,
+      "tAdjusted": 8.11,
+      "designEffectWinsor3": 0.4,
+      "tAdjustedWinsor3": 7.78,
+      "bootstrapCI": {
+        "lo": 2.85,
+        "hi": 4.59,
+        "se": 0.44
+      }
+    },
+    "0.05": {
+      "recentNet4Sharpe": 2.33,
+      "turnoverAnnual": 46,
+      "breakEvenBps": 6.66,
+      "tRaw": 3.29,
+      "designEffect": 0.5,
+      "tAdjusted": 4.72,
+      "designEffectWinsor3": 0.5,
+      "tAdjustedWinsor3": 4.67,
+      "bootstrapCI": {
+        "lo": 1.51,
+        "hi": 3.36,
+        "se": 0.47
+      }
+    },
+    "0.1": {
+      "recentNet4Sharpe": -0.58,
+      "turnoverAnnual": 93,
+      "breakEvenBps": 3.68,
+      "tRaw": -0.82,
+      "designEffect": 0.7,
+      "tAdjusted": -0.96,
+      "designEffectWinsor3": 0.7,
+      "tAdjustedWinsor3": -0.97,
+      "bootstrapCI": {
+        "lo": -1.57,
+        "hi": 0.69,
+        "se": 0.58
+      }
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: retune is NOT a rule if the walk-forward selector fails to beat the pinned F-24 spec out of sample, or if the slow book nets positive in <7/9 regimes.",
+    "walkForwardNet4Sharpe": 5.71,
+    "walkForwardTurnoverAnnual": 38,
+    "walkForwardBreakEvenBps": 16.08,
+    "walkForwardRecent24mNet4Sharpe": 3.41,
+    "walkForwardPickFrequency": {
+      "0.3": 1,
+      "0.2": 1,
+      "0.03": 4,
+      "0.02": 1,
+      "0.015": 2,
+      "0.005": 1,
+      "0.01": 1,
+      "0.0075": 3
+    },
+    "pinnedSpecNet4SharpeOnSameSpan": 2.76,
+    "pinnedLeaderNet4SharpeOnSameSpan": 6.48,
+    "pinnedSpecRecent24mNet4Sharpe": -0.53,
+    "pinnedLeaderRecent24mNet4Sharpe": 3.67,
+    "grossBlindSelectorNet4Sharpe": 0.28,
+    "grossBlindSelectorPickFrequency": {
+      "0.3": 11,
+      "0.02": 3
+    },
+    "slowBookPositiveRegimes": "9/9",
+    "sensitivityAllPositive": true,
+    "wfBeatsSpecOutOfSample": true,
+    "wfBeatsSpecRecent": true,
+    "slowBookRobustAcrossRegimes": true,
+    "retuneIsARule": true
+  }
+}

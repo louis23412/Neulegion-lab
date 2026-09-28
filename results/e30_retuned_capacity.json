@@ -1,0 +1,596 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6557,
+    "perp": "mark",
+    "feeBps": 4,
+    "variants": 8
+  },
+  "validation": {
+    "e19CapacityY1": 13211348.605227046,
+    "e19BreakEvenBps": 12.776815922238876,
+    "hereCapacityY1": 13211348.605227046,
+    "hereBreakEvenBps": 12.776815922238876,
+    "matchesE19": true,
+    "note": "λ=0.1 must reproduce e19; if not, the cost model or builders diverged and nothing else counts."
+  },
+  "books": {
+    "ewma_0.005_norm": {
+      "lambda": 0.005,
+      "cap": null,
+      "grossSharpe": 5.462034811371672,
+      "turnoverAnnual": 4.486075646619805,
+      "breakEvenBps": 122.01779240220344,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 16134731625.431717,
+        "Y1": 4033682906.357929,
+        "Y2": 1008420726.5894823
+      },
+      "impactBpsAt10M_Y1": 0.0240740458161894,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.2935697824086556
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.46,
+          "net4Sharpe": 5.28,
+          "turnoverAnnual": 4,
+          "breakEvenBps": 122.02
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 4.05,
+          "net4Sharpe": 3.71,
+          "turnoverAnnual": 5,
+          "breakEvenBps": 48.34
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 3.19,
+          "net4Sharpe": 2.83,
+          "turnoverAnnual": 5,
+          "breakEvenBps": 35.69
+        }
+      },
+      "oiPositionCapacity_at_5pct": 18491451.57075598,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 3698290.314151196,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 18491451.57075598,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 36982903.14151196,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 18491451.57075598
+    },
+    "ewma_0.01_norm": {
+      "lambda": 0.01,
+      "cap": null,
+      "grossSharpe": 5.710082940844797,
+      "turnoverAnnual": 8.770852766017287,
+      "breakEvenBps": 67.54030666342634,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 7943860417.298675,
+        "Y1": 1985965104.3246686,
+        "Y2": 496491276.08116716
+      },
+      "impactBpsAt10M_Y1": 0.03611529789316639,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.2221819049639606
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.71,
+          "net4Sharpe": 5.37,
+          "turnoverAnnual": 9,
+          "breakEvenBps": 67.54
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 4.53,
+          "net4Sharpe": 3.86,
+          "turnoverAnnual": 9,
+          "breakEvenBps": 27.07
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 3.85,
+          "net4Sharpe": 3.14,
+          "turnoverAnnual": 10,
+          "breakEvenBps": 21.76
+        }
+      },
+      "oiPositionCapacity_at_5pct": 19200933.62513582,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 3840186.725027164,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 19200933.62513582,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 38401867.25027164,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 19200933.62513582
+    },
+    "ewma_0.02_norm": {
+      "lambda": 0.02,
+      "cap": null,
+      "grossSharpe": 5.476137588094227,
+      "turnoverAnnual": 17.255064221568027,
+      "breakEvenBps": 39.63317458420044,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 2577361597.460841,
+        "Y1": 644340399.3652103,
+        "Y2": 161085099.84130257
+      },
+      "impactBpsAt10M_Y1": 0.06995186463991221,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.11744810261049096
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.48,
+          "net4Sharpe": 4.92,
+          "turnoverAnnual": 17,
+          "breakEvenBps": 39.63
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 4.98,
+          "net4Sharpe": 3.62,
+          "turnoverAnnual": 18,
+          "breakEvenBps": 14.65
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 4.43,
+          "net4Sharpe": 2.99,
+          "turnoverAnnual": 19,
+          "breakEvenBps": 12.34
+        }
+      },
+      "oiPositionCapacity_at_5pct": 20415293.506008178,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 4083058.7012016354,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 20415293.506008178,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 40830587.012016356,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 20415293.506008178
+    },
+    "ewma_0.05_norm": {
+      "lambda": 0.05,
+      "cap": null,
+      "grossSharpe": 5.591786143145594,
+      "turnoverAnnual": 42.56843932986266,
+      "breakEvenBps": 20.705078122281094,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 343199200.90927446,
+        "Y1": 85799800.22731861,
+        "Y2": 21449950.056829654
+      },
+      "impactBpsAt10M_Y1": 0.22170678363973595,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.033382523714854895
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.59,
+          "net4Sharpe": 4.51,
+          "turnoverAnnual": 43,
+          "breakEvenBps": 20.71
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 5.83,
+          "net4Sharpe": 2.33,
+          "turnoverAnnual": 46,
+          "breakEvenBps": 6.66
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 5.39,
+          "net4Sharpe": 1.68,
+          "turnoverAnnual": 49,
+          "breakEvenBps": 5.81
+        }
+      },
+      "oiPositionCapacity_at_5pct": 22086981.567118034,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 4417396.313423607,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 22086981.567118034,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 44173963.13423607,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 22086981.567118034
+    },
+    "ewma_0.1_norm": {
+      "lambda": 0.1,
+      "cap": null,
+      "grossSharpe": 5.1753136765412835,
+      "turnoverAnnual": 84.88886696661017,
+      "breakEvenBps": 12.776815922238876,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 52845394.42090818,
+        "Y1": 13211348.605227046,
+        "Y2": 3302837.1513067614
+      },
+      "impactBpsAt10M_Y1": 0.59197045464062,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.010136639643033435
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 5.18,
+          "net4Sharpe": 3.55,
+          "turnoverAnnual": 85,
+          "breakEvenBps": 12.78
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 6.62,
+          "net4Sharpe": -0.58,
+          "turnoverAnnual": 93,
+          "breakEvenBps": 3.68
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 6.18,
+          "net4Sharpe": -1.37,
+          "turnoverAnnual": 99,
+          "breakEvenBps": 3.27
+        }
+      },
+      "oiPositionCapacity_at_5pct": 23413984.796642747,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 4682796.959328549,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 23413984.796642747,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 46827969.59328549,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 13211348.605227046
+    },
+    "ewma_0.02_norm_cap12.5": {
+      "lambda": 0.02,
+      "cap": 0.125,
+      "grossSharpe": 6.77346296989985,
+      "turnoverAnnual": 14.346870303861452,
+      "breakEvenBps": 46.043866638499104,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 2905168556.2705097,
+        "Y1": 726292139.0676274,
+        "Y2": 181573034.76690686
+      },
+      "impactBpsAt10M_Y1": 0.06463831566516545,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.14182437483954344
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 6.77,
+          "net4Sharpe": 6.18,
+          "turnoverAnnual": 10,
+          "breakEvenBps": 46.04
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 5.65,
+          "net4Sharpe": 4.24,
+          "turnoverAnnual": 11,
+          "breakEvenBps": 15.97
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 5.49,
+          "net4Sharpe": 3.81,
+          "turnoverAnnual": 11,
+          "breakEvenBps": 13.04
+        }
+      },
+      "oiPositionCapacity_at_5pct": 35937180.5694138,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 7187436.11388276,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 35937180.5694138,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 71874361.1388276,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 35937180.5694138
+    },
+    "ewma_0.05_norm_cap12.5": {
+      "lambda": 0.05,
+      "cap": 0.125,
+      "grossSharpe": 6.638509362975706,
+      "turnoverAnnual": 34.97746789934164,
+      "breakEvenBps": 22.277264960228344,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 321432299.88781595,
+        "Y1": 80358074.97195399,
+        "Y2": 20089518.742988497
+      },
+      "impactBpsAt10M_Y1": 0.2059542190328906,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.03452291389548817
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 6.64,
+          "net4Sharpe": 5.45,
+          "turnoverAnnual": 25,
+          "breakEvenBps": 22.28
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 6.21,
+          "net4Sharpe": 2.67,
+          "turnoverAnnual": 26,
+          "breakEvenBps": 7.03
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 6.3,
+          "net4Sharpe": 2.34,
+          "turnoverAnnual": 27,
+          "breakEvenBps": 6.37
+        }
+      },
+      "oiPositionCapacity_at_5pct": 37943597.100406945,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 7588719.420081388,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 37943597.100406945,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 75887194.20081389,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 37943597.100406945
+    },
+    "ewma_0.1_norm_cap12.5": {
+      "lambda": 0.1,
+      "cap": 0.125,
+      "grossSharpe": 4.314029133876414,
+      "turnoverAnnual": 69.92991400525624,
+      "breakEvenBps": 13.453028899828958,
+      "capacityUSD_fee4bps": {
+        "Y0.5": 47857492.64644752,
+        "Y1": 11964373.16161188,
+        "Y2": 2991093.29040297
+      },
+      "impactBpsAt10M_Y1": 0.5519184161596281,
+      "bindingAtImpactCapacity": {
+        "symbol": "dogeusdt",
+        "participation": 0.009899946802962089
+      },
+      "windows": {
+        "full": {
+          "n": 6557,
+          "grossSharpe": 4.31,
+          "net4Sharpe": 3.03,
+          "turnoverAnnual": 50,
+          "breakEvenBps": 13.45
+        },
+        "last24m": {
+          "n": 2190,
+          "grossSharpe": 6.98,
+          "net4Sharpe": -0.26,
+          "turnoverAnnual": 53,
+          "breakEvenBps": 3.86
+        },
+        "last12m": {
+          "n": 1095,
+          "grossSharpe": 6.87,
+          "net4Sharpe": -1.11,
+          "turnoverAnnual": 56,
+          "breakEvenBps": 3.44
+        }
+      },
+      "oiPositionCapacity_at_5pct": 39209679.53981245,
+      "oiPositionCapacity": {
+        "at_1pct_of_meanOI": {
+          "USD": 7841935.90796249,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_5pct_of_meanOI": {
+          "USD": 39209679.53981245,
+          "bindingSymbol": "linkusdt"
+        },
+        "at_10pct_of_meanOI": {
+          "USD": 78419359.0796249,
+          "bindingSymbol": "linkusdt"
+        }
+      },
+      "usableSizeY1_fee4bps": 11964373.16161188
+    }
+  },
+  "frontier": [
+    {
+      "name": "ewma_0.005_norm",
+      "turnoverAnnual": 4,
+      "breakEvenBps": 122.01779240220344,
+      "capacityY05": 16134731625.431717,
+      "capacityY1": 4033682906.357929,
+      "capacityY2": 1008420726.5894823,
+      "oiBound5pct": 18491451.57075598,
+      "usableY1": 18491451.57075598,
+      "binding": "dogeusdt",
+      "recentNet4": 3.71,
+      "recentBreakEven": 48.34
+    },
+    {
+      "name": "ewma_0.01_norm",
+      "turnoverAnnual": 9,
+      "breakEvenBps": 67.54030666342634,
+      "capacityY05": 7943860417.298675,
+      "capacityY1": 1985965104.3246686,
+      "capacityY2": 496491276.08116716,
+      "oiBound5pct": 19200933.62513582,
+      "usableY1": 19200933.62513582,
+      "binding": "dogeusdt",
+      "recentNet4": 3.86,
+      "recentBreakEven": 27.07
+    },
+    {
+      "name": "ewma_0.02_norm_cap12.5",
+      "turnoverAnnual": 14,
+      "breakEvenBps": 46.043866638499104,
+      "capacityY05": 2905168556.2705097,
+      "capacityY1": 726292139.0676274,
+      "capacityY2": 181573034.76690686,
+      "oiBound5pct": 35937180.5694138,
+      "usableY1": 35937180.5694138,
+      "binding": "dogeusdt",
+      "recentNet4": 4.24,
+      "recentBreakEven": 15.97
+    },
+    {
+      "name": "ewma_0.02_norm",
+      "turnoverAnnual": 17,
+      "breakEvenBps": 39.63317458420044,
+      "capacityY05": 2577361597.460841,
+      "capacityY1": 644340399.3652103,
+      "capacityY2": 161085099.84130257,
+      "oiBound5pct": 20415293.506008178,
+      "usableY1": 20415293.506008178,
+      "binding": "dogeusdt",
+      "recentNet4": 3.62,
+      "recentBreakEven": 14.65
+    },
+    {
+      "name": "ewma_0.05_norm",
+      "turnoverAnnual": 43,
+      "breakEvenBps": 20.705078122281094,
+      "capacityY05": 343199200.90927446,
+      "capacityY1": 85799800.22731861,
+      "capacityY2": 21449950.056829654,
+      "oiBound5pct": 22086981.567118034,
+      "usableY1": 22086981.567118034,
+      "binding": "dogeusdt",
+      "recentNet4": 2.33,
+      "recentBreakEven": 6.66
+    },
+    {
+      "name": "ewma_0.05_norm_cap12.5",
+      "turnoverAnnual": 35,
+      "breakEvenBps": 22.277264960228344,
+      "capacityY05": 321432299.88781595,
+      "capacityY1": 80358074.97195399,
+      "capacityY2": 20089518.742988497,
+      "oiBound5pct": 37943597.100406945,
+      "usableY1": 37943597.100406945,
+      "binding": "dogeusdt",
+      "recentNet4": 2.67,
+      "recentBreakEven": 7.03
+    },
+    {
+      "name": "ewma_0.1_norm",
+      "turnoverAnnual": 85,
+      "breakEvenBps": 12.776815922238876,
+      "capacityY05": 52845394.42090818,
+      "capacityY1": 13211348.605227046,
+      "capacityY2": 3302837.1513067614,
+      "oiBound5pct": 23413984.796642747,
+      "usableY1": 13211348.605227046,
+      "binding": "dogeusdt",
+      "recentNet4": -0.58,
+      "recentBreakEven": 3.68
+    },
+    {
+      "name": "ewma_0.1_norm_cap12.5",
+      "turnoverAnnual": 70,
+      "breakEvenBps": 13.453028899828958,
+      "capacityY05": 47857492.64644752,
+      "capacityY1": 11964373.16161188,
+      "capacityY2": 2991093.29040297,
+      "oiBound5pct": 39209679.53981245,
+      "usableY1": 11964373.16161188,
+      "binding": "dogeusdt",
+      "recentNet4": -0.26,
+      "recentBreakEven": 3.86
+    }
+  ],
+  "verdict": {
+    "note": "Falsifier: if the retuned book's usable size does not exceed the λ=0.1 spec's, F-37's recovery does not extend to size.",
+    "specCapacityY1": 13211348.605227046,
+    "slowestCapacityY1": 1985965104.3246686,
+    "specUsableY1": 13211348.605227046,
+    "slowestUsableY1": 19200933.62513582,
+    "specOIbound5pct": 23413984.796642747,
+    "slowestOIbound5pct": 19200933.62513582,
+    "slowerRaisesImpactCapacity": true,
+    "slowerLowersOIBound": true,
+    "usableSizeRises": true,
+    "validationPass": true
+  }
+}

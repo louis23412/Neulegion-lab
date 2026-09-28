@@ -1,0 +1,151 @@
+{
+  "config": {
+    "sepN": 200,
+    "skewFolds": [
+      0.35,
+      0.5,
+      0.65
+    ],
+    "mlpHidden": 6
+  },
+  "rows": {
+    "constantY": {
+      "ybar": 1,
+      "meanPred": 0.5,
+      "minPred": 0.5,
+      "maxPred": 0.5,
+      "intercept": 0
+    },
+    "skewedFold": {
+      "baseRate": 0.8333333333333334,
+      "ybar": 0.8333333333333334,
+      "meanPredShipped": 0.5000000000000001,
+      "brierShipped": 0.22475299906958623,
+      "brierRestoreYbar": 0.13533111231662012,
+      "brierUncentred": 0.13533111231662004
+    },
+    "perfectClassifier": {
+      "minPred": 0.37754066997316427,
+      "maxPred": 0.6224593300268357,
+      "ridgeBrier": 0.14253695748378586,
+      "baseBrier": 0.25,
+      "band": [
+        0.3775406687981454,
+        0.6224593312018546
+      ]
+    },
+    "mlpConstantY": {
+      "mean": 0.9905343341679301,
+      "min": 0.9865544662946372,
+      "max": 0.9920710054005812
+    },
+    "independentSolveMaxWdiff": 0
+  },
+  "validation": {
+    "standardiserExact": true,
+    "standardiserConstantColumn": true,
+    "standardiserEmpty": true,
+    "ridgeMatchesIndependentSolve": true,
+    "ridgeInterceptUnpenalised": true,
+    "ridgePredictInUnitInterval": true,
+    "ridgeStandardiseFalsePath": true,
+    "baseRateIsTrainingPrior": true,
+    "forecastersLearnSeparableRule": true,
+    "mlpDeterministic": true,
+    "kindsAndFactory": true,
+    "perfectClassifierBeatsBaseRate": true
+  },
+  "verdict": {
+    "note": "L10-bl..: `benchmark.js` is the SHIPPED P1 model-class benchmark (opt-in `--variants=bench-*`, never in the default roster; its ridge arm is the MCS survivor and the best of the set, RUN-ANALYSIS.md section 16.2). PASSES the pre-registered read: the standardiser is exact (zero mean / unit std, collapsed constant column, empty-input shape), `fitRidge` matches an INDEPENDENTLY SOLVED centred ridge to 0, `predictRidge` stays in (0,1), the base rate equals the training prior and defaults to 0.5 on empty input, the ridge and MLP both learn a separable causal rule, the MLP is deterministic under a seed, `BENCHMARK_KINDS` are the expected kinds and the factory refuses `tsfm`/an unknown kind, and a perfect classifier beats the base rate on Brier. FINDINGS: (1) `fitRidge` centres the label on `ybar` and `predictRidge` NEVER restores it, so the linear arm's probability is anchored at 0.5 whatever the prior - a constant-y fit predicts exactly 0.5, and a 0.833-base-rate fold reads Brier 0.2248 shipped vs 0.1353 with the module's own term restored (the shipped test checks accuracy only, a 0.5 threshold, so it cannot fail); (2) the sigmoid is applied to a least-squares fit of a bounded [0,1] label, so the arm's output is confined to sigmoid([-1,1]) ~ [0.27, 0.73] - a perfectly separable feature reads Brier 0.1425 (the arm's floor), while the MLP fits its bias on the raw label and reaches 0.99 on a constant-y fold; (3) the lock-registry/LOCKED claim that the test proves \"the ridge closed form matches a hand-computed solve\" is unverified - the 5 shipped P1 checks assert accuracy/determinism/standardiser/factory/grouping only (the closed form itself IS exact); (4) the eps constant-column fallback amplifies a unit train->test deviation to z = 1e8 (latent). Scope: SHIPPED, but the two live findings move a forecast arm's probability readout, not the goldens.",
+    "checks": {
+      "standardiserExact": true,
+      "standardiserConstantColumn": true,
+      "standardiserEmpty": true,
+      "ridgeMatchesIndependentSolve": true,
+      "ridgeInterceptUnpenalised": true,
+      "ridgePredictInUnitInterval": true,
+      "ridgeStandardiseFalsePath": true,
+      "baseRateIsTrainingPrior": true,
+      "forecastersLearnSeparableRule": true,
+      "mlpDeterministic": true,
+      "kindsAndFactory": true,
+      "perfectClassifierBeatsBaseRate": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "deadTrainingBaseRate": {
+        "claim": "the ridge is a closed-form regression of the label (documented \"ridge (closed form)\") whose probability output is the fitted linear probability",
+        "constantY": {
+          "ybar": 1,
+          "meanPred": 0.5,
+          "minPred": 0.5,
+          "maxPred": 0.5,
+          "intercept": 0
+        },
+        "skewedFold": {
+          "baseRate": 0.8333333333333334,
+          "ybar": 0.8333333333333334,
+          "meanPredShipped": 0.5000000000000001,
+          "brierShipped": 0.22475299906958623,
+          "brierRestoreYbar": 0.13533111231662012,
+          "brierUncentred": 0.13533111231662004
+        },
+        "ybarFieldConsumers": "fitRidge returns `ybar`; predictRidge does not read it (only `model.w`, `model.d`, `model.scaler`, `model.standardise`)",
+        "note": "fitRidge centres the target on `ybar` (so the unpenalised intercept absorbs nothing) but predictRidge returns sigmoid(z·w + c) — the centred linear predictor — so the shipped probability is anchored at 0.5 whatever the training prior. A constant-y fit returns exactly 0.5 for every input; on a 0.833-base-rate fold the shipped mean prediction is 0.50 (Brier 0.2248) vs 0.69 with the module's own `ybar` restored (Brier 0.1353). The shipped P1 test only checks ACCURACY (a 0.5 threshold, invariant to the offset), so it cannot fail (the F-68 \"a test that cannot fail\" lesson)."
+      },
+      "sigmoidBandCap": {
+        "claim": "the linear arm is a probability model comparable to the MLP arm (both are `forecasters` scored by Brier against the base rate)",
+        "perfectClassifier": {
+          "minPred": 0.37754066997316427,
+          "maxPred": 0.6224593300268357,
+          "ridgeBrier": 0.14253695748378586,
+          "baseBrier": 0.25,
+          "band": [
+            0.3775406687981454,
+            0.6224593312018546
+          ]
+        },
+        "mlpConstantY": {
+          "mean": 0.9905343341679301,
+          "min": 0.9865544662946372,
+          "max": 0.9920710054005812
+        },
+        "note": "predictRidge returns sigmoid(linear least-squares fit of the 0/1 label). Because the fitted value of a bounded target lies in [min y, max y] = [0,1] (centred: [-ybar, 1-ybar]), the shipped probability lies in sigmoid([-1,1]) ~ [0.27, 0.73] (at ybar=0.5: [0.378, 0.622]) and cannot approach 0/1 however separable the data is: a PERFECTLY separable feature reads Brier 0.1425 (the arm's floor), not ~0. The MLP fits its output-bias on the raw label through the same sigmoid, so it CAN express the prior (constant-y MLP -> 0.99). So \"no model class has material positive skill\" is, for the ridge arm, partly a statement about a bounded output map rather than about the model class."
+      },
+      "unverifiedHandSolveClaim": {
+        "claim": "the analysis.test.js P1 block proves the ridge closed form against a hand-computed solve",
+        "shippedP1Checks": [
+          "ridge and a small MLP both learn a separable causal rule the base rate cannot",
+          "the benchmark forecasters are deterministic (same seed => identical fits)",
+          "the standardiser is fit-cause and round-trips to zero mean/unit variance",
+          "the factory exposes base-rate/linear/mlp and refuses tsfm without a checkpoint",
+          "a benchmark arm joins the probability group (MCS + DM) while a signal keeps its own group"
+        ],
+        "closedFormIsExact": true,
+        "note": "docs/LOCKED.md and test/lock-registry.js both claim the P1 test proves \"the ridge closed form matches a hand-computed solve\", but the shipped analysis.test.js P1 block contains no hand solve: it asserts ridge/MLP accuracy > 0.8 on a separable rule, determinism, a zero-mean standardiser round-trip, the factory kinds and the MCS grouping. My independent centred solve matches the module to 0 (check ridgeMatchesIndependentSolve), so the CLAIM is true - but it is not the test that establishes it, and the 5 shipped checks would pass on a ridge with an arbitrary output map (as finding (1) shows)."
+      },
+      "epsColumnAmplification": {
+        "claim": "the standardiser's eps \"constant-column fallback\" is safe",
+        "std0": 1e-8,
+        "z0ForUnitDeviation": 100000000,
+        "amplification": 100000000,
+        "note": "a column constant on the fit fold gets std = sqrt(0) + eps = 1e-8, so a test-fold value one unit away maps to z = 1e8: the fallback avoids a division by zero but turns any train->test deviation on that column into an arbitrarily large standardised feature. LATENT (a feature constant over a 60-bar training fold is plausible) but real, and untested."
+      }
+    },
+    "scope": {
+      "shipped": [
+        "fitRidge/predictRidge",
+        "fitMLP/predictMLP",
+        "fitBaseRate/predictBaseRate",
+        "fitStandardiser/applyStandardiser",
+        "BENCHMARK_KINDS",
+        "makeBenchmarkForecaster"
+      ],
+      "testOnly": [
+        "tsfm arm (throws by design)"
+      ],
+      "why": "analyze.js imports makeBenchmarkForecaster/BENCHMARK_KINDS and dispatches `kind:\"benchmark\"` variants through makeBenchmarkModelFactory; a --variants=bench-linear run reaches RUN-ANALYSIS section 16.2, so the ridge arm's probability is a shipped readout (the arms are opt-in, never in the default roster)."
+    }
+  }
+}

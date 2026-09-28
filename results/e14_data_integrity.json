@@ -1,0 +1,660 @@
+{
+  "at": "2026-09-27T10:57:57.935Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "mark_source_agreement",
+      "pass": true,
+      "detail": {
+        "btcusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.000002885886284494849
+        },
+        "ethusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.00007811366654397244
+        },
+        "solusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.00006854327668867703
+        },
+        "bnbusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.000044179368234994056
+        },
+        "xrpusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.00004875951543284929
+        },
+        "adausdt": {
+          "compared": 3,
+          "maxRelDiff": 0.00023711100053439675
+        },
+        "dogeusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.0000016105363041619625
+        },
+        "linkusdt": {
+          "compared": 3,
+          "maxRelDiff": 0.0004401795932741246
+        }
+      }
+    },
+    {
+      "name": "mark_precision",
+      "pass": true,
+      "detail": {
+        "btcusdt": {
+          "nonNull": 3630,
+          "unique": 3621,
+          "uniqueRatio": 0.998,
+          "integerFraction": 0.0529
+        },
+        "ethusdt": {
+          "nonNull": 3648,
+          "unique": 3638,
+          "uniqueRatio": 0.997,
+          "integerFraction": 0.0096
+        },
+        "solusdt": {
+          "nonNull": 3410,
+          "unique": 3377,
+          "uniqueRatio": 0.99,
+          "integerFraction": 0.0015
+        },
+        "bnbusdt": {
+          "nonNull": 3630,
+          "unique": 3594,
+          "uniqueRatio": 0.99,
+          "integerFraction": 0.0063
+        },
+        "xrpusdt": {
+          "nonNull": 3633,
+          "unique": 3464,
+          "uniqueRatio": 0.953,
+          "integerFraction": 0
+        },
+        "adausdt": {
+          "nonNull": 3648,
+          "unique": 3537,
+          "uniqueRatio": 0.97,
+          "integerFraction": 0
+        },
+        "dogeusdt": {
+          "nonNull": 3621,
+          "unique": 3532,
+          "uniqueRatio": 0.975,
+          "integerFraction": 0
+        },
+        "linkusdt": {
+          "nonNull": 3630,
+          "unique": 3505,
+          "uniqueRatio": 0.966,
+          "integerFraction": 0
+        }
+      }
+    },
+    {
+      "name": "candle_grid",
+      "pass": true,
+      "detail": {
+        "btcusdt": {
+          "bars": 79554,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "ethusdt": {
+          "bars": 79554,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "solusdt": {
+          "bars": 53500,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "bnbusdt": {
+          "bars": 77617,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "xrpusdt": {
+          "bars": 73350,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "adausdt": {
+          "bars": 73762,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "dogeusdt": {
+          "bars": 63142,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        },
+        "linkusdt": {
+          "bars": 67208,
+          "offHour": 0,
+          "duplicateTimestamps": 0,
+          "badRange": 0,
+          "lastClose": "2026-09-19T06:00:00.000Z"
+        }
+      }
+    },
+    {
+      "name": "funding_buckets",
+      "pass": true,
+      "detail": {
+        "btcusdt": {
+          "buckets": 7714,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "ethusdt": {
+          "buckets": 7480,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "solusdt": {
+          "buckets": 6606,
+          "maxRowsPerBucket": 4,
+          "multiRowBuckets": 26,
+          "multiFirst": "2022-11-10T00:00:00.000Z",
+          "multiLast": "2022-11-18T08:00:00.000Z"
+        },
+        "bnbusdt": {
+          "buckets": 7255,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "xrpusdt": {
+          "buckets": 7360,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "adausdt": {
+          "buckets": 7320,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "dogeusdt": {
+          "buckets": 6802,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        },
+        "linkusdt": {
+          "buckets": 7327,
+          "maxRowsPerBucket": 1,
+          "multiRowBuckets": 0,
+          "multiFirst": null,
+          "multiLast": null
+        }
+      }
+    },
+    {
+      "name": "no_frozen_spot",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "spot_guard",
+      "pass": true,
+      "detail": {
+        "note": "no carry return stamped after the last candle close"
+      }
+    },
+    {
+      "name": "series_sanity",
+      "pass": true,
+      "detail": {
+        "btcusdt": {
+          "periods": 6777,
+          "basisStd": 0.000308149236720075,
+          "maxAbsBasis": 0.0036187107377824157,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 908,
+          "sub8hBuckets": 0
+        },
+        "ethusdt": {
+          "periods": 6798,
+          "basisStd": 0.00041643299672172973,
+          "maxAbsBasis": 0.008094484406700242,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 656,
+          "sub8hBuckets": 0
+        },
+        "solusdt": {
+          "periods": 6558,
+          "basisStd": 0.0030841325680595172,
+          "maxAbsBasis": 0.19527300477233633,
+          "tailSkipped": 16,
+          "raggedSkipped": 3,
+          "noMark": 21,
+          "sub8hBuckets": 26
+        },
+        "bnbusdt": {
+          "periods": 6777,
+          "basisStd": 0.0006415057243497938,
+          "maxAbsBasis": 0.009723031404876292,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 449,
+          "sub8hBuckets": 0
+        },
+        "xrpusdt": {
+          "periods": 6781,
+          "basisStd": 0.0009690431405728592,
+          "maxAbsBasis": 0.05192913442735547,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 551,
+          "sub8hBuckets": 0
+        },
+        "adausdt": {
+          "periods": 6798,
+          "basisStd": 0.0005843727384127335,
+          "maxAbsBasis": 0.006118746069916359,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 496,
+          "sub8hBuckets": 0
+        },
+        "dogeusdt": {
+          "periods": 6771,
+          "basisStd": 0.000862056774926554,
+          "maxAbsBasis": 0.03200564584604271,
+          "tailSkipped": 16,
+          "raggedSkipped": 3,
+          "noMark": 6,
+          "sub8hBuckets": 0
+        },
+        "linkusdt": {
+          "periods": 6777,
+          "basisStd": 0.0006191311451328398,
+          "maxAbsBasis": 0.005481598820072264,
+          "tailSkipped": 16,
+          "raggedSkipped": 4,
+          "noMark": 521,
+          "sub8hBuckets": 0
+        }
+      }
+    },
+    {
+      "name": "pooled_no_huge_returns",
+      "pass": true,
+      "detail": {
+        "pooledPeriods": 6558,
+        "maxAbsPooledReturn": 0.033727393491822515
+      }
+    },
+    {
+      "name": "perp_source_coverage",
+      "pass": true,
+      "detail": {
+        "source": "data.binance.vision/data/futures/um/monthly/klines/<SYM>/8h/",
+        "builtAt": "2026-09-26T12:11:18.755Z",
+        "symbols": {
+          "btcusdt": {
+            "nonNull": 6759,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3630,
+            "spreadMean": 0.000007782280851546407,
+            "spreadSd": 0.0002206649743157663,
+            "spreadMaxAbs": 0.0019265482580226312
+          },
+          "ethusdt": {
+            "nonNull": 6759,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3648,
+            "spreadMean": -0.000017725240440970425,
+            "spreadSd": 0.0003275743054738256,
+            "spreadMaxAbs": 0.0031169627829609192
+          },
+          "solusdt": {
+            "nonNull": 6519,
+            "first": "2020-09-14T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3393,
+            "spreadMean": 0.000009983665967307231,
+            "spreadSd": 0.0006269684386474277,
+            "spreadMaxAbs": 0.014331449245821526
+          },
+          "bnbusdt": {
+            "nonNull": 6759,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3630,
+            "spreadMean": -0.0000021438738838396076,
+            "spreadSd": 0.0003727287844931012,
+            "spreadMaxAbs": 0.005503485235434757
+          },
+          "xrpusdt": {
+            "nonNull": 6744,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3618,
+            "spreadMean": -0.000012811673723505722,
+            "spreadSd": 0.0005069134599956279,
+            "spreadMaxAbs": 0.01761730056563282
+          },
+          "adausdt": {
+            "nonNull": 6759,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3648,
+            "spreadMean": 0.000013439982503207984,
+            "spreadSd": 0.00042899171023048986,
+            "spreadMaxAbs": 0.004763113625936732
+          },
+          "dogeusdt": {
+            "nonNull": 6731,
+            "first": "2020-07-10T16:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3620,
+            "spreadMean": 0.000013827779522043587,
+            "spreadSd": 0.0005990667675619506,
+            "spreadMaxAbs": 0.012066522338122443
+          },
+          "linkusdt": {
+            "nonNull": 6759,
+            "first": "2020-07-01T08:00:00.000Z",
+            "last": "2026-09-01T00:00:00.000Z",
+            "comparedToMark": 3630,
+            "spreadMean": -0.000005824732709037004,
+            "spreadSd": 0.00046583986645227463,
+            "spreadMaxAbs": 0.004176186477486632
+          }
+        }
+      }
+    },
+    {
+      "name": "perp_mark_spread_sane",
+      "pass": true,
+      "detail": {
+        "note": "mark/traded - 1 must be ~0 (smoothed index tracks the traded price)",
+        "symbols": {
+          "btcusdt": {
+            "mean": 0.000007782280851546407,
+            "sd": 0.0002206649743157663,
+            "maxAbs": 0.0019265482580226312
+          },
+          "ethusdt": {
+            "mean": -0.000017725240440970425,
+            "sd": 0.0003275743054738256,
+            "maxAbs": 0.0031169627829609192
+          },
+          "solusdt": {
+            "mean": 0.000009983665967307231,
+            "sd": 0.0006269684386474277,
+            "maxAbs": 0.014331449245821526
+          },
+          "bnbusdt": {
+            "mean": -0.0000021438738838396076,
+            "sd": 0.0003727287844931012,
+            "maxAbs": 0.005503485235434757
+          },
+          "xrpusdt": {
+            "mean": -0.000012811673723505722,
+            "sd": 0.0005069134599956279,
+            "maxAbs": 0.01761730056563282
+          },
+          "adausdt": {
+            "mean": 0.000013439982503207984,
+            "sd": 0.00042899171023048986,
+            "maxAbs": 0.004763113625936732
+          },
+          "dogeusdt": {
+            "mean": 0.000013827779522043587,
+            "sd": 0.0005990667675619506,
+            "maxAbs": 0.012066522338122443
+          },
+          "linkusdt": {
+            "mean": -0.000005824732709037004,
+            "sd": 0.00046583986645227463,
+            "maxAbs": 0.004176186477486632
+          }
+        }
+      }
+    },
+    {
+      "name": "perp_flow_integrity",
+      "pass": true,
+      "detail": {
+        "source": "data.binance.vision/data/futures/um/monthly/klines/<SYM>/8h/ (futures klines: vol=col5, qv=col7, cnt=col8)",
+        "builtAt": "2026-09-26T13:33:06.532Z",
+        "symbols": {
+          "btcusdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6759,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9996688915016675,
+            "ratioMin": 0.9202533048404209,
+            "ratioMax": 1.0710400945000218,
+            "badValues": 0
+          },
+          "ethusdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6759,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9995613857265487,
+            "ratioMin": 0.9053278073945465,
+            "ratioMax": 1.0923147570976355,
+            "badValues": 0
+          },
+          "solusdt": {
+            "nKlines": 6534,
+            "nonNullQv": 6519,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9998449595276075,
+            "ratioMin": 0.8343833765631767,
+            "ratioMax": 1.2100311189593325,
+            "badValues": 0
+          },
+          "bnbusdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6759,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9994830897733862,
+            "ratioMin": 0.8812574720945736,
+            "ratioMax": 1.131373638232908,
+            "badValues": 0
+          },
+          "xrpusdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6744,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9998413180007931,
+            "ratioMin": 0.8757531235746263,
+            "ratioMax": 2.852057154779025,
+            "badValues": 0
+          },
+          "adausdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6759,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9998879175706484,
+            "ratioMin": 0.9013040534783726,
+            "ratioMax": 1.1146686839957982,
+            "badValues": 0
+          },
+          "dogeusdt": {
+            "nKlines": 6731,
+            "nonNullQv": 6731,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9999148215853891,
+            "ratioMin": 0.6052243085095628,
+            "ratioMax": 1.1441670031010722,
+            "badValues": 0
+          },
+          "linkusdt": {
+            "nKlines": 6759,
+            "nonNullQv": 6759,
+            "gridMatchesTradedClose": true,
+            "ratioMedian": 0.9996363385923792,
+            "ratioMin": 0.8763616205413338,
+            "ratioMax": 1.1383452240455458,
+            "badValues": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "oi_integrity",
+      "pass": true,
+      "detail": {
+        "source": "data.binance.vision/data/futures/um/daily/metrics/<SYM>/<SYM>-metrics-<YYYY-MM-DD>.zip",
+        "builtAt": "2026-09-26T14:31:35.740Z",
+        "symbols": {
+          "btcusdt": {
+            "nKlines": 6573,
+            "nonNull": 6563,
+            "gridOk": true,
+            "ratioMedian": 1.0000035174710242,
+            "ratioMin": 0.9844666324512501,
+            "ratioMax": 1.0108336246819247,
+            "badValues": 0,
+            "first": "2020-09-01"
+          },
+          "ethusdt": {
+            "nKlines": 5205,
+            "nonNull": 5200,
+            "gridOk": true,
+            "ratioMedian": 1.000012762791393,
+            "ratioMin": 0.983865305194126,
+            "ratioMax": 1.0148082111805898,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "solusdt": {
+            "nKlines": 5205,
+            "nonNull": 5196,
+            "gridOk": true,
+            "ratioMedian": 1.0000293545908263,
+            "ratioMin": 0.977169038024741,
+            "ratioMax": 1.0412041710962692,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "bnbusdt": {
+            "nKlines": 5205,
+            "nonNull": 5199,
+            "gridOk": true,
+            "ratioMedian": 1.000000002911441,
+            "ratioMin": 0.9775249827003106,
+            "ratioMax": 1.0134571204472054,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "xrpusdt": {
+            "nKlines": 5205,
+            "nonNull": 5201,
+            "gridOk": true,
+            "ratioMedian": 1.0000000025910807,
+            "ratioMin": 0.9751840489151725,
+            "ratioMax": 1.0375370174584002,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "adausdt": {
+            "nKlines": 5205,
+            "nonNull": 5199,
+            "gridOk": true,
+            "ratioMedian": 1.0000124581013012,
+            "ratioMin": 0.9690996293690941,
+            "ratioMax": 1.0647716313558675,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "dogeusdt": {
+            "nKlines": 5205,
+            "nonNull": 5201,
+            "gridOk": true,
+            "ratioMedian": 1.0000229741689877,
+            "ratioMin": 0.9524257338866324,
+            "ratioMax": 1.0307369782137235,
+            "badValues": 0,
+            "first": "2021-12-01"
+          },
+          "linkusdt": {
+            "nKlines": 5205,
+            "nonNull": 5200,
+            "gridOk": true,
+            "ratioMedian": 1.0000052985161885,
+            "ratioMin": 0.9736090196611508,
+            "ratioMax": 1.032944751884709,
+            "badValues": 0,
+            "first": "2021-12-01"
+          }
+        }
+      }
+    },
+    {
+      "name": "oi_missing_is_null",
+      "pass": true,
+      "detail": {
+        "coveragePeriods": {
+          "btcusdt": 6563,
+          "ethusdt": 5200,
+          "solusdt": 5196,
+          "bnbusdt": 5199,
+          "xrpusdt": 5201,
+          "adausdt": 5199,
+          "dogeusdt": 5201,
+          "linkusdt": 5200
+        },
+        "coverageSpread": 1367,
+        "zeroStored": 0,
+        "topLsOutOfRange": 0,
+        "note": "coverage is asymmetric (masking required); missing stored as null, never 0"
+      }
+    },
+    {
+      "name": "sub_8h_sleeve_equality",
+      "pass": true,
+      "detail": {
+        "solRows": 6681,
+        "solBuckets": 6606,
+        "rawTotal": 0.012581,
+        "bucketTotal": 0.012581,
+        "ftxMultiRowBuckets": 26,
+        "ftxRawSum": -0.324421,
+        "ftxFtxBucketSum": -0.324421,
+        "note": "the lab buckets rows into 8h sums (lossless); the repo per-row projection understates this window ~3x (F-61/L10-d)"
+      }
+    }
+  ]
+}

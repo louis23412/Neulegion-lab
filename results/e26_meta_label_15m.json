@@ -1,0 +1,859 @@
+{
+  "config": {
+    "tf": "15m",
+    "bars": 79999,
+    "streams": 8,
+    "H": 8,
+    "step": 2666,
+    "maxTrain": 2000,
+    "minTrain": 1200,
+    "iters": 8,
+    "nullSeeds": 4,
+    "thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65
+    ],
+    "randomSeeds": 8,
+    "firstBar": "2024-06-13T06:15:00.000Z",
+    "lastBar": "2026-09-24T13:45:00.000Z"
+  },
+  "features": [
+    "mom16:{\"window\":16}",
+    "frac-mom16:{\"window\":16,\"d\":0.4}",
+    "vol-regime:{\"window\":8,\"long\":32}",
+    "agreement:{\"lenses\":[4,8,16,32]}",
+    "range-loc:{\"window\":32}",
+    "vol-imbalance:{\"window\":8,\"long\":32}",
+    "autocorr1:{\"window\":32}",
+    "accel:{\"window\":16}"
+  ],
+  "rules": {
+    "mom16": {
+      "note": "shipped sig-momentum (a trend rule)",
+      "actingBars": 639664,
+      "baseRate": 0.4928884539383176,
+      "oos": {
+        "predicted": 618336,
+        "brierModel": 0.25055606324348617,
+        "brierBase": 0.2503734315452656,
+        "brierSkill": -0.0007294372134190041,
+        "auc": 0.5082515864434051,
+        "brierSkillTripleBarrier": -0.0021843592832331282,
+        "aucTripleBarrier": 0.5104015826124365
+      },
+      "perStream": [
+        {
+          "stream": "btcusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.49462217664273744,
+          "brierSkill": -0.001246282652159758,
+          "auc": 0.5088559861725204,
+          "brierSkillTb": -0.0019216018035834725
+        },
+        {
+          "stream": "ethusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.49317141499287126,
+          "brierSkill": 0.0007885247977394982,
+          "auc": 0.5122188534356411,
+          "brierSkillTb": -0.0016124896254086085
+        },
+        {
+          "stream": "solusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4907326346331824,
+          "brierSkill": -0.0018394687653158215,
+          "auc": 0.5022276107385321,
+          "brierSkillTb": -0.0033777552495162233
+        },
+        {
+          "stream": "bnbusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4939718352134871,
+          "brierSkill": -0.00037185864377153877,
+          "auc": 0.5078693136957199,
+          "brierSkillTb": -0.0028008733058098034
+        },
+        {
+          "stream": "xrpusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4920958503214187,
+          "brierSkill": -0.001838247282094585,
+          "auc": 0.5074859644543767,
+          "brierSkillTb": -0.0018040275835062847
+        },
+        {
+          "stream": "adausdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4930838690312414,
+          "brierSkill": -0.000024333639243367955,
+          "auc": 0.5076305354251085,
+          "brierSkillTb": -0.0017341019657033385
+        },
+        {
+          "stream": "dogeusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4909702593861777,
+          "brierSkill": -0.0011039535828745173,
+          "auc": 0.5070602157767916,
+          "brierSkillTb": -0.0027117291997289517
+        },
+        {
+          "stream": "linkusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.4944595912854248,
+          "brierSkill": -0.00020068788719962427,
+          "auc": 0.5136953042708681,
+          "brierSkillTb": -0.0015114450890096887
+        }
+      ],
+      "byBlock": {
+        "nBlocks": 29,
+        "mean": -0.0007336062972174381,
+        "sd": 0.0031750364871435204,
+        "positiveFraction": 0.4827586206896552
+      },
+      "null": {
+        "skills": [
+          -0.0030704759618080946,
+          -0.003115758044775818,
+          -0.0028283826985811,
+          -0.0027297369182957
+        ],
+        "mean": -0.002936088405865178,
+        "sd": 0.0001866571278595153,
+        "zVsNull": 11.821949784349929,
+        "seeds": 4
+      },
+      "abstention": {
+        "regionStart": "2024-07-11T09:00:00.000Z",
+        "regionBars": 77300,
+        "raw": {
+          "net4Sharpe": -0.5329835914480631,
+          "grossSharpe": -0.04078855530127704,
+          "breakEvenBps": -0.4068695528280102,
+          "keepFraction": 1
+        },
+        "filters": {
+          "q0.5": {
+            "net4Sharpe": -0.5020282682408432,
+            "grossSharpe": -0.007403274490925662,
+            "breakEvenBps": -0.059493430452152815,
+            "keepFraction": 0.45282341526520054
+          },
+          "q0.55": {
+            "net4Sharpe": -0.14803558352538387,
+            "grossSharpe": 0.015047641216957609,
+            "breakEvenBps": 0.6682381558678729,
+            "keepFraction": 0.045624191461836994
+          },
+          "q0.6": {
+            "net4Sharpe": -0.042428147925467966,
+            "grossSharpe": 0.0012754000421894673,
+            "breakEvenBps": 0.6312084047014379,
+            "keepFraction": 0.004757438551099611
+          },
+          "q0.65": {
+            "net4Sharpe": -0.016054136693955022,
+            "grossSharpe": -0.00023470671366394684,
+            "breakEvenBps": 6.576321448457518,
+            "keepFraction": 0.0010268434670116428
+          }
+        },
+        "nullFilters": {
+          "q0.5": {
+            "meanNet4": -0.5634995724635159,
+            "sdNet4": 0.009010894400565832,
+            "seeds": 4
+          },
+          "q0.55": {
+            "meanNet4": -0.21972126887065238,
+            "sdNet4": 0.01247288941809246,
+            "seeds": 4
+          },
+          "q0.6": {
+            "meanNet4": -0.06759636180693845,
+            "sdNet4": 0.01949735758900425,
+            "seeds": 4
+          },
+          "q0.65": {
+            "meanNet4": -0.04032948608762612,
+            "sdNet4": 0.026964497394752616,
+            "seeds": 4
+          }
+        },
+        "bestFilter": {
+          "tag": "q0.65",
+          "net4Sharpe": -0.016054136693955022,
+          "grossSharpe": -0.00023470671366394684,
+          "breakEvenBps": 6.576321448457518,
+          "keepFraction": 0.0010268434670116428,
+          "nullMean": -0.04032948608762612,
+          "nullSd": 0.026964497394752616,
+          "randomMean": -0.09928214504081029,
+          "zVsNull": 0.9002707908212361
+        },
+        "randomControl": {
+          "thresholds": {
+            "q0.5": {
+              "meanNet4": -1.1082216993317278,
+              "sdNet4": 0.022435510922240838
+            },
+            "q0.55": {
+              "meanNet4": -0.5351029713593043,
+              "sdNet4": 0.030756659556523954
+            },
+            "q0.6": {
+              "meanNet4": -0.18276533792820163,
+              "sdNet4": 0.030481287974894043
+            },
+            "q0.65": {
+              "meanNet4": -0.09928214504081029,
+              "sdNet4": 0.031069429812081453
+            }
+          },
+          "note": "keeps the same FRACTION of acting bars as the matching filter, chosen at random (secondary; a time-clustered filter can beat this for purely mechanical turnover reasons - the null-model filter is the primary control)"
+        },
+        "oracle": {
+          "net4Sharpe": 1.6681860433855211,
+          "grossSharpe": 2.233765006827315,
+          "breakEvenBps": 16.73446755684656,
+          "keepFraction": 0.4931549159120311
+        },
+        "antiOracle": {
+          "net4Sharpe": -2.8768782704664946,
+          "grossSharpe": -2.242253741056355,
+          "breakEvenBps": -14.863319648833514,
+          "keepFraction": 0.5067415912031048
+        },
+        "controlsPass": true
+      },
+      "capacityProbe": [
+        {
+          "iters": 1,
+          "brierSkill": 0.0016612801805288013,
+          "auc": 0.5095509651177386,
+          "n": 77292
+        },
+        {
+          "iters": 5,
+          "brierSkill": 0.0001504125990741123,
+          "auc": 0.5093370278287535,
+          "n": 77292
+        },
+        {
+          "iters": 15,
+          "brierSkill": -0.003945259514471777,
+          "auc": 0.5077224792782793,
+          "n": 77292
+        },
+        {
+          "iters": 40,
+          "brierSkill": -0.009056288745871388,
+          "auc": 0.505733854033021,
+          "n": 77292
+        }
+      ]
+    },
+    "accel16": {
+      "note": "shipped sig-acceleration (a trend-change rule)",
+      "actingBars": 639624,
+      "baseRate": 0.49590540692656937,
+      "oos": {
+        "predicted": 618296,
+        "brierModel": 0.25069237475261547,
+        "brierBase": 0.2504469993325381,
+        "brierSkill": -0.0009797498901216173,
+        "auc": 0.5060936565234063,
+        "brierSkillTripleBarrier": -0.002536840052620004,
+        "aucTripleBarrier": 0.5084803843472991
+      },
+      "perStream": [
+        {
+          "stream": "btcusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.4984678498617938,
+          "brierSkill": -0.0004765791863914348,
+          "auc": 0.5068791731163662,
+          "brierSkillTb": -0.0017019198134198277
+        },
+        {
+          "stream": "ethusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.499418408314885,
+          "brierSkill": -0.00035262060722818234,
+          "auc": 0.5096940786894121,
+          "brierSkillTb": -0.0027747704165654863
+        },
+        {
+          "stream": "solusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.49571623328705616,
+          "brierSkill": -0.002124132958641889,
+          "auc": 0.5054347892836277,
+          "brierSkillTb": -0.0033640906239498225
+        },
+        {
+          "stream": "bnbusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.4913761835078108,
+          "brierSkill": -0.0007478365528981179,
+          "auc": 0.503206889141292,
+          "brierSkillTb": -0.0027083019062363878
+        },
+        {
+          "stream": "xrpusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.49851787925406177,
+          "brierSkill": -0.0022896910910483737,
+          "auc": 0.5069251596392332,
+          "brierSkillTb": -0.0021110613652650656
+        },
+        {
+          "stream": "adausdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.4917764186459545,
+          "brierSkill": 0.00012195298492900797,
+          "auc": 0.5009828920865965,
+          "brierSkillTb": -0.0021168530286610476
+        },
+        {
+          "stream": "dogeusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.49495328505496977,
+          "brierSkill": -0.0010070221957929615,
+          "auc": 0.5085309092755755,
+          "brierSkillTb": -0.0035794820839123442
+        },
+        {
+          "stream": "linkusdt",
+          "actingRows": 79953,
+          "predicted": 77287,
+          "baseRate": 0.497016997486023,
+          "brierSkill": -0.0009654622166026527,
+          "auc": 0.506218069858502,
+          "brierSkillTb": -0.0019398965436756566
+        }
+      ],
+      "byBlock": {
+        "nBlocks": 29,
+        "mean": -0.000981976412917242,
+        "sd": 0.0029097427419133926,
+        "positiveFraction": 0.3448275862068966
+      },
+      "null": {
+        "skills": [
+          -0.0033192088783937646,
+          -0.0024208520512145615,
+          -0.0036290485044807586,
+          -0.002696541961793031
+        ],
+        "mean": -0.003016412848970529,
+        "sd": 0.0005549828616345944,
+        "zVsNull": 3.669776311380708,
+        "seeds": 4
+      },
+      "abstention": {
+        "regionStart": "2024-07-11T10:15:00.000Z",
+        "regionBars": 77295,
+        "raw": {
+          "net4Sharpe": -0.5542065235949072,
+          "grossSharpe": -0.009575829627489794,
+          "breakEvenBps": -0.13885675523519803,
+          "keepFraction": 1
+        },
+        "filters": {
+          "q0.5": {
+            "net4Sharpe": -0.5502278322396486,
+            "grossSharpe": 0.009020815333991065,
+            "breakEvenBps": 0.06698179919980804,
+            "keepFraction": 0.4887266317355585
+          },
+          "q0.55": {
+            "net4Sharpe": -0.16351613246421423,
+            "grossSharpe": 0.018529848519597977,
+            "breakEvenBps": 0.590539060512997,
+            "keepFraction": 0.04834238954654247
+          },
+          "q0.6": {
+            "net4Sharpe": -0.017985775775217455,
+            "grossSharpe": 0.03548340753179751,
+            "breakEvenBps": 4.770263416794672,
+            "keepFraction": 0.00474480884921405
+          },
+          "q0.65": {
+            "net4Sharpe": -0.008848427959747126,
+            "grossSharpe": 0.010221149090102213,
+            "breakEvenBps": 6.261266800603952,
+            "keepFraction": 0.0010139724432369495
+          }
+        },
+        "nullFilters": {
+          "q0.5": {
+            "meanNet4": -0.5613718066868302,
+            "sdNet4": 0.007750359525008714,
+            "seeds": 4
+          },
+          "q0.55": {
+            "meanNet4": -0.2501717784803011,
+            "sdNet4": 0.025568536180997845,
+            "seeds": 4
+          },
+          "q0.6": {
+            "meanNet4": -0.06415672534668397,
+            "sdNet4": 0.02611120834075134,
+            "seeds": 4
+          },
+          "q0.65": {
+            "meanNet4": -0.04251137408687049,
+            "sdNet4": 0.01432068756688077,
+            "seeds": 4
+          }
+        },
+        "bestFilter": {
+          "tag": "q0.65",
+          "net4Sharpe": -0.008848427959747126,
+          "grossSharpe": 0.010221149090102213,
+          "breakEvenBps": 6.261266800603952,
+          "keepFraction": 0.0010139724432369495,
+          "nullMean": -0.04251137408687049,
+          "nullSd": 0.01432068756688077,
+          "randomMean": -0.0970312768026787,
+          "zVsNull": 2.350651529118974
+        },
+        "randomControl": {
+          "thresholds": {
+            "q0.5": {
+              "meanNet4": -1.1122377478826382,
+              "sdNet4": 0.023435468229090095
+            },
+            "q0.55": {
+              "meanNet4": -0.5477976327311778,
+              "sdNet4": 0.018052105915872887
+            },
+            "q0.6": {
+              "meanNet4": -0.18593674687829545,
+              "sdNet4": 0.02060151193879239
+            },
+            "q0.65": {
+              "meanNet4": -0.0970312768026787,
+              "sdNet4": 0.01924082728511098
+            }
+          },
+          "note": "keeps the same FRACTION of acting bars as the matching filter, chosen at random (secondary; a time-clustered filter can beat this for purely mechanical turnover reasons - the null-model filter is the primary control)"
+        },
+        "oracle": {
+          "net4Sharpe": 1.6325161476903578,
+          "grossSharpe": 2.257632016752197,
+          "breakEvenBps": 15.264842140063843,
+          "keepFraction": 0.4963306164693706
+        },
+        "antiOracle": {
+          "net4Sharpe": -2.8444988689732678,
+          "grossSharpe": -2.191465994629987,
+          "breakEvenBps": -14.09124967750995,
+          "keepFraction": 0.5035658839510965
+        },
+        "controlsPass": true
+      },
+      "capacityProbe": [
+        {
+          "iters": 1,
+          "brierSkill": 0.0021229460192585536,
+          "auc": 0.5073513828057759,
+          "n": 77287
+        },
+        {
+          "iters": 5,
+          "brierSkill": 0.0008482079664492437,
+          "auc": 0.5071261136130181,
+          "n": 77287
+        },
+        {
+          "iters": 15,
+          "brierSkill": -0.0031808750917676765,
+          "auc": 0.506369861983259,
+          "n": 77287
+        },
+        {
+          "iters": 40,
+          "brierSkill": -0.008441568370209707,
+          "auc": 0.5052741620101813,
+          "n": 77287
+        }
+      ]
+    },
+    "rev1": {
+      "note": "shipped sig-reversal (the only rule with a measured gross edge, F-32)",
+      "actingBars": 639664,
+      "baseRate": 0.5114591410490508,
+      "oos": {
+        "predicted": 618336,
+        "brierModel": 0.2502163388627198,
+        "brierBase": 0.2499629726516935,
+        "brierSkill": -0.001013614970003518,
+        "auc": 0.504118553875046,
+        "brierSkillTripleBarrier": -0.00020654452532231637,
+        "aucTripleBarrier": 0.5134045038627679
+      },
+      "perStream": [
+        {
+          "stream": "btcusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.512581605342805,
+          "brierSkill": -0.001420924865353168,
+          "auc": 0.5049467656307649,
+          "brierSkillTb": -0.0000982670127605001
+        },
+        {
+          "stream": "ethusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.5106430876210011,
+          "brierSkill": -0.0011180257444824981,
+          "auc": 0.5033524753381371,
+          "brierSkillTb": -0.0003125718856096249
+        },
+        {
+          "stream": "solusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.5084294254483603,
+          "brierSkill": -0.0008736127077195732,
+          "auc": 0.5013361196049226,
+          "brierSkillTb": -0.001116241745209301
+        },
+        {
+          "stream": "bnbusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.5096800820430726,
+          "brierSkill": -0.000260396367863569,
+          "auc": 0.5119899180107301,
+          "brierSkillTb": -0.00017576589452183988
+        },
+        {
+          "stream": "xrpusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.5112934290502514,
+          "brierSkill": -0.0008108870707632665,
+          "auc": 0.5037114058944114,
+          "brierSkillTb": -0.00014280149204637382
+        },
+        {
+          "stream": "adausdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.5116185997648766,
+          "brierSkill": -0.0014650410036012307,
+          "auc": 0.49893260395011346,
+          "brierSkillTb": 0.00015717798221681623
+        },
+        {
+          "stream": "dogeusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.513719702843993,
+          "brierSkill": -0.0009696066236990486,
+          "auc": 0.5020003908644952,
+          "brierSkillTb": 0.00016535314756893627
+        },
+        {
+          "stream": "linkusdt",
+          "actingRows": 79958,
+          "predicted": 77292,
+          "baseRate": 0.513707196278046,
+          "brierSkill": -0.0011907292044506246,
+          "auc": 0.5059419410999638,
+          "brierSkillTb": -0.00012989692501497174
+        }
+      ],
+      "byBlock": {
+        "nBlocks": 29,
+        "mean": -0.0010134474658847357,
+        "sd": 0.0022926188177551823,
+        "positiveFraction": 0.3103448275862069
+      },
+      "null": {
+        "skills": [
+          -0.003247244344615874,
+          -0.00327893239910515,
+          -0.0035314591754187497,
+          -0.0031478815602259402
+        ],
+        "mean": -0.0033013793698414284,
+        "sd": 0.0001632306772052539,
+        "zVsNull": 14.015529672533114,
+        "seeds": 4
+      },
+      "abstention": {
+        "regionStart": "2024-07-11T09:00:00.000Z",
+        "regionBars": 77300,
+        "raw": {
+          "net4Sharpe": -1.425065039618051,
+          "grossSharpe": 0.10583035258493598,
+          "breakEvenBps": 0.3165256565398632,
+          "keepFraction": 1
+        },
+        "filters": {
+          "q0.5": {
+            "net4Sharpe": -1.1127772434985788,
+            "grossSharpe": 0.11790825324212963,
+            "breakEvenBps": 0.4196826106907208,
+            "keepFraction": 0.6054382276843467
+          },
+          "q0.55": {
+            "net4Sharpe": -0.17497980305259597,
+            "grossSharpe": 0.01903614853676787,
+            "breakEvenBps": 0.6259157422775208,
+            "keepFraction": 0.02249191461836999
+          },
+          "q0.6": {
+            "net4Sharpe": -0.014234109093911462,
+            "grossSharpe": 0.012563584272483939,
+            "breakEvenBps": 1.2093108591176907,
+            "keepFraction": 0.0012176584734799483
+          },
+          "q0.65": {
+            "net4Sharpe": 0.018054377201663876,
+            "grossSharpe": 0.02267494875512116,
+            "breakEvenBps": 30.54190847267908,
+            "keepFraction": 0.0001552393272962484
+          }
+        },
+        "nullFilters": {
+          "q0.5": {
+            "meanNet4": -1.1546740607761055,
+            "sdNet4": 0.041584040030275604,
+            "seeds": 4
+          },
+          "q0.55": {
+            "meanNet4": -0.2958933054083584,
+            "sdNet4": 0.04389046762112986,
+            "seeds": 4
+          },
+          "q0.6": {
+            "meanNet4": -0.04942587357866654,
+            "sdNet4": 0.008866589848071892,
+            "seeds": 4
+          },
+          "q0.65": {
+            "meanNet4": -0.008863297810196248,
+            "sdNet4": 0.022184182731551937,
+            "seeds": 4
+          }
+        },
+        "bestFilter": {
+          "tag": "q0.65",
+          "net4Sharpe": 0.018054377201663876,
+          "grossSharpe": 0.02267494875512116,
+          "breakEvenBps": 30.54190847267908,
+          "keepFraction": 0.0001552393272962484,
+          "nullMean": -0.008863297810196248,
+          "nullSd": 0.022184182731551937,
+          "randomMean": -0.03202290536037349,
+          "zVsNull": 1.2133723985953233
+        },
+        "randomControl": {
+          "thresholds": {
+            "q0.5": {
+              "meanNet4": -1.2993623991709309,
+              "sdNet4": 0.019590706625948296
+            },
+            "q0.55": {
+              "meanNet4": -0.3356297865016464,
+              "sdNet4": 0.02112796286340692
+            },
+            "q0.6": {
+              "meanNet4": -0.0821282266894032,
+              "sdNet4": 0.01787514094264846
+            },
+            "q0.65": {
+              "meanNet4": -0.03202290536037349,
+              "sdNet4": 0.020735024641212362
+            }
+          },
+          "note": "keeps the same FRACTION of acting bars as the matching filter, chosen at random (secondary; a time-clustered filter can beat this for purely mechanical turnover reasons - the null-model filter is the primary control)"
+        },
+        "oracle": {
+          "net4Sharpe": 0.8070319432483476,
+          "grossSharpe": 2.1069964216341046,
+          "breakEvenBps": 6.905418829622042,
+          "keepFraction": 0.5111804657179819
+        },
+        "antiOracle": {
+          "net4Sharpe": -2.999095484455948,
+          "grossSharpe": -1.9476655632464621,
+          "breakEvenBps": -7.583594912922782,
+          "keepFraction": 0.48871604139715397
+        },
+        "controlsPass": true
+      },
+      "capacityProbe": [
+        {
+          "iters": 1,
+          "brierSkill": -0.00021580492811024143,
+          "auc": 0.5043432775689072,
+          "n": 77292
+        },
+        {
+          "iters": 5,
+          "brierSkill": -0.0007731163856161682,
+          "auc": 0.5047832152482269,
+          "n": 77292
+        },
+        {
+          "iters": 15,
+          "brierSkill": -0.002648902382734075,
+          "auc": 0.5049799015297021,
+          "n": 77292
+        },
+        {
+          "iters": 40,
+          "brierSkill": -0.00447510551084096,
+          "auc": 0.5044687900029221,
+          "n": 77292
+        }
+      ]
+    }
+  },
+  "summary": {
+    "perRule": {
+      "mom16": {
+        "baseRate": 0.4929,
+        "actingBars": 639664,
+        "brierSkill": -0.0007,
+        "auc": 0.5083,
+        "skillTb": -0.0022,
+        "nullMean": -0.0029,
+        "zVsNull": 11.82,
+        "blocksPositive": 0.48,
+        "rawNet4": -0.5329835914480631,
+        "bestFilterNet4": -0.016054136693955022,
+        "bestFilterNullMean": -0.04032948608762612,
+        "bestFilterZVsNull": 0.9,
+        "capacityProbe": [
+          {
+            "iters": 1,
+            "skill": 0.0017,
+            "auc": 0.5096
+          },
+          {
+            "iters": 5,
+            "skill": 0.0002,
+            "auc": 0.5093
+          },
+          {
+            "iters": 15,
+            "skill": -0.0039,
+            "auc": 0.5077
+          },
+          {
+            "iters": 40,
+            "skill": -0.0091,
+            "auc": 0.5057
+          }
+        ]
+      },
+      "accel16": {
+        "baseRate": 0.4959,
+        "actingBars": 639624,
+        "brierSkill": -0.001,
+        "auc": 0.5061,
+        "skillTb": -0.0025,
+        "nullMean": -0.003,
+        "zVsNull": 3.67,
+        "blocksPositive": 0.34,
+        "rawNet4": -0.5542065235949072,
+        "bestFilterNet4": -0.008848427959747126,
+        "bestFilterNullMean": -0.04251137408687049,
+        "bestFilterZVsNull": 2.35,
+        "capacityProbe": [
+          {
+            "iters": 1,
+            "skill": 0.0021,
+            "auc": 0.5074
+          },
+          {
+            "iters": 5,
+            "skill": 0.0008,
+            "auc": 0.5071
+          },
+          {
+            "iters": 15,
+            "skill": -0.0032,
+            "auc": 0.5064
+          },
+          {
+            "iters": 40,
+            "skill": -0.0084,
+            "auc": 0.5053
+          }
+        ]
+      },
+      "rev1": {
+        "baseRate": 0.5115,
+        "actingBars": 639664,
+        "brierSkill": -0.001,
+        "auc": 0.5041,
+        "skillTb": -0.0002,
+        "nullMean": -0.0033,
+        "zVsNull": 14.02,
+        "blocksPositive": 0.31,
+        "rawNet4": -1.425065039618051,
+        "bestFilterNet4": 0.018054377201663876,
+        "bestFilterNullMean": -0.008863297810196248,
+        "bestFilterZVsNull": 1.21,
+        "capacityProbe": [
+          {
+            "iters": 1,
+            "skill": -0.0002,
+            "auc": 0.5043
+          },
+          {
+            "iters": 5,
+            "skill": -0.0008,
+            "auc": 0.5048
+          },
+          {
+            "iters": 15,
+            "skill": -0.0026,
+            "auc": 0.505
+          },
+          {
+            "iters": 40,
+            "skill": -0.0045,
+            "auc": 0.5045
+          }
+        ]
+      }
+    }
+  },
+  "verdict": {
+    "note": "L06 falsifier: pooled OOS Brier skill of P(rule trade profitable) vs the causal base rate <= 0 closes the lead. Abstention must beat the null-model filter (a filter built from a no-information model) to be information, not just exposure/turnover reduction.",
+    "anyRuleSkillPositive": false,
+    "anyRuleBeatsNull": false,
+    "anyFilterBeatsNullModel": true,
+    "oracleFilterWorks": true,
+    "note2": "oracle/anti-oracle filters are the F-11 control: if keeping only winners does not produce a large positive net@4, the filter machinery is broken and no abstention result is believable."
+  }
+}

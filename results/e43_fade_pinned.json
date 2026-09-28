@@ -1,0 +1,451 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5248,
+    "firstTop": 1309,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "kcap": 0.125,
+    "lambdas": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.25,
+      0.5
+    ],
+    "caps": [
+      null,
+      0.125
+    ],
+    "oosSpan": {
+      "start": 1095,
+      "end": 5110,
+      "span": 4015
+    }
+  },
+  "checks": {
+    "e32JointWf": 0.7,
+    "hereJointWf": 0.7,
+    "jointWfAbsDiff": 0,
+    "e32Ewma01": 0.94,
+    "hereEwma01": 0.94,
+    "dEwma01": 0,
+    "e32Ewma005cap": 1.14,
+    "hereEwma005cap": 1.14,
+    "dEwma005cap": 0,
+    "e32Ewma01cap": 1.11,
+    "hereEwma01cap": 1.11,
+    "dEwma01cap": 0,
+    "note": "Rebuild must reproduce e32 (joint WF 0.70; pinned ewma0.1 0.94, +cap 1.11, ewma0.05+cap 1.14) — same construction, absolute 0.01.",
+    "matches": true
+  },
+  "jointWalkForward": {
+    "oosNet4": 0.7,
+    "recent24mNet4": 0.46,
+    "picks": [
+      {
+        "at": "2022-12-03",
+        "key": "lam0.02",
+        "trailingNet4": 1.06
+      },
+      {
+        "at": "2023-04-05",
+        "key": "lam0.05+cap0.125",
+        "trailingNet4": 0.94
+      },
+      {
+        "at": "2023-08-05",
+        "key": "lam0.03+cap0.125",
+        "trailingNet4": 1.51
+      },
+      {
+        "at": "2023-12-05",
+        "key": "lam0.15+cap0.125",
+        "trailingNet4": 1.59
+      },
+      {
+        "at": "2024-04-04",
+        "key": "lam0.15+cap0.125",
+        "trailingNet4": 2.84
+      },
+      {
+        "at": "2024-08-04",
+        "key": "lam0.15+cap0.125",
+        "trailingNet4": 2.26
+      },
+      {
+        "at": "2024-12-04",
+        "key": "lam0.02+cap0.125",
+        "trailingNet4": 1.92
+      },
+      {
+        "at": "2025-04-04",
+        "key": "lam0.05",
+        "trailingNet4": 1.32
+      },
+      {
+        "at": "2025-08-04",
+        "key": "lam0.25+cap0.125",
+        "trailingNet4": 0.8
+      },
+      {
+        "at": "2025-12-04",
+        "key": "lam0.05",
+        "trailingNet4": 1.7
+      },
+      {
+        "at": "2026-04-04",
+        "key": "lam0.5",
+        "trailingNet4": 0.31
+      }
+    ]
+  },
+  "frozenCapFixed": [
+    {
+      "S": 1095,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 1.14,
+      "jointWfNet4": 0.7,
+      "pin01cap": 1.11
+    },
+    {
+      "S": 1825,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 1.15,
+      "jointWfNet4": 0.87,
+      "pin01cap": 1.09
+    },
+    {
+      "S": 2555,
+      "pick": "lam0.075+cap0.125",
+      "frozenNet4": 0.37,
+      "jointWfNet4": 0.31,
+      "pin01cap": 0.31
+    },
+    {
+      "S": 3285,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 0.83,
+      "jointWfNet4": 0.6,
+      "pin01cap": 0.66
+    },
+    {
+      "S": 4380,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 0.87,
+      "jointWfNet4": 0.93,
+      "pin01cap": 0.29
+    }
+  ],
+  "frozenNoCap": [
+    {
+      "S": 1095,
+      "pick": "lam0.02",
+      "frozenNet4": 0.69,
+      "jointWfNet4": 0.7
+    },
+    {
+      "S": 1825,
+      "pick": "lam0.02",
+      "frozenNet4": 0.72,
+      "jointWfNet4": 0.87
+    },
+    {
+      "S": 2555,
+      "pick": "lam0.5",
+      "frozenNet4": 0.72,
+      "jointWfNet4": 0.31
+    },
+    {
+      "S": 3285,
+      "pick": "lam0.03",
+      "frozenNet4": 1.47,
+      "jointWfNet4": 0.6
+    },
+    {
+      "S": 4380,
+      "pick": "lam0.05",
+      "frozenNet4": 1.13,
+      "jointWfNet4": 0.93
+    }
+  ],
+  "frozenJoint": [
+    {
+      "S": 1095,
+      "pick": "lam0.02",
+      "frozenNet4": 0.69,
+      "jointWfNet4": 0.7
+    },
+    {
+      "S": 1825,
+      "pick": "lam0.02",
+      "frozenNet4": 0.72,
+      "jointWfNet4": 0.87
+    },
+    {
+      "S": 2555,
+      "pick": "lam0.075+cap0.125",
+      "frozenNet4": 0.37,
+      "jointWfNet4": 0.31
+    },
+    {
+      "S": 3285,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 0.83,
+      "jointWfNet4": 0.6
+    },
+    {
+      "S": 4380,
+      "pick": "lam0.05+cap0.125",
+      "frozenNet4": 0.87,
+      "jointWfNet4": 0.93
+    }
+  ],
+  "lambdaFlatnessCap": [
+    {
+      "lam": 0.02,
+      "oosNet4": 1.03,
+      "recent24mNet4": 0.82,
+      "turnoverAnnual": 5
+    },
+    {
+      "lam": 0.03,
+      "oosNet4": 1.14,
+      "recent24mNet4": 0.78,
+      "turnoverAnnual": 7
+    },
+    {
+      "lam": 0.05,
+      "oosNet4": 1.14,
+      "recent24mNet4": 0.64,
+      "turnoverAnnual": 10
+    },
+    {
+      "lam": 0.075,
+      "oosNet4": 1.11,
+      "recent24mNet4": 0.53,
+      "turnoverAnnual": 13
+    },
+    {
+      "lam": 0.1,
+      "oosNet4": 1.11,
+      "recent24mNet4": 0.47,
+      "turnoverAnnual": 16
+    },
+    {
+      "lam": 0.15,
+      "oosNet4": 1.1,
+      "recent24mNet4": 0.42,
+      "turnoverAnnual": 20
+    },
+    {
+      "lam": 0.25,
+      "oosNet4": 1.07,
+      "recent24mNet4": 0.43,
+      "turnoverAnnual": 29
+    },
+    {
+      "lam": 0.5,
+      "oosNet4": 0.98,
+      "recent24mNet4": 0.42,
+      "turnoverAnnual": 47
+    }
+  ],
+  "lambdaFlatnessNoCap": [
+    {
+      "lam": 0.02,
+      "oosNet4": 0.69,
+      "recent24mNet4": 0.82,
+      "turnoverAnnual": 9
+    },
+    {
+      "lam": 0.03,
+      "oosNet4": 0.85,
+      "recent24mNet4": 0.89,
+      "turnoverAnnual": 12
+    },
+    {
+      "lam": 0.05,
+      "oosNet4": 0.93,
+      "recent24mNet4": 0.9,
+      "turnoverAnnual": 17
+    },
+    {
+      "lam": 0.075,
+      "oosNet4": 0.94,
+      "recent24mNet4": 0.87,
+      "turnoverAnnual": 23
+    },
+    {
+      "lam": 0.1,
+      "oosNet4": 0.94,
+      "recent24mNet4": 0.84,
+      "turnoverAnnual": 28
+    },
+    {
+      "lam": 0.15,
+      "oosNet4": 0.94,
+      "recent24mNet4": 0.8,
+      "turnoverAnnual": 36
+    },
+    {
+      "lam": 0.25,
+      "oosNet4": 0.92,
+      "recent24mNet4": 0.75,
+      "turnoverAnnual": 51
+    },
+    {
+      "lam": 0.5,
+      "oosNet4": 0.84,
+      "recent24mNet4": 0.67,
+      "turnoverAnnual": 83
+    }
+  ],
+  "capSensitivity": [
+    {
+      "cap": null,
+      "oosNet4": 0.94,
+      "recent24mNet4": 0.84,
+      "turnoverAnnual": 28
+    },
+    {
+      "cap": 0.125,
+      "oosNet4": 1.11,
+      "recent24mNet4": 0.47,
+      "turnoverAnnual": 16
+    }
+  ],
+  "verdict": {
+    "note": "The fade is rule-free if the joint (λ, cap) walk-forward does not beat the best pinned book AND a frozen λ on >=2 y is within 0.2 of the walk-forward.",
+    "oosSpan": {
+      "start": 1095,
+      "end": 5110,
+      "span": 4015
+    },
+    "jointWfOos": 0.7,
+    "bestPinnedOos": 1.14,
+    "jointWfBeatsBestPinned": false,
+    "pinned01Oos": 0.94,
+    "pinnedBest": 1.14,
+    "frozenCapFixedLateMatchesWf": true,
+    "frozenCapFixedPicks": [
+      {
+        "S": 1095,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 1.14,
+        "jointWfNet4": 0.7
+      },
+      {
+        "S": 1825,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 1.15,
+        "jointWfNet4": 0.87
+      },
+      {
+        "S": 2555,
+        "pick": "lam0.075+cap0.125",
+        "frozenNet4": 0.37,
+        "jointWfNet4": 0.31
+      },
+      {
+        "S": 3285,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 0.83,
+        "jointWfNet4": 0.6
+      },
+      {
+        "S": 4380,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 0.87,
+        "jointWfNet4": 0.93
+      }
+    ],
+    "frozenNoCapPicks": [
+      {
+        "S": 1095,
+        "pick": "lam0.02",
+        "frozenNet4": 0.69,
+        "jointWfNet4": 0.7
+      },
+      {
+        "S": 1825,
+        "pick": "lam0.02",
+        "frozenNet4": 0.72,
+        "jointWfNet4": 0.87
+      },
+      {
+        "S": 2555,
+        "pick": "lam0.5",
+        "frozenNet4": 0.72,
+        "jointWfNet4": 0.31
+      },
+      {
+        "S": 3285,
+        "pick": "lam0.03",
+        "frozenNet4": 1.47,
+        "jointWfNet4": 0.6
+      },
+      {
+        "S": 4380,
+        "pick": "lam0.05",
+        "frozenNet4": 1.13,
+        "jointWfNet4": 0.93
+      }
+    ],
+    "frozenJointPicks": [
+      {
+        "S": 1095,
+        "pick": "lam0.02",
+        "frozenNet4": 0.69
+      },
+      {
+        "S": 1825,
+        "pick": "lam0.02",
+        "frozenNet4": 0.72
+      },
+      {
+        "S": 2555,
+        "pick": "lam0.075+cap0.125",
+        "frozenNet4": 0.37
+      },
+      {
+        "S": 3285,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 0.83
+      },
+      {
+        "S": 4380,
+        "pick": "lam0.05+cap0.125",
+        "frozenNet4": 0.87
+      }
+    ],
+    "lambdaSpreadCap": 0.16,
+    "lambdaSpreadNoCap": 0.25,
+    "jointWfPickFreq": {
+      "lam0.02": 1,
+      "lam0.05+cap0.125": 1,
+      "lam0.03+cap0.125": 1,
+      "lam0.15+cap0.125": 3,
+      "lam0.02+cap0.125": 1,
+      "lam0.05": 2,
+      "lam0.25+cap0.125": 1,
+      "lam0.5": 1
+    },
+    "validationPass": true,
+    "fadeRuleFree": true
+  }
+}

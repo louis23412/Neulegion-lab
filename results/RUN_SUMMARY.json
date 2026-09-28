@@ -1,0 +1,294 @@
+{
+  "at": "2026-09-27T11:06:28.402Z",
+  "steps": {
+    "e0_panel_baseline_15m": {
+      "ms": 8373
+    },
+    "e0_panel_baseline_1h": {
+      "ms": 7205
+    },
+    "e0b_window_sweep_1h": {
+      "ms": 8325
+    },
+    "e0c_validate_pipeline": {
+      "ms": 2096,
+      "pass": true
+    },
+    "e0d_ab_aggregation_1h": {
+      "ms": 607340
+    },
+    "e2_arm_sweep_1h": {
+      "ms": 53443
+    },
+    "e2_arm_sweep_15m": {
+      "ms": 56850
+    },
+    "e3_carry": {
+      "ms": 1731
+    },
+    "e4_edge_hunt_1h": {
+      "ms": 26343
+    },
+    "e5_controls_1h": {
+      "ms": 12449,
+      "pass": true
+    },
+    "e5_controls_15m": {
+      "ms": 13807,
+      "pass": true
+    },
+    "e6_conditional_seasonal_1h": {
+      "ms": 21826
+    },
+    "e7_basis_reversion": {
+      "ms": 1751
+    },
+    "e9_flow_1h": {
+      "ms": 36534
+    },
+    "e9_flow_15m": {
+      "ms": 41950
+    },
+    "e11_vol_1h": {
+      "ms": 85624
+    },
+    "e12_xs_carry": {
+      "ms": 1738
+    },
+    "e13_carry_robustness": {
+      "ms": 2697
+    },
+    "e14_data_integrity": {
+      "ms": 4712,
+      "pass": true
+    },
+    "e15_traded_basis": {
+      "ms": 9934
+    },
+    "e16_cost_capacity": {
+      "ms": 3204
+    },
+    "e17_low_turnover": {
+      "ms": 1903
+    },
+    "e18_reversion_smoothing": {
+      "ms": 1945
+    },
+    "e19_capacity_impact": {
+      "ms": 3632
+    },
+    "e20_capacity_aware": {
+      "ms": 4265
+    },
+    "e21_open_interest": {
+      "ms": 2160
+    },
+    "e22_toptrader_validate": {
+      "ms": 2383
+    },
+    "e23_combine": {
+      "ms": 1557
+    },
+    "e24_reversal_1h": {
+      "ms": 32007
+    },
+    "e24_reversal_15m": {
+      "ms": 39272
+    },
+    "e25_maker_fill_1h": {
+      "ms": 10255
+    },
+    "e25_maker_fill_15m": {
+      "ms": 11479
+    },
+    "e26_meta_label_1h": {
+      "ms": 76210
+    },
+    "e26_meta_label_15m": {
+      "ms": 137326
+    },
+    "e27_decay": {
+      "ms": 2177
+    },
+    "e28_regime_retune": {
+      "ms": 1925,
+      "pass": true
+    },
+    "e29_regime_retune_oos": {
+      "ms": 2746,
+      "pass": true
+    },
+    "e30_retuned_capacity": {
+      "ms": 2321,
+      "pass": true
+    },
+    "e31_ported_spec_oos": {
+      "ms": 2299,
+      "pass": true
+    },
+    "e32_fade_retune": {
+      "ms": 2668,
+      "pass": true
+    },
+    "e33_oi_capacity_distribution": {
+      "ms": 2330,
+      "pass": true
+    },
+    "e34_oi_scaled_sizing": {
+      "ms": 28826,
+      "pass": true
+    },
+    "e35_portfolio_mix": {
+      "ms": 1750,
+      "pass": true
+    },
+    "e36_portfolio_oi_frontier": {
+      "ms": 1758,
+      "pass": true
+    },
+    "e37_oi_signal_rescue": {
+      "ms": 2113,
+      "pass": true
+    },
+    "e38_oi_signal_holdout": {
+      "ms": 1788,
+      "pass": true
+    },
+    "e39_oi_portfolio_add": {
+      "ms": 2457,
+      "pass": true
+    },
+    "e40_retune_blend": {
+      "ms": 1716,
+      "pass": true
+    },
+    "e41_blend_hindsight": {
+      "ms": 1816,
+      "pass": true
+    },
+    "e42_cap_hindsight": {
+      "ms": 2053,
+      "pass": true
+    },
+    "e43_fade_pinned": {
+      "ms": 2132,
+      "pass": true
+    },
+    "e44_cap_mechanism": {
+      "ms": 2070,
+      "pass": true
+    },
+    "e45_fade_cap_mechanism": {
+      "ms": 1984,
+      "pass": true
+    },
+    "e46_cap_shrinkage": {
+      "ms": 1780,
+      "pass": true
+    },
+    "e47_split_robustness": {
+      "ms": 2146,
+      "pass": true
+    },
+    "e48_oi_construction": {
+      "ms": 4205,
+      "pass": true
+    },
+    "e49_hold_drift": {
+      "ms": 1984,
+      "pass": true
+    },
+    "e50_oi_band": {
+      "ms": 2002,
+      "pass": true
+    },
+    "e51_band_holdout": {
+      "ms": 1943,
+      "pass": true
+    },
+    "e52_port_artefact": {
+      "ms": 1746,
+      "pass": true
+    },
+    "e53_carry_grid_audit": {
+      "ms": 3325,
+      "pass": true
+    },
+    "e54_dependence_audit": {
+      "ms": 59496,
+      "pass": true
+    },
+    "e55_split_audit": {
+      "ms": 221,
+      "pass": true
+    },
+    "e56_labels_audit": {
+      "ms": 32,
+      "pass": true
+    },
+    "e57_overfitting_audit": {
+      "ms": 13511,
+      "pass": true
+    },
+    "e58_reality_check_audit": {
+      "ms": 4129,
+      "pass": true
+    },
+    "e59_forecast_audit": {
+      "ms": 4398,
+      "pass": true
+    },
+    "e60_race_audit": {
+      "ms": 28,
+      "pass": true
+    },
+    "e61_benchmark_audit": {
+      "ms": 73,
+      "pass": true
+    },
+    "e62_backtest_audit": {
+      "ms": 4268,
+      "pass": true
+    },
+    "e63_features_audit": {
+      "ms": 81,
+      "pass": true
+    },
+    "e64_uniqueness_audit": {
+      "ms": 79,
+      "pass": true
+    },
+    "e65_streams_audit": {
+      "ms": 17,
+      "pass": true
+    },
+    "e66_world_audit": {
+      "ms": 16,
+      "pass": true
+    },
+    "e67_parallel_audit": {
+      "ms": 29,
+      "pass": true
+    },
+    "e68_holding_audit": {
+      "ms": 56,
+      "pass": true
+    },
+    "e69_replication_audit": {
+      "ms": 352,
+      "pass": true
+    },
+    "e70_dependence_audit": {
+      "ms": 18,
+      "pass": true
+    },
+    "e71_decision_audit": {
+      "ms": 30,
+      "pass": true
+    },
+    "e72_hivemind_kernels_audit": {
+      "ms": 18,
+      "pass": true
+    }
+  }
+}

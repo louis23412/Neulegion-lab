@@ -1,0 +1,907 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5246,
+    "firstOI": 1310,
+    "holds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      15,
+      18,
+      24,
+      30,
+      36
+    ],
+    "eps": [
+      0.0005,
+      0.001,
+      0.0015,
+      0.002,
+      0.003,
+      0.004,
+      0.005,
+      0.006,
+      0.008,
+      0.01,
+      0.013,
+      0.016,
+      0.02,
+      0.025,
+      0.03,
+      0.04,
+      0.06,
+      0.1
+    ],
+    "feeBps": 4
+  },
+  "validation": {
+    "e21Gross": 0.9612,
+    "e21Turnover": 1501,
+    "e21Matches": true,
+    "f46Net4": 0.77,
+    "hereNet4": 0.77,
+    "f46Turnover": 254,
+    "hereTurnover": 254,
+    "f46Matches": true,
+    "note": "daily book = e21#dLogOI_pos; 50/50 blend = F-46 (e38/e48)."
+  },
+  "base": {
+    "grossSharpe": 1.18,
+    "net4": 0.77,
+    "net4Raw": 0.7660341476498127,
+    "turnoverAnnual": 254,
+    "breakEvenBps": 11.33,
+    "perYearNet4": {
+      "2021": -2.93,
+      "2022": 0.34,
+      "2023": 0.73,
+      "2024": 0.89,
+      "2025": 1.45,
+      "2026": 1.88
+    },
+    "positiveEveryYear": true
+  },
+  "bandSweep": [
+    {
+      "eps": 0.0005,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7661256816384646,
+      "turnoverAnnual": 254,
+      "breakEvenBps": 11.34,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.34,
+        "2023": 0.73,
+        "2024": 0.89,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.001,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7661830012401684,
+      "turnoverAnnual": 254,
+      "breakEvenBps": 11.34,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.34,
+        "2023": 0.73,
+        "2024": 0.89,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.0015,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7672201999404242,
+      "turnoverAnnual": 253,
+      "breakEvenBps": 11.35,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.35,
+        "2023": 0.73,
+        "2024": 0.9,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.002,
+      "grossSharpe": 1.19,
+      "net4": 0.77,
+      "net4Raw": 0.7682848773637038,
+      "turnoverAnnual": 253,
+      "breakEvenBps": 11.37,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.35,
+        "2023": 0.73,
+        "2024": 0.9,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.003,
+      "grossSharpe": 1.19,
+      "net4": 0.77,
+      "net4Raw": 0.7715599104451355,
+      "turnoverAnnual": 253,
+      "breakEvenBps": 11.41,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.35,
+        "2023": 0.73,
+        "2024": 0.9,
+        "2025": 1.45,
+        "2026": 1.89
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.004,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7669848783849695,
+      "turnoverAnnual": 252,
+      "breakEvenBps": 11.39,
+      "perYearNet4": {
+        "2021": -2.92,
+        "2022": 0.34,
+        "2023": 0.74,
+        "2024": 0.9,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.005,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7665271289509635,
+      "turnoverAnnual": 251,
+      "breakEvenBps": 11.41,
+      "perYearNet4": {
+        "2021": -2.9,
+        "2022": 0.34,
+        "2023": 0.73,
+        "2024": 0.89,
+        "2025": 1.45,
+        "2026": 1.89
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.006,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7708062544583967,
+      "turnoverAnnual": 250,
+      "breakEvenBps": 11.48,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.35,
+        "2023": 0.73,
+        "2024": 0.89,
+        "2025": 1.46,
+        "2026": 1.9
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.008,
+      "grossSharpe": 1.18,
+      "net4": 0.78,
+      "net4Raw": 0.7768034839157393,
+      "turnoverAnnual": 248,
+      "breakEvenBps": 11.61,
+      "perYearNet4": {
+        "2021": -2.97,
+        "2022": 0.36,
+        "2023": 0.74,
+        "2024": 0.88,
+        "2025": 1.47,
+        "2026": 1.93
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.01,
+      "grossSharpe": 1.2,
+      "net4": 0.79,
+      "net4Raw": 0.7919811203241406,
+      "turnoverAnnual": 245,
+      "breakEvenBps": 11.85,
+      "perYearNet4": {
+        "2021": -3,
+        "2022": 0.37,
+        "2023": 0.77,
+        "2024": 0.89,
+        "2025": 1.49,
+        "2026": 1.96
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.013,
+      "grossSharpe": 1.21,
+      "net4": 0.81,
+      "net4Raw": 0.8138416007198527,
+      "turnoverAnnual": 240,
+      "breakEvenBps": 12.24,
+      "perYearNet4": {
+        "2021": -3.02,
+        "2022": 0.35,
+        "2023": 0.81,
+        "2024": 0.92,
+        "2025": 1.56,
+        "2026": 2.03
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.016,
+      "grossSharpe": 1.22,
+      "net4": 0.84,
+      "net4Raw": 0.8398714464328118,
+      "turnoverAnnual": 234,
+      "breakEvenBps": 12.74,
+      "perYearNet4": {
+        "2021": -2.95,
+        "2022": 0.35,
+        "2023": 0.81,
+        "2024": 0.98,
+        "2025": 1.61,
+        "2026": 2.06
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.02,
+      "grossSharpe": 1.23,
+      "net4": 0.86,
+      "net4Raw": 0.8642120608382605,
+      "turnoverAnnual": 223,
+      "breakEvenBps": 13.41,
+      "perYearNet4": {
+        "2021": -3.14,
+        "2022": 0.36,
+        "2023": 0.83,
+        "2024": 1.04,
+        "2025": 1.66,
+        "2026": 2.06
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.025,
+      "grossSharpe": 1.25,
+      "net4": 0.9,
+      "net4Raw": 0.9036944088676637,
+      "turnoverAnnual": 210,
+      "breakEvenBps": 14.43,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.38,
+        "2023": 0.87,
+        "2024": 1.15,
+        "2025": 1.59,
+        "2026": 2.17
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.03,
+      "grossSharpe": 1.24,
+      "net4": 0.92,
+      "net4Raw": 0.9165424098468576,
+      "turnoverAnnual": 198,
+      "breakEvenBps": 15.22,
+      "perYearNet4": {
+        "2021": -2.56,
+        "2022": 0.34,
+        "2023": 1.04,
+        "2024": 0.95,
+        "2025": 1.72,
+        "2026": 2.24
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.04,
+      "grossSharpe": 1.18,
+      "net4": 0.9,
+      "net4Raw": 0.897103836236361,
+      "turnoverAnnual": 173,
+      "breakEvenBps": 16.53,
+      "perYearNet4": {
+        "2021": -2.84,
+        "2022": 0.38,
+        "2023": 1.05,
+        "2024": 0.83,
+        "2025": 1.57,
+        "2026": 2.38
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.06,
+      "grossSharpe": 0.92,
+      "net4": 0.7,
+      "net4Raw": 0.7001266845514936,
+      "turnoverAnnual": 135,
+      "breakEvenBps": 16.7,
+      "perYearNet4": {
+        "2021": -4.18,
+        "2022": 0.48,
+        "2023": 0.92,
+        "2024": 0.7,
+        "2025": 1.12,
+        "2026": 1.57
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "eps": 0.1,
+      "grossSharpe": 0.88,
+      "net4": 0.75,
+      "net4Raw": 0.7468284137204253,
+      "turnoverAnnual": 86,
+      "breakEvenBps": 25.95,
+      "perYearNet4": {
+        "2021": -4.82,
+        "2022": 0.53,
+        "2023": 1.16,
+        "2024": 0.76,
+        "2025": 0.67,
+        "2026": 2.21
+      },
+      "positiveEveryYear": true
+    }
+  ],
+  "holdGrid": [
+    {
+      "N": 1,
+      "grossSharpe": 1.18,
+      "net4": 0.77,
+      "net4Raw": 0.7660341476498127,
+      "turnoverAnnual": 254,
+      "breakEvenBps": 11.33,
+      "perYearNet4": {
+        "2021": -2.93,
+        "2022": 0.34,
+        "2023": 0.73,
+        "2024": 0.89,
+        "2025": 1.45,
+        "2026": 1.88
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 2,
+      "grossSharpe": 1.13,
+      "net4": 0.84,
+      "net4Raw": 0.843211223355147,
+      "turnoverAnnual": 176,
+      "breakEvenBps": 15.63,
+      "perYearNet4": {
+        "2021": -3.29,
+        "2022": 0.56,
+        "2023": 1.03,
+        "2024": 0.68,
+        "2025": 1.36,
+        "2026": 2.23
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 3,
+      "grossSharpe": 1.05,
+      "net4": 0.82,
+      "net4Raw": 0.8202816284900527,
+      "turnoverAnnual": 138,
+      "breakEvenBps": 18.21,
+      "perYearNet4": {
+        "2021": -1.85,
+        "2022": 0.46,
+        "2023": 0.9,
+        "2024": 0.81,
+        "2025": 1.42,
+        "2026": 1.73
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 4,
+      "grossSharpe": 0.95,
+      "net4": 0.75,
+      "net4Raw": 0.7452114667138857,
+      "turnoverAnnual": 120,
+      "breakEvenBps": 18.86,
+      "perYearNet4": {
+        "2021": -3.39,
+        "2022": 0.64,
+        "2023": 0.95,
+        "2024": 0.2,
+        "2025": 1.49,
+        "2026": 2
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 5,
+      "grossSharpe": 0.92,
+      "net4": 0.74,
+      "net4Raw": 0.7439727101662835,
+      "turnoverAnnual": 105,
+      "breakEvenBps": 20.83,
+      "perYearNet4": {
+        "2021": -2.28,
+        "2022": 0.41,
+        "2023": 0.9,
+        "2024": 0.5,
+        "2025": 1.42,
+        "2026": 2
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 6,
+      "grossSharpe": 1.03,
+      "net4": 0.87,
+      "net4Raw": 0.8741152067872322,
+      "turnoverAnnual": 93,
+      "breakEvenBps": 27.03,
+      "perYearNet4": {
+        "2021": -3.37,
+        "2022": 0.7,
+        "2023": 0.98,
+        "2024": 1.16,
+        "2025": 0.77,
+        "2026": 2.23
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 7,
+      "grossSharpe": 0.92,
+      "net4": 0.77,
+      "net4Raw": 0.7744970355071774,
+      "turnoverAnnual": 86,
+      "breakEvenBps": 25.25,
+      "perYearNet4": {
+        "2021": -4.35,
+        "2022": 0.51,
+        "2023": 1.67,
+        "2024": 0.06,
+        "2025": 1.39,
+        "2026": 2.09
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 8,
+      "grossSharpe": 0.86,
+      "net4": 0.73,
+      "net4Raw": 0.7309607699164424,
+      "turnoverAnnual": 79,
+      "breakEvenBps": 26.09,
+      "perYearNet4": {
+        "2021": -4.64,
+        "2022": 0.44,
+        "2023": 1.56,
+        "2024": 0.33,
+        "2025": 1.16,
+        "2026": 2.12
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 9,
+      "grossSharpe": 0.95,
+      "net4": 0.83,
+      "net4Raw": 0.8307955593641279,
+      "turnoverAnnual": 73,
+      "breakEvenBps": 30.88,
+      "perYearNet4": {
+        "2021": -3.33,
+        "2022": 0.88,
+        "2023": 1.74,
+        "2024": -0.44,
+        "2025": 1.44,
+        "2026": 1.96
+      },
+      "positiveEveryYear": false
+    },
+    {
+      "N": 10,
+      "grossSharpe": 0.76,
+      "net4": 0.65,
+      "net4Raw": 0.6473658453250937,
+      "turnoverAnnual": 70,
+      "breakEvenBps": 26.01,
+      "perYearNet4": {
+        "2021": -3.53,
+        "2022": 0.35,
+        "2023": 1,
+        "2024": 0.39,
+        "2025": 1.17,
+        "2026": 1.95
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 12,
+      "grossSharpe": 0.71,
+      "net4": 0.61,
+      "net4Raw": 0.6076173439950066,
+      "turnoverAnnual": 62,
+      "breakEvenBps": 28.03,
+      "perYearNet4": {
+        "2021": -3.81,
+        "2022": 0.37,
+        "2023": 1.2,
+        "2024": 0.44,
+        "2025": 0.6,
+        "2026": 2.06
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 15,
+      "grossSharpe": 0.65,
+      "net4": 0.57,
+      "net4Raw": 0.5676118207145012,
+      "turnoverAnnual": 52,
+      "breakEvenBps": 30.09,
+      "perYearNet4": {
+        "2021": -2.14,
+        "2022": -0.34,
+        "2023": 1.95,
+        "2024": 0.26,
+        "2025": 1,
+        "2026": 1.74
+      },
+      "positiveEveryYear": false
+    },
+    {
+      "N": 18,
+      "grossSharpe": 0.66,
+      "net4": 0.58,
+      "net4Raw": 0.579740792057472,
+      "turnoverAnnual": 47,
+      "breakEvenBps": 33.21,
+      "perYearNet4": {
+        "2021": -1.36,
+        "2022": -0.18,
+        "2023": 1.9,
+        "2024": -0.03,
+        "2025": 0.9,
+        "2026": 1.91
+      },
+      "positiveEveryYear": false
+    },
+    {
+      "N": 24,
+      "grossSharpe": 0.64,
+      "net4": 0.57,
+      "net4Raw": 0.5742793962631172,
+      "turnoverAnnual": 38,
+      "breakEvenBps": 39.84,
+      "perYearNet4": {
+        "2021": -2.27,
+        "2022": 0.01,
+        "2023": 1.82,
+        "2024": 0.54,
+        "2025": 0.64,
+        "2026": 0.98
+      },
+      "positiveEveryYear": true
+    },
+    {
+      "N": 30,
+      "grossSharpe": 0.31,
+      "net4": 0.26,
+      "net4Raw": 0.25610515906970094,
+      "turnoverAnnual": 31,
+      "breakEvenBps": 24.18,
+      "perYearNet4": {
+        "2021": -1.93,
+        "2022": -1.01,
+        "2023": 1.59,
+        "2024": 0.24,
+        "2025": 1.12,
+        "2026": 1.21
+      },
+      "positiveEveryYear": false
+    },
+    {
+      "N": 36,
+      "grossSharpe": 0.69,
+      "net4": 0.64,
+      "net4Raw": 0.6421771173747526,
+      "turnoverAnnual": 28,
+      "breakEvenBps": 58.73,
+      "perYearNet4": {
+        "2021": -2.49,
+        "2022": -0.3,
+        "2023": 2.16,
+        "2024": 0.56,
+        "2025": 0.56,
+        "2026": 1.56
+      },
+      "positiveEveryYear": false
+    }
+  ],
+  "rows": [
+    {
+      "eps": 0.0005,
+      "turn": 254,
+      "net4": 0.77,
+      "net4Raw": 0.7661256816384646,
+      "be": 11.34,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.001,
+      "turn": 254,
+      "net4": 0.77,
+      "net4Raw": 0.7661830012401684,
+      "be": 11.34,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.0015,
+      "turn": 253,
+      "net4": 0.77,
+      "net4Raw": 0.7672201999404242,
+      "be": 11.35,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.002,
+      "turn": 253,
+      "net4": 0.77,
+      "net4Raw": 0.7682848773637038,
+      "be": 11.37,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.003,
+      "turn": 253,
+      "net4": 0.77,
+      "net4Raw": 0.7715599104451355,
+      "be": 11.41,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.01
+    },
+    {
+      "eps": 0.004,
+      "turn": 252,
+      "net4": 0.77,
+      "net4Raw": 0.7669848783849695,
+      "be": 11.39,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.005,
+      "turn": 251,
+      "net4": 0.77,
+      "net4Raw": 0.7665271289509635,
+      "be": 11.41,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.006,
+      "turn": 250,
+      "net4": 0.77,
+      "net4Raw": 0.7708062544583967,
+      "be": 11.48,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0
+    },
+    {
+      "eps": 0.008,
+      "turn": 248,
+      "net4": 0.78,
+      "net4Raw": 0.7768034839157393,
+      "be": 11.61,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.01
+    },
+    {
+      "eps": 0.01,
+      "turn": 245,
+      "net4": 0.79,
+      "net4Raw": 0.7919811203241406,
+      "be": 11.85,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.03
+    },
+    {
+      "eps": 0.013,
+      "turn": 240,
+      "net4": 0.81,
+      "net4Raw": 0.8138416007198527,
+      "be": 12.24,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.05
+    },
+    {
+      "eps": 0.016,
+      "turn": 234,
+      "net4": 0.84,
+      "net4Raw": 0.8398714464328118,
+      "be": 12.74,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.07
+    },
+    {
+      "eps": 0.02,
+      "turn": 223,
+      "net4": 0.86,
+      "net4Raw": 0.8642120608382605,
+      "be": 13.41,
+      "posEvery": true,
+      "holdN": 1,
+      "holdNet4": 0.77,
+      "bandMinusHold": 0.1
+    },
+    {
+      "eps": 0.025,
+      "turn": 210,
+      "net4": 0.9,
+      "net4Raw": 0.9036944088676637,
+      "be": 14.43,
+      "posEvery": true,
+      "holdN": 2,
+      "holdNet4": 0.84,
+      "bandMinusHold": 0.06
+    },
+    {
+      "eps": 0.03,
+      "turn": 198,
+      "net4": 0.92,
+      "net4Raw": 0.9165424098468576,
+      "be": 15.22,
+      "posEvery": true,
+      "holdN": 2,
+      "holdNet4": 0.84,
+      "bandMinusHold": 0.07
+    },
+    {
+      "eps": 0.04,
+      "turn": 173,
+      "net4": 0.9,
+      "net4Raw": 0.897103836236361,
+      "be": 16.53,
+      "posEvery": true,
+      "holdN": 2,
+      "holdNet4": 0.84,
+      "bandMinusHold": 0.05
+    },
+    {
+      "eps": 0.06,
+      "turn": 135,
+      "net4": 0.7,
+      "net4Raw": 0.7001266845514936,
+      "be": 16.7,
+      "posEvery": true,
+      "holdN": 3,
+      "holdNet4": 0.82,
+      "bandMinusHold": -0.12
+    },
+    {
+      "eps": 0.1,
+      "turn": 86,
+      "net4": 0.75,
+      "net4Raw": 0.7468284137204253,
+      "be": 25.95,
+      "posEvery": true,
+      "holdN": 7,
+      "holdNet4": 0.77,
+      "bandMinusHold": -0.03
+    }
+  ],
+  "verdict": {
+    "note": "Port the no-trade band onto the OI sleeve: at matched turnover does it match/beat hold-6, and is its curve smoother than hold-N?",
+    "daily": {
+      "net4": 0.77,
+      "turn": 254
+    },
+    "hold6": {
+      "N": 6,
+      "net4": 0.87,
+      "turn": 93,
+      "positiveEveryYear": true
+    },
+    "bestBand": {
+      "eps": 0.03,
+      "net4": 0.92,
+      "turn": 198,
+      "be": 15.22,
+      "positiveEveryYear": true
+    },
+    "bandWins": 7,
+    "bandAdds": true,
+    "bandSmooth": true,
+    "holdSmooth": false,
+    "bandReRisers": 0,
+    "holdReRisers": 1,
+    "bandMaxDip": 0.13,
+    "bandPlateauCount": 3,
+    "bandNeighboursClose": true,
+    "bandPlateauRobust": true,
+    "matchedAtBestEps": {
+      "eps": 0.03,
+      "turn": 198,
+      "net4": 0.92,
+      "net4Raw": 0.9165424098468576,
+      "be": 15.22,
+      "posEvery": true,
+      "holdN": 2,
+      "holdNet4": 0.84,
+      "bandMinusHold": 0.07
+    },
+    "validationPass": true
+  }
+}

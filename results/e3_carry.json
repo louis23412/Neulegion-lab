@@ -1,0 +1,200 @@
+{
+  "config": {
+    "symbols": 8,
+    "commonPeriods": 6606,
+    "firstPeriod": "2020-09-13T16:00:00.000Z",
+    "lastPeriod": "2026-09-24T08:00:00.000Z",
+    "years": "6.03"
+  },
+  "perSymbol": [
+    {
+      "symbol": "btcusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.00010079015743263414,
+      "annualizedCarryFraction": 0.11036522238873438,
+      "sharpe": 17.282411093319528,
+      "negativeFraction": 0.13957008779897062,
+      "totalFraction": 0.6658197799999811
+    },
+    {
+      "symbol": "ethusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.0001117933726914897,
+      "annualizedCarryFraction": 0.12241374309718121,
+      "sharpe": 14.499447089887083,
+      "negativeFraction": 0.15183166818044203,
+      "totalFraction": 0.7385070199999809
+    },
+    {
+      "symbol": "solusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.000001904503481681366,
+      "annualizedCarryFraction": 0.0020854313124410956,
+      "sharpe": 0.04603530242909863,
+      "negativeFraction": 0.27974568574023617,
+      "totalFraction": 0.012581149999987103
+    },
+    {
+      "symbol": "bnbusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": -0.000004189194671510761,
+      "annualizedCarryFraction": -0.004587168165304283,
+      "sharpe": -0.36452723443899787,
+      "negativeFraction": 0.24644262791401755,
+      "totalFraction": -0.02767382000000009
+    },
+    {
+      "symbol": "xrpusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.00011727552679381979,
+      "annualizedCarryFraction": 0.12841670183923268,
+      "sharpe": 11.6381185552669,
+      "negativeFraction": 0.2222222222222222,
+      "totalFraction": 0.7747221299999736
+    },
+    {
+      "symbol": "adausdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.00011102966848319249,
+      "annualizedCarryFraction": 0.12157748698909578,
+      "sharpe": 12.578134181558207,
+      "negativeFraction": 0.21071752951861944,
+      "totalFraction": 0.7334619899999696
+    },
+    {
+      "symbol": "dogeusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.00011408191492582099,
+      "annualizedCarryFraction": 0.12491969684377398,
+      "sharpe": 11.059456521697546,
+      "negativeFraction": 0.1799878897971541,
+      "totalFraction": 0.7536251299999734
+    },
+    {
+      "symbol": "linkusdt",
+      "periods": 6606,
+      "meanRatePerPeriod": 0.0001292217574931835,
+      "annualizedCarryFraction": 0.14149782445503592,
+      "sharpe": 15.198507767724545,
+      "negativeFraction": 0.12670299727520437,
+      "totalFraction": 0.8536389299999702
+    }
+  ],
+  "pooled": {
+    "meanRatePerPeriod": 0.00008523846332879299,
+    "annualizedCarryFraction": 0.09333611734502832,
+    "sharpe": 9.401261043318897,
+    "negativeFraction": 0.22267635482894338,
+    "totalFraction": 0.5630852887500065,
+    "serialDesignEffect": {
+      "designEffect": 60.0769835609389,
+      "seCluster": 1.5487705792383308,
+      "seIid": 0.19981727439727406,
+      "nClusters": 73,
+      "effectiveBars": 109.3596850337158
+    }
+  },
+  "crossSectional": {
+    "meanPerPeriod": 2.266506594474134e-7,
+    "annualizedFraction": 0.0002481824720949177,
+    "sharpe": 1.0580054295594397,
+    "sharePositive": 1
+  },
+  "priceCorrelation": {
+    "n": 6605,
+    "corr": 0.08994254378112215
+  },
+  "basisBook": {
+    "available": true,
+    "periods": 6558,
+    "perSymbol": [
+      {
+        "symbol": "btcusdt",
+        "periods": 6777,
+        "annualized": 0.11495488604513625,
+        "sharpe": 9.828025054127108,
+        "maxDrawdown": 0.0047553296005106915,
+        "totalReturn": 1.0360264472319658,
+        "sharpeBasis": 9.828025054127108
+      },
+      {
+        "symbol": "ethusdt",
+        "periods": 6798,
+        "annualized": 0.12891746943675525,
+        "sharpe": 8.188347750420638,
+        "maxDrawdown": 0.019604603580130397,
+        "totalReturn": 1.2245000545505684,
+        "sharpeBasis": 8.188347750420638
+      },
+      {
+        "symbol": "solusdt",
+        "periods": 6558,
+        "annualized": -0.013050926211058146,
+        "sharpe": -0.10200865074227619,
+        "maxDrawdown": 0.4966853530090941,
+        "totalReturn": -0.1254641467763551,
+        "sharpeBasis": -0.10200865074227619
+      },
+      {
+        "symbol": "bnbusdt",
+        "periods": 6777,
+        "annualized": 0.0004396264713409409,
+        "sharpe": 0.018334847894432425,
+        "maxDrawdown": 0.2673772029415,
+        "totalReturn": 0.0009425406897509703,
+        "sharpeBasis": 0.018334847894432425
+      },
+      {
+        "symbol": "xrpusdt",
+        "periods": 6781,
+        "annualized": 0.134162838863048,
+        "sharpe": 4.123374002991854,
+        "maxDrawdown": 0.05689416797342359,
+        "totalReturn": 1.287522686355278,
+        "sharpeBasis": 4.123374002991854
+      },
+      {
+        "symbol": "adausdt",
+        "periods": 6798,
+        "annualized": 0.1280197405439285,
+        "sharpe": 5.944572322514209,
+        "maxDrawdown": 0.022584574158007586,
+        "totalReturn": 1.2106566111094854,
+        "sharpeBasis": 5.944572322514209
+      },
+      {
+        "symbol": "dogeusdt",
+        "periods": 6771,
+        "annualized": 0.12308037652757312,
+        "sharpe": 4.019127052125102,
+        "maxDrawdown": 0.035531376306388314,
+        "totalReturn": 1.1342991378658134,
+        "sharpeBasis": 4.019127052125102
+      },
+      {
+        "symbol": "linkusdt",
+        "periods": 6777,
+        "annualized": 0.13834834786875808,
+        "sharpe": 6.136863931514849,
+        "maxDrawdown": 0.024698942725508256,
+        "totalReturn": 1.350475982156996,
+        "sharpeBasis": 6.136863931514849
+      }
+    ],
+    "pooled": {
+      "annualized": 0.09046182033856837,
+      "sharpe": 4.539812843850759,
+      "maxDrawdown": 0.07955768174080637,
+      "totalReturn": 0.7169602312204901,
+      "negativeFraction": 0.3752668496492833,
+      "serialDesignEffect": {
+        "designEffect": 99.51496949766671,
+        "seCluster": 1.9768704463126785,
+        "seIid": 0.1981682169476652,
+        "nClusters": 72,
+        "effectiveBars": 65.11583164532783
+      },
+      "robustDesignEffect": 11.80308598854362
+    }
+  }
+}

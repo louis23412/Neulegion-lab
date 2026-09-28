@@ -1,0 +1,536 @@
+{
+  "config": {
+    "blocksGrid": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "pboBlocks": 10,
+    "nullTrials": 60,
+    "nullT": 400,
+    "nullK": 8
+  },
+  "structure": {
+    "blocks": [
+      {
+        "n": 8,
+        "S": 2,
+        "sizes": [
+          4,
+          4
+        ],
+        "expectedSizes": [
+          4,
+          4
+        ],
+        "blocks": 2,
+        "exactPartition": true,
+        "minBlock": 4
+      },
+      {
+        "n": 10,
+        "S": 4,
+        "sizes": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "expectedSizes": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "blocks": 4,
+        "exactPartition": true,
+        "minBlock": 2
+      },
+      {
+        "n": 12,
+        "S": 6,
+        "sizes": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "expectedSizes": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "blocks": 6,
+        "exactPartition": true,
+        "minBlock": 2
+      },
+      {
+        "n": 100,
+        "S": 10,
+        "sizes": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "expectedSizes": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "blocks": 10,
+        "exactPartition": true,
+        "minBlock": 10
+      },
+      {
+        "n": 101,
+        "S": 10,
+        "sizes": [
+          11,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "expectedSizes": [
+          11,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "blocks": 10,
+        "exactPartition": true,
+        "minBlock": 10
+      },
+      {
+        "n": 500,
+        "S": 10,
+        "sizes": [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ],
+        "expectedSizes": [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ],
+        "blocks": 10,
+        "exactPartition": true,
+        "minBlock": 50
+      },
+      {
+        "n": 6,
+        "S": 4,
+        "sizes": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "expectedSizes": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "blocks": 4,
+        "exactPartition": true,
+        "minBlock": 1
+      }
+    ],
+    "splits": [
+      {
+        "S": 2,
+        "splits": 2,
+        "expected": 2,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      },
+      {
+        "S": 4,
+        "splits": 6,
+        "expected": 6,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      },
+      {
+        "S": 6,
+        "splits": 20,
+        "expected": 20,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      },
+      {
+        "S": 8,
+        "splits": 70,
+        "expected": 70,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      },
+      {
+        "S": 10,
+        "splits": 252,
+        "expected": 252,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      },
+      {
+        "S": 12,
+        "splits": 924,
+        "expected": 924,
+        "coverOk": true,
+        "multOk": true,
+        "complementOk": true,
+        "sortedOk": true
+      }
+    ],
+    "cap": {
+      "capUnder": 184756,
+      "capOver": 705432,
+      "throwsUnder": false,
+      "throwsOver": true,
+      "maxSplits": 200000
+    }
+  },
+  "rank": {
+    "best": 0.8333333333333334,
+    "worst": 0.16666666666666666,
+    "bestExpected": 0.8333333333333334,
+    "worstExpected": 0.16666666666666666,
+    "fullTie": 0.5,
+    "tieHigh": 0.7,
+    "tieHighExpected": 0.7,
+    "tieLow": 0.3,
+    "tieLowExpected": 0.3,
+    "strictlyInside": true,
+    "nanTarget": true,
+    "nanRankWart": {
+      "nanOmega": 0.6,
+      "nanOmegaIfExcluded": 0.75,
+      "usesFullLength": true,
+      "depressed": true
+    }
+  },
+  "ols": {
+    "rows": 40,
+    "allMatch": true,
+    "identity": true,
+    "degenerate": true
+  },
+  "constructedPbo": {
+    "allFlat": {
+      "pbo": 1,
+      "splits": 6
+    },
+    "dominant": {
+      "pbo": 0,
+      "bestIsZeroEverywhere": true
+    },
+    "anti": {
+      "pbo": 1,
+      "slope": -0.9997979042067775
+    },
+    "antiNegated": {
+      "pbo": 1,
+      "slope": -0.9999993706636936
+    },
+    "metricOverride": {
+      "first": 0.5,
+      "second": 1,
+      "splits": 2
+    },
+    "base": {
+      "pbo": 0.5198412698412699,
+      "splits": 252
+    },
+    "annual": 0.5198412698412699,
+    "scaled": 0.5198412698412699
+  },
+  "calibration": {
+    "repoDraw": 0.4643,
+    "repoDrawOverfitSplits": 117,
+    "repoDrawSplits": 252,
+    "repoQuoted": 0.464,
+    "repoSlope": -0.0936,
+    "null": {
+      "mean": 0.4769,
+      "sd": 0.2546,
+      "se": 0.0329,
+      "p05": 0.0992,
+      "p95": 0.8849
+    },
+    "edge": {
+      "trials": 12,
+      "pboZero": true,
+      "allPositiveSlope": true,
+      "sample": [
+        {
+          "pbo": 0,
+          "slope": 0.9979435419331677
+        },
+        {
+          "pbo": 0,
+          "slope": 0.9988681020294473
+        },
+        {
+          "pbo": 0,
+          "slope": 0.99777785818373
+        }
+      ]
+    },
+    "plantedPbo": 1
+  },
+  "coverageGaps": {
+    "duplicateCurve": [
+      {
+        "duplicatedCopies": 0,
+        "meanPbo": 0.5806,
+        "aboveBase": 10
+      },
+      {
+        "duplicatedCopies": 5,
+        "meanPbo": 0.5671,
+        "aboveBase": 6
+      },
+      {
+        "duplicatedCopies": 19,
+        "meanPbo": 0.5401,
+        "aboveBase": 6
+      }
+    ],
+    "duplicateSeeds": [
+      {
+        "s": 1,
+        "dup0": 0.49603174603174605,
+        "dup5": 0.6031746031746031,
+        "dup19": 0.5912698412698413
+      },
+      {
+        "s": 2,
+        "dup0": 0.5873015873015873,
+        "dup5": 0.4801587301587302,
+        "dup19": 0.29365079365079366
+      },
+      {
+        "s": 3,
+        "dup0": 0.4722222222222222,
+        "dup5": 0.5873015873015873,
+        "dup19": 0.6190476190476191
+      },
+      {
+        "s": 4,
+        "dup0": 0.9325396825396826,
+        "dup5": 0.9801587301587301,
+        "dup19": 0.9761904761904762
+      },
+      {
+        "s": 5,
+        "dup0": 0.8571428571428571,
+        "dup5": 0.5793650793650794,
+        "dup19": 0.5515873015873016
+      },
+      {
+        "s": 6,
+        "dup0": 0.5753968253968254,
+        "dup5": 0.626984126984127,
+        "dup19": 0.623015873015873
+      },
+      {
+        "s": 7,
+        "dup0": 0.4801587301587302,
+        "dup5": 0.3968253968253968,
+        "dup19": 0.30952380952380953
+      },
+      {
+        "s": 8,
+        "dup0": 0.8650793650793651,
+        "dup5": 0.6468253968253969,
+        "dup19": 0.6388888888888888
+      },
+      {
+        "s": 9,
+        "dup0": 0.2261904761904762,
+        "dup5": 0.30952380952380953,
+        "dup19": 0.3134920634920635
+      },
+      {
+        "s": 10,
+        "dup0": 0.3134920634920635,
+        "dup5": 0.4603174603174603,
+        "dup19": 0.48412698412698413
+      }
+    ],
+    "allIdenticalPbo": 1,
+    "degradation": {
+      "trials": 80,
+      "naiveFalsePositiveRate": 0.912,
+      "sample": [
+        {
+          "n": 2016,
+          "r2": 0.02579049522244661,
+          "tStat": 7.301858162991043,
+          "effective": 80,
+          "inflates": true
+        },
+        {
+          "n": 2016,
+          "r2": 0.09169740122675694,
+          "tStat": 14.259128031760927,
+          "effective": 80,
+          "inflates": true
+        },
+        {
+          "n": 2016,
+          "r2": 0.14500542232919325,
+          "tStat": 18.481625858159877,
+          "effective": 80,
+          "inflates": true
+        }
+      ]
+    }
+  },
+  "inputContracts": {
+    "throwRows": {
+      "tooFewStrategies": 1,
+      "ragged": 1,
+      "oddBlocks": 1,
+      "tooFewBars": 1
+    },
+    "fourInvalidThrow": true,
+    "directOneObsBlocks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "blocksAloneAllowsOneObs": true
+  },
+  "validation": {
+    "blocksPartitionExact": true,
+    "splitCountMatchesBinomial": true,
+    "splitDisjointCover": true,
+    "blockInSampleMultiplicity": true,
+    "splitClosedUnderComplement": true,
+    "splitCapRejectsAstronomical": true,
+    "relativeRankClosedForms": true,
+    "relativeRankNonFiniteTargetNaN": true,
+    "relativeRankNaNDenominatorWart": true,
+    "olsMatchesIndependentFormula": true,
+    "olsDegenerateCases": true,
+    "pboAllFlatIsOne": true,
+    "pboDominantIsZero": true,
+    "pboAntiPersistentIsOne": true,
+    "pboMetricOverrideExact": true,
+    "pboAnnualisationInvariant": true,
+    "pboColumnScalingInvariant": true,
+    "pboStructuralInvariants": true,
+    "repoCalibrationReproduced": true,
+    "nullPboCentredAtHalf": true,
+    "repoDrawIsOneDraw": true,
+    "pboSplitDependenceSevere": true,
+    "edgePboZeroWithPositiveSlope": true,
+    "regimeFlipDetected": true,
+    "pboFullyTiedRosterIsOne": true,
+    "duplicationBiasNegligible": true,
+    "naiveDegradationOverRejects": true,
+    "invalidInputsThrow": true,
+    "blocksAloneAllowsOneObservationBlocks": true
+  },
+  "verdict": {
+    "note": "L10-aq..av: the CSCV structure is EXACT (C(S,S/2) splits, disjoint cover, block multiplicity C(S-1,S/2-1), complement closure, cap) and `relativeRank`/`oosOnIsRegression` match their closed forms; the calibration reproduces (the repo's own 0.464 = 117/252 draw is reproduced exactly with its RNG/seed; the ensembled null is centred at 0.5; a persistent edge gives PBO 0 with a positive slope; a regime flip is 1; all-flat and all-identical are exactly 1). But (i) a single 252-split PBO is NOT a measurement: across independent matrices sd 0.255 vs the binomial split SE 0.0315 -> design effect 65, effective splits ~3.9, so the registry's 3-decimal calibration quote is one draw; (ii) `relativeRank` skips non-finite values in the rank but divides by the full length, depressing omega (biasing PBO up) for a NaN-producing metric; (iii) the pooled `degradation` regression returns n = N*splits dependent pairs (only N*S block performances exist), so a naive t from it exceeds 1.96 on 91.2% of skill-less matrices; (iv) a FULLY-tied roster (all-flat/all-identical) is forced to PBO exactly 1 by the lambda<=0 convention, though partial duplication does NOT bias PBO (0.581 -> 0.540, 6/10 - the mechanic guess is falsified); (v) `cscvBlocks` alone accepts 1-observation blocks. No shipped module imports `overfitting.js` (tests + lock-registry only), so nothing is live.",
+    "validationPass": true,
+    "null": {
+      "trials": 60,
+      "mean": 0.4769,
+      "sd": 0.2546,
+      "se": 0.0329,
+      "withinMatrixSe": 0.0315,
+      "splitDesignEffect": 65.36,
+      "effectiveSplits": 3.86,
+      "repoQuoted": 0.464,
+      "repoDraw": 0.4643
+    },
+    "naiveT": {
+      "trials": 80,
+      "falsePositiveRate": 0.912,
+      "pairs": 2016,
+      "effectiveBlockPerformances": 80
+    },
+    "duplicateCurve": [
+      {
+        "duplicatedCopies": 0,
+        "meanPbo": 0.5806,
+        "aboveBase": 10
+      },
+      {
+        "duplicatedCopies": 5,
+        "meanPbo": 0.5671,
+        "aboveBase": 6
+      },
+      {
+        "duplicatedCopies": 19,
+        "meanPbo": 0.5401,
+        "aboveBase": 6
+      }
+    ]
+  }
+}

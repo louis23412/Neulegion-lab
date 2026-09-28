@@ -1,0 +1,201 @@
+{
+  "config": {
+    "kernels": [
+      "activations",
+      "linalg",
+      "normalization",
+      "sampling",
+      "statistics"
+    ],
+    "hiddenSize": 8,
+    "lowDim": 4
+  },
+  "rows": {
+    "activations": {
+      "okSilu": true,
+      "okSig": true,
+      "mono": true,
+      "okSoft": true,
+      "okUniform": true,
+      "okEmpty": true,
+      "okOut": true,
+      "siluZero": 0,
+      "sigZero": 0.5
+    },
+    "infiniteActivation": {
+      "sigPosInf": 0,
+      "sigNegInf": 0,
+      "siluPosInf": 0,
+      "siluNegInf": 0,
+      "sigLargeFinite": 1,
+      "sigNegLarge": 3.7200759760208356e-44,
+      "siluString": 1.7615941559557646,
+      "sigString": 0.8807970779778823,
+      "defect": true
+    },
+    "linalg": {
+      "okDot": true,
+      "okAdd": true,
+      "okScale": true,
+      "okSub": true,
+      "okNorm": true,
+      "okCos": true,
+      "okWeighted": true,
+      "okProj": true
+    },
+    "mismatch": {
+      "fast": null,
+      "slow": 0,
+      "addIsA": [
+        1,
+        2,
+        3
+      ],
+      "isNaNFast": true,
+      "slowIsZero": true,
+      "addCopiesA": true
+    },
+    "normalization": {
+      "okRms": true,
+      "okBadLen": true,
+      "identityAt0": true,
+      "okRope": true,
+      "okSemantic": true,
+      "newRms": 2.9000000953674316,
+      "maxMeanRMS": 2.9000000000000004
+    },
+    "sampling": {
+      "mean": -0.018060808608667104,
+      "varr": 1.0009607326760588,
+      "okNormal": true,
+      "okMeanStd": true,
+      "okDirichlet": true,
+      "okDirichletGuard": true,
+      "okProj": true,
+      "okHyp": true
+    },
+    "statistics": {
+      "v": 10,
+      "okMad": true,
+      "okMad2": true,
+      "okEma": true,
+      "conf": 0.75,
+      "okConf": true,
+      "okPct": true,
+      "okSparse": true,
+      "okDyn": true,
+      "gnorm": 5,
+      "okGrad": true,
+      "spec": 2.999999992948917,
+      "okSpec": true
+    },
+    "falsyZero": {
+      "gradZero": 1,
+      "gradZeroM": 1,
+      "specZero": 1,
+      "pctZero": 1,
+      "defect": true
+    },
+    "guards": {
+      "dualHigh": 100,
+      "dualLow": 3.67570831695961,
+      "okBwFloorDead": true,
+      "bwAt0": -0.05,
+      "bwHuge": -5.0000000000000005e-20
+    },
+    "detectors": {
+      "noDrop": 1,
+      "severe": 3,
+      "short": 1,
+      "stag": true,
+      "notStag": false
+    },
+    "fractal": {
+      "monotone": 1,
+      "flat": 2,
+      "zig": 1
+    }
+  },
+  "validation": {
+    "activationsContract": true,
+    "infiniteActivationDefect": true,
+    "linalgContract": true,
+    "lengthMismatchAbstention": true,
+    "normalizationContract": true,
+    "samplingContract": true,
+    "statisticsContract": true,
+    "falsyZeroFamily": true,
+    "unreachableGuards": true,
+    "stagnationAndDrop": true,
+    "fractalDimensionProbe": true
+  },
+  "verdict": {
+    "note": "L10-co..: the hivemind numeric kernels are SHIPPED (gradients.js + transformer/*) and PURE. PASSES the pre-registered read: `_silu`/`_siluDerivative`/`_sigmoid`/`_softmax`, `_fastVectorDot`/`_fastVectorAdd`/`_fastVectorScale`/`_vectorDot`/`_vectorNorm`/`_vectorSub`/`_cosineSimilarity`/`_weightedMean`/`_projSimilarity`, `_rmsNorm`/`_applyRoPE`/`_normalizeSemantic`, `_randomNormal`/`_sampleDirichlet`/`_generateProjectionMatrix`/`_generateLshHyperplanesLow`, and `_computeVariance` (the documented MAD proxy)/`_computeEMA`/`_computeGradientConformity`/`_computePercentile`/`_computeSparseThreshold`/`_computeDynamicPercentile`/`_computeGradientNorm`/`_computeSpectralNorm`/`_detectSuddenDrop`/`_isStagnating` all match their closed forms / documented contracts on finite inputs. FINDINGS: (0) `_sigmoid`/`_silu` return **0** for `+Infinity` (the `isFiniteNumber` guard runs BEFORE the +/-100 saturation clamp, so a maximally-positive logit reads as probability 0; `_sigmoid(-Infinity)` is also 0); (1) the falsy-zero family - `_computeGradientNorm` and `_computeSpectralNorm` return **1** for the zero vector/matrix and `_computePercentile` returns **1.0** for a legitimate 0 value, all via a `|| 1` fallback; (2) the three vector helpers abstain differently on a length mismatch (`_fastVectorDot` reads past the end -> NaN, `_vectorDot` -> 0, `_fastVectorAdd` -> a copy of `a`); (3) dead clamps (`_computeDualEMA` 0.8, `_computeNTKStability` -0.1 floor) and `_computeFractalDimension` being an ad-hoc clamped dispersion (a constant series reads the max 2). No golden moves: the golden suite pins the finite-path numerics, and the defects are non-finite/zero/degenerate-input edges.",
+    "checks": {
+      "activationsContract": true,
+      "infiniteActivationDefect": true,
+      "linalgContract": true,
+      "lengthMismatchAbstention": true,
+      "normalizationContract": true,
+      "samplingContract": true,
+      "statisticsContract": true,
+      "falsyZeroFamily": true,
+      "unreachableGuards": true,
+      "stagnationAndDrop": true,
+      "fractalDimensionProbe": true
+    },
+    "validationPass": true,
+    "failed": [],
+    "findings": {
+      "infiniteActivationDefect": {
+        "sigPosInf": 0,
+        "sigNegInf": 0,
+        "siluPosInf": 0,
+        "siluNegInf": 0,
+        "sigLargeFinite": 1,
+        "sigNegLarge": 3.7200759760208356e-44,
+        "siluString": 1.7615941559557646,
+        "sigString": 0.8807970779778823,
+        "defect": true
+      },
+      "falsyZeroFamily": {
+        "gradZero": 1,
+        "gradZeroM": 1,
+        "specZero": 1,
+        "pctZero": 1,
+        "defect": true
+      },
+      "lengthMismatchAbstention": {
+        "fast": null,
+        "slow": 0,
+        "addIsA": [
+          1,
+          2,
+          3
+        ],
+        "isNaNFast": true,
+        "slowIsZero": true,
+        "addCopiesA": true
+      },
+      "unreachableGuards": {
+        "dualHigh": 100,
+        "dualLow": 3.67570831695961,
+        "okBwFloorDead": true,
+        "bwAt0": -0.05,
+        "bwHuge": -5.0000000000000005e-20
+      },
+      "fractalDimensionProbe": {
+        "monotone": 1,
+        "flat": 2,
+        "zig": 1
+      }
+    },
+    "scope": {
+      "shipped": [
+        "gradients.js calls _computeSpectralNorm/_computeGradientNorm/_computeVariance/_computeFractalDimension/_computeNTKStability/_computePercentile/_computeDynamicPercentile/_computeSparseThreshold in the per-step training path",
+        "transformer/* calls the activations/linalg/normalization kernels"
+      ],
+      "why": "every defect is on a non-finite / exactly-zero / degenerate-input edge that the golden suite (which pins finite-path numerics) does not exercise; the finite path is exact, so no scored number moves. No fold-back row."
+    }
+  }
+}

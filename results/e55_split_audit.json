@@ -1,0 +1,607 @@
+{
+  "config": {
+    "labelGrid": "n in {200,1000}, k in {4,8}, H in {1,2,5,20}, embargo in {0,2,10}",
+    "wfGrid": "trainSize=120, testSize in {10,40}, H in {1,2,3,5,10}, n=600",
+    "exploitH": 5,
+    "exploitTrials": 200
+  },
+  "purgedKFold": [
+    {
+      "n": 200,
+      "k": 4,
+      "H": 1,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 1,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 1,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 2,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 2,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 2,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 5,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 5,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 5,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 20,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 20,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 4,
+      "H": 20,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 1,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 1,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 1,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 2,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 2,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 2,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 5,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 5,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 5,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 20,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 20,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 200,
+      "k": 8,
+      "H": 20,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 1,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 1,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 1,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 2,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 2,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 2,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 5,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 5,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 5,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 20,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 20,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 4,
+      "H": 20,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 1,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 1,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 1,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 2,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 2,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 2,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 5,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 5,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 5,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 20,
+      "embargo": 0,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 20,
+      "embargo": 2,
+      "leak": 0,
+      "embargoBreach": 0
+    },
+    {
+      "n": 1000,
+      "k": 8,
+      "H": 20,
+      "embargo": 10,
+      "leak": 0,
+      "embargoBreach": 0
+    }
+  ],
+  "combinatorialPurged": [
+    {
+      "n": 240,
+      "k": 4,
+      "m": 1,
+      "H": 5,
+      "count": 4,
+      "leak": 0,
+      "multiplicity": 1
+    },
+    {
+      "n": 240,
+      "k": 4,
+      "m": 2,
+      "H": 5,
+      "count": 6,
+      "leak": 0,
+      "multiplicity": 3
+    },
+    {
+      "n": 240,
+      "k": 6,
+      "m": 1,
+      "H": 5,
+      "count": 6,
+      "leak": 0,
+      "multiplicity": 1
+    },
+    {
+      "n": 240,
+      "k": 6,
+      "m": 2,
+      "H": 5,
+      "count": 15,
+      "leak": 0,
+      "multiplicity": 5
+    },
+    {
+      "n": 1200,
+      "k": 4,
+      "m": 1,
+      "H": 5,
+      "count": 4,
+      "leak": 0,
+      "multiplicity": 1
+    },
+    {
+      "n": 1200,
+      "k": 4,
+      "m": 2,
+      "H": 5,
+      "count": 6,
+      "leak": 0,
+      "multiplicity": 3
+    },
+    {
+      "n": 1200,
+      "k": 6,
+      "m": 1,
+      "H": 5,
+      "count": 6,
+      "leak": 0,
+      "multiplicity": 1
+    },
+    {
+      "n": 1200,
+      "k": 6,
+      "m": 2,
+      "H": 5,
+      "count": 15,
+      "leak": 0,
+      "multiplicity": 5
+    }
+  ],
+  "walkForward": [
+    {
+      "testSize": 10,
+      "H": 1,
+      "folds": 48,
+      "totalEdges": 0,
+      "closedPerFold": 0,
+      "maxPerFold": 0,
+      "repoDetector": 0
+    },
+    {
+      "testSize": 10,
+      "H": 2,
+      "folds": 48,
+      "totalEdges": 48,
+      "closedPerFold": 1,
+      "maxPerFold": 1,
+      "repoDetector": 48
+    },
+    {
+      "testSize": 10,
+      "H": 3,
+      "folds": 48,
+      "totalEdges": 144,
+      "closedPerFold": 3,
+      "maxPerFold": 3,
+      "repoDetector": 96
+    },
+    {
+      "testSize": 10,
+      "H": 5,
+      "folds": 48,
+      "totalEdges": 480,
+      "closedPerFold": 10,
+      "maxPerFold": 10,
+      "repoDetector": 192
+    },
+    {
+      "testSize": 10,
+      "H": 10,
+      "folds": 48,
+      "totalEdges": 2160,
+      "closedPerFold": 45,
+      "maxPerFold": 45,
+      "repoDetector": 432
+    },
+    {
+      "testSize": 40,
+      "H": 1,
+      "folds": 12,
+      "totalEdges": 0,
+      "closedPerFold": 0,
+      "maxPerFold": 0,
+      "repoDetector": 0
+    },
+    {
+      "testSize": 40,
+      "H": 2,
+      "folds": 12,
+      "totalEdges": 12,
+      "closedPerFold": 1,
+      "maxPerFold": 1,
+      "repoDetector": 12
+    },
+    {
+      "testSize": 40,
+      "H": 3,
+      "folds": 12,
+      "totalEdges": 36,
+      "closedPerFold": 3,
+      "maxPerFold": 3,
+      "repoDetector": 24
+    },
+    {
+      "testSize": 40,
+      "H": 5,
+      "folds": 12,
+      "totalEdges": 120,
+      "closedPerFold": 10,
+      "maxPerFold": 10,
+      "repoDetector": 48
+    },
+    {
+      "testSize": 40,
+      "H": 10,
+      "folds": 12,
+      "totalEdges": 540,
+      "closedPerFold": 45,
+      "maxPerFold": 45,
+      "repoDetector": 108
+    }
+  ],
+  "structure": {
+    "wfNoMeta": true,
+    "wfIgnoresLabels": true,
+    "causalBlind": true
+  },
+  "exploit": {
+    "H": 5,
+    "trials": 200,
+    "leakEdge": 0.0035,
+    "leakSe": 0.00007,
+    "cleanEdge": 0,
+    "purgedEdge": 0.00012,
+    "leakBarsPerRun": 48,
+    "note": "per-bar P&L edge of an index-lookup model: on the leak zone it reads sign of a training label whose window contains that bar, so it must beat chance; the clean zone and a purged walk-forward must be ~0"
+  },
+  "validation": {
+    "purgedKFoldLeakFree": true,
+    "purgedKFoldEmbargoHonoured": true,
+    "cpLeakFree": true,
+    "cpcvFoldCount": true,
+    "cpcvTestMultiplicity": true,
+    "wfCleanAtH1": true,
+    "wfLeakMatchesClosedForm": true,
+    "wfNoPurgeMetadata": true,
+    "wfIgnoresLabelArgs": true,
+    "wfCausalGuardBlind": true,
+    "exploitLeakZoneEdge": true,
+    "exploitPurgedNeutral": true
+  },
+  "verdict": {
+    "note": "L10-af: `purgedKFoldSplit`/`combinatorialPurgedSplit` are leak-free and embargo-honouring, but `walkForwardSplit` (the path the repo A/B and the lab use) performs NO purging or embargoing - it takes no labels/embargo and its folds carry no purge metadata - so for a label horizon H>1 it leaks exactly H(H-1)/2 train/test label-overlap edges per fold, the causality guard `isCausalFold` passes the leaky folds, and an index-lookup model recovers test-period returns in the leak zone (positive per-bar edge; the purged counterpart is neutral). The lab scores parameter-free signals (H=1 -> zero leak), so lab numbers are unaffected; the repo controller trains on horizon labels (labelHorizonBars / opt-in triple barrier), so the leak's precondition is met on the shipped model path.",
+    "checks": {
+      "purgedKFoldLeakFree": true,
+      "purgedKFoldEmbargoHonoured": true,
+      "cpLeakFree": true,
+      "cpcvFoldCount": true,
+      "cpcvTestMultiplicity": true,
+      "wfCleanAtH1": true,
+      "wfLeakMatchesClosedForm": true,
+      "wfNoPurgeMetadata": true,
+      "wfIgnoresLabelArgs": true,
+      "wfCausalGuardBlind": true,
+      "exploitLeakZoneEdge": true,
+      "exploitPurgedNeutral": true
+    },
+    "validationPass": true
+  }
+}

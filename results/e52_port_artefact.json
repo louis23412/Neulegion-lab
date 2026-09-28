@@ -1,0 +1,125 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 6557,
+    "cap": 0.125,
+    "feeBps": 4
+  },
+  "validation": {
+    "r8": {
+      "capped": {
+        "here": {
+          "net4": 6.18,
+          "turnoverAnnual": 10,
+          "breakEvenBps": 46.04
+        },
+        "e30": {
+          "net4": 6.18,
+          "turnoverAnnual": 10,
+          "breakEvenBps": 46.04
+        }
+      },
+      "matchesE30": true
+    },
+    "r7": {
+      "capped": {
+        "here": {
+          "net4": 1.07,
+          "turnoverAnnual": 8,
+          "breakEvenBps": 182.59
+        },
+        "e32": {
+          "net4": 1.07,
+          "turnoverAnnual": 8,
+          "breakEvenBps": 182.59
+        }
+      },
+      "matchesE32": true
+    },
+    "oi": {
+      "band": {
+        "here": {
+          "net4": 0.92,
+          "turnoverAnnual": 198,
+          "breakEvenBps": 15.22
+        },
+        "e50": {
+          "net4": 0.92,
+          "turnoverAnnual": 198,
+          "breakEvenBps": 15.22
+        }
+      },
+      "matchesE50": true
+    }
+  },
+  "verdict": {
+    "note": "One module (prototypes/port.js: clipWeights + bandWeights) must reproduce every published book across R8/R7/OI.",
+    "specs": {
+      "R8": {
+        "name": "carry dispersion",
+        "cap": 0.125,
+        "bandEps": 0.005
+      },
+      "R7": {
+        "name": "toptrader fade",
+        "cap": 0.125,
+        "bandEps": null
+      },
+      "OI": {
+        "name": "OI-change 50/50",
+        "cap": null,
+        "bandEps": 0.03
+      }
+    },
+    "minTrainPeriods": 2555,
+    "checks": {
+      "r8Cap": true,
+      "r7Cap": true,
+      "oiBand": true,
+      "r8BandMatched": true,
+      "r8CapBandStack": true
+    },
+    "r8": {
+      "capped": {
+        "net4": 6.18,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 46.04
+      },
+      "bandMatched": {
+        "net4": 5.05,
+        "turnoverAnnual": 10,
+        "breakEvenBps": 67.79
+      },
+      "capBand": {
+        "net4": 6.31,
+        "turnoverAnnual": 7,
+        "breakEvenBps": 68.61
+      }
+    },
+    "r7": {
+      "capped": {
+        "net4": 1.07,
+        "turnoverAnnual": 8,
+        "breakEvenBps": 182.59
+      }
+    },
+    "oi": {
+      "band": {
+        "net4": 0.92,
+        "turnoverAnnual": 198,
+        "breakEvenBps": 15.22
+      }
+    },
+    "validationPass": true
+  }
+}

@@ -1,0 +1,621 @@
+{
+  "config": {
+    "gridTrials": 60,
+    "cusumRefTrials": 40,
+    "goldenCases": 3,
+    "monotoneCases": 192
+  },
+  "tripleBarrier": {
+    "golden": {
+      "pt": {
+        "event": 0,
+        "t1": 2,
+        "label": 1,
+        "ret": 2
+      },
+      "sl": {
+        "event": 0,
+        "t1": 1,
+        "label": -1,
+        "ret": -3
+      },
+      "vertical": {
+        "event": 0,
+        "t1": 3,
+        "label": 0,
+        "ret": 0.9000000000000057
+      },
+      "goldenOk": true
+    },
+    "monotone": {
+      "cases": 192,
+      "allMatch": true,
+      "sample": [
+        {
+          "sign": 1,
+          "stepAbs": 0.85,
+          "ptMult": 1,
+          "slMult": 1,
+          "v": 1.4,
+          "H": 2,
+          "expectLabel": 1,
+          "expectTouch": 2,
+          "label": 1,
+          "touch": 2,
+          "match": true
+        },
+        {
+          "sign": 1,
+          "stepAbs": 0.85,
+          "ptMult": 1,
+          "slMult": 1,
+          "v": 1.4,
+          "H": 5,
+          "expectLabel": 1,
+          "expectTouch": 2,
+          "label": 1,
+          "touch": 2,
+          "match": true
+        },
+        {
+          "sign": 1,
+          "stepAbs": 0.85,
+          "ptMult": 1,
+          "slMult": 1,
+          "v": 1.4,
+          "H": 12,
+          "expectLabel": 1,
+          "expectTouch": 2,
+          "label": 1,
+          "touch": 2,
+          "match": true
+        }
+      ]
+    },
+    "grid": {
+      "trials": 60,
+      "allOk": true,
+      "sample": [
+        {
+          "s": 1,
+          "H": 3,
+          "labelContract": true,
+          "firstCrossOk": true,
+          "timeoutOk": true,
+          "retOk": true,
+          "rows": 113,
+          "gapOvershoot": 1
+        },
+        {
+          "s": 2,
+          "H": 8,
+          "labelContract": true,
+          "firstCrossOk": true,
+          "timeoutOk": true,
+          "retOk": true,
+          "rows": 93,
+          "gapOvershoot": 18
+        },
+        {
+          "s": 3,
+          "H": 20,
+          "labelContract": true,
+          "firstCrossOk": true,
+          "timeoutOk": true,
+          "retOk": true,
+          "rows": 93,
+          "gapOvershoot": 45
+        }
+      ],
+      "gapOvershootRows": 54,
+      "totalGapOvershoots": 1362
+    },
+    "tie": {
+      "rows": [
+        {
+          "vol": 2.7,
+          "ptLevel": 102.7,
+          "slLevel": 97.3,
+          "overlapReachable": false,
+          "barsSatisfyingBoth": 0,
+          "label": 0,
+          "touched": 5
+        },
+        {
+          "vol": 1.4,
+          "ptLevel": 101.4,
+          "slLevel": 98.6,
+          "overlapReachable": false,
+          "barsSatisfyingBoth": 0,
+          "label": 0,
+          "touched": 5
+        },
+        {
+          "vol": 0.3,
+          "ptLevel": 100.3,
+          "slLevel": 99.7,
+          "overlapReachable": false,
+          "barsSatisfyingBoth": 0,
+          "label": 1,
+          "touched": 1
+        },
+        {
+          "vol": 0,
+          "ptLevel": 100,
+          "slLevel": 100,
+          "overlapReachable": true,
+          "barsSatisfyingBoth": 3,
+          "label": 1,
+          "touched": 1
+        },
+        {
+          "vol": -0.5,
+          "ptLevel": 99.5,
+          "slLevel": 100.5,
+          "overlapReachable": true,
+          "barsSatisfyingBoth": 6,
+          "label": 1,
+          "touched": 1
+        },
+        {
+          "vol": -2,
+          "ptLevel": 98,
+          "slLevel": 102,
+          "overlapReachable": true,
+          "barsSatisfyingBoth": 6,
+          "label": 1,
+          "touched": 1
+        }
+      ],
+      "unreachableForPositiveVol": true,
+      "reachableForNonPositiveVol": true
+    },
+    "zeroVol": {
+      "rows": [
+        {
+          "step": 1,
+          "H": 1,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": 1,
+          "H": 5,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": 1,
+          "H": 30,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -1,
+          "H": 1,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -1,
+          "H": 5,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -1,
+          "H": 30,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": 0.25,
+          "H": 1,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": 0.25,
+          "H": 5,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": 0.25,
+          "H": 30,
+          "label": 1,
+          "expectOneBarSign": 1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -0.25,
+          "H": 1,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -0.25,
+          "H": 5,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        },
+        {
+          "step": -0.25,
+          "H": 30,
+          "label": -1,
+          "expectOneBarSign": -1,
+          "touched": 1,
+          "matchesSign": true
+        }
+      ],
+      "isOneBarSign": true,
+      "flat": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "flatCount": 12,
+      "flatAllPlusOne": true,
+      "flatPlusOneCount": 11
+    },
+    "defaultEvents": {
+      "rows": 30,
+      "expectedRows": 30,
+      "zeroHorizonCount": 1,
+      "zeroHorizonLast": {
+        "event": 29,
+        "t1": 29,
+        "label": 0,
+        "ret": 0
+      },
+      "truncatedVerticalEvents": 10,
+      "truncatedExpected": 10,
+      "verticalEndFormulaHolds": true,
+      "labelMix": {
+        "plus1": 13,
+        "minus1": 14,
+        "zero": 3
+      }
+    }
+  },
+  "cusum": {
+    "reference": {
+      "rows": 160,
+      "allEqual": true
+    },
+    "monotone": {
+      "cases": 12,
+      "allEqual": true,
+      "sample": [
+        {
+          "sign": 1,
+          "thr": 2.5,
+          "stepAbs": 1,
+          "k": 3,
+          "expectLen": 13,
+          "gotLen": 13,
+          "equal": true
+        },
+        {
+          "sign": 1,
+          "thr": 2.5,
+          "stepAbs": 0.65,
+          "k": 4,
+          "expectLen": 9,
+          "gotLen": 9,
+          "equal": true
+        }
+      ]
+    },
+    "ignoresEventsArg": true,
+    "strictThreshold": true
+  },
+  "fractionalDiff": {
+    "integerBinomial": [
+      {
+        "d": 0,
+        "len": 12,
+        "exact": true
+      },
+      {
+        "d": 1,
+        "len": 12,
+        "exact": true
+      },
+      {
+        "d": 2,
+        "len": 12,
+        "exact": true
+      },
+      {
+        "d": 3,
+        "len": 12,
+        "exact": true
+      },
+      {
+        "d": 4,
+        "len": 12,
+        "exact": true
+      },
+      {
+        "d": 5,
+        "len": 12,
+        "exact": true
+      }
+    ],
+    "nonIntegerGamma": [
+      {
+        "d": 0.4,
+        "len": 40,
+        "maxRelError": 2.585713114149103e-14,
+        "match": true
+      },
+      {
+        "d": 0.5,
+        "len": 40,
+        "maxRelError": 2.697609676167426e-14,
+        "match": true
+      },
+      {
+        "d": 0.7,
+        "len": 40,
+        "maxRelError": 4.0741722507120146e-14,
+        "match": true
+      },
+      {
+        "d": 1.5,
+        "len": 40,
+        "maxRelError": 2.3076619087326e-14,
+        "match": true
+      },
+      {
+        "d": 2.5,
+        "len": 40,
+        "maxRelError": 2.254915350818711e-14,
+        "match": true
+      },
+      {
+        "d": -0.5,
+        "len": 40,
+        "maxRelError": 3.438143314109935e-14,
+        "match": true
+      }
+    ],
+    "autoWindow": [
+      {
+        "d": 0,
+        "len": 1,
+        "predictedByStatedRule": 1,
+        "equalsDefaultWindow": false,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "len": 100,
+        "predictedByStatedRule": 100,
+        "equalsDefaultWindow": true,
+        "match": true
+      },
+      {
+        "d": 0.5,
+        "len": 100,
+        "predictedByStatedRule": 100,
+        "equalsDefaultWindow": true,
+        "match": true
+      },
+      {
+        "d": 1,
+        "len": 2,
+        "predictedByStatedRule": 2,
+        "equalsDefaultWindow": false,
+        "match": true
+      },
+      {
+        "d": 2,
+        "len": 3,
+        "predictedByStatedRule": 3,
+        "equalsDefaultWindow": false,
+        "match": true
+      },
+      {
+        "d": 3,
+        "len": 4,
+        "predictedByStatedRule": 4,
+        "equalsDefaultWindow": false,
+        "match": true
+      },
+      {
+        "d": -0.5,
+        "len": 100,
+        "predictedByStatedRule": 100,
+        "equalsDefaultWindow": true,
+        "match": true
+      },
+      {
+        "d": 0.1,
+        "len": 100,
+        "predictedByStatedRule": 100,
+        "equalsDefaultWindow": true,
+        "match": true
+      }
+    ],
+    "d1": [
+      1,
+      -1
+    ],
+    "d0": [
+      1
+    ],
+    "warmup": [
+      {
+        "d": 1,
+        "size": 0,
+        "width": 2,
+        "warmOk": true
+      },
+      {
+        "d": 0.4,
+        "size": 16,
+        "width": 16,
+        "warmOk": true
+      },
+      {
+        "d": 0.4,
+        "size": 0,
+        "width": 30,
+        "warmOk": true
+      },
+      {
+        "d": 2,
+        "size": 0,
+        "width": 3,
+        "warmOk": true
+      },
+      {
+        "d": 0.5,
+        "size": 5,
+        "width": 5,
+        "warmOk": true
+      }
+    ],
+    "shippedConsumerSample": [
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 0,
+        "gotIsNaN": true,
+        "expectIsNaN": true,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 14,
+        "gotIsNaN": true,
+        "expectIsNaN": true,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 15,
+        "gotIsNaN": false,
+        "expectIsNaN": false,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 16,
+        "gotIsNaN": false,
+        "expectIsNaN": false,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 37,
+        "gotIsNaN": false,
+        "expectIsNaN": false,
+        "match": true
+      },
+      {
+        "d": 0.4,
+        "window": 16,
+        "t": 59,
+        "gotIsNaN": false,
+        "expectIsNaN": false,
+        "match": true
+      }
+    ],
+    "shippedConsumerAllMatch": true
+  },
+  "validation": {
+    "tblReproducesGolden": true,
+    "tblMonotoneClosedForm": true,
+    "tblGridContracts": true,
+    "tblTieUnreachableForPositiveVol": true,
+    "tblTieReachableForNonPositiveVol": true,
+    "tblZeroVolIsOneBarSign": true,
+    "tblFlatZeroVolAllPlusOne": true,
+    "tblDefaultEventsDegenerate": true,
+    "cusumMatchesIndependentReference": true,
+    "cusumMonotoneClosedForm": true,
+    "cusumIgnoresEventsArg": true,
+    "cusumStrictThreshold": true,
+    "fdIntegerMatchesBinomial": true,
+    "fdNonIntegerMatchesGamma": true,
+    "fdAutoWindowRuleHolds": true,
+    "fdDocstringClaimFalse": true,
+    "fdD1IsMinusOne": true,
+    "fdD0IsWidthOneIdentity": true,
+    "fdSizeOneIdentity": true,
+    "fdWarmupClosedForm": true,
+    "fdD1IsFirstDifference": true,
+    "fdShippedConsumerMatches": true,
+    "fdTailBeyondShippedWindowNonNegligible": true
+  },
+  "verdict": {
+    "note": "the module is CORRECT on its stated contracts (first-touch, the binomial weights, the CUSUM reset rule, the NaN warm-up) but carries (i) a pt-before-sl tie-break that is unreachable for vol>0 and degenerate for vol<=0 (a zero-vol window collapses to a one-bar sign label), (ii) a default event set that emits a zero-horizon bet with label 0, (iii) a CUSUM `events` argument that is accepted and never read and a `lastEmit` guard that is dead, and (iv) a docstring that says `size <= 0` uses DEFAULT_FD_WINDOW when the code stops at the first |w| < 1e-12 (d=1 -> 2); and only 1 of its 6 exports is on the shipped path (`fractionalDiffWeights` via features.js), the shipped FD arm using window 16 where the auto rule uses 100.",
+    "validationPass": true,
+    "tailCalibration": {
+      "autoWindow": 100,
+      "shippedWindow": 16,
+      "w15": -0.006178,
+      "w16": -0.005638,
+      "l1TotalFirst100": 1.8933,
+      "l1Beyond15": 0.1188,
+      "fractionL1Beyond15": 0.0627,
+      "l1Beyond99": 0.0845,
+      "autoStopThreshold": 1e-12
+    },
+    "autoEarlyRows": [
+      {
+        "d": 0,
+        "len": 1
+      },
+      {
+        "d": 1,
+        "len": 2
+      },
+      {
+        "d": 2,
+        "len": 3
+      },
+      {
+        "d": 3,
+        "len": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "firstOI": 1310,
+    "periods": 5246,
+    "lambdas": [
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02,
+      0.01
+    ],
+    "sign": "+1 (prior from F-28 pooled IC 0.020)",
+    "feeBps": 4,
+    "lookback": 1095,
+    "block": 365
+  },
+  "validation": {
+    "e21GrossSharpe": 0.9612203471681686,
+    "hereGrossSharpe": 0.9612203471681686,
+    "e21Turnover": 1501.113249693133,
+    "hereTurnover": 1501.113249693133,
+    "matchesE21": true,
+    "note": "daily/sign+1 must reproduce e21#dLogOI_pos to display precision (xsBookImpl extraction)."
+  },
+  "daily": {
+    "grossSharpe": 0.961,
+    "turnoverAnnual": 1501.1,
+    "breakEvenBps": 1.89,
+    "net4": -1.07
+  },
+  "ladder": {
+    "ewma_0.5": {
+      "grossSharpe": 1.009,
+      "turnoverAnnual": 849.2,
+      "breakEvenBps": 3.21,
+      "net4": -0.25,
+      "net10": null,
+      "halves": [
+        0.36,
+        1.9
+      ]
+    },
+    "ewma_0.25": {
+      "grossSharpe": 1.178,
+      "turnoverAnnual": 337.8,
+      "breakEvenBps": 8.93,
+      "net4": 0.65,
+      "net10": null,
+      "halves": [
+        0.53,
+        2.09
+      ]
+    },
+    "ewma_0.1": {
+      "grossSharpe": 0.713,
+      "turnoverAnnual": 115.7,
+      "breakEvenBps": 14.73,
+      "net4": 0.52,
+      "net10": null,
+      "halves": [
+        0.58,
+        0.93
+      ]
+    },
+    "ewma_0.05": {
+      "grossSharpe": 0.17,
+      "turnoverAnnual": 55.1,
+      "breakEvenBps": 7.43,
+      "net4": 0.08,
+      "net10": null,
+      "halves": [
+        0.07,
+        0.32
+      ]
+    },
+    "ewma_0.02": {
+      "grossSharpe": 0.005,
+      "turnoverAnnual": 21.4,
+      "breakEvenBps": 0.54,
+      "net4": -0.03,
+      "net10": null,
+      "halves": [
+        -0.15,
+        0.2
+      ]
+    },
+    "ewma_0.01": {
+      "grossSharpe": 0.019,
+      "turnoverAnnual": 10.5,
+      "breakEvenBps": 3.67,
+      "net4": 0,
+      "net10": null,
+      "halves": [
+        0,
+        0.04
+      ]
+    }
+  },
+  "signControl": {
+    "grossSharpe": -0.961,
+    "turnoverAnnual": 1501.1,
+    "breakEvenBps": -1.89,
+    "net4": -3,
+    "net10": null,
+    "halves": [
+      -0.17,
+      -2.14
+    ]
+  },
+  "best": {
+    "lambda": 0.25,
+    "grossSharpe": 1.178,
+    "turnoverAnnual": 337.8,
+    "breakEvenBps": 8.93,
+    "net4": 0.65,
+    "net10": null,
+    "halves": [
+      0.53,
+      2.09
+    ],
+    "netHalves": [
+      0.07,
+      1.47
+    ],
+    "perYear": {
+      "2021": -2.68,
+      "2022": 0.89,
+      "2023": -0.19,
+      "2024": 2.04,
+      "2025": 1.68,
+      "2026": 3.16
+    },
+    "perYearNet4": {
+      "2021": -3.1,
+      "2022": 0.52,
+      "2023": -0.86,
+      "2024": 1.56,
+      "2025": 0.96,
+      "2026": 2.3
+    },
+    "correlationWithCarry": 0.007
+  },
+  "walkForward": {
+    "span": 4015,
+    "oosNet4": 0.44,
+    "picks": [
+      {
+        "at": "2022-12-04",
+        "lambda": 0.25,
+        "trailingNet4": 0.37
+      },
+      {
+        "at": "2023-04-06",
+        "lambda": 0.25,
+        "trailingNet4": 0.63
+      },
+      {
+        "at": "2023-08-05",
+        "lambda": 0.1,
+        "trailingNet4": -0.23
+      },
+      {
+        "at": "2023-12-05",
+        "lambda": 0.05,
+        "trailingNet4": 1.41
+      },
+      {
+        "at": "2024-04-05",
+        "lambda": 0.1,
+        "trailingNet4": 1.66
+      },
+      {
+        "at": "2024-08-04",
+        "lambda": 0.1,
+        "trailingNet4": 1.54
+      },
+      {
+        "at": "2024-12-04",
+        "lambda": 0.5,
+        "trailingNet4": 2.06
+      },
+      {
+        "at": "2025-04-05",
+        "lambda": 0.25,
+        "trailingNet4": 1.39
+      },
+      {
+        "at": "2025-08-04",
+        "lambda": 0.25,
+        "trailingNet4": 1.99
+      },
+      {
+        "at": "2025-12-04",
+        "lambda": 0.02,
+        "trailingNet4": 1.25
+      },
+      {
+        "at": "2026-04-05",
+        "lambda": 0.1,
+        "trailingNet4": 1.27
+      }
+    ],
+    "pickFrequency": {
+      "0.25": 4,
+      "0.1": 4,
+      "0.05": 1,
+      "0.5": 1,
+      "0.02": 1
+    }
+  },
+  "feeStress": {
+    "4bps": {
+      "pinned025OosNet": 0.76,
+      "recent24m": 1.73
+    },
+    "6bps": {
+      "pinned025OosNet": 0.44,
+      "recent24m": 1.42
+    },
+    "8bps": {
+      "pinned025OosNet": 0.13,
+      "recent24m": 1.1
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: unrescuable if no smoothing policy reaches break-even 4 bps (net@4 > 0).",
+    "dailyBreakEvenBps": 1.89,
+    "dailyNet4": -1.07,
+    "bestLambda": 0.25,
+    "bestBreakEvenBps": 8.93,
+    "bestNet4": 0.65,
+    "bestTurnoverAnnual": 337.8,
+    "policiesClearing4bps": 3,
+    "rescued": true,
+    "f28StandsForSmoothedBook": false,
+    "walkForwardOosNet4": 0.44,
+    "pinned025OosNet4": 0.76,
+    "pinned01OosNet4": 0.99,
+    "signControlNet4": -3,
+    "validationPass": true
+  }
+}

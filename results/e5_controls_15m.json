@@ -1,0 +1,101 @@
+{
+  "config": {
+    "tf": "15m",
+    "bars": 79999,
+    "streams": 8,
+    "seed": 12345
+  },
+  "arms": {
+    "oracle": {
+      "meanSharpe": {
+        "n": 8,
+        "mean": 13.191730624737602,
+        "std": 0.6064441962187428,
+        "min": 11.983224361142932,
+        "max": 14.0922007548175
+      },
+      "meanBreakEvenCostBps": 25.18153698812932,
+      "pooled": {
+        "netSharpe": 12.666837347655868,
+        "dsr": 1,
+        "dsrAdjusted": 0.999999999995798,
+        "effectiveBars": 907,
+        "psrAdjusted": 0.999999999995798
+      }
+    },
+    "antiOracle": {
+      "meanSharpe": {
+        "n": 8,
+        "mean": -13.191730624737602,
+        "std": 0.6064441962187428,
+        "min": -14.0922007548175,
+        "max": -11.983224361142932
+      },
+      "meanBreakEvenCostBps": -25.18153698812932,
+      "pooled": {
+        "netSharpe": -12.666837347655868,
+        "dsr": 0,
+        "dsrAdjusted": 4.2019721036012925e-12,
+        "effectiveBars": 907,
+        "psrAdjusted": 4.2019721036012925e-12
+      }
+    },
+    "random": {
+      "meanSharpe": {
+        "n": 8,
+        "mean": -0.06896319886991938,
+        "std": 0.02306503915280512,
+        "min": -0.10522424941231295,
+        "max": -0.04020265911634401
+      },
+      "meanBreakEvenCostBps": -0.1810522843977906,
+      "pooled": {
+        "netSharpe": -0.13303290209967822,
+        "dsr": 0.009856733840679144,
+        "dsrAdjusted": 0.1554939029504896,
+        "effectiveBars": 14500,
+        "psrAdjusted": 0.1554939029504896
+      }
+    },
+    "alwaysLong": {
+      "meanSharpe": {
+        "n": 8,
+        "mean": 0.033366073810957804,
+        "std": 0.022857843237376534,
+        "min": 0.012964108559644633,
+        "max": 0.08501867959762346
+      },
+      "meanBreakEvenCostBps": 6851.329563857724,
+      "pooled": {
+        "netSharpe": 0.17952331767794197,
+        "dsr": 0.9990864699225558,
+        "dsrAdjusted": 0.9246116940011418,
+        "effectiveBars": 16319,
+        "psrAdjusted": 0.9246116940011418
+      }
+    },
+    "alwaysShort": {
+      "meanSharpe": {
+        "n": 8,
+        "mean": -0.033366073810957804,
+        "std": 0.022857843237376534,
+        "min": -0.08501867959762346,
+        "max": -0.012964108559644633
+      },
+      "meanBreakEvenCostBps": -6851.329563857724,
+      "pooled": {
+        "netSharpe": -0.17952331767794197,
+        "dsr": 0.0009135300774442134,
+        "dsrAdjusted": 0.07538830599885815,
+        "effectiveBars": 16319,
+        "psrAdjusted": 0.07538830599885815
+      }
+    }
+  },
+  "verdict": {
+    "oracleSharpe": 13.191730624737602,
+    "antiOracleSharpe": -13.191730624737602,
+    "randomNearZero": true,
+    "pass": true
+  }
+}

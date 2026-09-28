@@ -1,0 +1,443 @@
+{
+  "config": {
+    "symbols": 8,
+    "symbolList": [
+      "btcusdt",
+      "ethusdt",
+      "solusdt",
+      "bnbusdt",
+      "xrpusdt",
+      "adausdt",
+      "dogeusdt",
+      "linkusdt"
+    ],
+    "periods": 5174,
+    "pairPeriods": 5247,
+    "firstTop": 1309,
+    "firstOI": 1310,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "f": 0.05,
+    "oiSleeve": "fixed 50/50 λ blend (F-46)",
+    "ebarCarry": 0.7026,
+    "ebarFade": 0.7
+  },
+  "validation": {
+    "e34CarryOiMean": 24033986,
+    "e34FadeOiMean": 31857219,
+    "hereCarryOiMean": 24139949.551324364,
+    "hereFadeOiMean": 31492044.144067705,
+    "carryOiMeanRelDiff": 0.0044,
+    "fadeOiMeanRelDiff": 0.0115,
+    "e36LpMean": 62719816,
+    "here2dLpMean": 62723328.10874311,
+    "lp2dRelDiff": 0.0001,
+    "matchesE34": true,
+    "matchesE36Lp": true,
+    "lp3dAtLeastLp2d": true,
+    "note": "The two port-spec books must reproduce e34 meanGcap within 5 %, and the 2-D carry+fade LP mean e36 lpMean within 5 %. It is the same alignment grid, so the tolerance is only for float/rounding. The 3-D optimum must be >= the 2-D one (G_O = 0 is feasible).",
+    "validationPass": true
+  },
+  "returnAdditivity": {
+    "corrWithCarry": 0.01,
+    "corrWithFade": 0,
+    "ladder": [
+      {
+        "oiFrac": 0,
+        "grossSharpe": 7.41,
+        "net4Sharp": 6.48,
+        "h1": 7.95,
+        "h2": 4.65
+      },
+      {
+        "oiFrac": 0.05,
+        "grossSharpe": 3.51,
+        "net4Sharp": 2.82,
+        "h1": 3.12,
+        "h2": 2.5
+      },
+      {
+        "oiFrac": 0.1,
+        "grossSharpe": 2.35,
+        "net4Sharp": 1.79,
+        "h1": 1.77,
+        "h2": 1.89
+      },
+      {
+        "oiFrac": 0.15,
+        "grossSharpe": 1.93,
+        "net4Sharp": 1.42,
+        "h1": 1.27,
+        "h2": 1.67
+      },
+      {
+        "oiFrac": 0.2,
+        "grossSharpe": 1.71,
+        "net4Sharp": 1.23,
+        "h1": 1.02,
+        "h2": 1.56
+      },
+      {
+        "oiFrac": 0.25,
+        "grossSharpe": 1.58,
+        "net4Sharp": 1.11,
+        "h1": 0.87,
+        "h2": 1.49
+      },
+      {
+        "oiFrac": 0.3,
+        "grossSharpe": 1.49,
+        "net4Sharp": 1.04,
+        "h1": 0.77,
+        "h2": 1.44
+      },
+      {
+        "oiFrac": 0.5,
+        "grossSharpe": 1.32,
+        "net4Sharp": 0.88,
+        "h1": 0.56,
+        "h2": 1.35
+      }
+    ],
+    "risk": {
+      "annualVolCarryNet4": 0.004,
+      "annualVolOiNet4": 0.243,
+      "volRatioOiOverCarry": 55.4,
+      "ladder": [
+        {
+          "oiFrac": 0,
+          "mixSharpe": 6.48,
+          "h1": 7.95,
+          "h2": 4.65
+        },
+        {
+          "oiFrac": 0.05,
+          "mixSharpe": 6.51,
+          "h1": 7.95,
+          "h2": 4.72
+        },
+        {
+          "oiFrac": 0.1,
+          "mixSharpe": 6.52,
+          "h1": 7.94,
+          "h2": 4.78
+        },
+        {
+          "oiFrac": 0.15,
+          "mixSharpe": 6.5,
+          "h1": 7.89,
+          "h2": 4.81
+        },
+        {
+          "oiFrac": 0.2,
+          "mixSharpe": 6.46,
+          "h1": 7.81,
+          "h2": 4.82
+        },
+        {
+          "oiFrac": 0.25,
+          "mixSharpe": 6.37,
+          "h1": 7.68,
+          "h2": 4.79
+        },
+        {
+          "oiFrac": 0.3,
+          "mixSharpe": 6.23,
+          "h1": 7.5,
+          "h2": 4.71
+        },
+        {
+          "oiFrac": 0.5,
+          "mixSharpe": 5.1,
+          "h1": 6.06,
+          "h2": 3.94
+        }
+      ],
+      "maxSharpeRiskNormalised": {
+        "oiFrac": 0.1,
+        "mixSharpe": 6.52
+      },
+      "walkForward": {
+        "oosSharpe": 6.58,
+        "picks": [
+          {
+            "at": "2022-12-04",
+            "oiFrac": 0,
+            "trailingSharpe": 7.03
+          },
+          {
+            "at": "2023-04-06",
+            "oiFrac": 0.01,
+            "trailingSharpe": 8.06
+          },
+          {
+            "at": "2023-08-05",
+            "oiFrac": 0.04,
+            "trailingSharpe": 8.32
+          },
+          {
+            "at": "2023-12-05",
+            "oiFrac": 0.06,
+            "trailingSharpe": 6.25
+          },
+          {
+            "at": "2024-04-05",
+            "oiFrac": 0.16,
+            "trailingSharpe": 9.92
+          },
+          {
+            "at": "2024-08-04",
+            "oiFrac": 0.11,
+            "trailingSharpe": 10.95
+          },
+          {
+            "at": "2024-12-04",
+            "oiFrac": 0.14,
+            "trailingSharpe": 11.36
+          },
+          {
+            "at": "2025-04-05",
+            "oiFrac": 0.08,
+            "trailingSharpe": 6.36
+          },
+          {
+            "at": "2025-08-04",
+            "oiFrac": 0.16,
+            "trailingSharpe": 4.78
+          },
+          {
+            "at": "2025-12-04",
+            "oiFrac": 0.11,
+            "trailingSharpe": 4.67
+          },
+          {
+            "at": "2026-04-05",
+            "oiFrac": 0.24,
+            "trailingSharpe": 4.4
+          }
+        ]
+      },
+      "note": "Risk-normalised mix (each stream at unit annualised vol). If the max-Sharpe weight on OI is ~0 and the walk-forward picks ~0, the OI stream does not add to the carry book even risk-adjusted; ρ≈0 makes it independent, but at net@4 ~0.8 it is too weak to add to a ~6.5-Sharpe book."
+    },
+    "mixConvention": {
+      "annualVolFadeNet4": 0.136,
+      "volRatioFadeOverCarry": 31,
+      "carryOnlySharpe": 6.48,
+      "riskNormCarryPlusFade": {
+        "a": 0.13,
+        "sharpe": 6.55
+      },
+      "riskNormCarryPlusOi": {
+        "oiFrac": 0.1,
+        "sharpe": 6.52
+      },
+      "riskNormCarryPlusFadePlusOi": {
+        "aF": 0.1,
+        "aO": 0.1,
+        "sc": 6.58
+      },
+      "note": "The carry book is a basis+funding stream with ~0.4 %/yr vol per unit gross; the spot-based books (fade, OI) are ~50× that, so the lab's capital-fraction mix convention (F-31/F-43) over-dilutes the carry book. Risk-normalised, the tangency gain from adding fade+OI to carry is ~+0.1 Sharpe (theory for ρ≈0 unit-vol streams: sqrt(Σ Sharpe²) = 6.60 vs 6.48) — the *direction* of F-43 stands but the *magnitude* is a vol-basis artefact."
+    },
+    "walkForward": {
+      "span": 4015,
+      "oosNet4": 6.58,
+      "picks": [
+        {
+          "at": "2022-12-04",
+          "oiFrac": 0,
+          "trailingNet4": 7.03
+        },
+        {
+          "at": "2023-04-06",
+          "oiFrac": 0,
+          "trailingNet4": 8.06
+        },
+        {
+          "at": "2023-08-05",
+          "oiFrac": 0,
+          "trailingNet4": 8.31
+        },
+        {
+          "at": "2023-12-05",
+          "oiFrac": 0,
+          "trailingNet4": 6.24
+        },
+        {
+          "at": "2024-04-05",
+          "oiFrac": 0,
+          "trailingNet4": 9.7
+        },
+        {
+          "at": "2024-08-04",
+          "oiFrac": 0,
+          "trailingNet4": 10.83
+        },
+        {
+          "at": "2024-12-04",
+          "oiFrac": 0,
+          "trailingNet4": 11.11
+        },
+        {
+          "at": "2025-04-05",
+          "oiFrac": 0,
+          "trailingNet4": 6.31
+        },
+        {
+          "at": "2025-08-04",
+          "oiFrac": 0,
+          "trailingNet4": 4.63
+        },
+        {
+          "at": "2025-12-04",
+          "oiFrac": 0,
+          "trailingNet4": 4.63
+        },
+        {
+          "at": "2026-04-05",
+          "oiFrac": 0,
+          "trailingNet4": 4.22
+        }
+      ],
+      "pickFrequency": {
+        "0": 11
+      },
+      "pinnedCarryOnly": 6.58,
+      "pinnedOI25": 1.41
+    }
+  },
+  "capacityAdditivity": {
+    "lp3dTotalGross": {
+      "n": 5174,
+      "mean": 142195293.63152683,
+      "p5": 20195446.715101734,
+      "median": 77662915.29972827,
+      "p95": 480177645.48196244,
+      "min": 11889544.68907125
+    },
+    "lp2dTotalGross": {
+      "n": 5174,
+      "mean": 62723328.10874311,
+      "p5": 11931602.913794018,
+      "median": 37112415.93210073,
+      "p95": 166404139.4208099,
+      "min": 9129286.18071455
+    },
+    "individualCarry": {
+      "n": 5174,
+      "mean": 24139949.551324364,
+      "p5": 10256660.86250331,
+      "median": 20127517.269556396,
+      "p95": 57924586.84089453,
+      "min": 7594950.227368998
+    },
+    "individualFade": {
+      "n": 5174,
+      "mean": 31492044.144067705,
+      "p5": 10753927.4631135,
+      "median": 22220322.875772677,
+      "p95": 86808651.47194538,
+      "min": 7941683.594769219
+    },
+    "individualOi": {
+      "n": 5174,
+      "mean": 25255565.026831143,
+      "p5": 7269773.902776702,
+      "median": 20583281.923248135,
+      "p95": 57942508.0551037,
+      "min": 4138488.850960987
+    },
+    "optimalShare": {
+      "mean": 0.374,
+      "median": 0.383,
+      "p5": 0,
+      "p95": 0.773
+    },
+    "bindingSymbols": {
+      "bnbusdt": 371,
+      "solusdt": 254,
+      "adausdt": 1843,
+      "linkusdt": 1327,
+      "xrpusdt": 536,
+      "dogeusdt": 843
+    },
+    "allThreeAtIndividual": {
+      "periods": 5174,
+      "breachFrac": 0.588,
+      "peakParticipation": 0.129,
+      "bindingSymbols": {
+        "linkusdt": 2088,
+        "adausdt": 2139,
+        "xrpusdt": 264,
+        "bnbusdt": 126,
+        "solusdt": 87,
+        "dogeusdt": 470
+      }
+    },
+    "schedule": {
+      "net4Sharpe": 0.82,
+      "grossSharpe": 1.11,
+      "turnoverFracOfGross": 129.6
+    }
+  },
+  "verdict": {
+    "note": "Falsifier: the OI stream does NOT add if the optimal 3-D-LP OI share is ~0, or the carry+OI ladder never lifts net@4. It DOES add if the 3-D LP mean beats the 2-D LP mean with a material OI share.",
+    "periods": 5174,
+    "returnCorrWithCarry": 0.01,
+    "returnCorrWithFade": 0,
+    "bestLadderStep": {
+      "oiFrac": 0,
+      "grossSharpe": 7.41,
+      "net4Sharp": 6.48,
+      "h1": 7.95,
+      "h2": 4.65
+    },
+    "ladderLiftsCarry": false,
+    "walkForwardOosNet4": 6.58,
+    "pinnedCarryOnlyOosNet4": 6.58,
+    "pinnedOI25OosNet4": 1.41,
+    "oiPickedFractionFreq": {
+      "0": 11
+    },
+    "lp3dMeanTotalGross": 142195294,
+    "lp3dMedianTotalGross": 77662915,
+    "lp2dMeanTotalGross": 62723328,
+    "lp3dOverLp2dMean": 2.267,
+    "sumOfThreeIndividualMeans": 80887559,
+    "lp3dOverSum3": 1.758,
+    "individualMeans": {
+      "carry": 24139950,
+      "fade": 31492044,
+      "oi": 25255565
+    },
+    "optimalOiShareMean": 0.374,
+    "optimalOiShareMedian": 0.383,
+    "oiShareOftenZero": 0.11074603788171627,
+    "lp3dScheduledNet4": 0.82,
+    "lp3dScheduledTurnoverFracOfGross": 129.6,
+    "allThreeAtIndividualBreach": {
+      "periods": 5174,
+      "breachFrac": 0.588,
+      "peakParticipation": 0.129,
+      "bindingSymbols": {
+        "linkusdt": 2088,
+        "adausdt": 2139,
+        "xrpusdt": 264,
+        "bnbusdt": 126,
+        "solusdt": 87,
+        "dogeusdt": 470
+      }
+    },
+    "oiAdds": true,
+    "oiAddsRiskNormalised": true,
+    "maxSharpeRiskNormalised": {
+      "oiFrac": 0.1,
+      "mixSharpe": 6.52
+    },
+    "riskNormalisedMaxSharpeGainOverCarry": 0.04,
+    "riskNormalisedWalkForwardOosSharpe": 6.58,
+    "carryOnlyRiskNormalisedFullSharpe": 6.48,
+    "mixConventionVolRatioFadeOverCarry": 31,
+    "validationPass": true
+  }
+}

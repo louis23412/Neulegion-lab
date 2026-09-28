@@ -1,0 +1,566 @@
+{
+  "config": {
+    "symbols": 8,
+    "periods": 6557,
+    "lookback": 1095,
+    "block": 365,
+    "feeBps": 4,
+    "cap": 0.125,
+    "lambdas": [
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "oosSpan": {
+      "start": 1095,
+      "end": 6205,
+      "span": 5110
+    }
+  },
+  "checks": {
+    "e40WalkForwardOos": 6.63,
+    "hereWalkForwardOos": 6.63,
+    "wfAbsDiff": 0,
+    "e40Pair0102Oos": 6.66,
+    "herePair0102Oos": 6.66,
+    "pairAbsDiff": 0,
+    "e40PinnedOos": 6.86,
+    "herePinnedOos": 6.86,
+    "pinnedOosAbsDiff": 0,
+    "e30FullNet4": 6.18,
+    "hereFullNet4": 6.184,
+    "fullNetAbsDiff": 0,
+    "e31PinnedOosNet4": 6.86,
+    "oosMatch": 0,
+    "note": "The rebuild must reproduce e40 (λ-only WF OOS 6.63, pinned λ=0.02 6.86, pair0102 6.66) and e30/e31 on the pinned book — same construction, absolute 0.01 (L10-z).",
+    "matches": true
+  },
+  "menu": [
+    {
+      "name": "all5",
+      "set": [
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "prior": "naive: blend the whole grid (includes the F-37-broken λ=0.1)",
+      "oosNet4": 4.36,
+      "recent24mNet4": 3.43,
+      "turnoverAnnual": 18,
+      "clears02": false
+    },
+    {
+      "name": "slow4",
+      "set": [
+        0.005,
+        0.01,
+        0.02,
+        0.05
+      ],
+      "prior": "no-hindsight: the cost-aware slow range (F-37), fast end dropped",
+      "oosNet4": 5.74,
+      "recent24mNet4": 4.24,
+      "turnoverAnnual": 10,
+      "clears02": false
+    },
+    {
+      "name": "slow3",
+      "set": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "prior": "no-hindsight: slow range minus the top",
+      "oosNet4": 6.08,
+      "recent24mNet4": 4.63,
+      "turnoverAnnual": 6,
+      "clears02": false
+    },
+    {
+      "name": "mid3",
+      "set": [
+        0.01,
+        0.02,
+        0.05
+      ],
+      "prior": "slow range minus the bottom",
+      "oosNet4": 6.02,
+      "recent24mNet4": 4.04,
+      "turnoverAnnual": 13,
+      "clears02": false
+    },
+    {
+      "name": "p005_01",
+      "set": [
+        0.005,
+        0.01
+      ],
+      "prior": "pair (slowest two)",
+      "oosNet4": 5.58,
+      "recent24mNet4": 4.74,
+      "turnoverAnnual": 4,
+      "clears02": false
+    },
+    {
+      "name": "p005_02",
+      "set": [
+        0.005,
+        0.02
+      ],
+      "prior": "pair",
+      "oosNet4": 5.93,
+      "recent24mNet4": 4.53,
+      "turnoverAnnual": 6,
+      "clears02": false
+    },
+    {
+      "name": "p005_05",
+      "set": [
+        0.005,
+        0.05
+      ],
+      "prior": "pair (widest)",
+      "oosNet4": 4.78,
+      "recent24mNet4": 3.85,
+      "turnoverAnnual": 13,
+      "clears02": false
+    },
+    {
+      "name": "p01_02",
+      "set": [
+        0.01,
+        0.02
+      ],
+      "prior": "pair — the F-48 winner (straddles F-38 recent λ≈0.02)",
+      "oosNet4": 6.66,
+      "recent24mNet4": 4.58,
+      "turnoverAnnual": 7,
+      "clears02": true
+    },
+    {
+      "name": "p01_05",
+      "set": [
+        0.01,
+        0.05
+      ],
+      "prior": "pair",
+      "oosNet4": 5.51,
+      "recent24mNet4": 3.89,
+      "turnoverAnnual": 14,
+      "clears02": false
+    },
+    {
+      "name": "p02_05",
+      "set": [
+        0.02,
+        0.05
+      ],
+      "prior": "pair",
+      "oosNet4": 5.75,
+      "recent24mNet4": 3.56,
+      "turnoverAnnual": 17,
+      "clears02": false
+    }
+  ],
+  "walkForwards": {
+    "lambda": {
+      "oosNet4": 6.63,
+      "recent24mNet4": 4.43,
+      "picks": [
+        {
+          "at": "2021-09-20",
+          "key": 0.1,
+          "trailingNet4": 9.54
+        },
+        {
+          "at": "2022-01-20",
+          "key": 0.1,
+          "trailingNet4": 9.07
+        },
+        {
+          "at": "2022-05-22",
+          "key": 0.02,
+          "trailingNet4": 6.81
+        },
+        {
+          "at": "2022-09-22",
+          "key": 0.02,
+          "trailingNet4": 6.86
+        },
+        {
+          "at": "2023-01-23",
+          "key": 0.02,
+          "trailingNet4": 7.41
+        },
+        {
+          "at": "2023-05-26",
+          "key": 0.02,
+          "trailingNet4": 8.5
+        },
+        {
+          "at": "2023-09-24",
+          "key": 0.02,
+          "trailingNet4": 8.11
+        },
+        {
+          "at": "2024-01-24",
+          "key": 0.05,
+          "trailingNet4": 7.66
+        },
+        {
+          "at": "2024-05-25",
+          "key": 0.02,
+          "trailingNet4": 10.18
+        },
+        {
+          "at": "2024-09-23",
+          "key": 0.02,
+          "trailingNet4": 10.46
+        },
+        {
+          "at": "2025-01-23",
+          "key": 0.01,
+          "trailingNet4": 9.77
+        },
+        {
+          "at": "2025-05-25",
+          "key": 0.01,
+          "trailingNet4": 5.59
+        },
+        {
+          "at": "2025-09-23",
+          "key": 0.005,
+          "trailingNet4": 5.46
+        },
+        {
+          "at": "2026-01-23",
+          "key": 0.01,
+          "trailingNet4": 4.72
+        }
+      ]
+    },
+    "blend": {
+      "oosNet4": 5.81,
+      "recent24mNet4": 4.12,
+      "picks": [
+        {
+          "at": "2021-09-20",
+          "key": "p02_05",
+          "trailingNet4": 8.74
+        },
+        {
+          "at": "2022-01-20",
+          "key": "all5",
+          "trailingNet4": 9.25
+        },
+        {
+          "at": "2022-05-22",
+          "key": "all5",
+          "trailingNet4": 6.99
+        },
+        {
+          "at": "2022-09-22",
+          "key": "p02_05",
+          "trailingNet4": 6.89
+        },
+        {
+          "at": "2023-01-23",
+          "key": "p01_02",
+          "trailingNet4": 6.87
+        },
+        {
+          "at": "2023-05-26",
+          "key": "p01_02",
+          "trailingNet4": 7.93
+        },
+        {
+          "at": "2023-09-24",
+          "key": "p01_02",
+          "trailingNet4": 7.61
+        },
+        {
+          "at": "2024-01-24",
+          "key": "p02_05",
+          "trailingNet4": 7.68
+        },
+        {
+          "at": "2024-05-25",
+          "key": "p02_05",
+          "trailingNet4": 10.15
+        },
+        {
+          "at": "2024-09-23",
+          "key": "p02_05",
+          "trailingNet4": 10.27
+        },
+        {
+          "at": "2025-01-23",
+          "key": "p01_02",
+          "trailingNet4": 9.67
+        },
+        {
+          "at": "2025-05-25",
+          "key": "p005_01",
+          "trailingNet4": 5.47
+        },
+        {
+          "at": "2025-09-23",
+          "key": "p005_01",
+          "trailingNet4": 5.44
+        },
+        {
+          "at": "2026-01-23",
+          "key": "p005_01",
+          "trailingNet4": 4.68
+        }
+      ]
+    }
+  },
+  "frozenLambdaLadder": [
+    {
+      "S": 1095,
+      "periods": 5110,
+      "frozenLambda": 0.1,
+      "frozenTrainNet4": 9.54,
+      "frozenNet4": 1.93,
+      "frozenBlend": "p02_05",
+      "frozenBlendNet4": 5.75,
+      "lambdaWfNet4": 6.63,
+      "blendWfNet4": 5.81,
+      "pair0102Net4": 6.66,
+      "pinned0202Net4": 6.86
+    },
+    {
+      "S": 1825,
+      "periods": 4380,
+      "frozenLambda": 0.1,
+      "frozenTrainNet4": 8.18,
+      "frozenNet4": 1.76,
+      "frozenBlend": "p02_05",
+      "frozenBlendNet4": 5.54,
+      "lambdaWfNet4": 6.79,
+      "blendWfNet4": 5.61,
+      "pair0102Net4": 6.64,
+      "pinned0202Net4": 6.87
+    },
+    {
+      "S": 2555,
+      "periods": 3650,
+      "frozenLambda": 0.02,
+      "frozenTrainNet4": 7.37,
+      "frozenNet4": 6.81,
+      "frozenBlend": "p02_05",
+      "frozenBlendNet4": 6.39,
+      "lambdaWfNet4": 6.69,
+      "blendWfNet4": 6.56,
+      "pair0102Net4": 6.84,
+      "pinned0202Net4": 6.81
+    },
+    {
+      "S": 3285,
+      "periods": 2920,
+      "frozenLambda": 0.02,
+      "frozenTrainNet4": 7.03,
+      "frozenNet4": 6.64,
+      "frozenBlend": "p02_05",
+      "frozenBlendNet4": 6.17,
+      "lambdaWfNet4": 6.48,
+      "blendWfNet4": 6.29,
+      "pair0102Net4": 6.65,
+      "pinned0202Net4": 6.64
+    },
+    {
+      "S": 4380,
+      "periods": 1825,
+      "frozenLambda": 0.02,
+      "frozenTrainNet4": 7.09,
+      "frozenNet4": 4.1,
+      "frozenBlend": "p02_05",
+      "frozenBlendNet4": 3.42,
+      "lambdaWfNet4": 4.27,
+      "blendWfNet4": 4.08,
+      "pair0102Net4": 4.42,
+      "pinned0202Net4": 4.1
+    }
+  ],
+  "trailingTrainSensitivity": [
+    {
+      "S": 1095,
+      "byLen": [
+        {
+          "trainLen": 365,
+          "lambda": 0.02,
+          "frozenNet4": 6.86
+        },
+        {
+          "trainLen": 730,
+          "lambda": 0.1,
+          "frozenNet4": 1.93
+        },
+        {
+          "trainLen": 1095,
+          "lambda": 0.1,
+          "frozenNet4": 1.93
+        }
+      ]
+    },
+    {
+      "S": 1825,
+      "byLen": [
+        {
+          "trainLen": 365,
+          "lambda": 0.05,
+          "frozenNet4": 4.31
+        },
+        {
+          "trainLen": 730,
+          "lambda": 0.02,
+          "frozenNet4": 6.87
+        },
+        {
+          "trainLen": 1095,
+          "lambda": 0.02,
+          "frozenNet4": 6.87
+        }
+      ]
+    },
+    {
+      "S": 2555,
+      "byLen": [
+        {
+          "trainLen": 365,
+          "lambda": 0.02,
+          "frozenNet4": 6.81
+        },
+        {
+          "trainLen": 730,
+          "lambda": 0.02,
+          "frozenNet4": 6.81
+        },
+        {
+          "trainLen": 1095,
+          "lambda": 0.02,
+          "frozenNet4": 6.81
+        },
+        {
+          "trainLen": 2190,
+          "lambda": 0.02,
+          "frozenNet4": 6.81
+        }
+      ]
+    },
+    {
+      "S": 3285,
+      "byLen": [
+        {
+          "trainLen": 365,
+          "lambda": 0.005,
+          "frozenNet4": 5.93
+        },
+        {
+          "trainLen": 730,
+          "lambda": 0.005,
+          "frozenNet4": 5.93
+        },
+        {
+          "trainLen": 1095,
+          "lambda": 0.02,
+          "frozenNet4": 6.64
+        },
+        {
+          "trainLen": 2190,
+          "lambda": 0.02,
+          "frozenNet4": 6.64
+        }
+      ]
+    },
+    {
+      "S": 4380,
+      "byLen": [
+        {
+          "trainLen": 365,
+          "lambda": 0.01,
+          "frozenNet4": 4.69
+        },
+        {
+          "trainLen": 730,
+          "lambda": 0.02,
+          "frozenNet4": 4.1
+        },
+        {
+          "trainLen": 1095,
+          "lambda": 0.02,
+          "frozenNet4": 4.1
+        },
+        {
+          "trainLen": 2190,
+          "lambda": 0.02,
+          "frozenNet4": 4.1
+        }
+      ]
+    }
+  ],
+  "verdict": {
+    "note": "Robust if a no-hindsight blend clears the 0.2 bar AND the frozen-λ ladder does not pick the F-37-broken fast λ on short trains; menu-dependent if only the cherry-picked pair clears it.",
+    "oosSpan": {
+      "start": 1095,
+      "end": 6205,
+      "span": 5110
+    },
+    "lambdaWfOos": 6.63,
+    "lambdaWfRecent24m": 4.43,
+    "blendsClearing02": [
+      "p01_02"
+    ],
+    "blendsInMenu": 10,
+    "noHindsightBlendsClearing02": [],
+    "onlyCherryPickedClears": true,
+    "blendWfOos": 5.81,
+    "blendWfRecent24m": 4.12,
+    "blendWfBeatsLambdaWf": false,
+    "blendWfPickFreq": {
+      "p02_05": 5,
+      "all5": 2,
+      "p01_02": 4,
+      "p005_01": 3
+    },
+    "frozenPicks": [
+      {
+        "S": 1095,
+        "lambda": 0.1,
+        "testNet4": 1.93
+      },
+      {
+        "S": 1825,
+        "lambda": 0.1,
+        "testNet4": 1.76
+      },
+      {
+        "S": 2555,
+        "lambda": 0.02,
+        "testNet4": 6.81
+      },
+      {
+        "S": 3285,
+        "lambda": 0.02,
+        "testNet4": 6.64
+      },
+      {
+        "S": 4380,
+        "lambda": 0.02,
+        "testNet4": 4.1
+      }
+    ],
+    "frozenPicksBrokenFast": [
+      1095,
+      1825
+    ],
+    "fullHistoryBestLambda": 0.02,
+    "validationPass": true,
+    "robust": false
+  }
+}

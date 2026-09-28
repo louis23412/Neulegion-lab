@@ -78,8 +78,8 @@ deliberate re-freeze (the module is LOCKED; `test/lock-registry.js`).
 
 ### D. The corpus reproduces the lab's other production findings
 
-* **F-32 (reversal is a real gross edge, uninvestable):** `sig-reversal-4` is family-wise significant (SPA
-  p **0.0474**, rejection accepted; 87/129 windows, breadth p 4.6e-5; paired p 0.0018) but its break-even is
+* **F-32 (reversal is a real gross edge, uninvestable):** `sig-reversal-4` is family-wise significant (arm StepM
+  p **0.0474**, rejection accepted; family SPA p 0.4382; 87/129 windows, breadth p 4.6e-5; paired p 0.0018) but its break-even is
   **1.50 bps** and it fails the `minDsr` floor at raw DSR 0.9272 — real edge, no cost margin. The plain and
   vol arms read negative Sharpe at 6500–6800 turnover.
 * **F-03 / L02 (demeaning is a power tool):** `sig-reversal-xs` reads **designEffect 0.361**,

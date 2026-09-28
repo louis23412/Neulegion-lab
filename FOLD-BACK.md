@@ -76,6 +76,11 @@ a *sign flip* between windows.
 block. **Verify:** `walkforward.test.js` exact fixtures (the repo's style for every statistic).
 **Falsifier:** if block-stability does not separate the arm that survives the full history from the one
 that does not, it is not the right statistic.
+**Status (round 32): PORTED.** `blockStability` lives in `analysis/walkforward.js` (lab-exact layout,
+k=6, `periodsPerYear` default 252 = the lab's), is computed by `walkForwardEvaluate` (single + async
+twin) and `poolReports` (price-only panel — extra sleeve streams cannot move it), renders as the
+`blocks:` report line, and gates through the default-off `minBlockPositiveFraction` (`walkforward`
+63 → 74, ledger 2741 → 2753 with R3). Default verdicts are byte-identical (opt-in only).
 
 ### R3 — Score every candidate at a realistic cost by default. *(from J4)*
 
@@ -87,6 +92,11 @@ verdict is currently window-dependent.
 
 **Where.** `costLadder` already exists; this is a reporting default. **Verify:** no golden moves (pure
 reporting).
+**Status (round 32): PORTED (reporting half).** The ladder already restated every candidate at
+[0, 2, 5, 10] bps with break-even and net Sharpe in the machine rows; what was missing was the
+decision-block readability — the rendered `cost-ladder` lines now name every candidate's restated
+net Sharpe (`analyze` 279 → 280). The remaining "full-history" half belongs to R1 (the evaluated
+sample is still the `--bars` window).
 
 ### R4 — Carry must be scored basis-marked. *(from F-04)*
 

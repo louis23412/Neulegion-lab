@@ -81,4 +81,5 @@ Rules:
 | [064](CYCLE-064.md) | Do the hivemind numeric kernels (`hivemind/kernels/*`) mean what they say? (L10; new L10-co…L10-cr) |
 | [065](CYCLE-065.md) | The operator's uploaded local run corpus (`src/runs/`) vs the ledger (read-only; confirms F-01/F-03/F-32/F-69/F-71/F-74/F-77 in production; new L10-cs — the funding sleeve enters the paired promotion test) |
 | [066](CYCLE-066.md) | Does the REPO's V2 sleeve layer reproduce the lab's published books? (port verification; all three books bit-for-bit; new L10-ct — the two shells disagree about the book grid) |
+| [067](CYCLE-067.md) | Port record: the REPO's R1 long-sample scorer (contiguous == walk-forward bar-for-bar modulo the fold's no-exposure first bar; the long-sample path is deliberately dependence-free) |
 The authoritative table (with outcomes) lives in `../INDEX.md`.

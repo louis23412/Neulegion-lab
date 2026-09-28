@@ -34,11 +34,7 @@ they do not need a promotion to be worth shipping.
 > ever added (currently latent). **R6 is dropped** (F-35). The repo-side plan is W1–W6 with gates
 > G1–G5; G5 (a bankable positive full-history net-of-cost portfolio) is the goal.
 >
-> **Progress (CYCLE-066): the R7/R8/OI complex is LANDED in the repo.** The V2.2 plugin layer
-> (`core/primitives/*` + `plugins/sleeves/*` + `plugins/risk/cap-band.js` + the registry) carries the
-> three pinned specs, and `e73_port_verify.js` (F-81) proves the repo reproduces the lab's published
-> books bit-for-bit on the real panel. They are **UNTESTED** until the repo's own gate scores them
-> (round-31 W2/W3; `MIGRATION-V2.md` §8). R1/R2/R3 (the measurement ports) are **not yet** ported.
+> **Progress (rounds 32–33): R1/R2/R3 are PORTED.** `blockStability` (R2) + the ladder net-Sharpe lines (R3 reporting half) landed in round 32; the long-sample scorer (R1) + the `--history=full` driver mode landed in round 33 (ledger 2768, default reports byte-identical). The R7/R8/OI complex is LANDED as UNTESTED V2.2 plugins (`e73_port_verify.js` F-81 proves the bit-for-bit port); the remaining queue is scoring them through the repo's own gate (round-31 W2/W3) plus **R5**.
 
 ### R1 — A model-free long-sample scoring path. *(highest value; from F-01)*
 
@@ -56,6 +52,7 @@ is `analysis/backtest.js#backtestMetrics`. A `--bars=full` (or `--history=full`)
 
 **Verify.** The lab's `e2_arm_sweep.js` full-history column is the expected output, arm-for-arm.
 **Falsifier:** if the long-sample readout and the 600-bar readout agree, F-01 is wrong.
+**Status (round 33): PORTED.** `analysis/walkforward.js#scoreSignalFullHistory` (positions through the same `positionAt` pipeline the A/B scores, `backtestMetrics` at the run cost + the 5/10 bps restatements, `blockStability` over the net series) + `poolSignalFullHistory` (equal-weight tail-aligned basket through the `poolFolds` arithmetic — one stream is the identity — deliberately dependence-free per F-14) + `buildFullHistoryBlock` (every active signal arm pooled at the run's K; model arms land `{available:false}` naming `--bars`), wired as the opt-in `--history=full` driver mode (`history` in `run.json`/`report.json`, `full-history` summary lines, default report byte-identical). Pinned by 9 new section-R1 `walkforward` checks (incl. the F-13 equivalence: contiguous == walk-forward bar-for-bar modulo the fold's no-exposure first bar) + 6 new `analyze` checks (incl. the pure-post-processing proof); ledger 2753 → 2768.
 **Status (CYCLE-002):** falsifier tested and survived — `e0d_ab_aggregation.js` runs the repo's own
 fold+pool path and reproduces the window effect (F-13: +1.106 @600 vs +0.109 @full). Two
 implementation notes for the port: (i) for a parameter-free signal a contiguous scorer is *equivalent*

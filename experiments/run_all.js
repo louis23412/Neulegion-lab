@@ -97,6 +97,14 @@ import * as e89 from './e89_carry_vol.js';
 import * as e90 from './e90_forecast_sizing.js';
 import * as e91 from './e91_vol_4h.js';
 import * as e92 from './e92_vol_ladder.js';
+import * as e93 from './e93_range_estimators.js';
+import * as e94 from './e94_har_challenger.js';
+import * as e95 from './e95_base_rate_learner.js';
+import * as e96 from './e96_har_sizing.js';
+import * as e97 from './e97_har_15m.js';
+import * as e98 from './e98_ridge_learner.js';
+import * as e99 from './e99_mlp_learner.js';
+import * as e100 from './e100_learner_gate.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -281,6 +289,22 @@ export async function run() {
     summary['e91_vol_4h'].pass = e91v.failed === 0;
     const e92v = await step('e92_vol_ladder', () => e92.run({}));
     summary['e92_vol_ladder'].pass = e92v.failed === 0;
+    const e93v = await step('e93_range_estimators', () => e93.run({}));
+    summary['e93_range_estimators'].pass = e93v.failed === 0;
+    const e94v = await step('e94_har_challenger', () => e94.run({}));
+    summary['e94_har_challenger'].pass = e94v.failed === 0;
+    const e95v = await step('e95_base_rate_learner', () => e95.run({}));
+    summary['e95_base_rate_learner'].pass = e95v.failed === 0;
+    const e96v = await step('e96_har_sizing', () => e96.run({}));
+    summary['e96_har_sizing'].pass = e96v.failed === 0;
+    const e97v = await step('e97_har_15m', () => e97.run({}));
+    summary['e97_har_15m'].pass = e97v.failed === 0;
+    const e98v = await step('e98_ridge_learner', () => e98.run({}));
+    summary['e98_ridge_learner'].pass = e98v.failed === 0;
+    const e99v = await step('e99_mlp_learner', () => e99.run({}));
+    summary['e99_mlp_learner'].pass = e99v.failed === 0;
+    const e100v = await step('e100_learner_gate', () => e100.run({}));
+    summary['e100_learner_gate'].pass = e100v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

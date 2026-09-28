@@ -199,6 +199,16 @@ taxonomy. **Falsifier:** if a demeaned arm's full-history Sharpe is not at least
 construction is destroying information (F-07 says exactly that for momentum — so port the *tool*, not the
 arm).
 
+**Status (round 45): PORTED as a tool, F-87.** `panelMean` (masked mean, L10-r, 2-live floor) +
+`demeanedFn` (any returns-feature net of its panel, sibling streams through returns-only views, causal) +
+`xsMomentum` (the F-03 object, following the `crossSectionalReversal` precedent) in `analysis/features.js`;
+no roster change (K untouched). `e76_demean_tool.js` drives the repo functions on the real 1h panel: raw
+4.92/1.47/+0.122 (F-03 baseline reproduced), demeaned 0.56/14.63/−0.093 (dependence collapses into the
+0.39–0.60 band, no edge manufactured — the falsifier direction holds: power, not edge). Pinned by eight
+`analysis` §AN checks; the three exports joined the exhaustive registry list in the same change. Driver
+wiring (a flag scoring demeaned arms in the A/B) lands with the first edge-carrying user, not
+preemptively — the report half (`designEffect`/`effectiveStreams` in `poolReports`) already exists via R25-1.
+
 ### R6 — Re-aim the learner: meta-labelling over a rule. *(from J6, E-D)*
 
 **What.** Change the controller's target from `P(next bar up)` to `P(a given rule's trade is profitable)`,

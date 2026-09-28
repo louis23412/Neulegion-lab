@@ -1,0 +1,55 @@
+{
+  "config": {
+    "tf": "1h",
+    "symbols": 8,
+    "bars": 53500
+  },
+  "repo": {
+    "raw": {
+      "de": 4.92,
+      "eff": 1.47,
+      "sharpe": 0.122
+    },
+    "xs": {
+      "de": 0.56,
+      "eff": 14.63,
+      "sharpe": -0.093
+    }
+  },
+  "stored": {
+    "rawDE": 4.92,
+    "rawEff": 1.47,
+    "rawSharpe": 0.11,
+    "xsDE": [
+      0.39,
+      0.6
+    ],
+    "xsEffMin": 10
+  },
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e76: the 1h panel builds with 8 cross-sectioned streams",
+      "pass": true,
+      "detail": "streams=8 bars=53500"
+    },
+    {
+      "name": "e76: the raw book reproduces the F-03 baseline",
+      "pass": true,
+      "detail": "DE=4.92 eff=1.47 sharpe=0.122"
+    },
+    {
+      "name": "e76: the repo-demeaned book collapses dependence into the F-03 band",
+      "pass": true,
+      "detail": "DE=0.56 eff=14.63"
+    },
+    {
+      "name": "e76: the demeaned Sharpe manufactures no edge",
+      "pass": true,
+      "detail": "sharpe=-0.093"
+    }
+  ],
+  "pass": true
+}

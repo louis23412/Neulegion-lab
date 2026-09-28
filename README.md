@@ -64,7 +64,7 @@ data/                durable samples of fetched/derived data that must survive s
   tool but CYCLE-024/025 restated the bound as a *schedule* — F-41/F-42; the toptrader ratio spun out to
   L18; the liquidation half is **data-blocked**, not testable) — and the standing audit L10. See
   `leads/INDEX.md`.
-* **86 findings** in `FINDINGS.md` (F-01…F-86), all reproducible via `RUNNER.md`.
+* **87 findings** in `FINDINGS.md` (F-01…F-87), all reproducible via `RUNNER.md`.
 * **The 2026-09-26/27 local run corpus was cross-checked (CYCLE-065; read-only, no experiment).** The operator's seven `npm run analyze` runs (`src/runs/`) reproduce the project's K=3/K=6 momentum verdicts, confirm F-01/F-03/F-32/F-69/F-71/F-74/F-77 in production, and expose one new gate coupling (the funding sleeve enters the paired promotion test — proposed `L10-cs`). See `RUN-CROSSCHECK.md`.
 * **Nothing has been folded back into the repo.** `FOLD-BACK.md` holds the port queue: R1–R3 are
   measurement fixes that need no promotion; R4–R8 are sleeves/features gated on the repo's own gate.

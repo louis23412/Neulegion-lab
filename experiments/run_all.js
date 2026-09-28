@@ -80,6 +80,7 @@ import * as e72 from './e72_hivemind_kernels_audit.js';
 import * as e73 from './e73_port_verify.js';
 import * as e74 from './e74_composer_verify.js';
 import * as e75 from './e75_sleeve_report.js';
+import * as e76 from './e76_demean_tool.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -230,6 +231,8 @@ export async function run() {
     summary['e74_composer_verify'].pass = e74v.pass;
     const e75v = await step('e75_sleeve_report', () => e75.run({}));
     summary['e75_sleeve_report'].pass = e75v.pass;
+    const e76v = await step('e76_demean_tool', () => e76.run({}));
+    summary['e76_demean_tool'].pass = e76v.pass;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

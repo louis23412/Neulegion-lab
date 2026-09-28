@@ -1,0 +1,92 @@
+{
+  "config": {
+    "symbols": 8,
+    "buckets": 6606,
+    "bookBars": 6605
+  },
+  "repo": {
+    "net4": 6.25,
+    "turnoverAnnual": 10.01,
+    "breakEvenBps": 43.83,
+    "grossSharpe": 6.88
+  },
+  "stored": {
+    "net4": 6.18,
+    "turnoverAnnual": 10,
+    "breakEvenBps": 46.04,
+    "periods": 6557
+  },
+  "g5": {
+    "verdict": false,
+    "levelAnn": 6.25,
+    "blocksNote": "6/6 positive blocks",
+    "neutralAnn": 6.29,
+    "rawAnn": 6.25,
+    "stress": {
+      "first": 7.01,
+      "second": 6.47
+    },
+    "worstBlockAnn": 3.91
+  },
+  "total": 11,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e74: all 8 funding panels and candle panels loaded",
+      "pass": true,
+      "detail": "btcusdt:7714/79554 ethusdt:7480/79554 solusdt:6681/53500 bnbusdt:7255/77617 xrpusdt:7360/73350 adausdt:7320/73762 dogeusdt:6802/63142 linkusdt:7327/67208"
+    },
+    {
+      "name": "e74: the built view covers the lab grid with a clean basis",
+      "pass": true,
+      "detail": "buckets=6606 nullBasis=338/52848"
+    },
+    {
+      "name": "e74: every view row is finite funding beside a nullable basis",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e74: the real book scores available",
+      "pass": true,
+      "detail": "n=6605"
+    },
+    {
+      "name": "e74: repo net@4 reproduces the stored R8 book",
+      "pass": true,
+      "detail": "repo=6.25 stored=6.18"
+    },
+    {
+      "name": "e74: repo turnover reproduces the stored R8 book",
+      "pass": true,
+      "detail": "repo=10.01 stored=10"
+    },
+    {
+      "name": "e74: repo break-even reproduces the stored R8 book",
+      "pass": true,
+      "detail": "repo=43.83 stored=46.04"
+    },
+    {
+      "name": "e74: G5 level == the recomputed annualized Sharpe",
+      "pass": true,
+      "detail": "level=6.25"
+    },
+    {
+      "name": "e74: G5 blocks == the hand-counted positive fraction",
+      "pass": true,
+      "detail": "6/6 positive blocks"
+    },
+    {
+      "name": "e74: G5 neutral == the recomputed factor-neutral Sharpe",
+      "pass": true,
+      "detail": "neutral=0.19 raw=0.19"
+    },
+    {
+      "name": "e74: G5 verdict is false on unscored dsr + unattested decay/unseen (the operator run owns them)",
+      "pass": true,
+      "detail": "reasons=dsr,decay,unseen"
+    }
+  ],
+  "pass": true
+}

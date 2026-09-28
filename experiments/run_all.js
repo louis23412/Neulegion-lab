@@ -78,6 +78,8 @@ import * as e70 from './e70_dependence_audit.js';
 import * as e71 from './e71_decision_audit.js';
 import * as e72 from './e72_hivemind_kernels_audit.js';
 import * as e73 from './e73_port_verify.js';
+import * as e74 from './e74_composer_verify.js';
+import * as e75 from './e75_sleeve_report.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -224,6 +226,10 @@ export async function run() {
     summary['e72_hivemind_kernels_audit'].pass = e72v.verdict && e72v.verdict.validationPass;
     const e73v = await step('e73_port_verify', () => e73.run({}));
     summary['e73_port_verify'].pass = e73v.verdict && e73v.verdict.validationPass;
+    const e74v = await step('e74_composer_verify', () => e74.run({}));
+    summary['e74_composer_verify'].pass = e74v.pass;
+    const e75v = await step('e75_sleeve_report', () => e75.run({}));
+    summary['e75_sleeve_report'].pass = e75v.pass;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

@@ -1,0 +1,49 @@
+{
+  "config": {
+    "symbols": 8
+  },
+  "repo": {
+    "buckets": 6606,
+    "net4": 11.26,
+    "turnoverAnnual": 10.01,
+    "breakEvenBps": 42.88,
+    "markedFraction": 0.439,
+    "nullBasisFraction": 0.5215
+  },
+  "total": 6,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e75: all 8 funding + candle texts loaded",
+      "pass": true,
+      "detail": "funding 8, candles 8/8"
+    },
+    {
+      "name": "e75: the sleeve-mode report is available on shipped texts",
+      "pass": true,
+      "detail": "buckets=6606"
+    },
+    {
+      "name": "e75: the grid matches e74 with the mark confinement documented",
+      "pass": true,
+      "detail": "buckets=6606 marked=43.9% nullBasis=52.15%"
+    },
+    {
+      "name": "e75: the text-parsed view equals the programmatic view bit-for-bit",
+      "pass": true,
+      "detail": "buckets text=6606 prog=6606"
+    },
+    {
+      "name": "e75: the report economics equal the direct chain economics exactly",
+      "pass": true,
+      "detail": "report 11.26/10.01 vs direct 11.26/10.01"
+    },
+    {
+      "name": "e75: the formatter names the sleeve and the G5 verdict line",
+      "pass": true,
+      "detail": "[sleeve] carry-dispersion @4bps over 6606 buckets x 8 streams"
+    }
+  ],
+  "pass": true
+}

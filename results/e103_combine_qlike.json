@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e103: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e103: the tournament is available on every stream",
+      "pass": true,
+      "detail": "candles:ok ethusdt_1h:ok solusdt_1h:ok bnbusdt_1h:ok xrpusdt_1h:ok adausdt_1h:ok dogeusdt_1h:ok linkusdt_1h:ok"
+    },
+    {
+      "name": "e103: the QLIKE block is decided on all 5 splits of every stream",
+      "pass": true,
+      "detail": "candles=5/5 ethusdt_1h=5/5 solusdt_1h=5/5 bnbusdt_1h=5/5 xrpusdt_1h=5/5 adausdt_1h=5/5 dogeusdt_1h=5/5 linkusdt_1h=5/5"
+    },
+    {
+      "name": "e103: every stream names a per-split QLIKE winner",
+      "pass": true,
+      "detail": "candles={lasso3,har1,ols1} ethusdt_1h={ols3,har2} solusdt_1h={ols5} bnbusdt_1h={lasso4,ols1} xrpusdt_1h={lasso5} adausdt_1h={ols2,har3} dogeusdt_1h={ols3,har2} linkusdt_1h={ols3,har2}"
+    },
+    {
+      "name": "e103: the mean best-combine QLIKE margin over HAR is recorded on every stream (any sign)",
+      "pass": true,
+      "detail": "margins=0.0002,0.0000,0.0001,0.0001,0.0001,0.0000,0.0000,0.0001"
+    }
+  ]
+}

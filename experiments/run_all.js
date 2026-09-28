@@ -105,6 +105,9 @@ import * as e97 from './e97_har_15m.js';
 import * as e98 from './e98_ridge_learner.js';
 import * as e99 from './e99_mlp_learner.js';
 import * as e100 from './e100_learner_gate.js';
+import * as e101 from './e101_combine_challenger.js';
+import * as e102 from './e102_combine_sizing.js';
+import * as e103 from './e103_combine_qlike.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -305,6 +308,12 @@ export async function run() {
     summary['e99_mlp_learner'].pass = e99v.failed === 0;
     const e100v = await step('e100_learner_gate', () => e100.run({}));
     summary['e100_learner_gate'].pass = e100v.failed === 0;
+    const e101v = await step('e101_combine_challenger', () => e101.run({}));
+    summary['e101_combine_challenger'].pass = e101v.failed === 0;
+    const e102v = await step('e102_combine_sizing', () => e102.run({}));
+    summary['e102_combine_sizing'].pass = e102v.failed === 0;
+    const e103v = await step('e103_combine_qlike', () => e103.run({}));
+    summary['e103_combine_qlike'].pass = e103v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

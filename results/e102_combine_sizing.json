@@ -1,0 +1,42 @@
+{
+  "total": 7,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e102: the honest carry book loads",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e102: the refit span covers 5000+ bars",
+      "pass": true,
+      "detail": "n=6056"
+    },
+    {
+      "name": "e102: OLS combination weights fit on the first span only",
+      "pass": true,
+      "detail": "w=[-0.045,0.806,0.235] rows=908"
+    },
+    {
+      "name": "e102: the repo scaler scores every arm on the second span",
+      "pass": true,
+      "detail": "trail=5148 ar=5148 har=5148 combine=5148"
+    },
+    {
+      "name": "e102: the scoring span is non-calm (unsized DD above 2%)",
+      "pass": true,
+      "detail": "unsized=7.915% scored=5148"
+    },
+    {
+      "name": "e102: all four sizings cut the unsized drawdown",
+      "pass": true,
+      "detail": "unsized=7.915% trail=2.672% ar=2.542% har=2.450% combine=2.671%"
+    },
+    {
+      "name": "e102: HAR and combination sizing are no worse than trailing sizing",
+      "pass": true,
+      "detail": "har=2.450% combine=2.671% vs trail=2.672% vs ar=2.542% | sharpe u=1.67 trail=6.01 ar=6.05 har=6.15 combine=6.06 | w=[-0.045,0.806,0.235]"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e101: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e101: the seven-way tournament is available on every stream",
+      "pass": true,
+      "detail": "candles:ok ethusdt_1h:ok solusdt_1h:ok bnbusdt_1h:ok xrpusdt_1h:ok adausdt_1h:ok dogeusdt_1h:ok linkusdt_1h:ok"
+    },
+    {
+      "name": "e101: every stream names a per-split winner for all 5 splits",
+      "pass": true,
+      "detail": "candles={ols5} ethusdt_1h={ols5} solusdt_1h={ols5} bnbusdt_1h={ols5} xrpusdt_1h={ols3,har2} adausdt_1h={ols5} dogeusdt_1h={ols5} linkusdt_1h={ols5}"
+    },
+    {
+      "name": "e101: the mean best-combine margin over HAR is recorded on every stream (any sign)",
+      "pass": true,
+      "detail": "margins=0.0001,0.0002,0.0001,0.0001,0.0000,0.0001,0.0001,0.0001"
+    },
+    {
+      "name": "e101: the panel rollup is available with combine and HAR majorities counted",
+      "pass": true,
+      "detail": "combine=8/8 har=0/8"
+    }
+  ]
+}

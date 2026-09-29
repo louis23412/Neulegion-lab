@@ -1,0 +1,45 @@
+{
+  "at": "2026-09-29T01:07:36.711Z",
+  "total": 5,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "e107: the honest carry book loads over the full span",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e107: the repo adaptive targets are causal on the real series (prefix identity)",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e107: the adaptive span covers 5000+ bars",
+      "pass": true,
+      "detail": "n=6058"
+    },
+    {
+      "name": "e107: the repo adaptive path restores the drawdown cut (F-115 through the CLI mode)",
+      "pass": true,
+      "detail": "unsized=7.96% adaptive=3.05% sharpe 3.58->7.55 meanScale=2.301"
+    },
+    {
+      "name": "e107: the cut is not an accumulation-window artefact (kept-bars mean agrees)",
+      "pass": true,
+      "detail": "kept-mean DD=2.70% vs repo DD=3.05%"
+    }
+  ],
+  "unsized": {
+    "sharpe": 3.58047783666472,
+    "maxDrawdown": 0.07955768174080641
+  },
+  "adaptive": {
+    "sharpe": 7.550005693799522,
+    "maxDrawdown": 0.030526946584381896,
+    "meanScale": 2.3007835877407867
+  },
+  "keptMean": {
+    "sharpe": 7.633212695870398,
+    "maxDrawdown": 0.026968249006049917
+  }
+}

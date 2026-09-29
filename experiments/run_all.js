@@ -110,6 +110,8 @@ import * as e102 from './e102_combine_sizing.js';
 import * as e103 from './e103_combine_qlike.js';
 import * as e104 from './e104_rolling_challenger.js';
 import * as e105 from './e105_voltarget_verify.js';
+import * as e106 from './e106_sized_sleeve.js';
+import * as e107 from './e107_adaptive_sizing.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -320,6 +322,10 @@ export async function run() {
     summary['e104_rolling_challenger'].pass = e104v.failed === 0;
     const e105v = await step('e105_voltarget_verify', () => e105.run({}));
     summary['e105_voltarget_verify'].pass = e105v.failed === 0;
+    const e106v = await step('e106_sized_sleeve', () => e106.run({}));
+    summary['e106_sized_sleeve'].pass = e106v.failed === 0;
+    const e107v = await step('e107_adaptive_sizing', () => e107.run({}));
+    summary['e107_adaptive_sizing'].pass = e107v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e105: vol-target validates as a risk plugin",
+      "pass": true,
+      "detail": "contract ok"
+    },
+    {
+      "name": "e105: the honest carry book loads",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e105: the sizing span covers 5000+ bars",
+      "pass": true,
+      "detail": "n=6058"
+    },
+    {
+      "name": "e105: the plugin sizing is bit-identical to the analysis scaler on the book",
+      "pass": true,
+      "detail": "scored=6058 skipped=0 cap=4"
+    },
+    {
+      "name": "e105: the plugin-sized book cuts the unsized drawdown (F-106 through the plugin)",
+      "pass": true,
+      "detail": "unsized=7.956% sized=2.697% sharpe 3.58->7.63"
+    }
+  ]
+}

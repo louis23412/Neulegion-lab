@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e104: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e104: the rolling tournament is available on every stream",
+      "pass": true,
+      "detail": "candles:ok ethusdt_1h:ok solusdt_1h:ok bnbusdt_1h:ok xrpusdt_1h:ok adausdt_1h:ok dogeusdt_1h:ok linkusdt_1h:ok"
+    },
+    {
+      "name": "e104: every stream names a per-split winner for all 5 splits",
+      "pass": true,
+      "detail": "candles={frozen5} ethusdt_1h={frozen5} solusdt_1h={frozen5} bnbusdt_1h={frozen5} xrpusdt_1h={frozen3,har2} adausdt_1h={frozen5} dogeusdt_1h={frozen5} linkusdt_1h={frozen5}"
+    },
+    {
+      "name": "e104: the mean best-rolling margin over frozen is recorded on every stream (any sign)",
+      "pass": true,
+      "detail": "margins=-0.0002,-0.0003,-0.0001,-0.0001,-0.0002,-0.0008,-0.0002,-0.0001"
+    },
+    {
+      "name": "e104: the panel rollup is available with rolling and frozen majorities counted",
+      "pass": true,
+      "detail": "rolling=0/8 frozen=8/8"
+    }
+  ]
+}

@@ -117,6 +117,7 @@ import * as e109 from './e109_yearly_crosscheck.js';
 import * as e110 from './e110_honest_marks.js';
 import * as e111 from './e111_momentum_dispersion.js';
 import * as e112 from './e112_oi_sleeve_score.js';
+import * as e113 from './e113_positioning_followup.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -339,6 +340,10 @@ export async function run() {
     summary['e110_honest_marks'].pass = e110v.failed === 0;
     const e111v = await step('e111_momentum_dispersion', () => e111.run({}));
     summary['e111_momentum_dispersion'].pass = e111v.failed === 0;
+    const e112v = await step('e112_oi_sleeve_score', () => e112.run({}));
+    summary['e112_oi_sleeve_score'].pass = e112v.failed === 0;
+    const e113v = await step('e113_positioning_followup', () => e113.run({}));
+    summary['e113_positioning_followup'].pass = e113v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

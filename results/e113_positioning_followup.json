@@ -1,0 +1,130 @@
+{
+  "config": {
+    "ladder": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16
+    ]
+  },
+  "repo": {
+    "ladder": {
+      "oi": {
+        "0": 1.032,
+        "1": 0.941,
+        "2": 0.851,
+        "4": 0.67,
+        "8": 0.308,
+        "16": -0.416
+      },
+      "fade": {
+        "0": 1.078,
+        "1": 1.072,
+        "2": 1.066,
+        "4": 1.054,
+        "8": 1.031,
+        "16": 0.985
+      }
+    },
+    "comp": {
+      "bars": 5274,
+      "corr": 0.0194,
+      "carryAnn": 9.432,
+      "fadeAnn": 1.055,
+      "blendAnn": 1.256,
+      "rpBlendAnn": 7.344,
+      "carryVol": 0.00008806,
+      "fadeVol": 0.004116
+    },
+    "sized": {
+      "adaptive": {
+        "net": 0.657,
+        "turn": 42.53
+      },
+      "drawdown": {
+        "net": 0.022,
+        "turn": 35.43
+      }
+    },
+    "fadeFlat": 1.054,
+    "oiFlat": 0.67
+  },
+  "total": 14,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e113: inputs loaded",
+      "pass": true,
+      "detail": "oi 1531195 chars"
+    },
+    {
+      "name": "e113: ladder scored all six rungs both sleeves",
+      "pass": true,
+      "detail": "oi [1.032,0.941,0.851,0.67,0.308,-0.416] fade [1.078,1.072,1.066,1.054,1.031,0.985]"
+    },
+    {
+      "name": "e113: oi dies between 8 and 16 bps (BE 11.4)",
+      "pass": true,
+      "detail": "net@8=0.308 net@16=-0.416"
+    },
+    {
+      "name": "e113: fade survives the whole ladder (BE 185)",
+      "pass": true,
+      "detail": "net@16=0.985"
+    },
+    {
+      "name": "e113: ladders monotone non-increasing in cost",
+      "pass": true,
+      "detail": "cost drag monotone"
+    },
+    {
+      "name": "e113: both views share the 6606-bucket grid",
+      "pass": true,
+      "detail": "6606/6606"
+    },
+    {
+      "name": "e113: both books scored",
+      "pass": true,
+      "detail": "fade ok / carry ok"
+    },
+    {
+      "name": "e113: earn-time alignment covers the overlap",
+      "pass": true,
+      "detail": "5274 aligned bars"
+    },
+    {
+      "name": "e113: all series finite",
+      "pass": true,
+      "detail": "corr=0.019 naive=1.256 rp=7.344"
+    },
+    {
+      "name": "e113: carry x fade ~uncorrelated (|corr| <= 0.3)",
+      "pass": true,
+      "detail": "corr=0.019"
+    },
+    {
+      "name": "e113: naive 50/50 net blend recorded (vol-mismatch screen)",
+      "pass": true,
+      "detail": "naive=1.256 (carryVol=8.81e-5 fadeVol=4.12e-3)"
+    },
+    {
+      "name": "e113: risk-parity blend recorded (dilution screen)",
+      "pass": true,
+      "detail": "rp=7.344 vs best leg 9.432 (a 9.4/1.1 pair cannot blend up)"
+    },
+    {
+      "name": "e113: fade sizing paths score",
+      "pass": true,
+      "detail": "{\"adaptive\":{\"net\":0.657,\"turn\":42.53},\"drawdown\":{\"net\":0.022,\"turn\":35.43}}"
+    },
+    {
+      "name": "e113: fade sizing recorded vs flat 1.054",
+      "pass": true,
+      "detail": "adaptive net=0.657"
+    }
+  ],
+  "pass": true
+}

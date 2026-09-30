@@ -1,0 +1,103 @@
+{
+  "config": {},
+  "repo": {
+    "oi": {
+      "buckets": 6606,
+      "net4": 0.67,
+      "turn": 197.11,
+      "be": 11.4,
+      "dsr": 0.9305,
+      "slope": 0.0222
+    },
+    "top": {
+      "buckets": 6606,
+      "net4": 1.054,
+      "turn": 7.93,
+      "be": 185.1,
+      "dsr": 0.9664,
+      "slope": 0.0137
+    }
+  },
+  "total": 15,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e112: all 8 funding + candle texts + OI loaded",
+      "pass": true,
+      "detail": "funding 8, candles 8/8, oi 1531195 chars"
+    },
+    {
+      "name": "e112: oi-change available on the 6606x8 grid",
+      "pass": true,
+      "detail": "buckets=6606"
+    },
+    {
+      "name": "e112: toptrader-fade available on the 6606x8 grid",
+      "pass": true,
+      "detail": "buckets=6606"
+    },
+    {
+      "name": "e112: oi net@4 in the F-45 band",
+      "pass": true,
+      "detail": "net=0.670"
+    },
+    {
+      "name": "e112: oi turnover churny",
+      "pass": true,
+      "detail": "turn=197.1/yr"
+    },
+    {
+      "name": "e112: oi break-even clears a fee",
+      "pass": true,
+      "detail": "be=11.40 bps"
+    },
+    {
+      "name": "e112: oi coverage documents the late start",
+      "pass": true,
+      "detail": "oiVal=81.2% topLS=66.8%"
+    },
+    {
+      "name": "e112: oi shows no decay (slope + first-last)",
+      "pass": true,
+      "detail": "slope=0.022 first-last=0.011"
+    },
+    {
+      "name": "e112: oi DSR reported below the floor (weak sleeve)",
+      "pass": true,
+      "detail": "dsr=0.9305"
+    },
+    {
+      "name": "e112: fade net@4 near F-51",
+      "pass": true,
+      "detail": "net=1.054"
+    },
+    {
+      "name": "e112: fade turnover low",
+      "pass": true,
+      "detail": "turn=7.93/yr"
+    },
+    {
+      "name": "e112: fade break-even huge",
+      "pass": true,
+      "detail": "be=185.1 bps"
+    },
+    {
+      "name": "e112: fade DSR passes",
+      "pass": true,
+      "detail": "dsr=0.9664"
+    },
+    {
+      "name": "e112: fade shows no decay",
+      "pass": true,
+      "detail": "slope=0.014"
+    },
+    {
+      "name": "e112: formatters name the sleeves + G5 line",
+      "pass": true,
+      "detail": "[sleeve] oi-change @4bps over 6606 buckets x 8 streams / [sleeve] toptrader-fade @4bps over 6606 buckets x 8 streams"
+    }
+  ],
+  "pass": true,
+  "ms": 1713
+}

@@ -1,0 +1,260 @@
+{
+  "config": {
+    "span": 5000,
+    "trainCap": 800,
+    "test": 500,
+    "splits": [
+      0.5,
+      0.6,
+      0.7
+    ]
+  },
+  "repo": {
+    "meanSkill": -0.0069,
+    "positiveCells": 6,
+    "cells": [
+      {
+        "sym": "candles",
+        "split": 0.5,
+        "baseRate": 0.5425,
+        "brierBase": 0.25147,
+        "brierHm": 0.25255,
+        "skill": -0.0043,
+        "ok": true
+      },
+      {
+        "sym": "candles",
+        "split": 0.6,
+        "baseRate": 0.51,
+        "brierBase": 0.24862,
+        "brierHm": 0.25248,
+        "skill": -0.0155,
+        "ok": true
+      },
+      {
+        "sym": "candles",
+        "split": 0.7,
+        "baseRate": 0.55,
+        "brierBase": 0.2509,
+        "brierHm": 0.25975,
+        "skill": -0.0353,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.5337,
+        "brierBase": 0.25181,
+        "brierHm": 0.25579,
+        "skill": -0.0158,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5088,
+        "brierBase": 0.24927,
+        "brierHm": 0.24532,
+        "skill": 0.0159,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.52,
+        "brierBase": 0.24936,
+        "brierHm": 0.249,
+        "skill": 0.0015,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.515,
+        "brierBase": 0.25047,
+        "brierHm": 0.25122,
+        "skill": -0.003,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5,
+        "brierBase": 0.25,
+        "brierHm": 0.24952,
+        "skill": 0.0019,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.5112,
+        "brierBase": 0.25008,
+        "brierHm": 0.25188,
+        "skill": -0.0072,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.5162,
+        "brierBase": 0.25033,
+        "brierHm": 0.25357,
+        "skill": -0.013,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5075,
+        "brierBase": 0.2497,
+        "brierHm": 0.25297,
+        "skill": -0.0131,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.5125,
+        "brierBase": 0.24931,
+        "brierHm": 0.2499,
+        "skill": -0.0024,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.5262,
+        "brierBase": 0.25184,
+        "brierHm": 0.25563,
+        "skill": -0.015,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5038,
+        "brierBase": 0.25016,
+        "brierHm": 0.25168,
+        "skill": -0.0061,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.47,
+        "brierBase": 0.25162,
+        "brierHm": 0.24945,
+        "skill": 0.0086,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.5,
+        "baseRate": 0.51,
+        "brierBase": 0.25002,
+        "brierHm": 0.25094,
+        "skill": -0.0037,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5125,
+        "brierBase": 0.24991,
+        "brierHm": 0.25265,
+        "skill": -0.011,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.7,
+        "baseRate": 0.5025,
+        "brierBase": 0.24986,
+        "brierHm": 0.25684,
+        "skill": -0.0279,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.505,
+        "brierBase": 0.24985,
+        "brierHm": 0.24913,
+        "skill": 0.0029,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5138,
+        "brierBase": 0.24909,
+        "brierHm": 0.24997,
+        "skill": -0.0035,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.5288,
+        "brierBase": 0.25094,
+        "brierHm": 0.25366,
+        "skill": -0.0108,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.5,
+        "baseRate": 0.5138,
+        "brierBase": 0.25041,
+        "brierHm": 0.25078,
+        "skill": -0.0015,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.6,
+        "baseRate": 0.5012,
+        "brierBase": 0.25,
+        "brierHm": 0.24981,
+        "skill": 0.0008,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.7,
+        "baseRate": 0.4913,
+        "brierBase": 0.25025,
+        "brierHm": 0.25207,
+        "skill": -0.0073,
+        "ok": true
+      }
+    ]
+  },
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e114: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e114: every cell scores a finite Brier for both arms",
+      "pass": true,
+      "detail": "24/24 cells finite"
+    },
+    {
+      "name": "e114: mean skill recorded (any sign)",
+      "pass": true,
+      "detail": "meanSkill hivemind=-0.0069"
+    },
+    {
+      "name": "e114: positive-cell fraction recorded",
+      "pass": true,
+      "detail": "positive 6/24 cells"
+    }
+  ],
+  "pass": true
+}

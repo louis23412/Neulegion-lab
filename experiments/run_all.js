@@ -118,6 +118,11 @@ import * as e110 from './e110_honest_marks.js';
 import * as e111 from './e111_momentum_dispersion.js';
 import * as e112 from './e112_oi_sleeve_score.js';
 import * as e113 from './e113_positioning_followup.js';
+import * as e114 from './e114_hivemind_skill.js';
+import * as e115 from './e115_hivemind_bigmove.js';
+import * as e116 from './e116_bucket_bigmove.js';
+import * as e117 from './e117_har_residual.js';
+import * as e118 from './e118_network_audit.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -344,6 +349,16 @@ export async function run() {
     summary['e112_oi_sleeve_score'].pass = e112v.failed === 0;
     const e113v = await step('e113_positioning_followup', () => e113.run({}));
     summary['e113_positioning_followup'].pass = e113v.failed === 0;
+    const e114v = await step('e114_hivemind_skill', () => e114.run({}));
+    summary['e114_hivemind_skill'].pass = e114v.failed === 0;
+    const e115v = await step('e115_hivemind_bigmove', () => e115.run({}));
+    summary['e115_hivemind_bigmove'].pass = e115v.failed === 0;
+    const e116v = await step('e116_bucket_bigmove', () => e116.run({}));
+    summary['e116_bucket_bigmove'].pass = e116v.failed === 0;
+    const e117v = await step('e117_har_residual', () => e117.run({}));
+    summary['e117_har_residual'].pass = e117v.failed === 0;
+    const e118v = await step('e118_network_audit', () => e118.run({}));
+    summary['e118_network_audit'].pass = e118v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

@@ -19,10 +19,12 @@
 // bar moves), and attaches the panel with this stream's own series replaced by `own`; (iv) `worldFromCandles`
 // aligns candles/closes/volumes/returns and honours `maxBars` with the last-N contract.
 //
-// The DEFECTS are reported in `findings`: `panelFor` replaces the panel's own-stream slot only when
-// `panel.streamIndex` matches an actual index, so with `streamIndex` absent or out of range the probe view hands
-// a cross-sectional candidate its UNPERTURBED own series (a vacuous audit); and `worldFromCandles`'s `maxBars`
-// guard treats 0 as "all bars" and a negative value as "drop the first |maxBars| bars" (a silent sign flip).
+// The DEFECTS are reported in `findings`: with `streamIndex` absent or out of
+// range the probe panel is NULL (fail-closed — a cross-sectional candidate
+// abstains and the audit flags VACUOUS rather than passing green); and with a
+// valid index the probe shocks sibling slots additively after `after` (round-86
+// sibling shock), so cross-sectional arms are reachable. `worldFromCandles`'s
+// `maxBars` guard is fail-closed (0 -> empty, negative/fractional -> throws).
 
 import {
     DEFAULT_SHOCK, shockFactor, volumeShockFactor, shockCandles, makeCandleViewFor, worldFromCandles,
@@ -160,17 +162,17 @@ export async function run() {
     checks.worldFromCandlesMaxBarsEdge = (() => {
         const candles = mkCandles(30);
         const zero = worldFromCandles(candles, { maxBars: 0 });
-        const neg = worldFromCandles(candles, { maxBars: -5 });
-        const frac = worldFromCandles(candles, { maxBars: 7.5 });
+        let negThrows = false, fracThrows = false;
+        try { worldFromCandles(candles, { maxBars: -5 }); } catch { negThrows = true; }
+        try { worldFromCandles(candles, { maxBars: 7.5 }); } catch { fracThrows = true; }
         rows.worldFromEdge = {
             maxBars0Bars: zero.candles.length,
-            maxBarsNeg5Bars: neg.candles.length,
-            maxBarsNeg5FirstTimestamp: neg.candles[0] && neg.candles[0].timestamp,
-            maxBarsFracBars: frac.candles.length,
-            note: 'the guard is `maxBars && candles.length > maxBars ? candles.slice(-maxBars) : candles.slice()`. maxBars 0 is FALSY so it returns ALL 30 bars (not none); maxBars -5 is truthy so it takes `slice(-(-5)) = slice(5)`, i.e. it DROPS the first 5 bars and keeps 25 — the opposite end from the last-N contract; and a fractional maxBars silently truncates via slice coercion (7.5 -> last 7). A maxBars <= 0 is reachable from the CLI (`--bars`, analyze.js `num(\'bars\', 300)`), so a mis-set flag produces a plausible-looking shorter series rather than an error.',
+            maxBarsNeg5Throws: negThrows,
+            maxBarsFracThrows: fracThrows,
+            note: 'round-86 restatement (repo R35 L10-cd fail-closed guard): maxBars 0 yields an EMPTY world, and a negative or fractional maxBars THROWS. A mis-set --bars now fails loudly instead of producing a plausible-looking shorter series.',
         };
         // pin the module's actual behaviour
-        return zero.candles.length === 30 && neg.candles.length === 25 && neg.candles[0].timestamp === candles[5].timestamp && frac.candles.length === 7;
+        return zero.candles.length === 0 && zero.returns.length === 0 && negThrows && fracThrows;
     })();
 
     // ============================== E. panel attachment ================================================
@@ -187,9 +189,13 @@ export async function run() {
         const basePanelOk = base.panel.streamIndex === 1 && base.panel.label === 'B'
             && base.panel.returnsByStream[0] === rA && base.panel.returnsByStream[2] === rC
             && deepEq(base.panel.returnsByStream[1], base.returns);
-        const probePanelOk = pr.panel.returnsByStream[0] === rA && pr.panel.returnsByStream[2] === rC
-            && pr.panel.returnsByStream[1] === pr.returns && !deepEq(pr.panel.returnsByStream[1], base.returns);
-        rows.panel = { basePanelOk, probePanelOk, probeOwnIsShocked: !deepEq(pr.panel.returnsByStream[1], base.returns) };
+        const probePanelOk = pr.panel.returnsByStream[1] === pr.returns && !deepEq(pr.panel.returnsByStream[1], base.returns)
+            && pr.panel.returnsByStream[0] !== rA && pr.panel.returnsByStream[2] !== rC
+            && pr.panel.returnsByStream[0].every((v, t) => v === (t > after ? rA[t] + probe : rA[t]))
+            && pr.panel.returnsByStream[2].every((v, t) => v === (t > after ? rC[t] + probe : rC[t]));
+        rows.panel = { basePanelOk, probePanelOk, probeOwnIsShocked: !deepEq(pr.panel.returnsByStream[1], base.returns),
+            probeSibsShockedPostAfterOnly: probePanelOk,
+            note: 'round-86 sibling shock: on a probe pass non-own slots are additive-shocked after `after` (the audit law), so a cross-sectional arm is reachable; the past is bit-unchanged.' };
         return basePanelOk && probePanelOk;
     })();
 
@@ -204,16 +210,17 @@ export async function run() {
         const oob = { streamIndex: 7, label: 'B', labels: ['A', 'B', 'C'], returnsByStream: [rA, rB, rC] };
         const prNo = makeCandleViewFor(candles, { panel: noIdx })(null, { after, probe });
         const prOob = makeCandleViewFor(candles, { panel: oob })(null, { after, probe });
-        const noIdxAllOriginal = prNo.panel.returnsByStream.every((rs, i) => rs === [rA, rB, rC][i]);
-        const oobAllOriginal = prOob.panel.returnsByStream.every((rs, i) => rs === [rA, rB, rC][i]);
+        const noIdxNull = prNo.panel === null;
+        const oobNull = prOob.panel === null;
         const ownShocked = !deepEq(prNo.returns, barReturns(candles.map((c) => c.close)));
         rows.panelSkip = {
-            noStreamIndex: { allOriginal: noIdxAllOriginal, ownSlotIsShocked: false, viewReturnsShocked: ownShocked },
-            outOfRangeIndex: { allOriginal: oobAllOriginal },
+            noStreamIndex: { panelNull: noIdxNull, viewReturnsShocked: ownShocked },
+            outOfRangeIndex: { panelNull: oobNull },
+            note: 'round-86 restatement: without a matching streamIndex the probe panel is NULL (fail-closed), so a cross-sectional candidate abstains and the audit flags VACUOUS instead of passing green — the old unshocked-panel trap is closed one level up. With a valid index, siblings are shocked (panelAttachment) and the arm is reachable (lab F-130).',
             note: 'panelFor replaces the own slot with `own` only when an index equals `panel.streamIndex`: `returnsByStream.map((rs, i) => i === panel.streamIndex ? own : rs)`. With `streamIndex` ABSENT the comparison is never true, so on a probe pass EVERY array in the panel is the UNPERTURBED original — a cross-sectional candidate (`sig-reversal-xs`, `sig-network-momentum`) reads its own stream unshocked, so the look-ahead audit is VACUOUS for it even though `view.returns` is shocked. Same root cause as L10-bu (features.js networkMomentum self-skip) in a different module, with the opposite consequence: there a wrong feature value, here a green audit that cannot fail. LATENT (analyze.js always sets streamIndex) but it is the exact vacuity trap world.js was built to close.',
         };
         // pin the module's actual behaviour
-        return noIdxAllOriginal && oobAllOriginal && ownShocked;
+        return noIdxNull && oobNull && ownShocked;
     })();
 
     const findingPanelSkip = rows.panelSkip;
@@ -225,7 +232,7 @@ export async function run() {
     const failed = Object.entries(resolved).filter(([, v]) => v !== true).map(([k]) => k);
 
     const verdict = {
-        note: 'L10-cc..: `analysis/world.js` is the SHIPPED audited evaluation world (round 23, N0) — the module that gives `auditNoLookahead` teeth after a returns-only perturbation was found to pass vacuously (BUGS.md #22); `analyze.js` and `fold_worker.js` build their views through `makeCandleViewFor`. PASSES the pre-registered read: `shockFactor`/`volumeShockFactor` are exactly 1 at and before `after` and strictly inside [1, 1+2*probe] after (so a price path stays positive and cannot explode), are deterministic, non-uniform across t (a scale-invariant model cannot normalise the shock away — measured ratio spread > 1e-6) and phase-shifted from each other; `shockCandles` is the identity for perturb=null, leaves every bar at or before `after` UNTOUCHED (same object), scales OHLC by one factor and volume by its own for bars after it, never mutates its input, is deterministic and shape-changing; `makeCandleViewFor` returns the real candles on the base pass (candles identity, closes/volumes/returns = the real series) and on a probe pass a self-consistent tuple (`view.returns === barReturns(view.closes)` exactly), with the past bit-unchanged and every future bar moved, and attaches a panel with this stream\'s own series replaced by `own`; and `worldFromCandles` aligns candles/closes/volumes/returns and honours the last-N maxBars contract. FINDINGS: (0) `panelFor` replaces the panel\'s own-stream slot only when `panel.streamIndex` matches an actual index, so with `streamIndex` absent (or out of range) a probe view hands a cross-sectional candidate its UNPERTURBED own series while `view.returns` is shocked — the look-ahead audit is VACUOUS for it; the same root cause as L10-bu in a different module, with the opposite consequence (a green audit that cannot fail, which is precisely the trap world.js exists to close); (1) `worldFromCandles`\'s maxBars guard treats 0 as "all bars" (falsy) and a negative value as "drop the first |maxBars| bars" (`slice(-maxBars)` sign flip), and silently truncates a fractional value — reachable from the CLI `--bars`. Both are latent/export-level (analyze.js always sets streamIndex and a positive bars value); no golden moves.',
+        note: 'L10-cc..: `analysis/world.js` is the SHIPPED audited evaluation world (round 23, N0) — the module that gives `auditNoLookahead` teeth after a returns-only perturbation was found to pass vacuously (BUGS.md #22); `analyze.js` and `fold_worker.js` build their views through `makeCandleViewFor`. PASSES the pre-registered read: `shockFactor`/`volumeShockFactor` are exactly 1 at and before `after` and strictly inside [1, 1+2*probe] after (so a price path stays positive and cannot explode), are deterministic, non-uniform across t (a scale-invariant model cannot normalise the shock away — measured ratio spread > 1e-6) and phase-shifted from each other; `shockCandles` is the identity for perturb=null, leaves every bar at or before `after` UNTOUCHED (same object), scales OHLC by one factor and volume by its own for bars after it, never mutates its input, is deterministic and shape-changing; `makeCandleViewFor` returns the real candles on the base pass (candles identity, closes/volumes/returns = the real series) and on a probe pass a self-consistent tuple (`view.returns === barReturns(view.closes)` exactly), with the past bit-unchanged and every future bar moved, and attaches a panel with this stream\'s own series replaced by `own`; and `worldFromCandles` aligns candles/closes/volumes/returns and honours the last-N maxBars contract. FINDINGS (round-86 restatement): (0) with streamIndex absent or out of range the probe panel is NULL (fail-closed, the arm abstains and the audit flags VACUOUS, never green); with a valid index the probe shocks sibling slots additively after after, so cross-sectional arms are reachable (lab F-130: 288/288, 0 violations); (1) the worldFromCandles maxBars guard is fail-closed (0 gives an empty world; negative/fractional throws), so a mis-set --bars fails loudly. Both are latent/export-level (analyze.js always sets streamIndex and a positive bars value)',
         checks: resolved,
         validationPass,
         failed,

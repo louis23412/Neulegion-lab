@@ -1,0 +1,242 @@
+{
+  "config": {
+    "span": 5000,
+    "trainCap": 800,
+    "test": 500,
+    "splits": [
+      0.5,
+      0.6,
+      0.7
+    ]
+  },
+  "repo": {
+    "meanHm": 0.0246,
+    "meanPersist": -0.6663,
+    "posHm": 19,
+    "cells": [
+      {
+        "sym": "candles",
+        "split": 0.5,
+        "trainRate": 0.5012,
+        "skillHm": 0.008,
+        "skillPersist": -0.9449,
+        "ok": true
+      },
+      {
+        "sym": "candles",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": 0.0153,
+        "skillPersist": -0.8095,
+        "ok": true
+      },
+      {
+        "sym": "candles",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": 0.1112,
+        "skillPersist": -0.3959,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5,
+        "skillHm": 0.0263,
+        "skillPersist": -0.744,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": -0.0091,
+        "skillPersist": -1.0002,
+        "ok": true
+      },
+      {
+        "sym": "ethusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": 0.1078,
+        "skillPersist": -0.2677,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5,
+        "skillHm": -0.0252,
+        "skillPersist": -0.672,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5,
+        "skillHm": 0.0189,
+        "skillPersist": -0.912,
+        "ok": true
+      },
+      {
+        "sym": "solusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.4988,
+        "skillHm": 0.0195,
+        "skillPersist": -0.5897,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5,
+        "skillHm": 0.0074,
+        "skillPersist": -0.936,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5,
+        "skillHm": 0.0426,
+        "skillPersist": -0.784,
+        "ok": true
+      },
+      {
+        "sym": "bnbusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": 0.0127,
+        "skillPersist": -0.6274,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5012,
+        "skillHm": 0.036,
+        "skillPersist": -0.4278,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": 0.0446,
+        "skillPersist": -0.5541,
+        "ok": true
+      },
+      {
+        "sym": "xrpusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": -0.0508,
+        "skillPersist": -0.7347,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5012,
+        "skillHm": -0.0131,
+        "skillPersist": -0.5462,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": 0.0127,
+        "skillPersist": -0.809,
+        "ok": true
+      },
+      {
+        "sym": "adausdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5,
+        "skillHm": 0.0299,
+        "skillPersist": -0.552,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5012,
+        "skillHm": 0.0324,
+        "skillPersist": -0.4984,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": 0.059,
+        "skillPersist": -0.3143,
+        "ok": true
+      },
+      {
+        "sym": "dogeusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": 0.0308,
+        "skillPersist": -0.5146,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.5,
+        "trainRate": 0.5012,
+        "skillHm": -0.0006,
+        "skillPersist": -0.9435,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.6,
+        "trainRate": 0.5012,
+        "skillHm": 0.0108,
+        "skillPersist": -0.8731,
+        "ok": true
+      },
+      {
+        "sym": "linkusdt_1h",
+        "split": 0.7,
+        "trainRate": 0.5012,
+        "skillHm": 0.0639,
+        "skillPersist": -0.5397,
+        "ok": true
+      }
+    ]
+  },
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e115: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e115: every cell finite for all three arms",
+      "pass": true,
+      "detail": "24/24 cells finite"
+    },
+    {
+      "name": "e115: mean skills recorded (any sign)",
+      "pass": true,
+      "detail": "hivemind=0.0246 persistence=-0.6663"
+    },
+    {
+      "name": "e115: one-step persistence recorded (sign informative: states anti-persist at 1h)",
+      "pass": true,
+      "detail": "persistence=-0.6663"
+    },
+    {
+      "name": "e115: model-vs-persistence gap recorded",
+      "pass": true,
+      "detail": "gap=0.6909 (SUPPORTED iff > 0 with hivemind > 0)"
+    }
+  ],
+  "pass": true
+}

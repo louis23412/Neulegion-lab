@@ -1,0 +1,232 @@
+{
+  "config": {
+    "span": 5000,
+    "trainCap": 800,
+    "test": 500,
+    "splits": [
+      0.5,
+      0.6,
+      0.7
+    ]
+  },
+  "repo": {
+    "meanSkill": -0.0105,
+    "posCells": 10,
+    "nullBars": 176,
+    "cells": [
+      {
+        "sym": "BTCUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0256,
+        "ok": true
+      },
+      {
+        "sym": "BTCUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0769,
+        "ok": true
+      },
+      {
+        "sym": "BTCUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0472,
+        "ok": true
+      },
+      {
+        "sym": "ETHUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0312,
+        "ok": true
+      },
+      {
+        "sym": "ETHUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0805,
+        "ok": true
+      },
+      {
+        "sym": "ETHUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0707,
+        "ok": true
+      },
+      {
+        "sym": "SOLUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0147,
+        "ok": true
+      },
+      {
+        "sym": "SOLUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0286,
+        "ok": true
+      },
+      {
+        "sym": "SOLUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0719,
+        "ok": true
+      },
+      {
+        "sym": "BNBUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0593,
+        "ok": true
+      },
+      {
+        "sym": "BNBUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0539,
+        "ok": true
+      },
+      {
+        "sym": "BNBUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.016,
+        "ok": true
+      },
+      {
+        "sym": "XRPUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0233,
+        "ok": true
+      },
+      {
+        "sym": "XRPUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0503,
+        "ok": true
+      },
+      {
+        "sym": "XRPUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0028,
+        "ok": true
+      },
+      {
+        "sym": "ADAUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0525,
+        "ok": true
+      },
+      {
+        "sym": "ADAUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0484,
+        "ok": true
+      },
+      {
+        "sym": "ADAUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0183,
+        "ok": true
+      },
+      {
+        "sym": "DOGEUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0556,
+        "ok": true
+      },
+      {
+        "sym": "DOGEUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0744,
+        "ok": true
+      },
+      {
+        "sym": "DOGEUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0657,
+        "ok": true
+      },
+      {
+        "sym": "LINKUSDT",
+        "split": 0.5,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.02,
+        "ok": true
+      },
+      {
+        "sym": "LINKUSDT",
+        "split": 0.6,
+        "trainN": 800,
+        "testN": 500,
+        "skill": -0.0012,
+        "ok": true
+      },
+      {
+        "sym": "LINKUSDT",
+        "split": 0.7,
+        "trainN": 800,
+        "testN": 500,
+        "skill": 0.0347,
+        "ok": true
+      }
+    ]
+  },
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e116: the 6606-bucket 8-stream view parses",
+      "pass": true,
+      "detail": "6606x8"
+    },
+    {
+      "name": "e116: every cell has coverage and finite Briers",
+      "pass": true,
+      "detail": "24/24 cells finite (null spotRet bars skipped: 176)"
+    },
+    {
+      "name": "e116: mean bucket skill recorded (any sign)",
+      "pass": true,
+      "detail": "meanSkill=-0.0105 positive 10/24"
+    }
+  ],
+  "pass": true
+}

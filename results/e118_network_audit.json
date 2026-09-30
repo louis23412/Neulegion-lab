@@ -1,0 +1,149 @@
+{
+  "config": {
+    "bars": 600,
+    "trainSize": 60,
+    "testSize": 15,
+    "probe": 0.05,
+    "probesPerFold": 1
+  },
+  "repo": {
+    "pooledSharpe252": 1.3005,
+    "refSharpe": 1.3005,
+    "pooledBars": 4320,
+    "runA": {
+      "vacuousAll8": false,
+      "reachableFolds": "288/288",
+      "violations": 0
+    },
+    "runB": {
+      "reachableFolds": 288,
+      "violations": 0
+    },
+    "verdict": "MEASURABLE",
+    "perStream": [
+      {
+        "stream": "btcusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "ethusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "solusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "bnbusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "xrpusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "adausdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "dogeusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      },
+      {
+        "stream": "linkusdt",
+        "folds": 36,
+        "vacuousA": false,
+        "reachA": 36,
+        "reachB": 36,
+        "violB": 0,
+        "firstViolB": []
+      }
+    ]
+  },
+  "total": 9,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e118: 8x1h series loaded with >= 600 bars",
+      "pass": true,
+      "detail": "79554/79554/53500/77617/73350/73762/63142/67208"
+    },
+    {
+      "name": "e118: last-600 slice aligned on all streams",
+      "pass": true,
+      "detail": "600/600/600/600/600/600/600/600"
+    },
+    {
+      "name": "e118: repo roster carries sig-network-momentum (lagged, cross-sectional)",
+      "pass": true,
+      "detail": "network (lead-lag) momentum: the other streams' risk-adjusted momentum one bar b"
+    },
+    {
+      "name": "e118: rebuilt pooled Sharpe matches the run (1.3005 +- 0.05)",
+      "pass": true,
+      "detail": "pooled=1.3005 n=4320"
+    },
+    {
+      "name": "e118: Run A reaches post-fix (the sibling shock is production now)",
+      "pass": true,
+      "detail": "vacuous8=false reach=288/288 viol=0"
+    },
+    {
+      "name": "e118: repo law equals the lab probe (A and B audits identical)",
+      "pass": true,
+      "detail": "A 288/0 vs B 288/0"
+    },
+    {
+      "name": "e118: probe-only difference (base views byte-equal A vs B)",
+      "pass": true,
+      "detail": "8/8 identical"
+    },
+    {
+      "name": "e118: Run B reaches the arm (sibling shock moves later positions)",
+      "pass": true,
+      "detail": "reach=288 folds"
+    },
+    {
+      "name": "e118: Run B decisive (verdict recorded: MEASURABLE, 0 violations)",
+      "pass": true,
+      "detail": "MEASURABLE viol=0"
+    }
+  ],
+  "pass": true
+}

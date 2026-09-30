@@ -1,7 +1,7 @@
 {
-  "at": "2026-09-29T01:01:32.323Z",
   "total": 7,
   "failed": 0,
+  "failures": [],
   "checks": [
     {
       "name": "e106: the honest carry book loads",

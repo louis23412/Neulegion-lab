@@ -14,10 +14,10 @@
 // and awaits the already-running units (so no promise is left dangling); and (iv) `makeFoldExecutor` adapts the
 // worker's `{positions, confidence, stats}` reply to `{signals, confidence, stats}` and refuses a malformed one.
 //
-// The DEFECTS are reported in `findings`: `normaliseConcurrency` never validates its own `max` cap, so it can
-// return a non-concurrency (0, negative or fractional); and `makeFoldExecutor` validates `positions` but
-// silently NULLS a non-array `confidence` (and any falsy `stats`), so half a malformed worker reply degrades to
-// "no confidence" instead of raising.
+// The DEFECTS were reported in `findings` and HARDENED in round 48 (e67 restated round 94):
+// `normaliseConcurrency` now validates its `max` cap (L10-ce throws on non-finite or < 1;
+// residual: fractional max >= 1 un-floored); `makeFoldExecutor` now throws a named error on
+// a non-array `confidence` or non-object `stats` (L10-cf) instead of nulling half the reply.
 
 import { normaliseConcurrency, scheduleUnits, makeFoldExecutor } from '../../NeuLegion-master/NeuLegion-master/src/analysis/parallel.js';
 
@@ -44,20 +44,21 @@ export async function run() {
         return serialOk && frac && cap && det;
     })();
 
-    // (FINDING) `max` is never validated -> the "normalised concurrency" can be non-positive or fractional.
+    // (FINDING, RESTATED round 94) `max` is now validated fail-closed (L10-ce, round 48,
+    // R48-pinned): non-finite or < 1 throws instead of returning a non-concurrency. Residual:
+    // a fractional max >= 1 (2.5) still passes through un-floored.
     checks.normaliseConcurrencyBadMax = (() => {
-        const zero = normaliseConcurrency(10, { max: 0 });
-        const neg = normaliseConcurrency(10, { max: -2 });
+        const throwsCe = (max) => { try { normaliseConcurrency(10, { max }); return false; } catch (e) { return /L10-ce/.test(String(e && e.message)); } };
+        const zeroThrows = throwsCe(0);
+        const negThrows = throwsCe(-2);
+        const halfThrows = throwsCe(0.5);
         const frac = normaliseConcurrency(10, { max: 2.5 });
-        const half = normaliseConcurrency(10, { max: 0.5 });
         rows.badMax = {
-            max0: zero, maxNeg2: neg, max2p5: frac, maxHalf: half,
-            allFinite: [zero, neg, frac, half].every(Number.isFinite),
-            notIntegerOrPositive: [zero, neg, frac, half].filter((x) => !(Number.isInteger(x) && x >= 1)),
-            note: 'the contract is "validate and normalise a concurrency request", but only the VALUE is validated; the `max` cap is used raw in `Math.min(Math.floor(value), max)`, so `max: 0` -> 0, `max: -2` -> -2 and `max: 2.5` -> 2.5 (a non-positive/fractional "concurrency"). The internal callers pass `{max: n}` with n >= 1, so it is not reachable through scheduleUnits — but it is reachable by any direct caller and contradicts the export\'s own contract.',
+            max0Throws: zeroThrows, maxNeg2Throws: negThrows, maxHalfThrows: halfThrows, max2p5: frac,
+            note: 'ROUND-94 UPDATE: hardened — `max` must now be a finite value >= 1 (L10-ce throws on 0/-2/0.5/NaN/Infinity) instead of flowing raw into Math.min. Pre-hardening, `max: 0` -> 0, `max: -2` -> -2, `max: 2.5` -> 2.5. Residual (still present): a fractional max >= 1 passes through un-floored (`max: 2.5` -> 2.5).',
         };
         // pin the module's actual behaviour
-        return zero === 0 && neg === -2 && frac === 2.5 && half === 0.5;
+        return zeroThrows && negThrows && halfThrows && frac === 2.5;
     })();
 
     // ============================== B. scheduleUnits order + bound ====================================
@@ -153,23 +154,24 @@ export async function run() {
     // (FINDING) half the reply is validated, half is silently nulled.
     checks.makeFoldExecutorSilentConfidence = (async () => {
         const make = (reply) => makeFoldExecutor({ dispatch: async () => reply });
-        const numConf = await make({ positions: [1], confidence: 5, stats: { x: 1 } })({});
-        const typedConf = await make({ positions: [1], confidence: new Float32Array([1, 2]), stats: { x: 1 } })({});
+        const throwsCf = async (reply) => { try { await make(reply)({}); return false; } catch (e) { return /L10-cf/.test(String(e && e.message)); } };
+        const numThrows = await throwsCf({ positions: [1], confidence: 5, stats: { x: 1 } });
+        const typedThrows = await throwsCf({ positions: [1], confidence: new Float32Array([1, 2]), stats: { x: 1 } });
+        const statsZeroThrows = await throwsCf({ positions: [1], confidence: [0.5], stats: 0 });
         const emptyConf = await make({ positions: [1], confidence: [], stats: { x: 1 } })({});
         const nullConf = await make({ positions: [1], confidence: null, stats: { x: 1 } })({});
-        const statsZero = await make({ positions: [1], confidence: [0.5], stats: 0 })({});
         const statsMissing = await make({ positions: [1], confidence: [0.5] })({});
         let positionsTyped = 'no-throw';
         try { await make({ positions: new Float32Array([1]) })({}); } catch { positionsTyped = 'throw'; }
         rows.silentConfidence = {
-            numConfidence: numConf.confidence, typedConfidence: typedConf.confidence,
+            numConfidenceThrows: numThrows, typedConfidenceThrows: typedThrows,
             emptyConfidence: emptyConf.confidence, nullConfidence: nullConf.confidence,
-            statsZero: statsZero.stats, statsMissing: statsMissing.stats, positionsTyped,
-            note: '`makeFoldExecutor` "validates the reply": a non-array `positions` (including a Float32Array) THROWS, but `confidence` is `Array.isArray(reply.confidence) ? reply.confidence : null` — a non-array confidence (a number, a Float32Array, a string) is silently degraded to null, i.e. "this fold has no confidence", and `stats: reply.stats || null` silently maps a falsy stats (0, \'\', false, NaN) to null. So half a malformed worker reply raises and half is absorbed, and a worker that switched its confidence to a typed array would silently lose the confidence channel (the R26-3 raw pre-policy confidence the whole turnover experiment is built on) with no error. LATENT (fold_worker.js posts a plain array or null).',
+            statsZeroThrows, statsMissing: statsMissing.stats, positionsTyped,
+            note: 'ROUND-94 UPDATE: hardened — a non-array `confidence` or non-object `stats` now throws a named malformed-reply error (L10-cf, round 48, R48-pinned) instead of degrading to null. Missing/null fields still map to null; an empty-array confidence passes through. Pre-hardening, half a malformed worker reply raised and half was absorbed.',
         };
         // pin the module's actual behaviour
-        return numConf.confidence === null && typedConf.confidence === null && Array.isArray(emptyConf.confidence) && nullConf.confidence === null
-            && statsZero.stats === null && statsMissing.stats === null && positionsTyped === 'throw';
+        return numThrows && typedThrows && statsZeroThrows && Array.isArray(emptyConf.confidence) && nullConf.confidence === null
+            && statsMissing.stats === null && positionsTyped === 'throw';
     })();
 
     const resolved = {};
@@ -178,7 +180,7 @@ export async function run() {
     const failed = Object.entries(resolved).filter(([, v]) => v !== true).map(([k]) => k);
 
     const verdict = {
-        note: 'L10-ce..: `analysis/parallel.js` is the SHIPPED order-preserving bounded-concurrency scheduler (round 26, R26-4) — the module that makes `folds.jsonl` byte-identical between the serial and parallel A/B paths; `backtest.js`/`walkforward.js` use normaliseConcurrency/scheduleUnits, `analyze.js` uses makeFoldExecutor, and `fold_worker.js` posts the reply shape the executor validates. PASSES the pre-registered read: `normaliseConcurrency` treats every non-finite / non-positive width as serial (0, -3, NaN, Infinity, null, undefined, \'3\', true -> 1), floors a fractional width (2.9 -> 2) and caps at 64 by default; `scheduleUnits` returns results in UNIT ORDER for an out-of-order completion schedule, calls exec exactly once per unit, never exceeds the requested concurrency (peak 3 of 3 requested, peak n when the request exceeds n) and reports through onResult (out of order, best-effort — a throwing reporter does not fail the run); a rejection rejects the whole call with the FIRST error (two failures -> e0), starts no unit past the start window and awaits every started unit (settled === started); a synchronous throw propagates; and empty input is []. `makeFoldExecutor` adapts the worker reply to {signals, confidence, stats}, passes the request through verbatim, and throws a named "malformed reply" for a null/undefined reply or a non-array positions (including a Float32Array). FINDINGS: (0) `normaliseConcurrency` never validates its `max` cap, so a bad cap makes it return a non-concurrency (max 0 -> 0, max -2 -> -2, max 2.5 -> 2.5) — not reachable through scheduleUnits (which passes max = n >= 1) but a direct-call contract gap; (1) `makeFoldExecutor` validates `positions` but silently NULLS a non-array `confidence` and any falsy `stats`, so a worker that switched its confidence to a typed array would silently lose the R26-3 raw pre-policy confidence the turnover experiment is built on, with no error — half a malformed reply raises and half is absorbed. Both are latent/export-level; no golden moves.',
+        note: 'L10-ce..: `analysis/parallel.js` is the SHIPPED order-preserving bounded-concurrency scheduler (round 26, R26-4) — the module that makes `folds.jsonl` byte-identical between the serial and parallel A/B paths; `backtest.js`/`walkforward.js` use normaliseConcurrency/scheduleUnits, `analyze.js` uses makeFoldExecutor, and `fold_worker.js` posts the reply shape the executor validates. PASSES the pre-registered read: `normaliseConcurrency` treats every non-finite / non-positive width as serial (0, -3, NaN, Infinity, null, undefined, \'3\', true -> 1), floors a fractional width (2.9 -> 2) and caps at 64 by default; `scheduleUnits` returns results in UNIT ORDER for an out-of-order completion schedule, calls exec exactly once per unit, never exceeds the requested concurrency (peak 3 of 3 requested, peak n when the request exceeds n) and reports through onResult (out of order, best-effort — a throwing reporter does not fail the run); a rejection rejects the whole call with the FIRST error (two failures -> e0), starts no unit past the start window and awaits every started unit (settled === started); a synchronous throw propagates; and empty input is []. `makeFoldExecutor` adapts the worker reply to {signals, confidence, stats}, passes the request through verbatim, and throws a named "malformed reply" for a null/undefined reply or a non-array positions (including a Float32Array). FINDINGS, RESTATED round 94 (both hardened in round 48): (0) `normaliseConcurrency` validates its `max` cap — L10-ce throws on non-finite or < 1; residual: fractional max >= 1 (2.5) still passes through un-floored; (1) `makeFoldExecutor` throws a named L10-cf error on a non-array `confidence` or non-object `stats` (missing/null still map to null). Both were latent/export-level; no golden moves.',
         checks: resolved,
         validationPass,
         failed,

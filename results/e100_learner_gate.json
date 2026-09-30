@@ -1,0 +1,22 @@
+{
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e100: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e100: every learner scores a finite Brier on every stream x split cell",
+      "pass": true,
+      "detail": "24/24 cells finite"
+    },
+    {
+      "name": "e100: mean skills are recorded (any sign)",
+      "pass": true,
+      "detail": "meanSkill ridge=0.0036 mlp=-0.0222 over 24 cells"
+    }
+  ]
+}

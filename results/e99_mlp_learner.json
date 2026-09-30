@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e99: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e99: the plugin validates as a learner",
+      "pass": true,
+      "detail": "contract ok"
+    },
+    {
+      "name": "e99: mlp matches the benchmark bit-exactly (batch=0, standardise=true)",
+      "pass": true,
+      "detail": "800/800 test bars exact"
+    },
+    {
+      "name": "e99: mlp matches the benchmark bit-exactly (batch=32, standardise=false)",
+      "pass": true,
+      "detail": "800/800 test bars exact"
+    }
+  ]
+}

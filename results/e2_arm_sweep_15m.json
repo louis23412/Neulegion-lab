@@ -753,57 +753,57 @@
       "note": "shipped sig-regime-momentum (G-H)",
       "meanSharpe": {
         "n": 8,
-        "mean": -0.016652320078149405,
-        "std": 0.03399424335409638,
-        "min": -0.05173254805534825,
-        "max": 0.04789237242270131
+        "mean": -0.016248829393162516,
+        "std": 0.04497691676851495,
+        "min": -0.09826598746738514,
+        "max": 0.06468267708254567
       },
-      "meanBreakEvenCostBps": -0.18182812481103572,
-      "turnoverPerBar": 0.19795296170547183,
-      "nonZeroFraction": 0.9993468668358356,
-      "positiveStreams": 2,
+      "meanBreakEvenCostBps": -0.16508317844360426,
+      "turnoverPerBar": 0.1995316593022782,
+      "nonZeroFraction": 0.9990249878123475,
+      "positiveStreams": 1,
       "stability": {
         "blockSharpes": [
-          0.034902296903375964,
-          -0.002325833094263434,
-          -0.24299413664976954,
-          0.15730742443532686,
-          0.00042915782444245473,
-          -0.127928511601725
+          0.049264913465218205,
+          0.0343908114909319,
+          -0.2300945394245025,
+          0.10405373711311097,
+          -0.004544686264680197,
+          -0.12024676518622088
         ],
         "positiveFraction": 0.5,
-        "min": -0.24299413664976954,
-        "max": 0.15730742443532686
+        "min": -0.2300945394245025,
+        "max": 0.10405373711311097
       },
       "dependence": {
         "streams": 8,
         "nClusters": 192,
-        "meanPairwiseStreamCorr": 0.4958000022108578,
-        "designEffect": 3.515878636640618,
-        "effectiveStreams": 1.7894689688869883,
-        "effectiveBars": 21843.757403805477,
+        "meanPairwiseStreamCorr": 0.5044715425514256,
+        "designEffect": 3.596743260833976,
+        "effectiveStreams": 1.7654974491603386,
+        "effectiveBars": 21352.650003212184,
         "adjustmentNeeded": true,
-        "seCluster": 0.10740994706297567,
-        "seIid": 0.057283238772616
+        "seCluster": 0.10863796674268908,
+        "seIid": 0.05728315233732167
       },
       "pooled": {
-        "netSharpe": -0.13548106352238895,
-        "dsr": 0.008884288670429119,
-        "dsrAdjusted": 0.10308694962361542,
-        "effectiveBars": 21844,
-        "psrAdjusted": 0.10308694962361542
+        "netSharpe": -0.1297449695361473,
+        "dsr": 0.011609987648741438,
+        "dsrAdjusted": 0.11568883904870991,
+        "effectiveBars": 21353,
+        "psrAdjusted": 0.11568883904870991
       },
       "verdictWindow": {
         "bars": 600,
         "meanSharpe": {
           "n": 8,
-          "mean": -0.4409134700196026,
-          "std": 0.38008793753105496,
-          "min": -1.008049333212631,
-          "max": 0.191505694531966
+          "mean": -0.4237860541550805,
+          "std": 0.3770306837383845,
+          "min": -0.8928627338914431,
+          "max": 0.15427149999894613
         },
-        "meanBreakEvenCostBps": -3.2638317492480464,
-        "positiveStreams": 1
+        "meanBreakEvenCostBps": -2.978412500548675,
+        "positiveStreams": 2
       }
     },
     "netmom-16": {

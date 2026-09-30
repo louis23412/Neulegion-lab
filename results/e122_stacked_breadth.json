@@ -1,0 +1,81 @@
+{
+  "config": {
+    "bars": 600,
+    "trainSize": 60,
+    "testSize": 15,
+    "policy": {
+      "deadZone": 0.05,
+      "scale": 1
+    },
+    "lag": 1,
+    "gridEnd": "2026-08-31T23:00:00.000Z",
+    "wave1": [
+      "avaxusdt",
+      "nearusdt",
+      "arbusdt",
+      "suiusdt",
+      "opusdt",
+      "injusdt",
+      "tiausdt",
+      "seiusdt"
+    ],
+    "wave2": [
+      "ltcusdt",
+      "etcusdt",
+      "uniusdt",
+      "aaveusdt",
+      "atomusdt",
+      "dotusdt",
+      "filusdt",
+      "aptusdt"
+    ]
+  },
+  "majors": {
+    "sharpe": 0.1528,
+    "grossPnl": 0.211482,
+    "turnover": 898.584,
+    "breakEvenBps": 2.35,
+    "meanPairwiseCorr": 0.5113,
+    "designEffect": 4.579,
+    "effectiveStreams": 1.7471,
+    "method": "fold-sharpe"
+  },
+  "wave1": {
+    "sharpe": 0.1164,
+    "grossPnl": 0.189249,
+    "turnover": 891.951,
+    "breakEvenBps": 2.12,
+    "meanPairwiseCorr": 0.3925,
+    "designEffect": 3.7474,
+    "effectiveStreams": 2.1348,
+    "method": "fold-sharpe"
+  },
+  "wave2": {
+    "sharpe": -0.0923,
+    "grossPnl": -0.124044,
+    "turnover": 874.142,
+    "breakEvenBps": -1.42,
+    "meanPairwiseCorr": 0.3275,
+    "designEffect": 3.2922,
+    "effectiveStreams": 2.43,
+    "method": "fold-sharpe"
+  },
+  "stacked16": {
+    "sharpe": 0.1327,
+    "meanPairwiseCorr": 0.3865,
+    "designEffect": 6.7981,
+    "effectiveStreams": 2.3536,
+    "method": "fold-sharpe"
+  },
+  "stacked24": {
+    "sharpe": 0.0633,
+    "meanPairwiseCorr": 0.3531,
+    "designEffect": 9.1222,
+    "effectiveStreams": 2.631,
+    "method": "fold-sharpe"
+  },
+  "verdict": "MIXED",
+  "total": 6,
+  "failed": 0,
+  "failures": []
+}

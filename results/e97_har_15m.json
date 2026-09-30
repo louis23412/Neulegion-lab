@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e97: the 15m panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8 n=79999,79999,79999,79999,79999,79999,79999,79999"
+    },
+    {
+      "name": "e97: the three-way tournament is available on every 15m stream",
+      "pass": true,
+      "detail": "btcusdt_15m:ok ethusdt_15m:ok solusdt_15m:ok bnbusdt_15m:ok xrpusdt_15m:ok adausdt_15m:ok dogeusdt_15m:ok linkusdt_15m:ok"
+    },
+    {
+      "name": "e97: HAR holds the split majority on every 15m stream",
+      "pass": true,
+      "detail": "btcusdt_15m=har5/5 ar0/5 ethusdt_15m=har5/5 ar0/5 solusdt_15m=har5/5 ar0/5 bnbusdt_15m=har5/5 ar0/5 xrpusdt_15m=har5/5 ar0/5 adausdt_15m=har5/5 ar0/5 dogeusdt_15m=har5/5 ar0/5 linkusdt_15m=har5/5 ar0/5"
+    },
+    {
+      "name": "e97: the 15m panel rollup is unanimous for HAR",
+      "pass": true,
+      "detail": "harMajority=8/8"
+    }
+  ]
+}

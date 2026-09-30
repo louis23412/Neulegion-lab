@@ -1,0 +1,47 @@
+{
+  "total": 8,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e77: healthy panel available",
+      "pass": true,
+      "detail": "K=2"
+    },
+    {
+      "name": "e77: constant stream fails closed (L10-ca)",
+      "pass": true,
+      "detail": "degenerate: constant stream(s) b carry no breadth (L10-ca)"
+    },
+    {
+      "name": "e77: maxStreams 0 throws (L10-cb)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e77: bad concurrency max throws (L10-ce)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e77: malformed confidence throws (L10-cf)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e77: rank-slice IQM kept, reference differs (L10-cj)",
+      "pass": true,
+      "detail": "iqm=2.5 ref=1.6666666666666667"
+    },
+    {
+      "name": "e77: restatement carries restated signals (L10-cn)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e77: single constant fails closed, single healthy trivial",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

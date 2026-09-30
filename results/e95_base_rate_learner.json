@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e95: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e95: the plugin validates as a learner",
+      "pass": true,
+      "detail": "contract ok"
+    },
+    {
+      "name": "e95: the online prior matches the benchmark prior bit-exactly on every stream",
+      "pass": true,
+      "detail": "candles=0.506271 ethusdt_1h=0.505897 solusdt_1h=0.498028 bnbusdt_1h=0.505916 xrpusdt_1h=0.501673 adausdt_1h=0.488925 dogeusdt_1h=0.498589 linkusdt_1h=0.489673"
+    },
+    {
+      "name": "e95: the signed confidence is exactly 2p-1 on every stream",
+      "pass": true,
+      "detail": "candles=0.012542 ethusdt_1h=0.011795 solusdt_1h=-0.003944 bnbusdt_1h=0.011832 xrpusdt_1h=0.003346 adausdt_1h=-0.022150 dogeusdt_1h=-0.002822 linkusdt_1h=-0.020655"
+    },
+    {
+      "name": "e95: the composition root carries base-rate UNTESTED and off the default roster",
+      "pass": true,
+      "detail": "UNTESTED/false"
+    }
+  ]
+}

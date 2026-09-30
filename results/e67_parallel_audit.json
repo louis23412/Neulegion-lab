@@ -33,18 +33,11 @@
       "det": true
     },
     "badMax": {
-      "max0": 0,
-      "maxNeg2": -2,
+      "max0Throws": true,
+      "maxNeg2Throws": true,
+      "maxHalfThrows": true,
       "max2p5": 2.5,
-      "maxHalf": 0.5,
-      "allFinite": true,
-      "notIntegerOrPositive": [
-        0,
-        -2,
-        2.5,
-        0.5
-      ],
-      "note": "the contract is \"validate and normalise a concurrency request\", but only the VALUE is validated; the `max` cap is used raw in `Math.min(Math.floor(value), max)`, so `max: 0` -> 0, `max: -2` -> -2 and `max: 2.5` -> 2.5 (a non-positive/fractional \"concurrency\"). The internal callers pass `{max: n}` with n >= 1, so it is not reachable through scheduleUnits — but it is reachable by any direct caller and contradicts the export's own contract."
+      "note": "ROUND-94 UPDATE: hardened — `max` must now be a finite value >= 1 (L10-ce throws on 0/-2/0.5/NaN/Infinity) instead of flowing raw into Math.min. Pre-hardening, `max: 0` -> 0, `max: -2` -> -2, `max: 2.5` -> 2.5. Residual (still present): a fractional max >= 1 passes through un-floored (`max: 2.5` -> 2.5)."
     },
     "executor": {
       "goodOk": true,
@@ -73,14 +66,14 @@
       }
     },
     "silentConfidence": {
-      "numConfidence": null,
-      "typedConfidence": null,
+      "numConfidenceThrows": true,
+      "typedConfidenceThrows": true,
       "emptyConfidence": [],
       "nullConfidence": null,
-      "statsZero": null,
+      "statsZeroThrows": true,
       "statsMissing": null,
       "positionsTyped": "throw",
-      "note": "`makeFoldExecutor` \"validates the reply\": a non-array `positions` (including a Float32Array) THROWS, but `confidence` is `Array.isArray(reply.confidence) ? reply.confidence : null` — a non-array confidence (a number, a Float32Array, a string) is silently degraded to null, i.e. \"this fold has no confidence\", and `stats: reply.stats || null` silently maps a falsy stats (0, '', false, NaN) to null. So half a malformed worker reply raises and half is absorbed, and a worker that switched its confidence to a typed array would silently lose the confidence channel (the R26-3 raw pre-policy confidence the whole turnover experiment is built on) with no error. LATENT (fold_worker.js posts a plain array or null)."
+      "note": "ROUND-94 UPDATE: hardened — a non-array `confidence` or non-object `stats` now throws a named malformed-reply error (L10-cf, round 48, R48-pinned) instead of degrading to null. Missing/null fields still map to null; an empty-array confidence passes through. Pre-hardening, half a malformed worker reply raised and half was absorbed."
     },
     "edges": {
       "emptyOk": true,
@@ -99,8 +92,8 @@
         1,
         0,
         5,
-        4,
         3,
+        4,
         6,
         8,
         7,
@@ -149,7 +142,7 @@
     "makeFoldExecutorSilentConfidence": true
   },
   "verdict": {
-    "note": "L10-ce..: `analysis/parallel.js` is the SHIPPED order-preserving bounded-concurrency scheduler (round 26, R26-4) — the module that makes `folds.jsonl` byte-identical between the serial and parallel A/B paths; `backtest.js`/`walkforward.js` use normaliseConcurrency/scheduleUnits, `analyze.js` uses makeFoldExecutor, and `fold_worker.js` posts the reply shape the executor validates. PASSES the pre-registered read: `normaliseConcurrency` treats every non-finite / non-positive width as serial (0, -3, NaN, Infinity, null, undefined, '3', true -> 1), floors a fractional width (2.9 -> 2) and caps at 64 by default; `scheduleUnits` returns results in UNIT ORDER for an out-of-order completion schedule, calls exec exactly once per unit, never exceeds the requested concurrency (peak 3 of 3 requested, peak n when the request exceeds n) and reports through onResult (out of order, best-effort — a throwing reporter does not fail the run); a rejection rejects the whole call with the FIRST error (two failures -> e0), starts no unit past the start window and awaits every started unit (settled === started); a synchronous throw propagates; and empty input is []. `makeFoldExecutor` adapts the worker reply to {signals, confidence, stats}, passes the request through verbatim, and throws a named \"malformed reply\" for a null/undefined reply or a non-array positions (including a Float32Array). FINDINGS: (0) `normaliseConcurrency` never validates its `max` cap, so a bad cap makes it return a non-concurrency (max 0 -> 0, max -2 -> -2, max 2.5 -> 2.5) — not reachable through scheduleUnits (which passes max = n >= 1) but a direct-call contract gap; (1) `makeFoldExecutor` validates `positions` but silently NULLS a non-array `confidence` and any falsy `stats`, so a worker that switched its confidence to a typed array would silently lose the R26-3 raw pre-policy confidence the turnover experiment is built on, with no error — half a malformed reply raises and half is absorbed. Both are latent/export-level; no golden moves.",
+    "note": "L10-ce..: `analysis/parallel.js` is the SHIPPED order-preserving bounded-concurrency scheduler (round 26, R26-4) — the module that makes `folds.jsonl` byte-identical between the serial and parallel A/B paths; `backtest.js`/`walkforward.js` use normaliseConcurrency/scheduleUnits, `analyze.js` uses makeFoldExecutor, and `fold_worker.js` posts the reply shape the executor validates. PASSES the pre-registered read: `normaliseConcurrency` treats every non-finite / non-positive width as serial (0, -3, NaN, Infinity, null, undefined, '3', true -> 1), floors a fractional width (2.9 -> 2) and caps at 64 by default; `scheduleUnits` returns results in UNIT ORDER for an out-of-order completion schedule, calls exec exactly once per unit, never exceeds the requested concurrency (peak 3 of 3 requested, peak n when the request exceeds n) and reports through onResult (out of order, best-effort — a throwing reporter does not fail the run); a rejection rejects the whole call with the FIRST error (two failures -> e0), starts no unit past the start window and awaits every started unit (settled === started); a synchronous throw propagates; and empty input is []. `makeFoldExecutor` adapts the worker reply to {signals, confidence, stats}, passes the request through verbatim, and throws a named \"malformed reply\" for a null/undefined reply or a non-array positions (including a Float32Array). FINDINGS, RESTATED round 94 (both hardened in round 48): (0) `normaliseConcurrency` validates its `max` cap — L10-ce throws on non-finite or < 1; residual: fractional max >= 1 (2.5) still passes through un-floored; (1) `makeFoldExecutor` throws a named L10-cf error on a non-array `confidence` or non-object `stats` (missing/null still map to null). Both were latent/export-level; no golden moves.",
     "checks": {
       "normaliseConcurrencyContract": true,
       "normaliseConcurrencyBadMax": true,
@@ -163,28 +156,21 @@
     "failed": [],
     "findings": {
       "normaliseConcurrencyBadMax": {
-        "max0": 0,
-        "maxNeg2": -2,
+        "max0Throws": true,
+        "maxNeg2Throws": true,
+        "maxHalfThrows": true,
         "max2p5": 2.5,
-        "maxHalf": 0.5,
-        "allFinite": true,
-        "notIntegerOrPositive": [
-          0,
-          -2,
-          2.5,
-          0.5
-        ],
-        "note": "the contract is \"validate and normalise a concurrency request\", but only the VALUE is validated; the `max` cap is used raw in `Math.min(Math.floor(value), max)`, so `max: 0` -> 0, `max: -2` -> -2 and `max: 2.5` -> 2.5 (a non-positive/fractional \"concurrency\"). The internal callers pass `{max: n}` with n >= 1, so it is not reachable through scheduleUnits — but it is reachable by any direct caller and contradicts the export's own contract."
+        "note": "ROUND-94 UPDATE: hardened — `max` must now be a finite value >= 1 (L10-ce throws on 0/-2/0.5/NaN/Infinity) instead of flowing raw into Math.min. Pre-hardening, `max: 0` -> 0, `max: -2` -> -2, `max: 2.5` -> 2.5. Residual (still present): a fractional max >= 1 passes through un-floored (`max: 2.5` -> 2.5)."
       },
       "makeFoldExecutorSilentConfidence": {
-        "numConfidence": null,
-        "typedConfidence": null,
+        "numConfidenceThrows": true,
+        "typedConfidenceThrows": true,
         "emptyConfidence": [],
         "nullConfidence": null,
-        "statsZero": null,
+        "statsZeroThrows": true,
         "statsMissing": null,
         "positionsTyped": "throw",
-        "note": "`makeFoldExecutor` \"validates the reply\": a non-array `positions` (including a Float32Array) THROWS, but `confidence` is `Array.isArray(reply.confidence) ? reply.confidence : null` — a non-array confidence (a number, a Float32Array, a string) is silently degraded to null, i.e. \"this fold has no confidence\", and `stats: reply.stats || null` silently maps a falsy stats (0, '', false, NaN) to null. So half a malformed worker reply raises and half is absorbed, and a worker that switched its confidence to a typed array would silently lose the confidence channel (the R26-3 raw pre-policy confidence the whole turnover experiment is built on) with no error. LATENT (fold_worker.js posts a plain array or null)."
+        "note": "ROUND-94 UPDATE: hardened — a non-array `confidence` or non-object `stats` now throws a named malformed-reply error (L10-cf, round 48, R48-pinned) instead of degrading to null. Missing/null fields still map to null; an empty-array confidence passes through. Pre-hardening, half a malformed worker reply raised and half was absorbed."
       }
     },
     "scope": {

@@ -183,10 +183,12 @@ export async function run() {
         rows.underflow = {
             mid1000P: mid1000.pValue, mid2000P: mid2000.pValue, one2000P: one2000.pValue, allWinP: allWin.pValue,
             mid1000Finite: mid1000.pValue > 0.4 && mid1000.pValue < 0.6,
-            note: 'signTest computes `pmf0 = Math.pow(0.5, n)` and walks the binomial pmf from it. For n >= ~1075 (2^-1075 underflows the double range) pmf0 is exactly 0, so EVERY pmf is 0 and `tail` stays 0: the function returns pValue = 0 (and significant = true) for ANY win count, including wins = n/2. The docstring scopes it to "tens to a few hundred" clusters, but the failure is silent and in the unsafe direction (a balanced 2000-cluster sign test reads "certainly significant").',
+            mid2000Abstains: mid2000.pValue == null, one2000Abstains: one2000.pValue == null, allWinAbstains: allWin.pValue == null,
+            reason: mid2000.reason || null,
+            note: 'ROUND-94 UPDATE: hardened fail-safe — n beyond the exact-walk range now abstains (pValue null + reason) instead of silently returning 0/significant. Pre-fix, signTest computed `pmf0 = Math.pow(0.5, n)` and walked from it, so for n >= ~1075 EVERY pmf was 0 and ANY win count (even n/2) read "certainly significant".',
         };
-        // pin the actual (buggy) behaviour: n=1000 is fine, n=2000 collapses
-        return rows.underflow.mid1000Finite && mid2000.pValue === 0 && one2000.pValue === 0 && allWin.pValue === 0;
+        // pin the actual (fixed) behaviour: n=1000 is fine, n=2000 abstains with a reason
+        return rows.underflow.mid1000Finite && rows.underflow.mid2000Abstains && rows.underflow.one2000Abstains && rows.underflow.allWinAbstains;
     })();
 
     // ============================== G. the paired cluster tests ======================================
@@ -214,13 +216,16 @@ export async function run() {
         // documented rule: stable = fractionPositive >= minFraction AND worstDelta > minDelta
         const docStable = looser.fractionPositive >= looser.minFraction - 1e-12 && looser.worstDelta > looser.minDelta;
         const mismatch = looser.stable === true && docStable === false;
+        // positive control: both halves pass -> stable
+        const good = clusterStability({ clustersA: [[0.5], [0.5], [0.7]], clustersB: [[0], [0], [0]], statistic: mean, minFraction: 0.5, minDelta: 0 });
         rows.stability = {
             worstDelta: looser.worstDelta, fractionPositive: looser.fractionPositive,
             codeStableLooser: looser.stable, docRuleLooser: docStable, mismatch,
             codeStableStrict: strict.stable, strictDoc: strict.fractionPositive >= strict.minFraction - 1e-12 && strict.worstDelta > strict.minDelta,
-            note: 'clusterStability\'s docstring: "stable requires fractionPositive >= minFraction (default: every cluster) AND worstDelta > minDelta (default 0)". The code computes `stable: fractionPositive >= minFraction - 1e-12` and NEVER tests worstDelta. With minFraction = 1 the two coincide (all deltas > 0 implies worst > 0), but with a looser minFraction the flag can read stable while the edge COLLAPSES when the worst window is removed: here fractionPositive 2/3 >= 0.5 reads stable: true while worstDelta = -0.5 fails the documented `> 0`. promoteDecision exposes minStableFraction, so a looser threshold reaches this branch. LATENT (the shipped default is minFraction 1).',
+            codeStableGood: good.stable,
+            note: 'ROUND-94 UPDATE: hardened — `stable` now tests BOTH halves (fractionPositive >= minFraction AND worstDelta > minDelta), so the looser case reads stable: false and the clean panel reads stable: true. Pre-fix, the code computed `stable: fractionPositive >= minFraction - 1e-12` and NEVER tested worstDelta, so fractionPositive 2/3 >= 0.5 read stable: true while worstDelta = -0.5 failed the documented rule.',
         };
-        return mismatch && strict.stable === false && looser.stable === true;
+        return !mismatch && looser.stable === false && strict.stable === false && good.stable === true;
     })();
 
     const findingStability = rows.stability;
@@ -232,7 +237,7 @@ export async function run() {
     const failed = Object.entries(resolved).filter(([, v]) => v !== true).map(([k]) => k);
 
     const verdict = {
-        note: 'L10-cl..: `analysis/dependence.js` is the SHIPPED cluster-inference module (round 25) behind the pooled cross-stream Sharpe SE; it is PURE and imports NOTHING, so it can be audited in isolation. PASSES the pre-registered read: `pearsonCorrelation`/`meanPairwiseCorrelation` are the textbook formulas with the documented NaN guards (fewer than 3 points, zero variance, unequal length) and skip uncorrelatable pairs; the equicorrelation design effect/effective size are exactly 1+(K-1)*rho and K/deff (negative rho legitimately reduces the deff; a non-positive deff abstains); `foldWindowClusters` groups exactly (cluster f = every stream fold f) and throws on a non-rectangular / non-divisible / bad-foldLength panel; `concatClusters`/`clusterJackknife` reproduce a hand delete-one-cluster jackknife (estimate 3.5, leave-one-out [4.5,3.5,2.5], se sqrt(4/3)) and abstain on <2 clusters / non-finite statistics; `studentTPValue`/`regularizedIncompleteBeta` reproduce the exact closed-form t tails for df = 1 (Cauchy) and df = 2, are symmetric, give 0.5/1 at t = 0 and handle the +-Infinity tails; `studentTCritical` inverts `studentTPValue` and matches the documented table values (1.68957 / 2.03011 at df = 35); `signTest` is the exact binomial tail from its pmf recursion and `signTestFloor` its minimum; `pairedClusterTest`/`pairedClusterSignTest` carry the documented fields and the per-cluster sign test counts signs correctly. FINDINGS: (0) `clusterStability.stable` ignores the `worstDelta > minDelta` half of its own documented rule - it only tests `fractionPositive >= minFraction`, so with minFraction < 1 a candidate whose edge collapses when its worst window is removed still reads stable (worstDelta -0.5, fractionPositive 2/3, stable true where the doc rule says false); (1) `signTest` computes pmf0 = 0.5^n, which underflows to 0 for n >= ~1075, so it returns pValue = 0 (and significant true) for ANY win count including wins = n/2. Both latent (the shipped minStableFraction default is 1; the documented cluster counts are tens to a few hundred); no golden moves and no fold-back row.',
+        note: 'L10-cl..: `analysis/dependence.js` is the SHIPPED cluster-inference module (round 25) behind the pooled cross-stream Sharpe SE; it is PURE and imports NOTHING, so it can be audited in isolation. PASSES the pre-registered read: `pearsonCorrelation`/`meanPairwiseCorrelation` are the textbook formulas with the documented NaN guards (fewer than 3 points, zero variance, unequal length) and skip uncorrelatable pairs; the equicorrelation design effect/effective size are exactly 1+(K-1)*rho and K/deff (negative rho legitimately reduces the deff; a non-positive deff abstains); `foldWindowClusters` groups exactly (cluster f = every stream fold f) and throws on a non-rectangular / non-divisible / bad-foldLength panel; `concatClusters`/`clusterJackknife` reproduce a hand delete-one-cluster jackknife (estimate 3.5, leave-one-out [4.5,3.5,2.5], se sqrt(4/3)) and abstain on <2 clusters / non-finite statistics; `studentTPValue`/`regularizedIncompleteBeta` reproduce the exact closed-form t tails for df = 1 (Cauchy) and df = 2, are symmetric, give 0.5/1 at t = 0 and handle the +-Infinity tails; `studentTCritical` inverts `studentTPValue` and matches the documented table values (1.68957 / 2.03011 at df = 35); `signTest` is the exact binomial tail from its pmf recursion and `signTestFloor` its minimum; `pairedClusterTest`/`pairedClusterSignTest` carry the documented fields and the per-cluster sign test counts signs correctly. FINDINGS, RESTATED round 94 (both hardened since F-78): (0) `clusterStability.stable` now tests BOTH halves (fractionPositive >= minFraction AND worstDelta > minDelta); (1) `signTest` abstains with a reason beyond the exact-walk range instead of underflowing to a silent 0. No golden moves and no fold-back row.',
         checks: resolved,
         validationPass,
         failed,

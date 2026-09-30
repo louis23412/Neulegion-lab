@@ -1,0 +1,22 @@
+{
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e88: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e88: every order scores a finite skill on every stream",
+      "pass": true,
+      "detail": "candles=0.985/0.985/0.985/0.656 ethusdt_1h=0.979/0.979/0.979/0.780 solusdt_1h=0.991/0.991/0.991/0.944 bnbusdt_1h=0.992/0.992/0.992/0.873 xrpusdt_1h=0.986/0.986/0.986/0.930 adausdt_1h=0.978/0.979/0.979/0.873 dogeusdt_1h=0.986/0.986/0.986/0.970 linkusdt_1h=0.983/0.983/0.983/0.868"
+    },
+    {
+      "name": "e88: no higher order beats AR(1) by > 0.02 on any stream",
+      "pass": true,
+      "detail": "simplicity holds 8/8"
+    }
+  ]
+}

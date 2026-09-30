@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e85: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e85: QLIKE is available on every stream",
+      "pass": true,
+      "detail": "candles:ok ethusdt_1h:ok solusdt_1h:ok bnbusdt_1h:ok xrpusdt_1h:ok adausdt_1h:ok dogeusdt_1h:ok linkusdt_1h:ok"
+    },
+    {
+      "name": "e85: EWMA QLIKE-skill is positive on every stream",
+      "pass": true,
+      "detail": "candles=0.864,ethusdt_1h=0.858,solusdt_1h=0.933,bnbusdt_1h=0.936,xrpusdt_1h=0.909,adausdt_1h=0.862,dogeusdt_1h=0.910,linkusdt_1h=0.874"
+    },
+    {
+      "name": "e85: AR beats EWMA under QLIKE on >= 6/8 streams",
+      "pass": true,
+      "detail": "arWinsQlike=8/8 candles=0.991,ethusdt_1h=0.988,solusdt_1h=0.994,bnbusdt_1h=0.995,xrpusdt_1h=0.993,adausdt_1h=0.988,dogeusdt_1h=0.992,linkusdt_1h=0.989"
+    }
+  ]
+}

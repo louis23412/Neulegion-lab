@@ -13,21 +13,21 @@
     },
     "iv4h": {
       "rowsIn8h": 2,
-      "codeReceiptPer8h": 0.0001,
+      "codeReceiptPer8h": 0.0002,
       "sleevePer8h": 0.0002,
-      "understatementX": 2
+      "understatementX": 1
     },
     "iv2h": {
       "rowsIn8h": 4,
-      "codeReceiptPer8h": 0.0001,
+      "codeReceiptPer8h": 0.0004,
       "sleevePer8h": 0.0004,
-      "understatementX": 4
+      "understatementX": 1
     },
     "iv1h": {
       "rowsIn8h": 8,
-      "codeReceiptPer8h": 0.0001,
+      "codeReceiptPer8h": 0.0008,
       "sleevePer8h": 0.0008,
-      "understatementX": 8
+      "understatementX": 1
     }
   },
   "barSpacing": {
@@ -118,9 +118,9 @@
     "firstPairLatent": true
   },
   "verdict": {
-    "note": "L10-d / FOLD-BACK-R4(b): the shipped carry grid join spreads every funding row over an 8h bar count regardless of the observed interval, so sub-8h funding is understated by 8h/interval.",
-    "commentClaim": "carry.js lines 22-26 (\"the bar-grid projection divides by the period actually observed\")",
-    "codeFact": "carryOnBarGrid uses perBar = gridMs (default 8h) and barsPerPeriod = round(gridMs / firstBarStep)",
+    "note": "L10-d / FOLD-BACK-R4(b), RESTATED round 94 (F-61 fixed round 34): the shipped carry grid join USED TO spread every funding row over an 8h bar count regardless of the observed interval; the fixed carryOnBarGrid divides by the period actually observed, so the synthetic sweep prices every interval at par ([1,1,1,1]). The real-data guards below still measure the historical sub-8h rows in the vendored funding files (a data fact, not the repo behavior).",
+    "commentClaim": "carry.js (\"the bar-grid projection divides by the period actually observed\") — true since round 34",
+    "codeFact": "carryOnBarGrid divides by the observed interval (round-34 fix); pre-fix it used perBar = gridMs (default 8h) and barsPerPeriod = round(gridMs / firstBarStep)",
     "synthetic": {
       "iv8h": {
         "rowsIn8h": 1,
@@ -130,21 +130,21 @@
       },
       "iv4h": {
         "rowsIn8h": 2,
-        "codeReceiptPer8h": 0.0001,
+        "codeReceiptPer8h": 0.0002,
         "sleevePer8h": 0.0002,
-        "understatementX": 2
+        "understatementX": 1
       },
       "iv2h": {
         "rowsIn8h": 4,
-        "codeReceiptPer8h": 0.0001,
+        "codeReceiptPer8h": 0.0004,
         "sleevePer8h": 0.0004,
-        "understatementX": 4
+        "understatementX": 1
       },
       "iv1h": {
         "rowsIn8h": 8,
-        "codeReceiptPer8h": 0.0001,
+        "codeReceiptPer8h": 0.0008,
         "sleevePer8h": 0.0008,
-        "understatementX": 8
+        "understatementX": 1
       }
     },
     "barSpacing": {

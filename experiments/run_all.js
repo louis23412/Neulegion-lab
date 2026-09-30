@@ -123,6 +123,10 @@ import * as e115 from './e115_hivemind_bigmove.js';
 import * as e116 from './e116_bucket_bigmove.js';
 import * as e117 from './e117_har_residual.js';
 import * as e118 from './e118_network_audit.js';
+import * as e119 from './e119_xs_demeaned_momentum.js';
+import * as e120 from './e120_multifreq_panel.js';
+import * as e121 from './e121_symbol_breadth.js';
+import * as e122 from './e122_stacked_breadth.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -359,6 +363,14 @@ export async function run() {
     summary['e117_har_residual'].pass = e117v.failed === 0;
     const e118v = await step('e118_network_audit', () => e118.run({}));
     summary['e118_network_audit'].pass = e118v.failed === 0;
+    const e119v = await step('e119_xs_demeaned_momentum', () => e119.run({}));
+    summary['e119_xs_demeaned_momentum'].pass = e119v.failed === 0;
+    const e120v = await step('e120_multifreq_panel', () => e120.run({}));
+    summary['e120_multifreq_panel'].pass = e120v.failed === 0;
+    const e121v = await step('e121_symbol_breadth', () => e121.run({}));
+    summary['e121_symbol_breadth'].pass = e121v.failed === 0;
+    const e122v = await step('e122_stacked_breadth', () => e122.run({}));
+    summary['e122_stacked_breadth'].pass = e122v.failed === 0;
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);
     return out;

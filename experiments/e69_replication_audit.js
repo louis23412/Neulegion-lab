@@ -230,20 +230,21 @@ export async function run() {
         return ok && empty.available === false;
     })();
 
-    // (FINDING) the formatter labels the CI with ITS OWN alpha, not the distribution's.
+    // (FINDING, RESTATED round 94) the formatter now labels the CI from the distribution's own
+    // alpha (fixed) — a 0.10 distribution prints 90%CI without the caller passing alpha.
     checks.formatterAlphaMismatch = (() => {
         const perSeed = [{ seed: 1, values: [0.1, 0.2, 0.3, 0.4] }, { seed: 2, values: [0.15, 0.25, 0.35, 0.45] }];
         const d90 = seedDistribution({ perSeed, alpha: 0.10, nBoot: 400, seed: 5 });
-        const textBad = formatSeedReplication({ label: 'seeds', dist: d90 });               // formatter default alpha=0.05
-        const textGood = formatSeedReplication({ label: 'seeds', dist: d90, alpha: 0.10 }); // the caller must know to pass it
-        const badLabels95 = textBad.includes('95%CI') && d90.ci.alpha === 0.10;
+        const textBad = formatSeedReplication({ label: 'seeds', dist: d90 });               // used to print 95%CI
+        const textGood = formatSeedReplication({ label: 'seeds', dist: d90, alpha: 0.10 }); // explicit alpha agrees
+        const labels90 = textBad.includes('90%CI') && d90.ci.alpha === 0.10;
         const goodLabels90 = textGood.includes('90%CI');
         rows.formatter = {
-            ciAlpha: d90.ci.alpha, badLabels95, goodLabels90,
+            ciAlpha: d90.ci.alpha, labels90, goodLabels90,
             badText: textBad, goodText: textGood,
-            note: 'formatSeedReplication({ label, dist, alpha = 0.05 }) prints `(1 - alpha) * 100}%CI` using ITS OWN `alpha` parameter, never `dist.ci.alpha`. A distribution built at alpha = 0.10 is reported as "95%CI" by default, and only the caller happening to know the distribution alpha labels it correctly. The interval bounds are the 90% ones either way. analyze.js calls the formatter without an alpha, so the shipped path is consistent only because it also builds the distribution at the default 0.05 - a non-default alpha mislabels the summary.',
+            note: 'ROUND-94 UPDATE: fixed — formatSeedReplication reads `dist.ci.alpha` for the CI label, so a distribution built at alpha = 0.10 prints "90%CI" by default. Pre-fix it used its own `alpha = 0.05` default and mislabeled it "95%CI" (bounds were the 90% ones either way).',
         };
-        return badLabels95 && goodLabels90;
+        return labels90 && goodLabels90;
     })();
 
     const findingIqm = rows.iqmReference;

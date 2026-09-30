@@ -65,8 +65,8 @@
       "maxMeanRMS": 2.9000000000000004
     },
     "sampling": {
-      "mean": -0.018060808608667104,
-      "varr": 1.0009607326760588,
+      "mean": 0.00008252672408856813,
+      "varr": 0.992886822543318,
       "okNormal": true,
       "okMeanStd": true,
       "okDirichlet": true,
@@ -86,7 +86,7 @@
       "okDyn": true,
       "gnorm": 5,
       "okGrad": true,
-      "spec": 2.999999992948917,
+      "spec": 2.9999999853182255,
       "okSpec": true
     },
     "falsyZero": {

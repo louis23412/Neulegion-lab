@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e96: the honest carry book loads",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e96: scored span covers 5000+ bars",
+      "pass": true,
+      "detail": "n=6056"
+    },
+    {
+      "name": "e96: all three sizings cut the unsized drawdown",
+      "pass": true,
+      "detail": "unsized=7.915% trail=2.672% ar=2.542% har=2.450%"
+    },
+    {
+      "name": "e96: HAR sizing drawdown is no worse than trailing sizing",
+      "pass": true,
+      "detail": "har=2.450% vs trail=2.672% vs ar=2.542% | sharpe u=3.59 trail=7.64 ar=7.68 har=7.78"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e78: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e78: every stream has a positive EWMA skill",
+      "pass": true,
+      "detail": "skills=0.774,0.792,0.828,0.840,0.791,0.774,0.806,0.788"
+    },
+    {
+      "name": "e78: pooled EWMA skill is positive",
+      "pass": true,
+      "detail": "skill=0.803"
+    },
+    {
+      "name": "e78: median stream skill clears 0.1",
+      "pass": true,
+      "detail": "median=0.792"
+    }
+  ]
+}

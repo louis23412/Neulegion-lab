@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e93: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e93: every stream carries true opens",
+      "pass": true,
+      "detail": "open[0]=53500,53500,53500,53500,53500,53500,53500,53500"
+    },
+    {
+      "name": "e93: every estimator series is available on every stream",
+      "pass": true,
+      "detail": "candles:53476/53477/53477/53477/53477 ethusdt_1h:53476/53477/53477/53477/53477 solusdt_1h:53476/53477/53477/53477/53477 bnbusdt_1h:53476/53477/53477/53477/53477 xrpusdt_1h:53476/53477/53477/53477/53477 adausdt_1h:53476/53477/53477/53477/53477 dogeusdt_1h:53476/53477/53477/53477/53477 linkusdt_1h:53476/53477/53477/53477/53477"
+    },
+    {
+      "name": "e93: every range estimator correlates with close-close vol above 0.8",
+      "pass": true,
+      "detail": "min=0.8274"
+    },
+    {
+      "name": "e93: AR holds the split majority on every stream x estimator cell",
+      "pass": true,
+      "detail": "32/32 cells majority-AR"
+    }
+  ]
+}

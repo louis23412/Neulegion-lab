@@ -1,4 +1,5 @@
 # RUN-CROSSCHECK — the project's 2026-09-26/27 local run corpus vs the lab's findings
+(+ the 2026-09-30 re-measurement, §7)
 
 **What this is.** The operator uploaded seven fresh `npm run analyze` run directories under
 `src/runs/` (plus the earlier `src/20260920T094400-seed1/` smoke run already covered by the repo's
@@ -59,7 +60,8 @@ panel in `dependenceSummary`. This is a `walkforward.js` change and therefore a 
 ## 4. Good news
 
 * **The harness is reproducible and honest.** Four runs on the same data produce byte-identical
-  `folds.jsonl` and identical pooled metrics; zero errors/quarantine in all seven `run.log`s; the gate
+  `folds.jsonl` and identical pooled metrics; zero errors/quarantine in all seven `run.log`s (eight
+  after the §7 re-measurement, whose log is likewise clean); the gate
   refuses to promote `VACUOUS` candidates, refuses the zero-cost promotion under any real cost, and
   deflates monotonically with the roster. The corpus *re-derives the project's own multiplicity table*
   (K=3 → `sig-accel` 0.9742 ✓; K=6 → nothing) without any of the lab's help.
@@ -143,3 +145,19 @@ The corpus is the strongest evidence yet for `THEORY.md`'s J1–J4 and FOLD-BACK
   break-even/net@5/net@10 block would show reversal-4 at 1.5 bps and the momentum arms collapsing at 2.
 * **Do not add momentum variants** (F-06, the K=6 run) and **do not expect the model to help**
   (F-69/NL-BENCH, the `bare` run).
+
+## 7. Round-90 addendum: the eighth run closes the vacuity (F-131)
+
+`20260930T154333-seed1` re-runs the K=6 1h roster natively after the R40 probe went production
+(`RUN-ANALYSIS.md` §35; `src/runs/README.md` §6). Read-out deltas against §§2–6 above:
+
+* Row 5 of the §2 table is **SUPERSEDED**: the network arm's audit is clean (`reachable 288/288`,
+  0 violations) and it still promotes nothing (adjDSR 0.8654, single binding hurdle). The
+  "strongest arm is unmeasured" bad-news bullet (§5) is closed; the replacement fact is sharper:
+  the strongest arm is measured and held by the dependence adjustment alone (streamCorr 0.73,
+  DE 5.38 — the §4 good-news lever, F-03, turned against it).
+* §6 item 2 is **DONE**: the panel-arm audit is fixed and the re-score ran. Its successor is
+  TODO 114 (trim `sig-regime-momentum` from the `gh` roster — momentum~regime excess r = 0.9964,
+  effectiveTrials 1.18 of 5).
+* `run.log` is clean (9 lines, 0 errors, `analyze complete`); the §4 reproducibility note now
+  covers eight runs (pooled network Sharpe 1.3005 bit-matches the corpus run).

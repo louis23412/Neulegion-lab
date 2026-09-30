@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e98: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e98: the plugin validates as a learner",
+      "pass": true,
+      "detail": "contract ok"
+    },
+    {
+      "name": "e98: ridge matches the benchmark bit-exactly (standardise=true)",
+      "pass": true,
+      "detail": "1600/1600 test bars exact"
+    },
+    {
+      "name": "e98: ridge matches the benchmark bit-exactly (standardise=false)",
+      "pass": true,
+      "detail": "1600/1600 test bars exact"
+    }
+  ]
+}

@@ -79,11 +79,11 @@
     },
     "formatter": {
       "ciAlpha": 0.1,
-      "badLabels95": true,
+      "labels90": true,
       "goodLabels90": true,
-      "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 95%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+      "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
       "goodText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
-      "note": "formatSeedReplication({ label, dist, alpha = 0.05 }) prints `(1 - alpha) * 100}%CI` using ITS OWN `alpha` parameter, never `dist.ci.alpha`. A distribution built at alpha = 0.10 is reported as \"95%CI\" by default, and only the caller happening to know the distribution alpha labels it correctly. The interval bounds are the 90% ones either way. analyze.js calls the formatter without an alpha, so the shipped path is consistent only because it also builds the distribution at the default 0.05 - a non-default alpha mislabels the summary."
+      "note": "ROUND-94 UPDATE: fixed — formatSeedReplication reads `dist.ci.alpha` for the CI label, so a distribution built at alpha = 0.10 prints \"90%CI\" by default. Pre-fix it used its own `alpha = 0.05` default and mislabeled it \"95%CI\" (bounds were the 90% ones either way)."
     }
   },
   "validation": {
@@ -128,11 +128,11 @@
       },
       "formatterAlphaMismatch": {
         "ciAlpha": 0.1,
-        "badLabels95": true,
+        "labels90": true,
         "goodLabels90": true,
-        "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 95%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
+        "badText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
         "goodText": "seeds: n=8 over 2 seeds mean=0.275 IQM=0.275 90%CI=[0.200, 0.362] | seed-fraction=0.048 fold-fraction=0.952",
-        "note": "formatSeedReplication({ label, dist, alpha = 0.05 }) prints `(1 - alpha) * 100}%CI` using ITS OWN `alpha` parameter, never `dist.ci.alpha`. A distribution built at alpha = 0.10 is reported as \"95%CI\" by default, and only the caller happening to know the distribution alpha labels it correctly. The interval bounds are the 90% ones either way. analyze.js calls the formatter without an alpha, so the shipped path is consistent only because it also builds the distribution at the default 0.05 - a non-default alpha mislabels the summary."
+        "note": "ROUND-94 UPDATE: fixed — formatSeedReplication reads `dist.ci.alpha` for the CI label, so a distribution built at alpha = 0.10 prints \"90%CI\" by default. Pre-fix it used its own `alpha = 0.05` default and mislabeled it \"95%CI\" (bounds were the 90% ones either way)."
       }
     },
     "scope": {

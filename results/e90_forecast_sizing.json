@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e90: the honest carry book loads",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e90: scored span covers 5000+ bars",
+      "pass": true,
+      "detail": "n=6058"
+    },
+    {
+      "name": "e90: both sizings cut the unsized drawdown",
+      "pass": true,
+      "detail": "unsized=7.96% trail=2.70% ar=2.57%"
+    },
+    {
+      "name": "e90: AR sizing drawdown is no worse than trailing sizing",
+      "pass": true,
+      "detail": "ar=2.567% vs trail=2.697% | sharpe u=3.58 trail=7.63 ar=7.68"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e89: the honest carry book loads with a pooled series",
+      "pass": true,
+      "detail": "n=6558"
+    },
+    {
+      "name": "e89: carry-book realized vol builds",
+      "pass": true,
+      "detail": "n=6535"
+    },
+    {
+      "name": "e89: tournament is available on carry-book vol",
+      "pass": true,
+      "detail": "trainN=3267 testN=3268"
+    },
+    {
+      "name": "e89: EWMA skill is positive on carry-book vol",
+      "pass": true,
+      "detail": "ewma=0.978"
+    },
+    {
+      "name": "e89: AR beats EWMA on carry-book vol",
+      "pass": true,
+      "detail": "ar=0.998 winner=ar"
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 // E53 - L10-d: THE SHIPPED CARRY GRID JOIN, AUDITED. CYCLE-044 (L10).
+// ROUND-94 RESTATEMENT: F-61 was FIXED in round 34 (divide by the observed interval), so the
+// synthetic sweep now prices every interval at par. The header below describes the PRE-FIX
+// behavior this audit originally witnessed; the real-data guards measure the historical
+// sub-8h rows in the vendored funding files (a data fact).
 //
 // FOLD-BACK R4 pre-registered this check in CYCLE-006: before porting the carry sleeve, audit the repo's
 // `analysis/carry.js#carryOnBarGrid`/`carryPanelStream` (the shipped funding -> bar-grid join) for
@@ -105,7 +109,9 @@ export async function run({ symbols = SYMBOLS } = {}) {
         };
     }
     const syntheticRatios = [8, 4, 2, 1].map((h) => synthetic[`iv${h}h`].understatementX);
-    const syntheticExact = syntheticRatios.every((x, i) => Math.abs(x - [1, 2, 4, 8][i]) < 1e-9);
+    // RESTATED round 94 (F-61 fixed round 34: bucket rows / divide by the observed interval):
+    // the sub-8h mis-scale is gone, so every interval prices at par ([1,1,1,1], was [1,2,4,8]).
+    const syntheticExact = syntheticRatios.every((x) => Math.abs(x - 1) < 1e-9);
 
     // ---------- B. bar-spacing inference is a single pair (latent) ----------
     const cleanBars = [];
@@ -223,9 +229,9 @@ export async function run({ symbols = SYMBOLS } = {}) {
     const validationPass = Object.values(checks).every((x) => x === true);
 
     const verdict = {
-        note: 'L10-d / FOLD-BACK-R4(b): the shipped carry grid join spreads every funding row over an 8h bar count regardless of the observed interval, so sub-8h funding is understated by 8h/interval.',
-        commentClaim: 'carry.js lines 22-26 ("the bar-grid projection divides by the period actually observed")',
-        codeFact: 'carryOnBarGrid uses perBar = gridMs (default 8h) and barsPerPeriod = round(gridMs / firstBarStep)',
+        note: 'L10-d / FOLD-BACK-R4(b), RESTATED round 94 (F-61 fixed round 34): the shipped carry grid join USED TO spread every funding row over an 8h bar count regardless of the observed interval; the fixed carryOnBarGrid divides by the period actually observed, so the synthetic sweep prices every interval at par ([1,1,1,1]). The real-data guards below still measure the historical sub-8h rows in the vendored funding files (a data fact, not the repo behavior).',
+        commentClaim: 'carry.js ("the bar-grid projection divides by the period actually observed") — true since round 34',
+        codeFact: 'carryOnBarGrid divides by the observed interval (round-34 fix); pre-fix it used perBar = gridMs (default 8h) and barsPerPeriod = round(gridMs / firstBarStep)',
         synthetic,
         barSpacing: { synthetic: firstPair, shippedFirstPairs: firstPairs },
         shipped: sub8h,

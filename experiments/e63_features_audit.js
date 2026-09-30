@@ -210,21 +210,21 @@ export async function run() {
         return close(rows.zScoreHandCheck.pos, ref, 1e-12) && close(z, (raw - m) / sd, 1e-12)
             && early && minObsHigh && nanRaw;
     })();
-    // The zero-dispersion guard is defeated by rounding: an EXACTLY-constant feature window does not
-    // produce std = 0, it produces a denormal std from the mean's rounding error, and the z it returns has
-    // a closed form. This pins the actual arithmetic (the finding below explains why it is wrong).
+    // The zero-dispersion guard WAS defeated by rounding (pre-fix: an EXACTLY-constant feature window
+    // produced a denormal std from the mean's rounding error with closed form sqrt((n-1)/n)).
+    // RESTATED round 94: the guard is FIXED (relative epsilon), flat windows abstain. This pins the fixed arithmetic.
     checks.constantWindowClosedForm = (() => {
         const cases = [];
         let ok = true;
-        let sawNonZero = false;
         for (const [val, n] of [[0.001, 8], [0.001, 16], [0.001, 32], [0.1, 16], [0.1, 32], [0.07, 20]]) {
             const flat = { closes: new Array(80).fill(5), returns: new Array(80).fill(val), volumes: new Array(80).fill(7), panel: null };
             const t = 70;
             const z = causalZScore(momentum, flat, t, { window: n, zWindow: n, minObs: 8 });
-            const expectedAbs = Math.sqrt((n - 1) / n); // the feature window = zWindow = n -> exactly n finite readings
-            const okHere = (z === 0) || close(Math.abs(z), expectedAbs, 1e-9);
-            if (z !== 0) sawNonZero = true;
-            cases.push({ val, n, z, expectedAbs, okHere });
+            // RESTATED round 94: the zero-dispersion guard is FIXED (relative epsilon
+            // `std > 1e-12 * max(1,|mean|)` in causalZScore) — a flat window abstains (0) instead of
+            // returning the denormal closed form sqrt((n-1)/n) the old audit pinned.
+            const okHere = (z === 0);
+            cases.push({ val, n, z, okHere });
             if (!okHere) ok = false;
         }
         rows.constantWindowZ = cases;
@@ -232,7 +232,7 @@ export async function run() {
         const exact = { closes: new Array(80).fill(5), returns: new Array(80).fill(0.5 / 16), volumes: new Array(80).fill(7), panel: null };
         const exactZ = causalZScore(momentum, exact, 70, { window: 16, zWindow: 16, minObs: 8 });
         rows.constantWindowExactMean = { returns: 0.5 / 16, z: exactZ };
-        return ok && sawNonZero && exactZ === 0;
+        return ok && exactZ === 0;
     })();
 
     // ============================== D. feature references ============================================

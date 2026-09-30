@@ -1,0 +1,44 @@
+{
+  "config": {
+    "symbols": 8
+  },
+  "repo": {
+    "buckets": 6606,
+    "net4": 6.25,
+    "turnoverAnnual": 10.01,
+    "breakEvenBps": 43.83,
+    "substituted": 28901,
+    "nullBasisFraction": 0.0064
+  },
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e110: all 8 funding + candle texts and the marks file loaded",
+      "pass": true,
+      "detail": "funding 8, candles 8/8, marks 290248 chars"
+    },
+    {
+      "name": "e110: the honest-marks report is available with a full-history substitution",
+      "pass": true,
+      "detail": "substituted=28901 nullBasis=0.64%"
+    },
+    {
+      "name": "e110: the text-path view equals the programmatic substituted view bit-for-bit",
+      "pass": true,
+      "detail": "buckets twin=6606"
+    },
+    {
+      "name": "e110: the report economics equal the direct chain economics exactly",
+      "pass": true,
+      "detail": "report 6.25/10.01"
+    },
+    {
+      "name": "e110: the honest level reproduces the stored R8 book and the formatter prints the marks line",
+      "pass": true,
+      "detail": "honest 6.25/10.01/43.83 vs stored 6.18/10/46.04"
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,99 @@
+{
+  "config": {
+    "bars": 600,
+    "trainSize": 60,
+    "testSize": 15,
+    "policy": {
+      "deadZone": 0.05,
+      "scale": 1
+    },
+    "lag": 1,
+    "mom15m": {
+      "window": 64,
+      "zWindow": 128
+    },
+    "causal": "last 15m bar with t < 1h open"
+  },
+  "arms": {
+    "A": {
+      "sharpe": 1.0848,
+      "meanPairwiseCorr": 0.5196,
+      "designEffect": 4.6373,
+      "effectiveStreams": 1.7252,
+      "method": "fold-sharpe",
+      "grossPnl": 1.186537,
+      "turnover": 810.435,
+      "breakEvenBps": 14.64
+    },
+    "F": {
+      "sharpe": 1.0407,
+      "meanPairwiseCorr": 0.5659,
+      "designEffect": 4.9612,
+      "effectiveStreams": 1.6125,
+      "method": "fold-sharpe",
+      "grossPnl": 1.097143,
+      "turnover": 823.011,
+      "breakEvenBps": 13.33,
+      "note": "descriptive only: 15m momentum held on the 1h grid, not the native 15m edge"
+    }
+  },
+  "stacked": {
+    "sharpe": 1.0631,
+    "meanPairwiseCorr": 0.5245,
+    "designEffect": 8.8671,
+    "effectiveStreams": 1.8044,
+    "method": "fold-sharpe"
+  },
+  "sameStreamCrossFreqCorr": [
+    0.9483,
+    0.7982,
+    0.9398,
+    0.9178,
+    0.9037,
+    0.8384,
+    0.9567,
+    0.8402
+  ],
+  "verdict": "NEGATIVE",
+  "total": 7,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e120: 8x1h and 8x15m loaded",
+      "pass": true,
+      "detail": "79554/79554/53500/77617/73350/73762/63142/67208 | 79999/79999/79999/79999/79999/79999/79999/79999"
+    },
+    {
+      "name": "e120: 15m history covers the 1h window plus z-lookback",
+      "pass": true,
+      "detail": "window from 2026-08-25"
+    },
+    {
+      "name": "e120: repo roster carries sig-momentum",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "e120: arm A reproduces the run Sharpe (1.0848 +- 0.05)",
+      "pass": true,
+      "detail": "A=1.0848"
+    },
+    {
+      "name": "e120: same-stream cross-frequency return corr measured on all 8",
+      "pass": true,
+      "detail": "0.95/0.80/0.94/0.92/0.90/0.84/0.96/0.84"
+    },
+    {
+      "name": "e120: stacked panel measures finite",
+      "pass": true,
+      "detail": "S effStreams=1.8044 rbar=0.5245"
+    },
+    {
+      "name": "e120: verdict recorded (NEGATIVE)",
+      "pass": true,
+      "detail": "A effStreams=1.7252 rbar=0.5196 | S effStreams=1.8044 rbar=0.5245"
+    }
+  ],
+  "pass": true
+}

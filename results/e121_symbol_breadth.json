@@ -1,0 +1,97 @@
+{
+  "config": {
+    "bars": 600,
+    "trainSize": 60,
+    "testSize": 15,
+    "policy": {
+      "deadZone": 0.05,
+      "scale": 1
+    },
+    "lag": 1,
+    "gridEnd": "2026-08-31T23:00:00.000Z",
+    "midcaps": [
+      "avaxusdt",
+      "nearusdt",
+      "arbusdt",
+      "suiusdt",
+      "opusdt",
+      "injusdt",
+      "tiausdt",
+      "seiusdt"
+    ]
+  },
+  "calibration": {
+    "sharpe": 1.0848,
+    "grossPnl": 1.186537,
+    "turnover": 810.435,
+    "breakEvenBps": 14.64,
+    "meanPairwiseCorr": 0.5196,
+    "designEffect": 4.6373,
+    "effectiveStreams": 1.7252,
+    "method": "fold-sharpe"
+  },
+  "majors": {
+    "sharpe": 0.1528,
+    "grossPnl": 0.211482,
+    "turnover": 898.584,
+    "breakEvenBps": 2.35,
+    "meanPairwiseCorr": 0.5113,
+    "designEffect": 4.579,
+    "effectiveStreams": 1.7471,
+    "method": "fold-sharpe"
+  },
+  "midcaps": {
+    "sharpe": 0.1164,
+    "grossPnl": 0.189249,
+    "turnover": 891.951,
+    "breakEvenBps": 2.12,
+    "meanPairwiseCorr": 0.3925,
+    "designEffect": 3.7474,
+    "effectiveStreams": 2.1348,
+    "method": "fold-sharpe"
+  },
+  "stacked": {
+    "sharpe": 0.1327,
+    "meanPairwiseCorr": 0.3865,
+    "designEffect": 6.7981,
+    "effectiveStreams": 2.3536,
+    "method": "fold-sharpe"
+  },
+  "verdict": "SUPPORTED",
+  "total": 6,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e121: 8 majors + 8 midcaps loaded with >= 600 bars",
+      "pass": true,
+      "detail": "79554/79554/53500/77617/73350/73762/63142/67208 | 19728/19728/19728/19728/19728/19728/19728/19728"
+    },
+    {
+      "name": "e121: repo roster carries sig-momentum",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "e121: shared 600-bar grid timestamp-exact on all 16 streams",
+      "pass": true,
+      "detail": "16/16 exact"
+    },
+    {
+      "name": "e121: calibration reproduces the run Sharpe on the run window (1.0848 +- 0.05)",
+      "pass": true,
+      "detail": "cal=1.0848"
+    },
+    {
+      "name": "e121: all three panels measure finite",
+      "pass": true,
+      "detail": "M=0.1528/1.7471 C=0.1164/2.1348 S=0.1327/2.3536"
+    },
+    {
+      "name": "e121: verdict recorded (SUPPORTED)",
+      "pass": true,
+      "detail": "M effStreams=1.7471 rbar=0.5113 | S effStreams=2.3536 rbar=0.3865"
+    }
+  ],
+  "pass": true
+}

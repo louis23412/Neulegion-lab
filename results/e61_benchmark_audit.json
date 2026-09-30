@@ -11,16 +11,16 @@
   "rows": {
     "constantY": {
       "ybar": 1,
-      "meanPred": 0.5,
-      "minPred": 0.5,
-      "maxPred": 0.5,
+      "meanPred": 1,
+      "minPred": 1,
+      "maxPred": 1,
       "intercept": 0
     },
     "skewedFold": {
       "baseRate": 0.8333333333333334,
       "ybar": 0.8333333333333334,
-      "meanPredShipped": 0.5000000000000001,
-      "brierShipped": 0.22475299906958623,
+      "meanPredShipped": 0.8333333333333333,
+      "brierShipped": 0.11364188795847513,
       "brierRestoreYbar": 0.13533111231662012,
       "brierUncentred": 0.13533111231662004
     },
@@ -78,16 +78,16 @@
         "claim": "the ridge is a closed-form regression of the label (documented \"ridge (closed form)\") whose probability output is the fitted linear probability",
         "constantY": {
           "ybar": 1,
-          "meanPred": 0.5,
-          "minPred": 0.5,
-          "maxPred": 0.5,
+          "meanPred": 1,
+          "minPred": 1,
+          "maxPred": 1,
           "intercept": 0
         },
         "skewedFold": {
           "baseRate": 0.8333333333333334,
           "ybar": 0.8333333333333334,
-          "meanPredShipped": 0.5000000000000001,
-          "brierShipped": 0.22475299906958623,
+          "meanPredShipped": 0.8333333333333333,
+          "brierShipped": 0.11364188795847513,
           "brierRestoreYbar": 0.13533111231662012,
           "brierUncentred": 0.13533111231662004
         },

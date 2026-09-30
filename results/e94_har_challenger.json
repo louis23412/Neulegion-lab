@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e94: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e94: the three-way tournament is available on every stream",
+      "pass": true,
+      "detail": "candles:ok ethusdt_1h:ok solusdt_1h:ok bnbusdt_1h:ok xrpusdt_1h:ok adausdt_1h:ok dogeusdt_1h:ok linkusdt_1h:ok"
+    },
+    {
+      "name": "e94: HAR holds the split majority on every stream",
+      "pass": true,
+      "detail": "candles=har5/5 ar0/5 ethusdt_1h=har5/5 ar0/5 solusdt_1h=har5/5 ar0/5 bnbusdt_1h=har5/5 ar0/5 xrpusdt_1h=har5/5 ar0/5 adausdt_1h=har5/5 ar0/5 dogeusdt_1h=har5/5 ar0/5 linkusdt_1h=har5/5 ar0/5"
+    },
+    {
+      "name": "e94: the mean HAR skill margin over the best rival is positive on every stream",
+      "pass": true,
+      "detail": "margins=0.0003,0.0003,0.0001,0.0002,0.0004,0.0005,0.0003,0.0003"
+    },
+    {
+      "name": "e94: the panel rollup is unanimous for HAR",
+      "pass": true,
+      "detail": "harMajority=8/8"
+    }
+  ]
+}

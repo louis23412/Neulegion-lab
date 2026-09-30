@@ -339,42 +339,36 @@
         "val": 0.001,
         "n": 8,
         "z": 0,
-        "expectedAbs": 0.9354143466934853,
         "okHere": true
       },
       {
         "val": 0.001,
         "n": 16,
-        "z": -0.9682458365518544,
-        "expectedAbs": 0.9682458365518543,
+        "z": 0,
         "okHere": true
       },
       {
         "val": 0.001,
         "n": 32,
         "z": 0,
-        "expectedAbs": 0.9842509842514764,
         "okHere": true
       },
       {
         "val": 0.1,
         "n": 16,
-        "z": -0.9682458365518544,
-        "expectedAbs": 0.9682458365518543,
+        "z": 0,
         "okHere": true
       },
       {
         "val": 0.1,
         "n": 32,
-        "z": -0.9842509842514764,
-        "expectedAbs": 0.9842509842514764,
+        "z": 0,
         "okHere": true
       },
       {
         "val": 0.07,
         "n": 20,
-        "z": -0.9746794344808966,
-        "expectedAbs": 0.9746794344808963,
+        "z": 0,
         "okHere": true
       }
     ],
@@ -523,42 +517,36 @@
             "val": 0.001,
             "n": 8,
             "z": 0,
-            "expectedAbs": 0.9354143466934853,
             "okHere": true
           },
           {
             "val": 0.001,
             "n": 16,
-            "z": -0.9682458365518544,
-            "expectedAbs": 0.9682458365518543,
+            "z": 0,
             "okHere": true
           },
           {
             "val": 0.001,
             "n": 32,
             "z": 0,
-            "expectedAbs": 0.9842509842514764,
             "okHere": true
           },
           {
             "val": 0.1,
             "n": 16,
-            "z": -0.9682458365518544,
-            "expectedAbs": 0.9682458365518543,
+            "z": 0,
             "okHere": true
           },
           {
             "val": 0.1,
             "n": 32,
-            "z": -0.9842509842514764,
-            "expectedAbs": 0.9842509842514764,
+            "z": 0,
             "okHere": true
           },
           {
             "val": 0.07,
             "n": 20,
-            "z": -0.9746794344808966,
-            "expectedAbs": 0.9746794344808963,
+            "z": 0,
             "okHere": true
           }
         ],
@@ -571,8 +559,8 @@
       "emptyRangeSum": {
         "claim": "the feature helpers never manufacture a value: a feature that cannot be computed abstains (NaN)",
         "witness": {
-          "momentumWindow0": 0,
-          "accelerationWindow0": 0,
+          "momentumWindow0": null,
+          "accelerationWindow0": null,
           "volRegimeWindow0": null,
           "reversalWindowWindow0": null,
           "meanOfWindow0": null,
@@ -585,10 +573,10 @@
         "witness": {
           "withStreamIndex": -0.9066812991824462,
           "othersOnly": -0.9066812991824462,
-          "missingStreamIndex": -1.8820447956410788,
+          "missingStreamIndex": null,
           "allThreeIncludingSelf": -1.8820447956410788,
           "ownLaggedMomentum": -3.8327717885583437,
-          "equalsAllThree": true,
+          "equalsAllThree": false,
           "equalsOthers": true
         },
         "note": "the skip is `if (i === p.streamIndex) continue` — with `streamIndex` absent (undefined) the comparison is never true, so the feature silently folds the stream's OWN lagged momentum into its \"network\" average and reports a non-abstaining position. LATENT: `analyze.js` always sets `streamIndex`, so the shipped path is correct; the exported API is not, and the failure mode is silent (a plausible number, not a NaN)."

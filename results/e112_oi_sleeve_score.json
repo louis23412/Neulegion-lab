@@ -98,6 +98,5 @@
       "detail": "[sleeve] oi-change @4bps over 6606 buckets x 8 streams / [sleeve] toptrader-fade @4bps over 6606 buckets x 8 streams"
     }
   ],
-  "pass": true,
-  "ms": 1713
+  "pass": true
 }

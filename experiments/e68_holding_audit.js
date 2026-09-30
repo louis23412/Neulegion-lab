@@ -130,31 +130,33 @@ export async function run() {
         return ok;
     })();
 
-    // (FINDING) `costBps` is accepted, echoed, and never applied.
+    // (FINDING, RESTATED round 94) `costBps` is now threaded (F-76 fixed: holding.js passes it
+    // into every restateReportAtPolicy) — the costBps 0 and 25 sweeps DIFFER and match direct restatements.
     checks.costBpsIsDead = (() => {
         const a = turnoverSweep({ baseline, candidates: [candVar], ...gridOpts, costBps: 0, periodsPerYear: 252, trials: 1 });
         const b = turnoverSweep({ baseline, candidates: [candVar], ...gridOpts, costBps: 25, periodsPerYear: 252, trials: 1 });
         const identical = deepEq(stripCost(a.rows), stripCost(b.rows));
         const echoed = b.rows.every((r) => r.costBps === 25) && a.rows.every((r) => r.costBps === 0);
-        // ... but a direct restatement at a cost DOES change the net Sharpe (so the option would matter)
+        // ... and a direct restatement at a cost moves the net Sharpe (so the option matters)
         const p = { deadZone: 0.1, scale: 1 };
         const at0 = restateReportAtPolicy(candVar, p, { periodsPerYear: 252, trials: 1, costBps: 0 });
         const at25 = restateReportAtPolicy(candVar, p, { periodsPerYear: 252, trials: 1, costBps: 25 });
         const costMoves = !close(at0.pooledMetrics.netSharpe, at25.pooledMetrics.netSharpe, 1e-9);
         const bar0 = a.rows.find((r) => r.policy.deadZone === 0.1 && r.policy.enter === undefined);
         const bar25 = b.rows.find((r) => r.policy.deadZone === 0.1 && r.policy.enter === undefined);
+        const matchesDirect = !!bar25 && close(bar25.netSharpe, at25.pooledMetrics.netSharpe, 1e-9);
         rows.costDead = {
-            identicalRows: identical, echoed, costMovesNetSharpe: costMoves,
+            identicalRows: identical, echoed, costMovesNetSharpe: costMoves, matchesDirect,
             rowNetSharpe: bar0 ? bar0.netSharpe : null,
             direct0NetSharpe: at0.pooledMetrics.netSharpe,
             direct25NetSharpe: at25.pooledMetrics.netSharpe,
-            note: 'turnoverSweep destructures `costBps` and writes it on every row, but each restatement is `restateReportAtPolicy(baseline|candidate, policy, { periodsPerYear, trials })` - costBps is NEVER threaded, so it defaults to 0. The rows at costBps 0 and 25 are byte-identical apart from the echoed field, while a DIRECT restatement at 25 bps moves the net Sharpe. So the reported net Sharpe and the promotion decision are gross-of-cost regardless of the requested cost. `analyze.js` passes the run `costBps` (the --cost-bps flag), so a `--turnover-sweep --cost-bps=10` run prints cost-free Sharpes under a header that says costBps=10.',
+            note: 'ROUND-94 UPDATE: threaded (F-76 fixed) — turnoverSweep passes `costBps` into every restateReportAtPolicy, so the costBps-25 rows carry net-of-cost Sharpes matching direct restatements. Pre-fix, the rows at costBps 0 and 25 were byte-identical apart from the echoed field.',
         };
-        // pin the actual (buggy) behaviour
-        return identical && echoed && costMoves;
+        // pin the actual (fixed) behaviour
+        return !identical && echoed && costMoves && matchesDirect;
     })();
 
-    // (FINDING) the requireCleanAudit hurdle is structurally inapplicable in the sweep.
+    // (FINDING, RESTATED round 94) the requireCleanAudit hurdle now applies in the sweep.
     checks.auditHurdleSkipped = (() => {
         const dirtyAudit = { clean: false, violations: [{ fold: 0 }], probes: 1, reachable: true };
         const baseDirty = mkReport({ id: 'base', confidences: weakConf, returns: weakReturns, audit: { clean: true, violations: [], probes: 1, reachable: true } });
@@ -162,22 +164,26 @@ export async function run() {
         const sweep = turnoverSweep({ baseline: baseDirty, candidates: [candDirty], deadZones: [0], scales: [1], holdings: [null], periodsPerYear: 252, trials: 1, decisionOptions: { requireCleanAudit: true } });
         const somePromote = sweep.rows.some((r) => r.promote);
         const sweepMentionsAudit = sweep.rows.some((r) => (r.reasons || []).some((x) => /audit/i.test(x)));
-        // the mechanism: restatement drops `audit`, so the hurdle sees undefined
+        // the mechanism, RESTATED round 94: restatement now CARRIES `audit` (`audit: report.audit || null`),
+        // so the hurdle sees the dirty block
         const restBase = restateReportAtPolicy(baseDirty, { deadZone: 0, scale: 1 });
         const restCand = restateReportAtPolicy(candDirty, { deadZone: 0, scale: 1 });
-        const restDropsAudit = restBase.audit === undefined && restCand.audit === undefined;
+        const restCarriesAudit = deepEq(restBase.audit, baseDirty.audit) && deepEq(restCand.audit, dirtyAudit);
+        // ... and the sweep's dirty row now fails on the audit hurdle
+        const dirtyRow = sweep.rows.find((r) => r.id === 'sig-dirty');
+        const sweepFailsDirtyOnAudit = !!dirtyRow && dirtyRow.promote === false && (dirtyRow.reasons || []).some((x) => /audit/i.test(x));
         // ... and if the dirty audit WERE carried, the same decision would fail
         const manual = promoteDecision(restBase, { ...restCand, audit: dirtyAudit }, { requireCleanAudit: true });
         const manualFailsAudit = (manual.reasons || []).some((x) => /audit/i.test(x)) && manual.promote === false;
         const cleanPromote = promoteDecision(restBase, restCand, { requireCleanAudit: true }).promote;
         rows.auditSkip = {
-            somePromote, sweepMentionsAudit, restDropsAudit, manualFailsAudit, cleanPromote,
+            somePromote, sweepMentionsAudit, restCarriesAudit, sweepFailsDirtyOnAudit, manualFailsAudit, cleanPromote,
             promoteStates: sweep.rows.map((r) => r.promote),
             manualReasons: manual.reasons,
-            note: 'turnoverSweep passes `decisionOptions: { requireCleanAudit: audit }` straight to promoteDecision, but each report is RESTATED first, and restateReportAtPolicy does NOT carry the `audit` block (unlike its sibling restateReportAtCost, which deliberately does: "the look-ahead audit is cost-independent, so it carries over unchanged"). promoteDecision then sees audit === undefined and skips the hurdle (its guard is `if (baseline.audit && !baseline.audit.clean)`). So a candidate that FAILED the run\'s look-ahead audit still promotes in the sweep and can be named `byId.bestPromoting` - the sweep reports a decision the run would not make. Rebuilt with the audit attached, the same decision correctly fails.',
+            note: 'ROUND-94 UPDATE: applicable (F-76 fixed) — restateReportAtPolicy carries the audit block like its sibling restateReportAtCost, so the sweep with requireCleanAudit fails the dirty candidate on the audit hurdle. Pre-fix, the restatement dropped audit and the sweep promoted a candidate the run would not.',
         };
         // pin the actual behaviour
-        return restDropsAudit && manualFailsAudit && !sweepMentionsAudit && somePromote && cleanPromote;
+        return restCarriesAudit && sweepFailsDirtyOnAudit && manualFailsAudit;
     })();
 
     // (FINDING) DEFAULT_TURNOVER_GRID is only shallowly frozen.
@@ -254,7 +260,7 @@ export async function run() {
     const failed = Object.entries(resolved).filter(([, v]) => v !== true).map(([k]) => k);
 
     const verdict = {
-        note: 'L10-cg..: `analysis/holding.js` is the SHIPPED turnover attack (round 26, R26-5) - `analyze.js` imports it as `runTurnoverSweep` behind `--turnover-sweep` and calls it with the run costBps and `decisionOptions: { requireCleanAudit: audit, ...gateOptions }`. PASSES the pre-registered read: the grid is the cartesian product DZ x SCALE x HOLD ({...holding, deadZone, scale} per policy, rows = policies x candidates); every row reproduces a direct `restateReportAtPolicy(candidate, policy)` recompute (turnover/gross/net Sharpe/break-even to 1e-9); rows are sorted by break-even DESCENDING with a missing value last; `byId.best` is the highest-break-even row and `bestPromoting` the highest-break-even promoting one; `bestTurnoverPolicy` prefers promoting and returns null for an unknown id; the two bail-outs (no baseline fold inputs, a candidate without any) return `available:false` with a reason; and `formatTurnoverSweep` renders the unavailable reason and, when available, every id plus the target. FINDINGS: (0) `turnoverSweep` accepts `costBps` and echoes it on every row but NEVER threads it into `restateReportAtPolicy`, so every row netSharpe/dsr and every promotion decision is computed at ZERO cost - the costBps 0 and 25 sweeps are byte-identical apart from the echoed field while a direct restatement at 25 bps moves the net Sharpe (shipped caller passes costBps); (1) the `requireCleanAudit` hurdle the caller asks for is structurally inapplicable because `restateReportAtPolicy` drops the `audit` block (unlike `restateReportAtCost`, which carries it), so a candidate that FAILED the look-ahead audit still promotes and can be named `bestPromoting`; (2) `DEFAULT_TURNOVER_GRID` is only SHALLOWLY frozen - a caller can push a band onto its mutable `deadZones` and change the default grid for every later caller. All three are latent/report-level (no scored number moves, no golden moves); no fold-back row.',
+        note: 'L10-cg..: `analysis/holding.js` is the SHIPPED turnover attack (round 26, R26-5) - `analyze.js` imports it as `runTurnoverSweep` behind `--turnover-sweep` and calls it with the run costBps and `decisionOptions: { requireCleanAudit: audit, ...gateOptions }`. PASSES the pre-registered read: the grid is the cartesian product DZ x SCALE x HOLD ({...holding, deadZone, scale} per policy, rows = policies x candidates); every row reproduces a direct `restateReportAtPolicy(candidate, policy)` recompute (turnover/gross/net Sharpe/break-even to 1e-9); rows are sorted by break-even DESCENDING with a missing value last; `byId.best` is the highest-break-even row and `bestPromoting` the highest-break-even promoting one; `bestTurnoverPolicy` prefers promoting and returns null for an unknown id; the two bail-outs (no baseline fold inputs, a candidate without any) return `available:false` with a reason; and `formatTurnoverSweep` renders the unavailable reason and, when available, every id plus the target. FINDINGS, RESTATED round 94 (both hardened: F-76 costBps threading + audit carry): (0) `turnoverSweep` threads `costBps` into every restatement, so rows carry net-of-cost Sharpes matching direct restatements; (1) the `requireCleanAudit` hurdle applies because restatements carry the `audit` block — a dirty candidate fails it in the sweep; (2) `DEFAULT_TURNOVER_GRID` is only SHALLOWLY frozen - a caller can push a band onto its mutable `deadZones` and change the default grid for every later caller. All three are latent/report-level (no scored number moves, no golden moves); no fold-back row.',
         checks: resolved,
         validationPass,
         failed,

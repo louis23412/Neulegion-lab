@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e83: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e83: panel call is available over 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e83: AR majority and EWMA-positive are unanimous",
+      "pass": true,
+      "detail": "arMajority=8/8 ewmaClean=8/8"
+    },
+    {
+      "name": "e83: per-stream cells equal the single-stream calls",
+      "pass": true,
+      "detail": "8/8 cells match"
+    }
+  ]
+}

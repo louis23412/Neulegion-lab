@@ -1,0 +1,37 @@
+{
+  "total": 6,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e84: synthetic AR(1) builds at full length",
+      "pass": true,
+      "detail": "n=5000"
+    },
+    {
+      "name": "e84: fit is available on the synthetic series",
+      "pass": true,
+      "detail": "rows=4999"
+    },
+    {
+      "name": "e84: fit recovers phi within 0.05",
+      "pass": true,
+      "detail": "phi=0.7082"
+    },
+    {
+      "name": "e84: fit recovers c within 0.15",
+      "pass": true,
+      "detail": "c=0.4782"
+    },
+    {
+      "name": "e84: repo fit matches the independent closed form to 1e-9",
+      "pass": true,
+      "detail": "d0=1.5e-15 d1=8.9e-16"
+    },
+    {
+      "name": "e84: prediction equals the linear form exactly",
+      "pass": true,
+      "detail": "p=1.728415"
+    }
+  ]
+}

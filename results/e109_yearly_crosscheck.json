@@ -1,0 +1,52 @@
+{
+  "config": {
+    "symbols": 8
+  },
+  "repo": {
+    "buckets": 6606,
+    "slope": -0.09267922697017147,
+    "diff": -0.2704504600983183
+  },
+  "honest": {
+    "years": 7,
+    "slope": -0.01306386655758413,
+    "firstTwo": 0.24091411989864034,
+    "lastTwo": 0.0968415259932163
+  },
+  "total": 6,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e109: all 8 funding + candle texts loaded",
+      "pass": true,
+      "detail": "funding 8, candles 8/8"
+    },
+    {
+      "name": "e109: the sleeve-mode report is available on shipped texts",
+      "pass": true,
+      "detail": "buckets=6606"
+    },
+    {
+      "name": "e109: the lab yearly block equals the operator block near-exactly",
+      "pass": true,
+      "detail": "slope lab=-0.09267922697017147 operator=-0.09267922697017147, maxSharpeDrift=0"
+    },
+    {
+      "name": "e109: the first-last block is populated over the scored bars and printed",
+      "pass": true,
+      "detail": "halves 3302+3303=6605, diff=-0.2704504600983183"
+    },
+    {
+      "name": "e109: the independent honest book shows the same decay direction",
+      "pass": true,
+      "detail": "7y slope=-0.013 first2=0.24 last2=0.10"
+    },
+    {
+      "name": "e109: the operator block itself shows decay (the attestation pin)",
+      "pass": true,
+      "detail": "2020 0.66 → 2026 0.11, slope -0.09/yr"
+    }
+  ],
+  "pass": true
+}

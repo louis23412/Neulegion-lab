@@ -1,0 +1,107 @@
+{
+  "config": {
+    "bars": 600,
+    "trainSize": 60,
+    "testSize": 15,
+    "policy": {
+      "deadZone": 0.05,
+      "scale": 1
+    },
+    "lag": 1
+  },
+  "arms": {
+    "A": {
+      "sharpe": 1.0848,
+      "bars": 4320,
+      "grossPnl": 1.186537,
+      "turnover": 810.435,
+      "breakEvenBps": 14.64,
+      "meanPairwiseCorr": 0.5196,
+      "designEffect": 4.6373,
+      "effectiveStreams": 1.7252,
+      "effectiveBars": 932,
+      "method": "fold-sharpe"
+    },
+    "B": {
+      "sharpe": 0.0926,
+      "bars": 4320,
+      "grossPnl": 0.038244,
+      "turnover": 331.93,
+      "breakEvenBps": 1.15,
+      "meanPairwiseCorr": -0.0715,
+      "designEffect": 0.4993,
+      "effectiveStreams": 16.0229,
+      "effectiveBars": 8652,
+      "method": "fold-sharpe"
+    },
+    "C": {
+      "sharpe": 0.1958,
+      "bars": 4320,
+      "grossPnl": 0.233017,
+      "turnover": 1216.524,
+      "breakEvenBps": 1.92,
+      "meanPairwiseCorr": -0.043,
+      "designEffect": 0.699,
+      "effectiveStreams": 11.4448,
+      "effectiveBars": 6180,
+      "method": "fold-sharpe"
+    }
+  },
+  "ref": {
+    "sharpe": 1.0848,
+    "meanPairwiseCorr": 0.5196,
+    "effectiveStreams": 1.7252
+  },
+  "verdict": "NEGATIVE",
+  "total": 9,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e119: 8x1h series loaded with >= 600 bars",
+      "pass": true,
+      "detail": "79554/79554/53500/77617/73350/73762/63142/67208"
+    },
+    {
+      "name": "e119: last-600 slice aligned on all streams",
+      "pass": true,
+      "detail": "600/600/600/600/600/600/600/600"
+    },
+    {
+      "name": "e119: repo roster carries sig-momentum",
+      "pass": true,
+      "detail": "trailing 16-bar return momentum (the classic trend primitive)"
+    },
+    {
+      "name": "e119: 36 folds of 15 test bars",
+      "pass": true,
+      "detail": "folds=36"
+    },
+    {
+      "name": "e119: confidences finite on every fold/stream",
+      "pass": true,
+      "detail": "8x36x15"
+    },
+    {
+      "name": "e119: arm A reproduces the run Sharpe (1.0848 +- 0.05)",
+      "pass": true,
+      "detail": "A=1.0848 n=4320"
+    },
+    {
+      "name": "e119: arm A reproduces the run panel correlation (rbar 0.5196 +- 0.02, effStreams 1.7252 +- 0.1)",
+      "pass": true,
+      "detail": "rbar=0.5196 effStreams=1.7252 (Kish DE=4.6373 vs run composite 3.6239, which folds in serial dependence)"
+    },
+    {
+      "name": "e119: arms B/C measure finite",
+      "pass": true,
+      "detail": "B=0.0926 C=0.1958"
+    },
+    {
+      "name": "e119: verdict recorded (NEGATIVE)",
+      "pass": true,
+      "detail": "B Sharpe=0.0926 DE=0.4993 | C Sharpe=0.1958 DE=0.699"
+    }
+  ],
+  "pass": true
+}

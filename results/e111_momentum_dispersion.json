@@ -1,0 +1,72 @@
+{
+  "config": {
+    "windows": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "feeBps": 4
+  },
+  "repo": {
+    "buckets": 6606,
+    "carryAnn": 11.26
+  },
+  "momentum": {
+    "2": {
+      "net": -0.0096,
+      "netAnn": -0.32,
+      "be": -60.2,
+      "corr": -0.006
+    },
+    "4": {
+      "net": -0.0168,
+      "netAnn": -0.56,
+      "be": -99.3,
+      "corr": -0.043
+    },
+    "8": {
+      "net": -0.0084,
+      "netAnn": -0.28,
+      "be": -43.7,
+      "corr": -0.041
+    },
+    "16": {
+      "net": 0.0014,
+      "netAnn": 0.05,
+      "be": 12.5,
+      "corr": -0.032
+    }
+  },
+  "total": 5,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e111: all 8 funding + candle texts loaded",
+      "pass": true,
+      "detail": "funding 8, candles 8/8"
+    },
+    {
+      "name": "e111: the carry control replicates the shipped-marks level",
+      "pass": true,
+      "detail": "carry netAnn=11.26"
+    },
+    {
+      "name": "e111: momentum is null at every window",
+      "pass": true,
+      "detail": "W2:-0.010/-60.2 W4:-0.017/-99.3 W8:-0.008/-43.7 W16:0.001/12.5"
+    },
+    {
+      "name": "e111: momentum is decorrelated from carry at every window",
+      "pass": true,
+      "detail": "W2:-0.006 W4:-0.043 W8:-0.041 W16:-0.032"
+    },
+    {
+      "name": "e111: the null is gross, not cost (no turnover rescue)",
+      "pass": true,
+      "detail": "grossAnn 0.57/0.55, turn hold 993/849 vs ewma 67/68"
+    }
+  ],
+  "pass": true
+}

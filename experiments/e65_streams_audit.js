@@ -23,7 +23,8 @@
 //
 // The DEFECTS are reported in `findings`: a zero-variance (constant) stream is skipped from every correlation
 // pair but still counted in K and rawBars, so the panel's reported effective breadth counts a stream that
-// carries no information; and `maxStreams <= 0` is treated as "unlimited" rather than "none".
+// carries no information; and `maxStreams <= 0` WAS treated as "unlimited" rather than "none"
+// (hardened in round 48 — L10-cb now throws, R48-pinned; e65 restated round 94).
 
 import {
     resampleCandles, designEffectOfStreams, selectStreams, formatStreamSelection,
@@ -261,15 +262,16 @@ export async function run() {
     checks.selectStreamsEdges = (() => {
         const a = mkSeries(240, 21);
         const b = mkSeries(240, 22);
-        const zero = selectStreams({ seriesByLabel: { a, b }, maxStreams: 0 });
-        const neg = selectStreams({ seriesByLabel: { a, b }, maxStreams: -3 });
+        const throwsCb = (m) => { try { selectStreams({ seriesByLabel: { a, b }, maxStreams: m }); return false; } catch (e) { return /L10-cb/.test(String(e && e.message)); } };
+        const zeroThrows = throwsCb(0);
+        const negThrows = throwsCb(-3);
         const avail = selectStreams({ seriesByLabel: { a: [1, 2], b: [3, 4] } });
         const minEff = selectStreams({ seriesByLabel: { a, b }, minMarginalEfficiency: 10 });
         rows.selectorEdges = {
-            maxStreams0Chosen: zero.chosen, maxStreamsNegChosen: neg.chosen,
+            maxStreams0Throws: zeroThrows, maxStreamsNegThrows: negThrows,
             unavailable: avail.available, minEffChosen: minEff.chosen,
         };
-        return avail.available === false && zero.chosen.length > 0 && neg.chosen.length > 0 && minEff.chosen.length === 0;
+        return avail.available === false && zeroThrows && negThrows && minEff.chosen.length === 0;
     })();
 
     checks.formatStreamSelection = (() => {
@@ -284,7 +286,9 @@ export async function run() {
     })();
 
     // ============================== D. findings ========================================================
-    // (FINDING 1) a zero-variance (constant) stream is skipped from rbar but still counted in K and rawBars.
+    // (FINDING 1, RESTATED round 94) a zero-variance (constant) stream used to be skipped from rbar
+    // but still counted in K and rawBars (buying a full unit of "effective breadth"); round 48
+    // hardened it fail-closed (L10-ca), so the panel with a constant stream is now unavailable.
     checks.constantStreamCountedInK = (() => {
         // two genuinely independent streams (different deterministic components AND noise) + one constant
         const a = mkSeries(240, 41, 0.13, 0.0);
@@ -294,23 +298,20 @@ export async function run() {
         const three = designEffectOfStreams({ a, b, c });
         rows.constantStream = {
             two: { rbar: two.meanPairwiseCorr, K: two.K, T: two.T, designEffect: two.designEffect, effectiveStreams: two.effectiveStreams, effectiveBars: two.effectiveBars, rawBars: two.rawBars },
-            three: { rbar: three.meanPairwiseCorr, K: three.K, T: three.T, designEffect: three.designEffect, effectiveStreams: three.effectiveStreams, effectiveBars: three.effectiveBars, rawBars: three.rawBars },
-            note: 'the constant stream cannot be correlated with anything, so every pair involving it is skipped by meanPairwiseCorrelation — yet it is still counted in K and in rawBars = K*T. `e65` (two independent streams + one constant, T = 240): rbar is BIT-IDENTICAL with and without the constant stream (-0.0133166822 both), rawBars goes 480 -> 720, and effectiveStreams goes 2.027 -> 3.082 (a full extra unit, slightly MORE than one because the noise-set rbar is negative). So a no-information stream buys a full unit of "effective breadth" in the printed report, while the selector DOES skip it (its candidate is unavailable: rbar with a constant partner is NaN), so `designEffectOfStreams` and `selectStreams` disagree about whether it is a stream. LATENT (a flat/halted stream in the panel — the L10-l class) and diagnostic-only.',
+            three: { available: three.available, reason: three.reason || null },
+            note: 'ROUND-94 UPDATE: hardened fail-closed (L10-ca, round 48, R48-pinned) — the constant-stream panel is now unavailable instead of inflated. Pre-hardening, rbar was BIT-IDENTICAL with and without the constant stream while effectiveStreams gained a full unit (2.027 -> 3.082); that inflation path is closed.',
         };
-        // pin the module's actual behaviour (the finding is the inflation): rbar is BIT-IDENTICAL with and
-        // without the constant stream (its pairs are all skipped), yet effectiveStreams/effectiveBars each gain
-        // a full stream's worth.
-        return three.rawBars === 3 * three.T && two.rawBars === 2 * two.T
-            && three.meanPairwiseCorr === two.meanPairwiseCorr
-            && three.effectiveStreams > two.effectiveStreams + 0.9
-            && three.designEffect < 1.05;
+        // pin the module's actual behaviour (fail-closed): the clean pair measures, the panel with
+        // a constant stream is unavailable with the L10-ca reason.
+        return two.available === true && two.rawBars === 2 * two.T
+            && three.available === false && /L10-ca/.test(three.reason || '');
     })();
 
     const findingConstantStream = rows.constantStream;
     const findingMaxStreamsZero = {
         claim: 'the selector "stop[s] when the best remaining candidate cannot improve effective bars" and honours `maxStreams`',
         witness: rows.selectorEdges,
-        note: '`maxStreams <= 0` is silently treated as UNLIMITED: the limit is `Number.isFinite(maxStreams) && maxStreams > 0 ? Math.floor(maxStreams) : all.length`, so `maxStreams: 0` and `maxStreams: -3` both select streams instead of none. The shipped check only exercises `maxStreams: 2`, so it cannot see this. LATENT (analyze.js passes a positive/Infinity value), but it is an API contract gap of the same class as L10-bj (`successiveHalving` not validating `eta`/`minBudget`).',
+        note: 'ROUND-94 UPDATE: this defect is HARDENED — round 48 changed `selectStreams` to throw `maxStreams must be a positive integer or Infinity (L10-cb)` on non-positive values (R48-pinned in `analysis.test.js`), so `maxStreams: 0` and `maxStreams: -3` now fail closed instead of selecting streams. The pre-hardening behavior this audit originally witnessed (`maxStreams <= 0` silently treated as UNLIMITED via `Number.isFinite(maxStreams) && maxStreams > 0 ? Math.floor(maxStreams) : all.length`) is historical. The shipped check only exercises `maxStreams: 2`, but the R48 harness checks pin 0/-2/NaN.',
     };
 
     const resolved = {};

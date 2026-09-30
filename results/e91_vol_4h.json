@@ -1,0 +1,27 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e91: the 1h panel builds with 8 streams",
+      "pass": true,
+      "detail": "streams=8"
+    },
+    {
+      "name": "e91: 4h resampling yields 13k+ bars per stream",
+      "pass": true,
+      "detail": "candles=13375,ethusdt_1h=13375,solusdt_1h=13375,bnbusdt_1h=13375,xrpusdt_1h=13375,adausdt_1h=13375,dogeusdt_1h=13375,linkusdt_1h=13375"
+    },
+    {
+      "name": "e91: tournament available on every 4h stream",
+      "pass": true,
+      "detail": "candles:5/5 ethusdt_1h:5/5 solusdt_1h:5/5 bnbusdt_1h:5/5 xrpusdt_1h:5/5 adausdt_1h:5/5 dogeusdt_1h:5/5 linkusdt_1h:5/5"
+    },
+    {
+      "name": "e91: AR majority on >= 6/8 4h streams",
+      "pass": true,
+      "detail": "arMajority=8/8"
+    }
+  ]
+}

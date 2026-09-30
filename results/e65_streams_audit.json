@@ -180,14 +180,8 @@
       ]
     },
     "selectorEdges": {
-      "maxStreams0Chosen": [
-        "a",
-        "b"
-      ],
-      "maxStreamsNegChosen": [
-        "a",
-        "b"
-      ],
+      "maxStreams0Throws": true,
+      "maxStreamsNegThrows": true,
       "unavailable": false,
       "minEffChosen": []
     },
@@ -209,15 +203,10 @@
         "rawBars": 480
       },
       "three": {
-        "rbar": -0.013316682156877634,
-        "K": 3,
-        "T": 240,
-        "designEffect": 0.9733666356862447,
-        "effectiveStreams": 3.082086328020617,
-        "effectiveBars": 739.7007187249482,
-        "rawBars": 720
+        "available": false,
+        "reason": "degenerate: constant stream(s) c carry no breadth (L10-ca)"
       },
-      "note": "the constant stream cannot be correlated with anything, so every pair involving it is skipped by meanPairwiseCorrelation — yet it is still counted in K and in rawBars = K*T. `e65` (two independent streams + one constant, T = 240): rbar is BIT-IDENTICAL with and without the constant stream (-0.0133166822 both), rawBars goes 480 -> 720, and effectiveStreams goes 2.027 -> 3.082 (a full extra unit, slightly MORE than one because the noise-set rbar is negative). So a no-information stream buys a full unit of \"effective breadth\" in the printed report, while the selector DOES skip it (its candidate is unavailable: rbar with a constant partner is NaN), so `designEffectOfStreams` and `selectStreams` disagree about whether it is a stream. LATENT (a flat/halted stream in the panel — the L10-l class) and diagnostic-only."
+      "note": "ROUND-94 UPDATE: hardened fail-closed (L10-ca, round 48, R48-pinned) — the constant-stream panel is now unavailable instead of inflated. Pre-hardening, rbar was BIT-IDENTICAL with and without the constant stream while effectiveStreams gained a full unit (2.027 -> 3.082); that inflation path is closed."
     }
   },
   "validation": {
@@ -258,31 +247,20 @@
           "rawBars": 480
         },
         "three": {
-          "rbar": -0.013316682156877634,
-          "K": 3,
-          "T": 240,
-          "designEffect": 0.9733666356862447,
-          "effectiveStreams": 3.082086328020617,
-          "effectiveBars": 739.7007187249482,
-          "rawBars": 720
+          "available": false,
+          "reason": "degenerate: constant stream(s) c carry no breadth (L10-ca)"
         },
-        "note": "the constant stream cannot be correlated with anything, so every pair involving it is skipped by meanPairwiseCorrelation — yet it is still counted in K and in rawBars = K*T. `e65` (two independent streams + one constant, T = 240): rbar is BIT-IDENTICAL with and without the constant stream (-0.0133166822 both), rawBars goes 480 -> 720, and effectiveStreams goes 2.027 -> 3.082 (a full extra unit, slightly MORE than one because the noise-set rbar is negative). So a no-information stream buys a full unit of \"effective breadth\" in the printed report, while the selector DOES skip it (its candidate is unavailable: rbar with a constant partner is NaN), so `designEffectOfStreams` and `selectStreams` disagree about whether it is a stream. LATENT (a flat/halted stream in the panel — the L10-l class) and diagnostic-only."
+        "note": "ROUND-94 UPDATE: hardened fail-closed (L10-ca, round 48, R48-pinned) — the constant-stream panel is now unavailable instead of inflated. Pre-hardening, rbar was BIT-IDENTICAL with and without the constant stream while effectiveStreams gained a full unit (2.027 -> 3.082); that inflation path is closed."
       },
       "maxStreamsZeroMeansUnlimited": {
         "claim": "the selector \"stop[s] when the best remaining candidate cannot improve effective bars\" and honours `maxStreams`",
         "witness": {
-          "maxStreams0Chosen": [
-            "a",
-            "b"
-          ],
-          "maxStreamsNegChosen": [
-            "a",
-            "b"
-          ],
+          "maxStreams0Throws": true,
+          "maxStreamsNegThrows": true,
           "unavailable": false,
           "minEffChosen": []
         },
-        "note": "`maxStreams <= 0` is silently treated as UNLIMITED: the limit is `Number.isFinite(maxStreams) && maxStreams > 0 ? Math.floor(maxStreams) : all.length`, so `maxStreams: 0` and `maxStreams: -3` both select streams instead of none. The shipped check only exercises `maxStreams: 2`, so it cannot see this. LATENT (analyze.js passes a positive/Infinity value), but it is an API contract gap of the same class as L10-bj (`successiveHalving` not validating `eta`/`minBudget`)."
+        "note": "ROUND-94 UPDATE: this defect is HARDENED — round 48 changed `selectStreams` to throw `maxStreams must be a positive integer or Infinity (L10-cb)` on non-positive values (R48-pinned in `analysis.test.js`), so `maxStreams: 0` and `maxStreams: -3` now fail closed instead of selecting streams. The pre-hardening behavior this audit originally witnessed (`maxStreams <= 0` silently treated as UNLIMITED via `Number.isFinite(maxStreams) && maxStreams > 0 ? Math.floor(maxStreams) : all.length`) is historical. The shipped check only exercises `maxStreams: 2`, but the R48 harness checks pin 0/-2/NaN."
       }
     },
     "scope": {

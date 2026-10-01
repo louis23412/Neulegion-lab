@@ -1,0 +1,100 @@
+{
+  "total": 4,
+  "failed": 1,
+  "failures": [
+    {
+      "name": "e134: zero-crossing cost is finite on both panels (cost-sensitive inside the ladder)",
+      "pass": false,
+      "detail": "cross majors@nullbps stacked@25bps"
+    }
+  ],
+  "checks": [
+    {
+      "name": "e134: full cost ladder scores finite on majors-full + stacked-16",
+      "pass": true,
+      "detail": "majors=6606 stacked16=2466"
+    },
+    {
+      "name": "e134: net falls monotonically with cost on both panels (cost mechanism)",
+      "pass": true,
+      "detail": "majors 0.38/0.36/0.34/0.29/0.16 stacked 0.48/0.44/0.40/0.28/-0.02"
+    },
+    {
+      "name": "e134: 4bps lanes reproduce the recorded pinned lanes (e131/e132 coherence)",
+      "pass": true,
+      "detail": "majors4=0.3404/42.88 stacked4=0.4008/24.11"
+    },
+    {
+      "name": "e134: zero-crossing cost is finite on both panels (cost-sensitive inside the ladder)",
+      "pass": false,
+      "detail": "cross majors@nullbps stacked@25bps"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "majors": {
+      "buckets": 6606,
+      "ladder": {
+        "0": {
+          "netSharpe": 0.37542101079699464,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        },
+        "2": {
+          "netSharpe": 0.3579100512010967,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        },
+        "4": {
+          "netSharpe": 0.3403990916051963,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        },
+        "10": {
+          "netSharpe": 0.287866212817499,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        },
+        "25": {
+          "netSharpe": 0.1565340158482574,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        }
+      }
+    },
+    "stacked16": {
+      "buckets": 2466,
+      "ladder": {
+        "0": {
+          "netSharpe": 0.48044618812970474,
+          "breakEvenCostBps": 24.114148882731318,
+          "turnover": 39.68586476985328
+        },
+        "2": {
+          "netSharpe": 0.4405985293575744,
+          "breakEvenCostBps": 24.114148882731318,
+          "turnover": 39.68586476985328
+        },
+        "4": {
+          "netSharpe": 0.4007508705854461,
+          "breakEvenCostBps": 24.114148882731318,
+          "turnover": 39.68586476985328
+        },
+        "10": {
+          "netSharpe": 0.2812078942690563,
+          "breakEvenCostBps": 24.114148882731318,
+          "turnover": 39.68586476985328
+        },
+        "25": {
+          "netSharpe": -0.017649546521916398,
+          "breakEvenCostBps": 24.114148882731318,
+          "turnover": 39.68586476985328
+        }
+      }
+    },
+    "crossAt": {
+      "majors": null,
+      "stacked16": 25
+    }
+  }
+}

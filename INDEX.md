@@ -6,7 +6,7 @@ Everything in the lab, and where to start.
 
 * **`README.md`** — what the lab is, ground rules, layout, status.
 * **`leads/INDEX.md`** — the board: 19 leads, statuses, results, fold-back rows. **The entry point.**
-* **`FINDINGS.md`** — the measured ledger F-01…F-87 (what is *true*, with numbers).
+* **`FINDINGS.md`** — the measured ledger F-01…F-143 (what is *true*, with numbers).
 * **`THEORY.md`** — the system model and the ranked frontier J1–J6 (what to do about it).
 * **`RUN-CROSSCHECK.md`** — the uploaded local run corpus (`src/runs/`) read against the ledger: what it confirms, the one new gate-coupling item, and the modules/LOCKED items worth unlocking.
 * **`../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md`** — the project's next-step plan (the pivot: stop predicting, start allocating), built from this lab's evidence + the run corpus. The lab's `FOLD-BACK.md` queue carries its port priority.
@@ -22,7 +22,7 @@ Everything in the lab, and where to start.
 | `PROTOCOL.md` | cycles, the lead template, statuses, evidence rules, bug-hunt protocol | the method changes |
 | `INDEX.md` | this map | a file is added/removed |
 | `THEORY.md` | system model, ranked weakest joints J1–J6, edge directions E-A…E-E | a joint is fixed or a direction closes |
-| `FINDINGS.md` | F-01…F-87: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
+| `FINDINGS.md` | F-01…F-143: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
 | `FOLD-BACK.md` | the port contract + queue R1…R8 + the NOT-to-port list | a lead graduates or is ruled out |
 | `RUN-CROSSCHECK.md` | the project's 2026-09-26/27 local run corpus (`src/runs/`) read against F-01…F-80: confirms/refutes, the new funding-sleeve/paired-test coupling (proposed `L10-cs`), and the module/unlock list | a run corpus is supplied or a run-derived row is confirmed |
 | `../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md` | the project's next-step plan (the pivot: structural sleeves + portfolio/risk + honest full-history scoring; the model demoted to a modular, default-off research layer) | the project's direction changes |
@@ -940,3 +940,4 @@ concluded, and what is now false that used to be believed.
 | [129](cycles/CYCLE-129.md) | roster.js (505 lines) → roster/ ×3 + shim (analyze/ fully modular); e127 quantized-sizing; 10c (1 grounding) | 294/41/255 green; two path bugs self-caught; e127 4/4 NEGATIVE (F-140: rank-not-level); S44; `npm test` owed. |
 | [130](cycles/CYCLE-130.md) | candle_fetcher.js (655 lines) → candle_fetcher/ ×5 + shim; e128 rank-persistence; 10d blocked | exact 28-name contract (fetcher 111/0, candles 192/0); one self-caught import; e128 4/3 NEGATIVE-descriptive (F-141: raw ranks churn, slow EWMA constructs); S45; `npm test` owed. |
 | [131](cycles/CYCLE-131.md) | dependence.js (556 lines, registered) → dependence/ ×3 + shim + registry/locks; e129 smoothed-rank | exact contract (locks 41/0, analysis 856/0 first try); e129 4/4 SUPPORTED (F-142: EWMA manufactures rho1 0.99, raw replicated); 10d still paused; S46; `npm test` owed (covers R100+R101). |
+| [132](cycles/CYCLE-132.md) | features.js (545 lines, registered) → features/ ×4 + shim + registry/locks; e130 lambda-plateau; 10e (6 notes) | exact 29-name contract (locks 41/0, analysis 856/0 first try); one self-caught import; e130 4/3 (F-143: plateau range 0.03, turnover sign corrected); S47; `npm test` owed. |

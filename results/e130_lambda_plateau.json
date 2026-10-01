@@ -1,0 +1,96 @@
+{
+  "total": 4,
+  "failed": 1,
+  "failures": [
+    {
+      "name": "e130: turnover falls from lambda 0.005 to 0.05 on majors-full (speed mechanism)",
+      "pass": false,
+      "detail": "t0.005=14.7 t0.05=146.3"
+    }
+  ],
+  "checks": [
+    {
+      "name": "e130: full lambda ladder scores finite on both panels",
+      "pass": true,
+      "detail": "majors=6606 midcap=2466"
+    },
+    {
+      "name": "e130: 0.01–0.03 net-Sharpe range <= 0.5 on majors-full (plateau, not pinnacle)",
+      "pass": true,
+      "detail": "lanes=0.35/0.34/0.32 range=0.03"
+    },
+    {
+      "name": "e130: pinned 0.02 within 0.1 below the best neighbor on majors-full",
+      "pass": true,
+      "detail": "pinned=0.34 bestNbr=0.35"
+    },
+    {
+      "name": "e130: turnover falls from lambda 0.005 to 0.05 on majors-full (speed mechanism)",
+      "pass": false,
+      "detail": "t0.005=14.7 t0.05=146.3"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "majors": {
+      "buckets": 6606,
+      "ladder": {
+        "0.005": {
+          "netSharpe": 0.30984050339396674,
+          "breakEvenCostBps": 153.14984852893275,
+          "turnover": 14.664644328683108
+        },
+        "0.01": {
+          "netSharpe": 0.34833326471041776,
+          "breakEvenCostBps": 82.68080489805968,
+          "turnover": 29.563705728903034
+        },
+        "0.02": {
+          "netSharpe": 0.3403990916051963,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039
+        },
+        "0.03": {
+          "netSharpe": 0.3194907778841149,
+          "breakEvenCostBps": 30.47146503187646,
+          "turnover": 89.35791623145758
+        },
+        "0.05": {
+          "netSharpe": 0.29369926836969046,
+          "breakEvenCostBps": 20.481695330957926,
+          "turnover": 146.29211346042223
+        }
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "ladder": {
+        "0.005": {
+          "netSharpe": 0.36311663320035314,
+          "breakEvenCostBps": 92.15468082300586,
+          "turnover": 5.999165537484952
+        },
+        "0.01": {
+          "netSharpe": 0.5191686757779949,
+          "breakEvenCostBps": 62.12684297909826,
+          "turnover": 11.960079962463297
+        },
+        "0.02": {
+          "netSharpe": 0.5471699677935676,
+          "breakEvenCostBps": 39.48958083512979,
+          "turnover": 22.36423352786482
+        },
+        "0.03": {
+          "netSharpe": 0.48706807473457303,
+          "breakEvenCostBps": 27.571112750439966,
+          "turnover": 34.08660724230079
+        },
+        "0.05": {
+          "netSharpe": 0.4202020318442969,
+          "breakEvenCostBps": 17.74351674510514,
+          "turnover": 55.700242304758184
+        }
+      }
+    }
+  }
+}

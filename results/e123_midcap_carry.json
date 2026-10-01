@@ -1,0 +1,118 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e123: all 8 midcap funding series parse with zero invalid rows",
+      "pass": true,
+      "detail": "invalid=0"
+    },
+    {
+      "name": "e123: all 8 audits show zero missing funding periods",
+      "pass": true,
+      "detail": "missing=0 {\"AVAXUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}},\"NEARUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}},\"ARBUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}},\"SUIUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}},\"OPUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}},\"INJUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":2,\"grid\":{\"8h\":2465}},\"TIAUSDT\":{\"rows\":4931,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"4h\":4929,\"8h\":1}},\"SEIUSDT\":{\"rows\":2466,\"missing\":0,\"offGrid\":0,\"extreme\":0,\"grid\":{\"8h\":2465}}}"
+    },
+    {
+      "name": "e123: carry-dispersion available on the 8-midcap panel",
+      "pass": true,
+      "detail": "buckets=2466 streams=8"
+    },
+    {
+      "name": "e123: majors carry panel scores as the descriptive baseline",
+      "pass": true,
+      "detail": "buckets=6606"
+    }
+  ],
+  "artefact": {
+    "audits": {
+      "AVAXUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "NEARUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "ARBUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "SUIUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "OPUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "INJUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 2,
+        "grid": {
+          "8h": 2465
+        }
+      },
+      "TIAUSDT": {
+        "rows": 4931,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "4h": 4929,
+          "8h": 1
+        }
+      },
+      "SEIUSDT": {
+        "rows": 2466,
+        "missing": 0,
+        "offGrid": 0,
+        "extreme": 0,
+        "grid": {
+          "8h": 2465
+        }
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "streams": 8,
+      "netAnnual": 18.10628333348562,
+      "turnoverAnnual": 9.934618950511958,
+      "breakEvenCostBps": 39.48958083512979
+    },
+    "majors": {
+      "buckets": 6606,
+      "streams": 8,
+      "netAnnual": 11.264072887476312,
+      "turnoverAnnual": 10.00517641279787,
+      "breakEvenCostBps": 42.87840523427613
+    }
+  }
+}

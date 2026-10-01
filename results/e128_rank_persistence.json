@@ -1,0 +1,56 @@
+{
+  "total": 4,
+  "failed": 1,
+  "failures": [
+    {
+      "name": "e128: lag-1 rank persistence >= 0.7 on both panels",
+      "pass": false,
+      "detail": "rho1 majors=0.517 midcap=0.425"
+    }
+  ],
+  "checks": [
+    {
+      "name": "e128: both panels yield finite rank curves on >= 1000 buckets",
+      "pass": true,
+      "detail": "majors=6606 midcap=2466"
+    },
+    {
+      "name": "e128: lag-1 rank persistence >= 0.7 on both panels",
+      "pass": false,
+      "detail": "rho1 majors=0.517 midcap=0.425"
+    },
+    {
+      "name": "e128: rank persistence decays over days/weeks (rho1 > rho7 > rho30) on both panels",
+      "pass": true,
+      "detail": "majors 0.517>0.321>0.249 midcap 0.425>0.255>0.203"
+    },
+    {
+      "name": "e128: ranks still persistent at ~10d (rho30 > 0) on both panels",
+      "pass": true,
+      "detail": "rho30 majors=0.249 midcap=0.203 move1 majors=1.48 midcap=1.67"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "majors": {
+      "buckets": 6606,
+      "rho": {
+        "lag1": 0.5170131092067026,
+        "lag7": 0.32106125557075377,
+        "lag30": 0.24894745181108205,
+        "lag90": 0.1977782992395933
+      },
+      "meanAbsMove": 1.4822672218016655
+    },
+    "midcap": {
+      "buckets": 2466,
+      "rho": {
+        "lag1": 0.42491258663486897,
+        "lag7": 0.25503644417217675,
+        "lag30": 0.20288492392934557,
+        "lag90": 0.14892419521396763
+      },
+      "meanAbsMove": 1.6719574036511156
+    }
+  }
+}

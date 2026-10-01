@@ -132,6 +132,8 @@ import * as e124 from './e124_stacked_carry.js';
 import * as e125 from './e125_flow_reversal.js';
 import * as e126 from './e126_dispersion_sizing.js';
 import * as e127 from './e127_quantized_sizing.js';
+import * as e128 from './e128_rank_persistence.js';
+import * as e129 from './e129_smoothed_rank.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -386,6 +388,12 @@ export async function run() {
     summary['e126_dispersion_sizing'].pass = e126v.failed === 0;
     const e127v = await step('e127_quantized_sizing', () => e127.run({}));
     summary['e127_quantized_sizing'].pass = e127v.failed === 0;
+    const e128v = await step('e128_rank_persistence', () => e128.run({}));
+    summary['e128_rank_persistence'].pass = e128v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e128_rank_persistence.json', JSON.stringify(e128v, null, 2)); } catch (e) { /* best effort */ }
+    const e129v = await step('e129_smoothed_rank', () => e129.run({}));
+    summary['e129_smoothed_rank'].pass = e129v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e129_smoothed_rank.json', JSON.stringify(e129v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e127_quantized_sizing.json', JSON.stringify(e127v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e126_dispersion_sizing.json', JSON.stringify(e126v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e125_flow_reversal.json', JSON.stringify(e125v, null, 2)); } catch (e) { /* best effort */ }

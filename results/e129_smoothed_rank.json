@@ -1,0 +1,57 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e129: both panels yield finite raw + smoothed curves on >= 1000 buckets",
+      "pass": true,
+      "detail": "majors=6606 midcap=2466"
+    },
+    {
+      "name": "e129: smoothed rho1 >= 0.9 on both panels (the construction manufactures a slow rank)",
+      "pass": true,
+      "detail": "sm rho1 majors=0.992 midcap=0.992"
+    },
+    {
+      "name": "e129: smoothing helps at every horizon (sm >= raw at lags 1/7/30) on both panels",
+      "pass": true,
+      "detail": "majors raw 0.517->sm 0.992 midcap raw 0.425->sm 0.992"
+    },
+    {
+      "name": "e129: smoothed long-horizon rank persists (sm rho30 >= 0.5) on both panels",
+      "pass": true,
+      "detail": "sm rho30 majors=0.842 midcap=0.891"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "lambda": 0.02,
+    "majors": {
+      "buckets": 6606,
+      "raw": {
+        "lag1": 0.5170131092067026,
+        "lag7": 0.32106125557075377,
+        "lag30": 0.24894745181108205
+      },
+      "sm": {
+        "lag1": 0.9916243753834049,
+        "lag7": 0.9554287446620215,
+        "lag30": 0.8424809669887517
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "raw": {
+        "lag1": 0.42491258663486897,
+        "lag7": 0.25503644417217675,
+        "lag30": 0.20288492392934557
+      },
+      "sm": {
+        "lag1": 0.991571241933061,
+        "lag7": 0.9612486314217001,
+        "lag30": 0.8908768649463492
+      }
+    }
+  }
+}

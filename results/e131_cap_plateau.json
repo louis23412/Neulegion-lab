@@ -1,0 +1,88 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e131: full cap ladder scores finite on both panels",
+      "pass": true,
+      "detail": "majors=6606 midcap=2466"
+    },
+    {
+      "name": "e131: 0.0625–0.25 net-Sharpe range <= 0.5 on majors-full (plateau, not pinnacle)",
+      "pass": true,
+      "detail": "lanes=0.33/0.34/0.33 range=0.01"
+    },
+    {
+      "name": "e131: pinned 0.125 within 0.1 below the best neighbor on majors-full",
+      "pass": true,
+      "detail": "pinned=0.34 bestNbr=0.33"
+    },
+    {
+      "name": "e131: cap binds monotonically on majors-full (tighter cap -> smaller mean max weight)",
+      "pass": true,
+      "detail": "mm0.0625=0.0625 mm0.25=0.2427"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "majors": {
+      "buckets": 6606,
+      "ladder": {
+        "0.0625": {
+          "netSharpe": 0.32690072281380594,
+          "breakEvenCostBps": 47.960354867819696,
+          "turnover": 29.91176144668777,
+          "meanMaxAbs": 0.0625
+        },
+        "0.125": {
+          "netSharpe": 0.3403990916051963,
+          "breakEvenCostBps": 42.87840523427613,
+          "turnover": 60.35085863610039,
+          "meanMaxAbs": 0.125
+        },
+        "0.25": {
+          "netSharpe": 0.32926942736204395,
+          "breakEvenCostBps": 41.71079260054965,
+          "turnover": 90.79382449664078,
+          "meanMaxAbs": 0.24274880352978856
+        },
+        "0.5": {
+          "netSharpe": 0.30374464065003,
+          "breakEvenCostBps": 39.19663735065277,
+          "turnover": 101.73480135668147,
+          "meanMaxAbs": 0.27783049174066815
+        }
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "ladder": {
+        "0.0625": {
+          "netSharpe": 0.5123303006101128,
+          "breakEvenCostBps": 43.82628386109488,
+          "turnover": 10.725281704451703,
+          "meanMaxAbs": 0.0625
+        },
+        "0.125": {
+          "netSharpe": 0.5471699677935676,
+          "breakEvenCostBps": 39.48958083512979,
+          "turnover": 22.36423352786482,
+          "meanMaxAbs": 0.125
+        },
+        "0.25": {
+          "netSharpe": 0.5128669598395346,
+          "breakEvenCostBps": 33.73587078656148,
+          "turnover": 39.14591370420067,
+          "meanMaxAbs": 0.2331182421157001
+        },
+        "0.5": {
+          "netSharpe": 0.5011757620018635,
+          "breakEvenCostBps": 33.3358903145686,
+          "turnover": 42.35131677002239,
+          "meanMaxAbs": 0.25814206279026
+        }
+      }
+    }
+  }
+}

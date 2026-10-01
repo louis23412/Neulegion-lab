@@ -1,0 +1,69 @@
+{
+  "total": 4,
+  "failed": 2,
+  "failures": [
+    {
+      "name": "e133: AR(1) predictions persist at least as well as EWMA on majors-full (adoption bar)",
+      "pass": false,
+      "detail": "pred rho1=0.701 sm rho1=0.992"
+    },
+    {
+      "name": "e133: AR(1) predictions persist at least as well as EWMA on midcap-window (adoption bar)",
+      "pass": false,
+      "detail": "pred rho1=0.722 sm rho1=0.992"
+    }
+  ],
+  "checks": [
+    {
+      "name": "e133: both panels yield finite smoothed + predicted curves on >= 1000 buckets",
+      "pass": true,
+      "detail": "majors=6606 midcap=2466"
+    },
+    {
+      "name": "e133: pinned smoother replicates e129 (sm rho1 >= 0.9 both panels, plumbing guard)",
+      "pass": true,
+      "detail": "sm rho1 majors=0.992 midcap=0.992"
+    },
+    {
+      "name": "e133: AR(1) predictions persist at least as well as EWMA on majors-full (adoption bar)",
+      "pass": false,
+      "detail": "pred rho1=0.701 sm rho1=0.992"
+    },
+    {
+      "name": "e133: AR(1) predictions persist at least as well as EWMA on midcap-window (adoption bar)",
+      "pass": false,
+      "detail": "pred rho1=0.722 sm rho1=0.992"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "window": 168,
+    "warmup": 24,
+    "majors": {
+      "buckets": 6606,
+      "sm": {
+        "lag1": 0.9916243753834049,
+        "lag7": 0.9554287446620215,
+        "lag30": 0.8424809669887517
+      },
+      "pr": {
+        "lag1": 0.701183102778691,
+        "lag7": 0.5752627853915625,
+        "lag30": 0.5024445669844239
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "sm": {
+        "lag1": 0.991571241933061,
+        "lag7": 0.9612486314217001,
+        "lag30": 0.8908768649463492
+      },
+      "pr": {
+        "lag1": 0.7224888316653962,
+        "lag7": 0.6227437176102467,
+        "lag30": 0.5902827134170426
+      }
+    }
+  }
+}

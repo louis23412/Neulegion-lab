@@ -6,7 +6,7 @@ Everything in the lab, and where to start.
 
 * **`README.md`** — what the lab is, ground rules, layout, status.
 * **`leads/INDEX.md`** — the board: 19 leads, statuses, results, fold-back rows. **The entry point.**
-* **`FINDINGS.md`** — the measured ledger F-01…F-145 (what is *true*, with numbers).
+* **`FINDINGS.md`** — the measured ledger F-01…F-146 (what is *true*, with numbers).
 * **`THEORY.md`** — the system model and the ranked frontier J1–J6 (what to do about it).
 * **`RUN-CROSSCHECK.md`** — the uploaded local run corpus (`src/runs/`) read against the ledger: what it confirms, the one new gate-coupling item, and the modules/LOCKED items worth unlocking.
 * **`../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md`** — the project's next-step plan (the pivot: stop predicting, start allocating), built from this lab's evidence + the run corpus. The lab's `FOLD-BACK.md` queue carries its port priority.
@@ -22,7 +22,7 @@ Everything in the lab, and where to start.
 | `PROTOCOL.md` | cycles, the lead template, statuses, evidence rules, bug-hunt protocol | the method changes |
 | `INDEX.md` | this map | a file is added/removed |
 | `THEORY.md` | system model, ranked weakest joints J1–J6, edge directions E-A…E-E | a joint is fixed or a direction closes |
-| `FINDINGS.md` | F-01…F-145: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
+| `FINDINGS.md` | F-01…F-146: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
 | `FOLD-BACK.md` | the port contract + queue R1…R8 + the NOT-to-port list | a lead graduates or is ruled out |
 | `RUN-CROSSCHECK.md` | the project's 2026-09-26/27 local run corpus (`src/runs/`) read against F-01…F-80: confirms/refutes, the new funding-sleeve/paired-test coupling (proposed `L10-cs`), and the module/unlock list | a run corpus is supplied or a run-derived row is confirmed |
 | `../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md` | the project's next-step plan (the pivot: structural sleeves + portfolio/risk + honest full-history scoring; the model demoted to a modular, default-off research layer) | the project's direction changes |
@@ -943,3 +943,4 @@ concluded, and what is now false that used to be believed.
 | [132](cycles/CYCLE-132.md) | features.js (545 lines, registered) → features/ ×4 + shim + registry/locks; e130 lambda-plateau; 10e (6 notes) | exact 29-name contract (locks 41/0, analysis 856/0 first try); one self-caught import; e130 4/3 (F-143: plateau range 0.03, turnover sign corrected); S47; `npm test` owed. |
 | [133](cycles/CYCLE-133.md) | backtest.js (410 lines, registered) → backtest/ ×3 + shim + registry/locks; e131 cap-plateau; 10f (5 notes) | exact 13-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 first try); one self-caught import; e131 4/4 SUPPORTED (F-144: cap plateau range 0.02, binds monotonically); S48; `npm test` owed. |
 | [134](cycles/CYCLE-134.md) | scoring.js (521 lines, registered) → scoring/ ×3 + shim + registry/locks; e132 stacked-cap; 10g (3 notes) | exact 11-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 first try); no cross-calls; e132 4/4 SUPPORTED (F-145: stacked plateau range 0.01, caps ≥ 0.25 no-ops); S49; `npm test` owed. |
+| [135](cycles/CYCLE-135.md) | restate.js (555 lines, registered) → restate/ ×3 + shim + registry/locks; e133 predictive-smoother; 10h (thin) | exact 7-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 first try); one unused import dropped; e133 4/2 NEGATIVE (F-146: predicted 0.70/0.72 lose to 0.992); S50; `npm test` owed. |

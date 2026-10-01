@@ -1,0 +1,70 @@
+{
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e126: both panels score finite flat and scaled books",
+      "pass": true,
+      "detail": "majors flat=0.340 scaled=-0.280"
+    },
+    {
+      "name": "e126: scaled-vs-flat comparison is measurable on majors full history",
+      "pass": true,
+      "detail": "flatBE=42.9 scaledBE=2.2"
+    },
+    {
+      "name": "e126: scaled-vs-flat comparison is measurable on the midcap window",
+      "pass": true,
+      "detail": "flatBE=39.5 scaledBE=1.5"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "wins": {
+      "majorsSharpe": false,
+      "majorsBE": false,
+      "midcapSharpe": false,
+      "midcapBE": false
+    },
+    "majors": {
+      "buckets": 6606,
+      "flat": {
+        "netSharpe": 0.3403990916051963,
+        "breakEvenCostBps": 42.87840523427613,
+        "turnover": 60.35085863610039
+      },
+      "scaled": {
+        "netSharpe": -0.2799692613281628,
+        "breakEvenCostBps": 2.151652243776909,
+        "turnover": 1628.9096389517922
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "flat": {
+        "netSharpe": 0.5471699677935676,
+        "breakEvenCostBps": 39.48958083512979,
+        "turnover": 22.36423352786482
+      },
+      "scaled": {
+        "netSharpe": -0.7367944971279341,
+        "breakEvenCostBps": 1.5340045386809897,
+        "turnover": 739.4550203448769
+      }
+    },
+    "exploratorySlow": {
+      "majors": {
+        "netSharpe": -0.129658343797539,
+        "breakEvenCostBps": 2.916948380601759,
+        "turnover": 1093.5453668514829
+      },
+      "midcap": {
+        "netSharpe": -0.4604399792148567,
+        "breakEvenCostBps": 2.1002273784758,
+        "turnover": 488.2436395127217
+      },
+      "note": "REG-90/clamp-[0.5,1.5], descriptive only — outside the pre-registered gate"
+    }
+  }
+}

@@ -131,6 +131,7 @@ import * as e123 from './e123_midcap_carry.js';
 import * as e124 from './e124_stacked_carry.js';
 import * as e125 from './e125_flow_reversal.js';
 import * as e126 from './e126_dispersion_sizing.js';
+import * as e127 from './e127_quantized_sizing.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -383,6 +384,9 @@ export async function run() {
     summary['e125_flow_reversal'].pass = e125v.failed === 0;
     const e126v = await step('e126_dispersion_sizing', () => e126.run({}));
     summary['e126_dispersion_sizing'].pass = e126v.failed === 0;
+    const e127v = await step('e127_quantized_sizing', () => e127.run({}));
+    summary['e127_quantized_sizing'].pass = e127v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e127_quantized_sizing.json', JSON.stringify(e127v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e126_dispersion_sizing.json', JSON.stringify(e126v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e125_flow_reversal.json', JSON.stringify(e125v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e124_stacked_carry.json', JSON.stringify(e124v, null, 2)); } catch (e) { /* best effort */ }

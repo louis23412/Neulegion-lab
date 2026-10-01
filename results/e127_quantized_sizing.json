@@ -1,0 +1,58 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e127: both panels score finite flat and quantized books",
+      "pass": true,
+      "detail": "majors qBE=30.5 midcap qBE=27.1"
+    },
+    {
+      "name": "e127: quantized regime switches at most monthly",
+      "pass": true,
+      "detail": "transitions majors=69 midcap=26"
+    },
+    {
+      "name": "e127: quantized-vs-flat comparison is measurable on majors",
+      "pass": true,
+      "detail": "qBE=30.5 flatBE=42.9"
+    },
+    {
+      "name": "e127: quantized-vs-flat comparison is measurable on midcap",
+      "pass": true,
+      "detail": "qBE=27.1 flatBE=39.5"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "majors": {
+      "buckets": 6606,
+      "transitions": 69,
+      "flat": {
+        "netSharpe": 0.3403990916051963,
+        "breakEvenCostBps": 42.87840523427613,
+        "turnover": 60.35085863610039
+      },
+      "q": {
+        "netSharpe": 0.3059011303549128,
+        "breakEvenCostBps": 30.50013911150589,
+        "turnover": 84.2898205449275
+      }
+    },
+    "midcap": {
+      "buckets": 2466,
+      "transitions": 26,
+      "flat": {
+        "netSharpe": 0.5471699677935676,
+        "breakEvenCostBps": 39.48958083512979,
+        "turnover": 22.36423352786482
+      },
+      "q": {
+        "netSharpe": 0.471809347653999,
+        "breakEvenCostBps": 27.077261905394884,
+        "turnover": 31.88370808740198
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e124: majors-windowed leg available with 8 streams",
+      "pass": true,
+      "detail": "buckets=2537"
+    },
+    {
+      "name": "e124: midcap leg available with 8 streams on the shared window",
+      "pass": true,
+      "detail": "buckets=2466"
+    },
+    {
+      "name": "e124: stacked book available with 16 streams",
+      "pass": true,
+      "detail": "buckets=2466"
+    },
+    {
+      "name": "e124: cross-leg return correlation is measurable on a common grid",
+      "pass": true,
+      "detail": "corr=-0.0214 nCommon=2465"
+    }
+  ],
+  "artefact": {
+    "corr": -0.02142668804034149,
+    "verdict": "SUPPORTED",
+    "majors": {
+      "buckets": 2537,
+      "streams": 8,
+      "netAnnual": 3.7614747557826003,
+      "turnoverAnnual": 10.779993335708088,
+      "breakEvenCostBps": 14.373111956784978
+    },
+    "midcap": {
+      "buckets": 2466,
+      "streams": 8,
+      "netAnnual": 18.10628333348562,
+      "turnoverAnnual": 9.934618950511958,
+      "breakEvenCostBps": 39.48958083512979
+    },
+    "stacked": {
+      "buckets": 2466,
+      "streams": 16,
+      "netAnnual": 13.261160582736238,
+      "turnoverAnnual": 17.629217818656933,
+      "breakEvenCostBps": 24.114148882731318
+    }
+  }
+}

@@ -128,6 +128,7 @@ import * as e120 from './e120_multifreq_panel.js';
 import * as e121 from './e121_symbol_breadth.js';
 import * as e122 from './e122_stacked_breadth.js';
 import * as e123 from './e123_midcap_carry.js';
+import * as e124 from './e124_stacked_carry.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -374,6 +375,9 @@ export async function run() {
     summary['e122_stacked_breadth'].pass = e122v.failed === 0;
     const e123v = await step('e123_midcap_carry', () => e123.run({}));
     summary['e123_midcap_carry'].pass = e123v.failed === 0;
+    const e124v = await step('e124_stacked_carry', () => e124.run({}));
+    summary['e124_stacked_carry'].pass = e124v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e124_stacked_carry.json', JSON.stringify(e124v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e123_midcap_carry.json', JSON.stringify(e123v, null, 2)); } catch (e) { /* best effort */ }
     const out = { at: new Date().toISOString(), steps: summary };
     await write('RUN_SUMMARY', out);

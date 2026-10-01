@@ -1,0 +1,70 @@
+{
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e125: 15m flow coverage is usable",
+      "pass": true,
+      "detail": "min=1.000 mean=1.000"
+    },
+    {
+      "name": "e125: random control is null (sanity)",
+      "pass": true,
+      "detail": "sharpe=-0.003 hr=0.489"
+    },
+    {
+      "name": "e125: every quintile arm trades",
+      "pass": true,
+      "detail": "121034/122077/121522/121098/123493"
+    }
+  ],
+  "artefact": {
+    "verdict": "NEGATIVE",
+    "arms": {
+      "all": {
+        "meanSharpe": 0.17170113354587385,
+        "meanBE": 0.432251484069275,
+        "hitRate": 0.5045671131741314,
+        "traded": 609247
+      },
+      "Q1": {
+        "meanSharpe": 0.06968135942963842,
+        "meanBE": 0.30231629683425354,
+        "hitRate": 0.5057008774393972,
+        "traded": 121034
+      },
+      "Q2": {
+        "meanSharpe": 0.06244923735371257,
+        "meanBE": 0.2136073928934497,
+        "hitRate": 0.504869877208647,
+        "traded": 122077
+      },
+      "Q3": {
+        "meanSharpe": 0.0707470884157701,
+        "meanBE": 0.2364930316855265,
+        "hitRate": 0.5036948042329784,
+        "traded": 121522
+      },
+      "Q4": {
+        "meanSharpe": 0.07019252603356066,
+        "meanBE": 0.21626700992969047,
+        "hitRate": 0.5033939453995937,
+        "traded": 121098
+      },
+      "Q5": {
+        "meanSharpe": 0.11812936823579079,
+        "meanBE": 0.30908329602803564,
+        "hitRate": 0.5051136501664062,
+        "traded": 123493
+      },
+      "rand": {
+        "meanSharpe": -0.0032547938130786692,
+        "meanBE": -0.015648086030960504,
+        "hitRate": 0.48890768518280286,
+        "traded": 621872
+      }
+    },
+    "blocks": 6
+  }
+}

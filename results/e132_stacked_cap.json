@@ -1,0 +1,57 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e132: full cap ladder scores finite on stacked-16 (16 streams)",
+      "pass": true,
+      "detail": "buckets=2466"
+    },
+    {
+      "name": "e132: 0.0625–0.25 net-Sharpe range <= 0.5 on stacked-16 (plateau, not pinnacle)",
+      "pass": true,
+      "detail": "lanes=0.39/0.40/0.40 range=0.01"
+    },
+    {
+      "name": "e132: pinned 0.125 within 0.1 below the best neighbor on stacked-16",
+      "pass": true,
+      "detail": "pinned=0.40 bestNbr=0.40"
+    },
+    {
+      "name": "e132: cap binds monotonically on stacked-16 (tighter cap -> smaller mean max weight)",
+      "pass": true,
+      "detail": "mm0.0625=0.0625 mm0.25=0.1529"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "buckets": 2466,
+    "ladder": {
+      "0.0625": {
+        "netSharpe": 0.3919423939041444,
+        "breakEvenCostBps": 23.88296991464435,
+        "turnover": 24.633886963080656,
+        "meanMaxAbs": 0.0625
+      },
+      "0.125": {
+        "netSharpe": 0.4007508705854461,
+        "breakEvenCostBps": 24.114148882731318,
+        "turnover": 39.68586476985328,
+        "meanMaxAbs": 0.12404433402801895
+      },
+      "0.25": {
+        "netSharpe": 0.4006604398285105,
+        "breakEvenCostBps": 24.36739087481706,
+        "turnover": 43.92228737398788,
+        "meanMaxAbs": 0.15285389511228395
+      },
+      "0.5": {
+        "netSharpe": 0.4006604398285105,
+        "breakEvenCostBps": 24.36739087481706,
+        "turnover": 43.92228737398788,
+        "meanMaxAbs": 0.15285389511228395
+      }
+    }
+  }
+}

@@ -136,6 +136,7 @@ import * as e128 from './e128_rank_persistence.js';
 import * as e129 from './e129_smoothed_rank.js';
 import * as e130 from './e130_lambda_plateau.js';
 import * as e131 from './e131_cap_plateau.js';
+import * as e132 from './e132_stacked_cap.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -402,6 +403,9 @@ export async function run() {
     const e131v = await step('e131_cap_plateau', () => e131.run({}));
     summary['e131_cap_plateau'].pass = e131v.failed === 0;
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e131_cap_plateau.json', JSON.stringify(e131v, null, 2)); } catch (e) { /* best effort */ }
+    const e132v = await step('e132_stacked_cap', () => e132.run({}));
+    summary['e132_stacked_cap'].pass = e132v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e132_stacked_cap.json', JSON.stringify(e132v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e127_quantized_sizing.json', JSON.stringify(e127v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e126_dispersion_sizing.json', JSON.stringify(e126v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e125_flow_reversal.json', JSON.stringify(e125v, null, 2)); } catch (e) { /* best effort */ }

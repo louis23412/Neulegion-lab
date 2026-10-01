@@ -1,0 +1,48 @@
+{
+  "total": 3,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e135: full band ladder scores finite on stacked-16 (capped 0.125)",
+      "pass": true,
+      "detail": "buckets=2466"
+    },
+    {
+      "name": "e135: some band lane matches/beats daily net at no higher turnover",
+      "pass": true,
+      "detail": "daily=0.40 lanes=0.005:0.43/19.9x 0.01:0.44/15.2x 0.03:0.42/8.8x"
+    },
+    {
+      "name": "e135: best band lane within 0.1 of a neighbor (no isolated spike)",
+      "pass": true,
+      "detail": "best=0.01:0.44 gap=0.00"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "buckets": 2466,
+    "ladder": {
+      "null": {
+        "netSharpe": 0.4007508705854461,
+        "breakEvenCostBps": 24.114148882731318,
+        "turnover": 39.68586476985328
+      },
+      "0.005": {
+        "netSharpe": 0.4319153624979271,
+        "breakEvenCostBps": 46.64614478544291,
+        "turnover": 19.879202449669613
+      },
+      "0.01": {
+        "netSharpe": 0.43641016108373615,
+        "breakEvenCostBps": 59.52233084910742,
+        "turnover": 15.19587747456981
+      },
+      "0.03": {
+        "netSharpe": 0.42019400787032907,
+        "breakEvenCostBps": 94.97075304650915,
+        "turnover": 8.805566212578139
+      }
+    }
+  }
+}

@@ -1,22 +1,23 @@
 # Lab STATUS — 30-second orientation (for the AI that mostly uses this lab)
 
-**Counts (verified CYCLE-179, 2026-10-02):** 19 leads · 168 findings (F-01…F-81
-full rows + summary table to F-168) · cycles CYCLE-000…CYCLE-179 · 139
-experiments, all registered in `experiments/run_all.js` (146 steps) · lab INDEX
+**Counts (verified CYCLE-198, 2026-10-02):** 19 leads (board ARCHIVED, CYCLE-192) · 183 findings (F-01…F-81
+full rows + summary table to F-183) · cycles CYCLE-000…CYCLE-198 · 147
+experiment files (139 in `experiments/run_all.js` (146 steps) + 8 named (run_all + standalone s6a/s6b/s6c/s6e/m1/m4/c1/c2)), lab INDEX
 names every cycle file.
 
-**Start here:** `leads/INDEX.md` (the board) → `FINDINGS.md` (the ledger) →
-`FOLD-BACK.md` (the port queue R1…R8) → `cycles/CYCLE-179.md` (latest state).
+**Start here:** `cycles/CYCLE-198.md` (C2 probes + native ablation — the live plan) → `PLAN.md` (model track C2→C3) →
+`FINDINGS.md` (the ledger) → `leads/INDEX.md` (archived board, provenance only).
 
-**Open frontier:** L19 only (OI-change sleeve: standalone, weak/churny,
-band-pinned `eps ≈ 0.03`; does not add to R8). L10 (bug hunt) is permanently
-ongoing. Everything else is SUPPORTED-ported or NEGATIVE-closed.
+**One live track:** model core code only (C2→C3; C1 CLOSED no-edit). Allocation CLOSED, S6f PARKED, M3-builds PARKED. Operator load: ONE command owed (C2 ablation script below).
 
-**Operator queue (native-only, in order):** TODO 116 (16-panel port + `gh`
-with `--cadences` + `--exposure-match` and a `--test=10` leg, per repo
-§76) → 118 → 117 (midcap breadth/carry ports + runs).
-Gated behind them: config-robustness (84/85/87), model benchmark (86),
-sized-leg G5 (104), unseen execution (106).
+**Native gate: CLOSED (CYCLE-180 operator proof 134/134). No operator load owed.**
+
+**Open frontier:** model core code only — C1 (mean-pool readout replacement) →
+C2 (optimizer/spec retire-test) → C3 (live-reader routing). Full unlock
+checklist: `cycles/CYCLE-192.md` §2. L10 (bug hunt) stays permanently
+ongoing. Allocation leads L01–L19 ARCHIVED (CYCLE-192) — provenance only.
+
+**Operator queue (native-only):** CLOSED — nothing owed, nothing asked.
 
 **Gate (round 110) CLOSED 2026-10-02:** operator `npm test` green (133/133)
 plus both proof runs uploaded (`20261002T071743-seed1`,

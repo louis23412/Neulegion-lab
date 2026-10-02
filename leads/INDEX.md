@@ -1,4 +1,9 @@
-# Leads — the board
+# Leads — the board (ARCHIVED CYCLE-192 — allocation-research history, provenance only)
+
+> CYCLE-192 purge: L01–L19 are CLOSED history, not live work. Verdicts stand;
+> no new leads; no revisit conditions. The live plan is the model core-code
+> track (`../cycles/CYCLE-192.md` §2–§3, `../PLAN.md` model track). L10 rows
+> touching core code stay referenced via that unlock checklist.
 
 19 leads (17 + L18, opened in CYCLE-013, + **L19, opened in CYCLE-028**). One file per lead under
 `leads/`. A lead is a *line of research*, not a finding. This table is the first thing to read and the

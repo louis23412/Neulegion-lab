@@ -26,6 +26,7 @@ Everything in the lab, and where to start.
 | `THEORY.md` | system model, ranked weakest joints J1–J6, edge directions E-A…E-E | a joint is fixed or a direction closes |
 | `FINDINGS.md` | F-01…F-162: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
 | `FOLD-BACK.md` | the port contract + queue R1…R8 + the NOT-to-port list | a lead graduates or is ruled out |
+| `PLAN.md` | the trackable next-step plan: findings D-01…D-07, decision log, sequenced steps S1–S5 with owners/gates/status — update it every iteration | a step changes state |
 | `RUN-CROSSCHECK.md` | the project's 2026-09-26/27 local run corpus (`src/runs/`) read against F-01…F-80: confirms/refutes, the new funding-sleeve/paired-test coupling (proposed `L10-cs`), and the module/unlock list | a run corpus is supplied or a run-derived row is confirmed |
 | `../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md` | the project's next-step plan (the pivot: structural sleeves + portfolio/risk + honest full-history scoring; the model demoted to a modular, default-off research layer) | the project's direction changes |
 | `../NeuLegion-master/NeuLegion-master/docs/ARCHITECTURE-v2.md` | the V2 blueprint answering the operator's modularity question: the old-vs-cutting-edge component audit, a modularity scorecard for every subsystem, the contract/registry/per-plugin-golden design, and the V2.0–V2.4 strangler-fig migration (folds into round-31 W1–W6) | the architecture direction changes |
@@ -981,3 +982,8 @@ concluded, and what is now false that used to be believed.
 | [168](cycles/CYCLE-168.md) | full bug + sanity sweep: 27/27 + 7/7 re-proof, fixed §83 file-count (15 not 16) + added bare-flag native case | 2 issues found, both fixed in place. |
 | [169](cycles/CYCLE-169.md) | 116 turnkey script: one command (port+gate+runs, self-checked, idempotent manifest edit) | manifest edit replay-verified; §83.1 + TODO 116 point at it. |
 | [170](cycles/CYCLE-170.md) | standalone-rule fix: 8 midcap series ported byte-exact into repo src/data/; script verifies in place, zero lab refs in scripts/ | TODO 116 + §83 rewritten to match. |
+| [171](cycles/CYCLE-171.md) | 116 investigation: breadth without edge — half-gate + 87 pass, all keep-off, test=10 shift reproduces | 117 park recommended; 118 next. |
+| [172](cycles/CYCLE-172.md) | 116 deep-dive: per-variant fold-stats table, sign-gap mechanism, TIA benign; created PLAN.md | 117 parked; 122 opened; S1 operator's. |
+| [173](cycles/CYCLE-173.md) | executed S3: 122a gap explained, 122b run.json P2 flags + native test, 122c power bound; research sync 10q | 122 done AI-side; 122b native owed. |
+| [174](cycles/CYCLE-174.md) | director rule locked; S1 resolved by harvest (marks_midcap + stacked16 land in repo); 118 script ready | S2 queued; operator runs S0+S2. |
+| [175](cycles/CYCLE-175.md) | sanity sweep on CYCLE-174 touch set: fixed $0-recursion + added manifest guard; verified resolution order + parser compat | 2 issues fixed; S0+S2 unchanged. |

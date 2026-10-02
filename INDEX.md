@@ -987,3 +987,7 @@ concluded, and what is now false that used to be believed.
 | [173](cycles/CYCLE-173.md) | executed S3: 122a gap explained, 122b run.json P2 flags + native test, 122c power bound; research sync 10q | 122 done AI-side; 122b native owed. |
 | [174](cycles/CYCLE-174.md) | director rule locked; S1 resolved by harvest (marks_midcap + stacked16 land in repo); 118 script ready | S2 queued; operator runs S0+S2. |
 | [175](cycles/CYCLE-175.md) | sanity sweep on CYCLE-174 touch set: fixed $0-recursion + added manifest guard; verified resolution order + parser compat | 2 issues fixed; S0+S2 unchanged. |
+| [176](cycles/CYCLE-176.md) | 118 investigation (3/4 stages) + S4 G5 attestation decided: unseen PASS, decay FAIL measured | mid flat missing; S6 allocation next. |
+| [177](cycles/CYCLE-177.md) | 118 complete (4/4): mid-flat deep dig — haircut exact (45% retained), BE inversion, lane-independent decay; S6 allocation plan scoped | S0 owed; S6a AI reads; S6b design before runs. |
+| [178](cycles/CYCLE-178.md) | S6a executed (7/7): trailing hedge fails (no overlay), D-14 corrected to first-PC hedge, band/decay attribution, S6b/c fleshed with gates | S0 owed; S6b DESIGN (AI); native runs after. |
+| [179](cycles/CYCLE-179.md) | S6b executed (5/5): blend frontier bulges inward — operating blend a=0.25 decided (9.87/62.0); research 10r synced (8 grounded); touch-set sweep clean | S0 owed; S6c gated-open. |

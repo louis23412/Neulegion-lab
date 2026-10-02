@@ -1,12 +1,12 @@
 # Lab STATUS — 30-second orientation (for the AI that mostly uses this lab)
 
-**Counts (verified CYCLE-175, 2026-10-02):** 19 leads · 168 findings (F-01…F-81
-full rows + summary table to F-168) · cycles CYCLE-000…CYCLE-175 · 139
+**Counts (verified CYCLE-179, 2026-10-02):** 19 leads · 168 findings (F-01…F-81
+full rows + summary table to F-168) · cycles CYCLE-000…CYCLE-179 · 139
 experiments, all registered in `experiments/run_all.js` (146 steps) · lab INDEX
 names every cycle file.
 
 **Start here:** `leads/INDEX.md` (the board) → `FINDINGS.md` (the ledger) →
-`FOLD-BACK.md` (the port queue R1…R8) → `cycles/CYCLE-175.md` (latest state).
+`FOLD-BACK.md` (the port queue R1…R8) → `cycles/CYCLE-179.md` (latest state).
 
 **Open frontier:** L19 only (OI-change sleeve: standalone, weak/churny,
 band-pinned `eps ≈ 0.03`; does not add to R8). L10 (bug hunt) is permanently

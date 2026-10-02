@@ -46,7 +46,7 @@ allocation rule picks the fade at **0 % in 11/11 blocks**. The fade's standalone
 (net@4 1.00, break-even 109 bps, both halves positive, ρ with carry still 0.010) — it is simply dominated
 by the re-tuned carry book.
 **Opened:** CYCLE-013
-**Last updated:** CYCLE-036
+**Last updated:** CYCLE-108
 **Owner experiments:** `e21_open_interest.js` (the signal), `e22_toptrader_validate.js` (the validation),
 `e23_combine.js` (the diversifier), `e27_decay.js` (the decay check), `e32_fade_retune.js` (the retune/cap),
 `e33_oi_capacity_distribution.js` (the OI-bound restatement), `e34_oi_scaled_sizing.js` (the sizing policy),
@@ -208,3 +208,7 @@ net-positive sleeve** (or, equivalently, the 25 % mix whose recent net@4 is +1.7
   (14→6×/yr) stays in [0.78, 0.95]. The band leaves max `|w|` at 0.456 and capacity a **1.03–1.04×** multiple
   of base while the cap is **1.43–1.47×** → the cap is a **concentration** tool on R7 too. But the band does
   **not** stack here (+0.06 vs R8's +0.18) → port R7 with the pinned cap and **no** band.
+* **CYCLE-108 (F-125, e113 follow-ups 14/14)** — fade survives the cost ladder (oi dies 8→16 bps);
+  carry×fade corr +0.02 but no composite (dilution, not diversification); adaptive sizing (0.66/42x)
+  and drawdown-governor (0.02/35x) both rejected — flat sizing stands. Native gate confirmed
+  fade 1.054/7.9x/BE 185.1 DSR 0.9664 (TODO 110 CLOSED).

@@ -18,7 +18,7 @@ cost recipe is **EWMA (λ frozen ≥ ~2 y) + cap `1/k` + a no-trade band**. The 
 6.18), so only the level (≈ `1/k`) matters, while `sign(w)·|w|^p` reads 4.44/3.99/3.25/2.27 for
 p=1.25/1.5/2/3 (all below base 4.92) and equal-weight reads 1.51. CYCLE-038 (F-55) then challenged the **split points**: on a dense 14-point grid the pre-registered 0.80 robustness bar narrowly fails (expanding freeze 0.71, rolling 1-year 0.79), but every failure is in the first ~2 y — the expanding freeze collapses at S ≤ 2190 and matches at 10/10 splits from S = 2555 (safe boundary **~2.3 y**). The **rolling** freeze beats the expanding one (0.79 vs 0.71), the broken fast λ is **0.075**, and the **cap stabilises** the frozen policy (**0.50 uncapped → 0.79 capped**).
 **Opened:** CYCLE-008
-**Last updated:** CYCLE-038
+**Last updated:** CYCLE-138
 **Owner experiments:** `e17_low_turnover.js` (reuses `e16#audit`, `e13#windowStats/REGIMES`),
 `e28_regime_retune.js`, `e29_regime_retune_oos.js`, `e30_retuned_capacity.js`, `e31_ported_spec_oos.js`,
 `e40_retune_blend.js`, `e41_blend_hindsight.js`, `e42_cap_hindsight.js`, `e44_cap_mechanism.js`, `e46_cap_shrinkage.js`, `e47_split_robustness.js`
@@ -198,3 +198,7 @@ now fully pinned: freeze λ on ≥2 y + cap = 1/k, no walk-forward.**
   (0.71 expanding / 0.79 rolling) because the expanding freeze collapses at every split S ≤ 2190 and works
   only from S = 2555 (safe boundary **~2.3 y**). The rolling freeze is more robust (median +0.30), the
   broken fast λ is **0.075** (not 0.1), and the **cap stabilises** the policy (0.50 → 0.79).
+* **CYCLE-137/138** — **the band transfers to the stacked-16 panel (F-148/F-149).** `e135_stacked_band.js`
+  (3/3): every band lane beats daily net at lower turnover (best eps 0.01 at 0.44, smooth; null lane
+  reproduces e132 to the digit). `e136_stacked_band_holdout.js` (4/4): trailing pick 0.01 at ALL 8
+  splits; frozen + fixed beat daily 8/8. Stacked native read: cap 0.125 + band ~0.01 (TODO 118).

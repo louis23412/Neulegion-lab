@@ -1027,7 +1027,7 @@ See `RUNNER.md`. On a machine with Node (≥ 22), run an experiment directly wit
 regenerate every artefact); the runner wires `globalThis.__fs` to `node:fs` and exits non-zero on a
 failed verdict. In the no-Node workspace, every experiment runs through the repo's browser harness from
 `execute_js` (esbuild-wasm bundles the lab file + its repo imports into an ES module). `run_all.js` regenerates
-every artefact in **~8–25 min** from one code revision (**81 steps**; dominated by `e0d`'s
+every artefact in **~8–25 min** from one code revision (**145 steps**; dominated by `e0d`'s
 `poolReports`, 140–610 s depending on machine load, with `e26` adding ~4.5 min) and reports the control
 (`e0c`, `e5`), integrity (`e14`, now **14 checks**) and validation (`e25`, `e28`, `e29`, `e30`, `e31`, `e32`, `e33`, `e34`,
 `e35`, `e36`, `e37`, `e38`, `e39`, `e40`, `e41`, `e42`, `e43`, `e44`, `e45`, `e46`, `e47`, `e48`, `e49`, `e50`, `e51`, `e52`, `e53`, `e54`, `e55`, `e56`, `e57`, `e58`, `e59`, `e60`, `e61`, `e62`, `e63`, `e64`, `e65`, `e66`, `e67`, `e68`, `e69`, `e70`, `e71`, `e72`, `e73`) verdicts

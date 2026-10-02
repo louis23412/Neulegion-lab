@@ -184,6 +184,14 @@ So R4's honest deployable size is **tens of millions**, not $10 B — the same o
 impact limit. Combined, the whole carry complex is a **~$5–70 M strategy**. R4 is still the scalable
 *relative to R8* and the priority port, but "scalable" now means ~$30 M, not billions.
 
+**Status (round 78, repo-side: PORTED as an opt-in scorer):** the basis-marking
+half is native — `analyze --sleeve --carry-marks=<file>` scores the dispersion
+sleeve on substituted full-history marks (the e74 lab semantics;
+`bash scripts/sleeve-runs.sh honest` is the turnkey entry; predicted honest
+net ≈ 6.2 vs shipped-marks 11.26 — `RUN-ANALYSIS.md` §22, TODO 95). What
+remains is the TODO 95 remainder (execution beyond taker fees,
+borrow/margin), not the marking itself.
+
 ### R5 — Cross-sectional demeaning as a variance-reduction primitive. *(from F-03)*
 
 **What.** Generalise the lab's `xsMomentum` shape into the signal family: any feature can be scored
@@ -675,6 +683,13 @@ repo `cleanBook` fingerprint-identical to `prototypes/port.js`. The port exposed
 (**L10-ct**: the two shells read different arrays for the book grid, so the V2 primitives take the grid as an
 explicit `n`). The sleeve lands **UNTESTED** in the repo pending the repo's own gate (G2/G5). No lab number
 moves.
+
+**Status (CYCLE-137/138, stacked-16 band read for TODO 118):** the band transfers to the
+stacked panel — every band lane beats daily net at lower turnover (best eps 0.01 at net 0.44,
+smooth; null lane reproduces e132 to the digit; F-148). Trailing pick 0.01 at ALL 8
+holdout splits; frozen-eps and fixed-0.01 beat daily 8/8 (F-149). Native read: score the
+stacked-16 book with cap 0.125 + band ~0.01 (holdout-certified; supersedes the 0.03 lab-panel
+recipe for the 16-wide book).
 
 ### R9 — Purge the walk-forward boundary for horizon labels. *(candidate; from F-63, CYCLE-046)*
 

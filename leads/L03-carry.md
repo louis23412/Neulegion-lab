@@ -2,7 +2,7 @@
 
 **Status:** SUPPORTED
 **Opened:** CYCLE-000
-**Last updated:** CYCLE-044
+**Last updated:** CYCLE-126
 **Owner experiments:** `e3_carry.js`, `e4_edge_hunt.js` (the funding-as-price-signal null),
 `e13_carry_robustness.js` (window/regime breakdown)
 **Prototypes:** `experiments/e3_carry.js#loadCarryBook` (the honest delta-neutral book — the lab's
@@ -100,3 +100,7 @@ cleared (F-22, CYCLE-007).
   **11.96→9.60**), so it fails safe. **This lead's own numbers do not move**: the lab's loader buckets rows
   into 8h sums first (the L10-o fix), and `e14#sub_8h_sleeve_equality` now pins that. R4's port must use the
   bucket-sum projection; see `FOLD-BACK.md` R4's CYCLE-044 status.
+* **CYCLE-125/126** — **carry breadth lab-side (F-136/F-137).** `e123` (4/4): 8 midcap funding series
+  harvested + vendored (`data/midcap_funding/`, 2466×8, zero gaps), descriptive net 18.11 vs 11.26.
+  `e124` (4/4): 16-wide carry available, cross-leg corr −0.02. Native port queued as TODO 118
+  (with the cap 0.125 + band ~0.01 read from CYCLE-137/138).

@@ -1157,3 +1157,21 @@ ad-hoc clamped dispersion (a constant series reads the maximum 2), not a fractal
   dimension. All latent; no golden moves and no fold-back row. `run_all` is now **80 steps, 49 gated, 0 fails**.
 
 * **CYCLE-065 — RUN CORPUS (2026-09-26/27)** - read-only, no experiment: the operator's seven local `npm run analyze` runs (`src/runs/**`) were read against the ledger (`RUN-CROSSCHECK.md`). Confirms F-01/F-13 (the promoted `sig-momentum` +1.0848 is the 600-bar number; full history ~+0.11), F-32 (15m `sig-reversal-4` family-wise significant at family SPA p 0.4382, arm StepM p 0.0474, but break-even **1.50 bps**), F-03/L02 (`sig-reversal-xs` design effect **0.361**, effective streams **12.05** of 8), F-06/F-08 (all four momentum upgrades fail), F-71/F-74 (**`sig-network-momentum` audit VACUOUS in production**, reachable 0/288, 8 violations - the corpus's top Sharpe 1.3005 and unmeasured), F-69 (best benchmark is a map-bounded ridge), and F-77/L10-cj (replication signals are seed-free). One new row: **L10-cs** (the funding sleeve enters the paired promotion test, flipping the verdict). No repo number or lab number moves; the run readout is the repo's `docs/RUN-ANALYSIS.md` section 18.
+
+* **CYCLE-146 — SHIM AUDIT (2026-10-02)** — read-only page-ESM probe, one fix: every split shim loads in the live page except `src/analyze.js`, which carried a static `import { pathToFileURL } from 'node:url'` — so any non-harness importer (raw page, future tooling) fails at link time, while the harness (which aliases `node:url`) and Node never notice. The shim's own header ("node-only imports live in ./cli.js") is false of the code (F-61 class). One new row: **L10-cu** — fixed by guarding the import: `process.versions?.node` gate + dynamic `await import('node:url')`, exact dispatch condition preserved (`node ./src/analyze.js` still runs `analyzeMain`; `node --test` and harness paths never take the branch). Latent: the browser entry imports `analyze/cli.js`, the CLI runs in real Node, so no measured number moves; no golden moves; no fold-back row. `npm test` owed (now also covers this fix).
+
+* **CYCLE-149 — COLLISION CENSUS (2026-10-02)** — static census of all 883
+  `src/` export names (347 shared; top-30 all benign shim chains) with
+  body-level inspection + full importer tracing of the remainder. Two new
+  rows, both latent: **L10-cv** — `sharpeStandardError` is two different
+  formulas under one name (`performance.js` Lo-style object form vs
+  `walkforward/power.js` scalar form); importers verified correct on each
+  side (`sleeve/evidence.js` takes performance's, the `walkforward.js` shim
+  re-exports power's) — a naming footgun, not a miswiring; **L10-cw** — the
+  weight tools (`clipWeights`/`bandWeights`/`cleanBook`/`MIN_TRAIN_PERIODS`)
+  are defined twice (`core/primitives/weights.js` ships in the sleeves,
+  `analysis/portfolio.js` is test-pinned and lab-audited); `clipWeights`
+  byte-identical, `bandWeights` 1-guard drift (`Array.isArray`), no caller
+  passes a non-array so shipped and tested behavior coincide — single-source
+  proposed as a repo task, not rewired without the native gate. No measured
+  number moves; no golden moves; no fold-back row.

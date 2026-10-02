@@ -34,7 +34,7 @@ c=0.125 matches the hard clip (net@4 **6.04 vs 6.18**; 6.11 at c=0.10), so the *
 level ≈ `1/k` is). But `sign(w)·|w|^p` reads **4.44 / 3.99 / 3.25 / 2.27** for p = 1.25 / 1.5 / 2 / 3 —
 *all below base* (4.92) — and equal-weight reads **1.51**: clip the extremes, **never** shrink the book.
 **Opened:** CYCLE-011 (by F-26)
-**Last updated:** CYCLE-037
+**Last updated:** CYCLE-134
 **Owner experiments:** `e20_capacity_aware.js`, `e30_retuned_capacity.js` (the retuned-book follow-up),
 `e31_ported_spec_oos.js` (the joint walk-forward), `e33_oi_capacity_distribution.js` (the OI-bound restatement),
 `e34_oi_scaled_sizing.js` (the sizing policy), `e42_cap_hindsight.js` (the cap-rule test),
@@ -140,3 +140,6 @@ capacity ~$27 M (Y=1, 4 bps) / ~$107 M (Y=0.5), turnover 85→35×, DD 0.94→0.
   level matters (a plateau) — while `sign(w)·|w|^p` reads **4.44/3.99/3.25/2.27** for p=1.25/1.5/2/3 (all
   below base 4.92) and equal-weight reads **1.51**. The cap **winsorises the extreme tail**; it does not
   lower concentration in general, and the hard form is not essential.
+* **CYCLE-134** — **the cap transfers to the stacked-16 panel (F-145).** `e132_stacked_cap.js` (4/4):
+  stacked plateau range 0.01, pinned ports unchanged; caps ≥ 0.25 are no-ops on 16-wide. Cap-then-band
+  order is load-bearing (e137 edge witness, F-150).

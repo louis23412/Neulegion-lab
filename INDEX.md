@@ -4,9 +4,10 @@ Everything in the lab, and where to start.
 
 ## Start here
 
+* **`STATUS.md`** — 30-second orientation: counts, entry points, open frontier, owed gate. Read this first.
 * **`README.md`** — what the lab is, ground rules, layout, status.
 * **`leads/INDEX.md`** — the board: 19 leads, statuses, results, fold-back rows. **The entry point.**
-* **`FINDINGS.md`** — the measured ledger F-01…F-147 (what is *true*, with numbers).
+* **`FINDINGS.md`** — the measured ledger F-01…F-162 (what is *true*, with numbers).
 * **`THEORY.md`** — the system model and the ranked frontier J1–J6 (what to do about it).
 * **`RUN-CROSSCHECK.md`** — the uploaded local run corpus (`src/runs/`) read against the ledger: what it confirms, the one new gate-coupling item, and the modules/LOCKED items worth unlocking.
 * **`../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md`** — the project's next-step plan (the pivot: stop predicting, start allocating), built from this lab's evidence + the run corpus. The lab's `FOLD-BACK.md` queue carries its port priority.
@@ -21,8 +22,9 @@ Everything in the lab, and where to start.
 | `run_lab.mjs` | the local Node runner: `node src/NeuLegion-lab/run_lab.mjs <experiment.js>` (wires `__fs` to `node:fs`, exits non-zero on a failed verdict) | the runner contract changes |
 | `PROTOCOL.md` | cycles, the lead template, statuses, evidence rules, bug-hunt protocol | the method changes |
 | `INDEX.md` | this map | a file is added/removed |
+| `STATUS.md` | 30-second orientation pointer (counts, frontier, gate) | every sweep refreshes it, or delete it if it disagrees with `leads/INDEX.md` |
 | `THEORY.md` | system model, ranked weakest joints J1–J6, edge directions E-A…E-E | a joint is fixed or a direction closes |
-| `FINDINGS.md` | F-01…F-147: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
+| `FINDINGS.md` | F-01…F-162: hypothesis → experiment → number → verdict | any number is measured/changed/falsified |
 | `FOLD-BACK.md` | the port contract + queue R1…R8 + the NOT-to-port list | a lead graduates or is ruled out |
 | `RUN-CROSSCHECK.md` | the project's 2026-09-26/27 local run corpus (`src/runs/`) read against F-01…F-80: confirms/refutes, the new funding-sleeve/paired-test coupling (proposed `L10-cs`), and the module/unlock list | a run corpus is supplied or a run-derived row is confirmed |
 | `../NeuLegion-master/NeuLegion-master/docs/PLAN-round31.md` | the project's next-step plan (the pivot: structural sleeves + portfolio/risk + honest full-history scoring; the model demoted to a modular, default-off research layer) | the project's direction changes |
@@ -566,7 +568,7 @@ Everything in the lab, and where to start.
   `bandWeights` + `cleanBook` = cap-then-band) that reproduces all three sleeves' books, plus `SLEEVE_SPECS`
   and `MIN_TRAIN_PERIODS = 2555` (the F-49/F-55/F-59 ~2.3 y frozen-parameter rule). Validated by `e52`.
 * `experiments/` — one file per experiment, each `export async function run(options)`. `run_all.js`
-  regenerates every artefact in one pass (**81 steps, ~8–25 min** depending on machine load; `e0d` alone
+  regenerates every artefact in one pass (**145 steps, ~8–25 min** depending on machine load; `e0d` alone
   is ~140–610 s). `e14_data_integrity.js` is a suite of regression tests, not a measurement (now **14
   checks**) — its `pass` is reported beside the controls'. `e25_maker_fill.js` supplies the reusable execution primitive
   `fillSelection()` (passive/maker fill replay) whose taker arm must reproduce `e24`'s reversal book;
@@ -948,3 +950,15 @@ concluded, and what is now false that used to be believed.
 | [137](cycles/CYCLE-137.md) | bootstrap.js (574 lines, registered) → bootstrap/ ×3 + shim + registry/locks; e135 stacked-band; 10j (5 new + 3 convergence) | exact 12-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 second run); one self-caught import + one registry correction; e135 3/3 SUPPORTED (F-148: band transfers, best 0.01 at 0.44, smooth); S52; `npm test` owed. |
 | [138](cycles/CYCLE-138.md) | subsampling.js (536 lines, registered) → subsampling/ ×2 + shim + registry/locks; e136 band-holdout; 10k (4 new + 5 convergence) | exact 6-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 first try); mean import dropped; e136 4/4 SUPPORTED (F-149: pick 0.01 at 8/8, frozen + fixed beat daily 8/8); S53; `npm test` owed. |
 | [139](cycles/CYCLE-139.md) | vol.js (405 lines, registered) -> vol/ x2 + shim + registry/locks; e137 portfolio audit; 10l partial | exact 14-name contract (locks 41/0, analysis 856/0, walkforward 90/0, analyze 294/0 first try); e137 27/27 SUPPORTED (F-150: scoring path exact, no L10 rows); S54; `npm test` owed. |
+| [140](cycles/CYCLE-140.md) | coherency sweep: 78 unused bindings removed (26 files), doc sync, backlog rerank + 6 archived, 10l carryovers closed as 10m | 0 dead targets repo-wide + lab cross-tree; browser 3123/0 ledger-equal, e136 4/4 + e137 27/27 re-green; F-151; `npm test` owed (R109 + sweep). |
+| [141](cycles/CYCLE-141.md) | sweep S2 bug-hunt: shim contracts both directions, DAG/CJS, ledger/mirrors, lineage/goldens/registry, results reds, corpus gap | 0 problems everywhere checkable; 2 doc fixes + deliberate-keeps recorded; F-152; `npm test` still owed. |
+| [142](cycles/CYCLE-142.md) | sweep S3 cross-doc consistency: DROPPED↔lineage, FOLD-BACK queue, THEORY frontier | 12/12 DROPPED named; R8 band-0.01 + J5 risk-layer gaps closed; F-153; `npm test` still owed. |
+| [143](cycles/CYCLE-143.md) | sweep S4 lead refresh: archived cross-refs, PROTOCOL compound statuses, 5 lead files to latest measurements | verdicts unchanged; F-154; `npm test` still owed. |
+| [144](cycles/CYCLE-144.md) | sweep S5 dead-import round two (23 across 16 files, two batches), 10l JSON repair, sweep 10n, rerank refresh | 0 dangling/cycles/CJS in 303 files; entries green ledger-equal, e58 39/39 + e63 11/11; F-155; `npm test` still owed. |
+| [145](cycles/CYCLE-145.md) | sweep S6 alias-aware re-scan (0 dead/dangling/cycles), shim + registration census, ledger-shape audit, STATUS.md pointer, rerank refresh | shims 18/18; run_all 152 steps / 138 exps; 33 entries / 45 mirrors ledger-equal; F-156; `npm test` still owed. |
+| [146](cycles/CYCLE-146.md) | shim audit S7: page-ESM probe 10/11, analyze.js node:url latent fix (L10-cu) | dispatch preserved (node CLI/test/worker/harness unaffected); F-157; `npm test` owed (now covers the fix). |
+| [147](cycles/CYCLE-147.md) | registry census S8: 916/916 exports resolve, 30/30 proves refs, 72/72 lead cites | capability registries exempt by shape; F-158; `npm test` still owed. |
+| [148](cycles/CYCLE-148.md) | reference census S9: 301 doc refs, 6 stale exonerated, 12 pre-split coordinates, standing rule | frozen history left intact; F-159; `npm test` still owed. |
+| [149](cycles/CYCLE-149.md) | collision census S10: 883 names, top-30 benign chains, L10-cv/cw latent rows, no miswiring | single-source proposed for weight tools; F-160; `npm test` still owed. |
+| [150](cycles/CYCLE-150.md) | ledger sync S11: 43/43 raws parse, 11/11 goldens, R4 port status appended | queue otherwise current; F-161; `npm test` still owed. |
+| [151](cycles/CYCLE-151.md) | ledger arithmetic S12: table sums to 3123, data dirs 9 files each, THEORY folded | no gaps; F-162; `npm test` still owed. |

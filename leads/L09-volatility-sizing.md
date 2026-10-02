@@ -3,7 +3,7 @@
 **Status:** SUPPORTED (partial) — vol is forecastable; sizing buys drawdown/dependence, not a
 trustworthy Sharpe *level*
 **Opened:** CYCLE-000 (identified), CYCLE-001 (registered)
-**Last updated:** CYCLE-006
+**Last updated:** CYCLE-129
 **Owner experiments:** `e11_vol.js`
 **Prototypes:** `prototypes/vol.js` (`trailingVol`, `ewmaVol`, `harComponents`, `volTargetLeverage`, `olsFit`)
 **Result artefacts:** `results/e11_vol_1h.json`
@@ -103,3 +103,7 @@ on the mark; 10.91 / 0.68 % on the traded leg), which is R4's.
   amplification. Also: on this sample the rolling HAR beats the trailing baseline on QLIKE while EWMA
   does not, which reverses F-16A's "simple beats complex" clause. Both design effects (raw and
   winsorised) are now stored.
+* **CYCLE-128/129** — **sizing NEGATIVE twice (F-139/F-140).** `e126` kills per-bar dispersion scaling
+  (turnover 27–33×, Sharpe negative both panels; mechanism, not bad luck); `e127` kills quantized
+  2-state scaling (rank, not level — TODO 119 measured-closed). Flat sizing stands; any future
+  sized-leg design is closed-loop (sweep 10f amendment) with its own G5 pass (TODO 104).

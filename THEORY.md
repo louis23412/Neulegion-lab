@@ -102,6 +102,10 @@ standard way to make a *real* stream's Sharpe legible, and it is a prerequisite 
 *(CYCLE-004: partly addressed — F-16 shows causal vol-targeting cuts the carry book's drawdown ~14× and
 its serial design effect ~10×, and that a simple EWMA is the forecaster to use. The sized Sharpe's level
 is not banked; the port recommendation is inverse-vol weights, R4.)*
+*(Rounds 67–69 + 98–99 update: the risk layer now exists as V2.2 plugins (`cap-band.js`,
+`vol-target.js`) but ships unpromoted — e126/e127 killed per-bar and quantized sizing (turnover
+mechanism, rank-not-level), so the sized book still has no G5 claim (TODO 104: limit law + closed-loop
+amendment). The joint stands: no *banked* risk layer.)*
 
 ### J6 — The model has no job description.
 

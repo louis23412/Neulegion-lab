@@ -49,7 +49,9 @@ number is kept as a signal of record, and any fold-back row is gated until a low
 exists; see F-23).
 
 `leads/INDEX.md` is the board: id, title, status, owner experiment, key result, fold-back row, next
-action. It is the first thing to read and the first thing to update.
+action. It is the first thing to read and the first thing to update. Compound statuses
+(`PARTIALLY CLOSED — <part> NEGATIVE, <part> POSITIVE ...`, L07's form) are allowed when a
+lead's branches measured differently; each branch names its verdict.
 
 ## 3. Evidence rules (non-negotiable)
 

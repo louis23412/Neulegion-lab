@@ -1,0 +1,90 @@
+{
+  "total": 4,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e136: full-sample lanes reproduce e135 (coherence guard)",
+      "pass": true,
+      "detail": "null=0.4 fixed0.01=0.44"
+    },
+    {
+      "name": "e136: frozen-eps OOS net >= daily at >= 60% of splits",
+      "pass": true,
+      "detail": "1 (8/8)"
+    },
+    {
+      "name": "e136: fixed-0.01 OOS net >= daily at >= 60% of splits",
+      "pass": true,
+      "detail": "1 (8/8)"
+    },
+    {
+      "name": "e136: trailing pick takes at most 3 distinct values (stable pick)",
+      "pass": true,
+      "detail": "picks=0.01"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "buckets": 2466,
+    "perSplit": [
+      {
+        "S": 600,
+        "epsPick": "0.01",
+        "oosFrozen": 0.38,
+        "oosFixed": 0.38,
+        "oosDaily": 0.34
+      },
+      {
+        "S": 800,
+        "epsPick": "0.01",
+        "oosFrozen": 0.4,
+        "oosFixed": 0.4,
+        "oosDaily": 0.36
+      },
+      {
+        "S": 1000,
+        "epsPick": "0.01",
+        "oosFrozen": 0.36,
+        "oosFixed": 0.36,
+        "oosDaily": 0.32
+      },
+      {
+        "S": 1200,
+        "epsPick": "0.01",
+        "oosFrozen": 0.34,
+        "oosFixed": 0.34,
+        "oosDaily": 0.29
+      },
+      {
+        "S": 1400,
+        "epsPick": "0.01",
+        "oosFrozen": 0.34,
+        "oosFixed": 0.34,
+        "oosDaily": 0.3
+      },
+      {
+        "S": 1600,
+        "epsPick": "0.01",
+        "oosFrozen": 0.44,
+        "oosFixed": 0.44,
+        "oosDaily": 0.39
+      },
+      {
+        "S": 1800,
+        "epsPick": "0.01",
+        "oosFrozen": 0.46,
+        "oosFixed": 0.46,
+        "oosDaily": 0.41
+      },
+      {
+        "S": 2000,
+        "epsPick": "0.01",
+        "oosFrozen": 0.47,
+        "oosFixed": 0.47,
+        "oosDaily": 0.42
+      }
+    ],
+    "note": "band-robust: the e135 pick survives the holdout"
+  }
+}

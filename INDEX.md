@@ -975,3 +975,8 @@ concluded, and what is now false that used to be believed.
 | [162](cycles/CYCLE-162.md) | D2 L10-hygiene review (read-only): dual SE agrees to off-by-one, weight tools canonical-vs-legacy, stale R8 0.005 trap inert | no code; both cleanups proposed owner-gated. |
 | [163](cycles/CYCLE-163.md) | 121 pre-verification: base + honest score AI-side, band dividend confirmed shape, honest level 6.25 vs 11.26 | turnkey proof + predicted comparators for the native runs. |
 | [164](cycles/CYCLE-164.md) | bug-check round: none/null alias-sentinel fix, 15/15 unit + 298/298 + 31/31 wiring re-proof | native npm test re-owed by the 2-line scoring.js change. |
+| [165](cycles/CYCLE-165.md) | banking the 121 pair: base confirms pre-read, DE 32.6→2.8 + decay artefact via honest marks | 121 closed; G5 must score the honest book. |
+| [166](cycles/CYCLE-166.md) | mechanism + trust test: null-basis rows earn funding-only, ext exact to 0.004%, midcap funding has zero marks | decay = measurement-regime change; 118 honesty gate set. |
+| [167](cycles/CYCLE-167.md) | 116 port package: midcap 8/8 verified (19728 rows, 0 gaps), byte-exact copy + manifest + 3 run commands | §76 legs folded in; repo §83 is the executable recipe. |
+| [168](cycles/CYCLE-168.md) | full bug + sanity sweep: 27/27 + 7/7 re-proof, fixed §83 file-count (15 not 16) + added bare-flag native case | 2 issues found, both fixed in place. |
+| [169](cycles/CYCLE-169.md) | 116 turnkey script: one command (port+gate+runs, self-checked, idempotent manifest edit) | manifest edit replay-verified; §83.1 + TODO 116 point at it. |

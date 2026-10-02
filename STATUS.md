@@ -1,19 +1,20 @@
 # Lab STATUS — 30-second orientation (for the AI that mostly uses this lab)
 
-**Counts (verified CYCLE-164, 2026-10-02):** 19 leads · 168 findings (F-01…F-81
-full rows + summary table to F-168) · cycles CYCLE-000…CYCLE-164 · 139
+**Counts (verified CYCLE-169, 2026-10-02):** 19 leads · 168 findings (F-01…F-81
+full rows + summary table to F-168) · cycles CYCLE-000…CYCLE-169 · 139
 experiments, all registered in `experiments/run_all.js` (146 steps) · lab INDEX
 names every cycle file.
 
 **Start here:** `leads/INDEX.md` (the board) → `FINDINGS.md` (the ledger) →
-`FOLD-BACK.md` (the port queue R1…R8) → `cycles/CYCLE-164.md` (latest state).
+`FOLD-BACK.md` (the port queue R1…R8) → `cycles/CYCLE-169.md` (latest state).
 
 **Open frontier:** L19 only (OI-change sleeve: standalone, weak/churny,
 band-pinned `eps ≈ 0.03`; does not add to R8). L10 (bug hunt) is permanently
 ongoing. Everything else is SUPPORTED-ported or NEGATIVE-closed.
 
-**Operator queue (native-only, in order):** TODO 121 (flat-base + honest
-sleeve reads, minutes) → 116 → 118 → 117 (midcap breadth/carry ports + runs).
+**Operator queue (native-only, in order):** TODO 116 (16-panel port + `gh`
+with `--cadences` + `--exposure-match` and a `--test=10` leg, per repo
+§76) → 118 → 117 (midcap breadth/carry ports + runs).
 Gated behind them: config-robustness (84/85/87), model benchmark (86),
 sized-leg G5 (104), unseen execution (106).
 

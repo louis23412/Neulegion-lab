@@ -969,3 +969,9 @@ concluded, and what is now false that used to be believed.
 | [156](cycles/CYCLE-156.md) | pre-point sweep S16: 0 dangling, plan refs resolve; sweep 10o (4 notes); Phase-A recipe audit (GAP 1 needs round 110) | F-166; gate still owed. |
 | [157](cycles/CYCLE-157.md) | round 110: sleeve risk-spec override flags + band stage (A2 enabler) | analyze 298/298 AI-side; F-167; npm test 133 owed. |
 | [158](cycles/CYCLE-158.md) | experiment e138: vol-tournament level alignment 8/8, flip needs >= 1 sigma | 10o-1 closed, no L10 row; F-168. |
+| [159](cycles/CYCLE-159.md) | coherency sweep C1: ledger/test/run_all counts verified, stale pins fixed, analyze 298/298 AI-side | STATUS/RUNBOOK/TODO/PLAN-next updated; operator queue 121 → 116 → 118 → 117 turnkey. |
+| [160](cycles/CYCLE-160.md) | Phase-D scoping: 84/85/87 — P2 machinery already pinned, 87 needs no code, 85 proposal recorded | application runs queued on 116; matched-exposure-only proposed, family thresholds rejected. |
+| [161](cycles/CYCLE-161.md) | research sync 10p: decay/MRP task form for C3 + 4 convergences + L07 unchanged | snapshot filed; README later-sweeps list updated. |
+| [162](cycles/CYCLE-162.md) | D2 L10-hygiene review (read-only): dual SE agrees to off-by-one, weight tools canonical-vs-legacy, stale R8 0.005 trap inert | no code; both cleanups proposed owner-gated. |
+| [163](cycles/CYCLE-163.md) | 121 pre-verification: base + honest score AI-side, band dividend confirmed shape, honest level 6.25 vs 11.26 | turnkey proof + predicted comparators for the native runs. |
+| [164](cycles/CYCLE-164.md) | bug-check round: none/null alias-sentinel fix, 15/15 unit + 298/298 + 31/31 wiring re-proof | native npm test re-owed by the 2-line scoring.js change. |

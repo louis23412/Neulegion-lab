@@ -1,0 +1,58 @@
+{
+  "total": 8,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e138: repo ewmaVolForecast matches a hand replay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e138: repo AR(1) fit matches an independent OLS solve",
+      "pass": true,
+      "detail": "coef=0.001664,0.912656"
+    },
+    {
+      "name": "e138: repo MSE/QLIKE skills match hand recomputes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e138: raw MSE ranks AR > EWMA > flat on AR truth (tournament premise)",
+      "pass": true,
+      "detail": "5/5 seeds"
+    },
+    {
+      "name": "e138: level alignment never flips the AR/EWMA ranking on truth-like data",
+      "pass": true,
+      "detail": "5/5 seeds"
+    },
+    {
+      "name": "e138: QLIKE agrees with aligned MSE on every seed",
+      "pass": true,
+      "detail": "5/5 seeds"
+    },
+    {
+      "name": "e138: raw-MSE flip needs >= 1 vol-sigma of level bias (else L10 row)",
+      "pass": true,
+      "detail": "median b*=1 sigma, per-seed=1.25,1,1,1,1"
+    },
+    {
+      "name": "e138: synthetic paths are bit-deterministic per seed",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED",
+    "medianFlipSigma": 1,
+    "flips": [
+      1.25,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}

@@ -4,7 +4,7 @@ Everything in the lab, and where to start.
 
 ## Start here
 
-* **`STATUS.md`** — 30-second orientation: counts, entry points, open frontier, owed gate. Read this first.
+* **`STATUS.md`** — 30-second orientation: counts, entry points, open frontier, gate status. Read this first.
 * **`README.md`** — what the lab is, ground rules, layout, status.
 * **`leads/INDEX.md`** — the board: 19 leads, statuses, results, fold-back rows. **The entry point.**
 * **`FINDINGS.md`** — the measured ledger F-01…F-162 (what is *true*, with numbers).
@@ -962,3 +962,10 @@ concluded, and what is now false that used to be believed.
 | [149](cycles/CYCLE-149.md) | collision census S10: 883 names, top-30 benign chains, L10-cv/cw latent rows, no miswiring | single-source proposed for weight tools; F-160; `npm test` still owed. |
 | [150](cycles/CYCLE-150.md) | ledger sync S11: 43/43 raws parse, 11/11 goldens, R4 port status appended | queue otherwise current; F-161; `npm test` still owed. |
 | [151](cycles/CYCLE-151.md) | ledger arithmetic S12: table sums to 3123, data dirs 9 files each, THEORY folded | no gaps; F-162; `npm test` still owed. |
+| [152](cycles/CYCLE-152.md) | gate CLOSED (operator 132/132 ~350 s) + re-verification: S7 fix intact, 0 dead (1 exonerated), run_all 138/138, ledger 81+81 | no owed gate; F-163. |
+| [153](cycles/CYCLE-153.md) | opens audit S14: all 18 opens re-checked, dispositions stand, archive bar not met | rerank unchanged (116→118→117); F-164. |
+| [154](cycles/CYCLE-154.md) | doc-pointer sync S15: STATUS/README/INDEX/FINDINGS/TODO/RUN-ANALYSIS counts + gate | no live "owed" line at write time (post-write grep); F-165. |
+| [155](cycles/CYCLE-155.md) | next-step plan: post-109 roadmap (PLAN-next.md), no code | phases A-D + parked; rerank unchanged. |
+| [156](cycles/CYCLE-156.md) | pre-point sweep S16: 0 dangling, plan refs resolve; sweep 10o (4 notes); Phase-A recipe audit (GAP 1 needs round 110) | F-166; gate still owed. |
+| [157](cycles/CYCLE-157.md) | round 110: sleeve risk-spec override flags + band stage (A2 enabler) | analyze 298/298 AI-side; F-167; npm test 133 owed. |
+| [158](cycles/CYCLE-158.md) | experiment e138: vol-tournament level alignment 8/8, flip needs >= 1 sigma | 10o-1 closed, no L10 row; F-168. |

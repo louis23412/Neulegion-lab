@@ -980,3 +980,4 @@ concluded, and what is now false that used to be believed.
 | [167](cycles/CYCLE-167.md) | 116 port package: midcap 8/8 verified (19728 rows, 0 gaps), byte-exact copy + manifest + 3 run commands | §76 legs folded in; repo §83 is the executable recipe. |
 | [168](cycles/CYCLE-168.md) | full bug + sanity sweep: 27/27 + 7/7 re-proof, fixed §83 file-count (15 not 16) + added bare-flag native case | 2 issues found, both fixed in place. |
 | [169](cycles/CYCLE-169.md) | 116 turnkey script: one command (port+gate+runs, self-checked, idempotent manifest edit) | manifest edit replay-verified; §83.1 + TODO 116 point at it. |
+| [170](cycles/CYCLE-170.md) | standalone-rule fix: 8 midcap series ported byte-exact into repo src/data/; script verifies in place, zero lab refs in scripts/ | TODO 116 + §83 rewritten to match. |

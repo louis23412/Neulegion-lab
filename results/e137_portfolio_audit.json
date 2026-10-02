@@ -1,0 +1,145 @@
+{
+  "total": 27,
+  "failed": 0,
+  "failures": [],
+  "checks": [
+    {
+      "name": "e137: clip caps max|w| exactly at cap",
+      "pass": true,
+      "detail": "max=0.125"
+    },
+    {
+      "name": "e137: clip null returns the same array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: clip preserves unclipped ratios (winsorise, not shrink)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: band null returns the same array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: band holds within eps, takes beyond (independent replay)",
+      "pass": true,
+      "detail": "[[0,0],[0,0],[0.009,0.02],[0.02,0.02]]"
+    },
+    {
+      "name": "e137: cleanBook is exactly band-after-clip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: order matters (band-after-clip != clip-after-band on the edge witness)",
+      "pass": true,
+      "detail": "[[0.12,0],[0.12,0],[0.12,0]] vs [[0.12,0],[0.125,0],[0.12,0]]"
+    },
+    {
+      "name": "e137: SLEEVE_SPECS pinned (R8 0.125/0.005, R7 0.125/null, OI null/0.03)",
+      "pass": true,
+      "detail": "{\"R8\":{\"name\":\"carry dispersion\",\"cap\":0.125,\"bandEps\":0.005},\"R7\":{\"name\":\"toptrader fade\",\"cap\":0.125,\"bandEps\":null},\"OI\":{\"name\":\"OI-change 50/50\",\"cap\":null,\"bandEps\":0.03}}"
+    },
+    {
+      "name": "e137: cleanForSleeve matches cleanBook per spec; unknown sleeve throws",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: bookReturns is the hand dot product",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: bookReturns nulls on shape mismatch / non-finite",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: bookTurnover is the hand L1 (first row free)",
+      "pass": true,
+      "detail": "to=2"
+    },
+    {
+      "name": "e137: single-row turnover is 0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: cost is spread uniformly (net = gross - cost/n)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: break-even is 1e4*sum(gross)/turnover",
+      "pass": true,
+      "detail": "be=25"
+    },
+    {
+      "name": "e137: zero cost leaves gross untouched",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: scoreBook equals the two-step pipeline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: null panel reads neutral NaN, raw == book net",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: inverse-vol sums to 1, dead stream gets 0",
+      "pass": true,
+      "detail": "0.67/0/0.33"
+    },
+    {
+      "name": "e137: all-degenerate vols read all 0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: volTargetScale is target/sqrt(var); degenerate reads NaN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: clipped schedule is the trailing median clipped at f*last",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: fixed-split joint is the dot product; mismatch is NaN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: blockSharpes hand recompute (6 blocks of 2)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: worstBlock is the min; stressHalves splits evenly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "e137: G5 passes full conjunction; null dsr fails (never skips)",
+      "pass": true,
+      "detail": "dsr"
+    },
+    {
+      "name": "e137: G5 fails without human attestations",
+      "pass": true,
+      "detail": "decay,unseen"
+    }
+  ],
+  "artefact": {
+    "verdict": "SUPPORTED"
+  }
+}

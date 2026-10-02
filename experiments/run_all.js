@@ -141,6 +141,7 @@ import * as e133 from './e133_predictive_smoother.js';
 import * as e134 from './e134_cost_ladder.js';
 import * as e135 from './e135_stacked_band.js';
 import * as e136 from './e136_stacked_band_holdout.js';
+import * as e137 from './e137_portfolio_audit.js';
 
 const write = async (name, value) => {
     await globalThis.__fs.writeTextFile(`src/NeuLegion-lab/results/${name}.json`, JSON.stringify(value, null, 2));
@@ -422,6 +423,9 @@ export async function run() {
     const e136v = await step('e136_stacked_band_holdout', () => e136.run({}));
     summary['e136_stacked_band_holdout'].pass = e136v.failed === 0;
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e136_stacked_band_holdout.json', JSON.stringify(e136v, null, 2)); } catch (e) { /* best effort */ }
+    const e137v = await step('e137_portfolio_audit', () => e137.run({}));
+    summary['e137_portfolio_audit'].pass = e137v.failed === 0;
+    try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e137_portfolio_audit.json', JSON.stringify(e137v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e127_quantized_sizing.json', JSON.stringify(e127v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e126_dispersion_sizing.json', JSON.stringify(e126v, null, 2)); } catch (e) { /* best effort */ }
     try { await globalThis.__fs.writeTextFile('src/NeuLegion-lab/results/e125_flow_reversal.json', JSON.stringify(e125v, null, 2)); } catch (e) { /* best effort */ }

@@ -1,14 +1,14 @@
 # Lab STATUS — 30-second orientation (for the AI that mostly uses this lab)
 
-**Counts (verified CYCLE-198, 2026-10-02):** 19 leads (board ARCHIVED, CYCLE-192) · 183 findings (F-01…F-81
-full rows + summary table to F-183) · cycles CYCLE-000…CYCLE-198 · 147
+**Counts (verified CYCLE-201, 2026-10-02):** 19 leads (board ARCHIVED, CYCLE-192) · 186 findings (F-01…F-81
+full rows + summary table to F-186) · cycles CYCLE-000…CYCLE-201 · 147
 experiment files (139 in `experiments/run_all.js` (146 steps) + 8 named (run_all + standalone s6a/s6b/s6c/s6e/m1/m4/c1/c2)), lab INDEX
 names every cycle file.
 
-**Start here:** `cycles/CYCLE-198.md` (C2 probes + native ablation — the live plan) → `PLAN.md` (model track C2→C3) →
+**Start here:** `cycles/CYCLE-201.md` (firewall green — identity check owed) → `PLAN.md` (model track C2-verify→C3) →
 `FINDINGS.md` (the ledger) → `leads/INDEX.md` (archived board, provenance only).
 
-**One live track:** model core code only (C2→C3; C1 CLOSED no-edit). Allocation CLOSED, S6f PARKED, M3-builds PARKED. Operator load: ONE command owed (C2 ablation script below).
+**One live track:** model core code only (C2-verify→C3; C1 CLOSED no-edit). Allocation CLOSED, S6f PARKED, M3-builds PARKED. Operator load: ONE command owed (post-delete ablation identity check).
 
 **Native gate: CLOSED (CYCLE-180 operator proof 134/134). No operator load owed.**
 

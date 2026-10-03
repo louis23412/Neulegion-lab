@@ -185,6 +185,11 @@ below). Research synced 10q.
   laggard add nothing. Native `c2-optimizer-ablation.sh` issued (one
   command owed); proof-back unblocks delete/adopt. Research 11b grounds
   the noisy-teacher framing.
+* **D-35 — C2 proof + delete EXECUTED (CYCLE-199/200).** Runs (n=800):
+  plain_vs_stock p=0.856 → DELETE branch; adamw ns → no adopt. Delete
+  applied: `_scaleGradients`→global clip, rank-LR retired (homeostasis
+  hook kept), registry notes updated. Firewall owed: `npm test` →
+  re-bless → post-delete ablation (expect plain≡stock bit-identical).
 
 ## Decision log
 
@@ -230,7 +235,7 @@ brierSkill −0.075; linear/MLP also ≤0); one open door — e115 1h big-move
 | # | Step | Owner | Gate | Effort | Status |
 |---|---|---|---|---|---|
 | C1 | readout-head A/B/C (REFINED CYCLE-194 per 2610.01831: last-position vs uniform mean-pool (control) vs learned-pool on the same Llama block; learned may lose — read 2510.03339 first) | AI | none | repo edit + test script | CLOSED-NO-EDIT (CYCLE-197: lastpos≡meanpool DM p=0.925; learned≡uniform; MCS flatridge alone — readout not binding, goldens untouched) |
-| C2 | A17 retire-test (identity-spec + plain AdamW + clip ablation; delete the trust/spec/fractal stack on no-Brier-move) | AI | none | lab probes DONE (CYCLE-198); native script ISSUED, proof owed | IN-FLIGHT (harness verdicts banked; delete/adopt gated on operator proof) |
+| C2 | A17 retire-test (identity-spec + plain AdamW + clip ablation; delete the trust/spec/fractal stack on no-Brier-move) | AI | none | proof RECEIVED (p=0.856 → DELETE); delete APPLIED (CYCLE-200); firewall GREEN — `npm test` 134/134 post re-bless (CYCLE-201); owed: post-delete ablation identity check | VERIFYING (C3 queued behind identity proof) |
 | C3 | upgrades-into-live-reader or delete-broadcast (REFRAMED CYCLE-193: `_retrieveTopRelevantProtos` already IS the live scored reader via `_contextAwareAttention`; wire multiprobes/querymod into IT, or delete `broadcastMemory`) | AI | none | repo edit + test script | QUEUED (after C2) |
 | M1p2 | controller-as-is + TSFM-probe arms (native/operator-gated; weights + better-sqlite3) | operator | code track progress | — | PARKED (nothing asked) |
 
